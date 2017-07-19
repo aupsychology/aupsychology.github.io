@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Statistics: The Story of Numbers</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="An Introduction to Psychology Statistics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Statistics: The Story of Numbers" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An Introduction to Psychology Statistics" />
+  <meta name="github-repo" content="rgfran" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Statistics: The Story of Numbers" />
+  
+  <meta name="twitter:description" content="An Introduction to Psychology Statistics" />
+  
+
+<meta name="author" content="Robert G. Franklin, Jr.">
+
+
+<meta name="date" content="2017-07-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="data-distributions-and-descriptive-statistics.html">
+<link rel="next" href="probability-and-samples.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The Story of Numbers</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Part 1: Basic Concepts</b></span></li>
+<li class="chapter" data-level="1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html"><i class="fa fa-check"></i><b>1</b> Chapter 1: Statistical Stories</a><ul>
+<li class="chapter" data-level="1.1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-1-to-catch-a-thief"><i class="fa fa-check"></i><b>1.1</b> Story 1: To catch a thief</a></li>
+<li class="chapter" data-level="1.2" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-2-the-quirks-of-what-we-dont-see"><i class="fa fa-check"></i><b>1.2</b> Story 2: The quirks of what we don’t see</a></li>
+<li class="chapter" data-level="1.3" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-3-what-causes-cancer"><i class="fa fa-check"></i><b>1.3</b> Story 3: What causes cancer</a></li>
+<li class="chapter" data-level="1.4" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-4-simpsons-paradox"><i class="fa fa-check"></i><b>1.4</b> Story 4: Simpson’s Paradox</a></li>
+<li class="chapter" data-level="1.5" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#the-takeaway"><i class="fa fa-check"></i><b>1.5</b> The takeaway</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html"><i class="fa fa-check"></i><b>2</b> Chapter 2: How We Use Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-are-data"><i class="fa fa-check"></i><b>2.1</b> What are data?</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#getting-data"><i class="fa fa-check"></i><b>2.2</b> Getting data</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-can-we-use-data-for"><i class="fa fa-check"></i><b>2.3</b> What can we use data for?</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#where-do-data-come-from"><i class="fa fa-check"></i><b>2.4</b> Where do data come from?</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#how-accurate-are-our-data"><i class="fa fa-check"></i><b>2.5</b> How accurate are our data?</a></li>
+<li class="chapter" data-level="2.6" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#claims-about-data"><i class="fa fa-check"></i><b>2.6</b> Claims about data</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#frequency-claims"><i class="fa fa-check"></i><b>2.6.1</b> Frequency claims</a></li>
+<li class="chapter" data-level="2.6.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#association-claims"><i class="fa fa-check"></i><b>2.6.2</b> Association claims</a></li>
+<li class="chapter" data-level="2.6.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#mean-claims"><i class="fa fa-check"></i><b>2.6.3</b> Mean claims</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#summary"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html"><i class="fa fa-check"></i><b>3</b> Data, Distributions and Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-idea-of-describing-data"><i class="fa fa-check"></i><b>3.1</b> The idea of describing data</a></li>
+<li class="chapter" data-level="3.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#distributions-and-summarizing-data"><i class="fa fa-check"></i><b>3.2</b> Distributions and summarizing data</a></li>
+<li class="chapter" data-level="3.3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#plotting-distributions"><i class="fa fa-check"></i><b>3.3</b> Plotting distributions</a></li>
+<li class="chapter" data-level="3.4" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#using-descriptive-statistics-to-characterize-distributions"><i class="fa fa-check"></i><b>3.4</b> Using Descriptive Statistics to Characterize Distributions</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#central-tendency"><i class="fa fa-check"></i><b>3.4.1</b> Central tendency</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#measures-of-variance"><i class="fa fa-check"></i><b>3.4.2</b> Measures of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-importance-of-descriptive-statistics"><i class="fa fa-check"></i><b>3.5</b> The importance of descriptive statistics</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summarizing-populations"><i class="fa fa-check"></i><b>3.5.1</b> Summarizing Populations</a></li>
+<li class="chapter" data-level="3.5.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#mistakes-with-descriptive-statistics"><i class="fa fa-check"></i><b>3.5.2</b> Mistakes with descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summary-1"><i class="fa fa-check"></i><b>3.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>4</b> Introduction to R</a><ul>
+<li class="chapter" data-level="4.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-is-r"><i class="fa fa-check"></i><b>4.1</b> What is R?</a></li>
+<li class="chapter" data-level="4.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-basics-of-r"><i class="fa fa-check"></i><b>4.2</b> The basics of R</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#basic-math-functions"><i class="fa fa-check"></i><b>4.2.1</b> Basic Math Functions</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#objects"><i class="fa fa-check"></i><b>4.2.2</b> Objects</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-frames"><i class="fa fa-check"></i><b>4.2.3</b> Data frames</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-into-r"><i class="fa fa-check"></i><b>4.3</b> Inputting data into R</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-from-a-.csv-file"><i class="fa fa-check"></i><b>4.3.1</b> Inputting data from a .csv file</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#importing-data-from-google-sheets"><i class="fa fa-check"></i><b>4.3.2</b> Importing data from Google Sheets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#descriptive-statistics-in-r"><i class="fa fa-check"></i><b>4.4</b> Descriptive statistics in R</a></li>
+<li class="chapter" data-level="4.5" data-path="introduction-to-r.html"><a href="introduction-to-r.html#summary-2"><i class="fa fa-check"></i><b>4.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability-and-samples.html"><a href="probability-and-samples.html"><i class="fa fa-check"></i><b>5</b> Probability and Samples</a><ul>
+<li class="chapter" data-level="5.1" data-path="probability-and-samples.html"><a href="probability-and-samples.html#what-is-probability"><i class="fa fa-check"></i><b>5.1</b> What is probability?</a></li>
+<li class="chapter" data-level="5.2" data-path="probability-and-samples.html"><a href="probability-and-samples.html#calculating-probability-of-events"><i class="fa fa-check"></i><b>5.2</b> Calculating probability of events</a></li>
+<li class="chapter" data-level="5.3" data-path="probability-and-samples.html"><a href="probability-and-samples.html#probability-and-sampling"><i class="fa fa-check"></i><b>5.3</b> Probability and sampling</a></li>
+<li class="chapter" data-level="5.4" data-path="probability-and-samples.html"><a href="probability-and-samples.html#summary-3"><i class="fa fa-check"></i><b>5.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html"><i class="fa fa-check"></i><b>6</b> The Normal Distribution and Sampling</a><ul>
+<li class="chapter" data-level="6.1" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#the-central-limit-theorem"><i class="fa fa-check"></i><b>6.1</b> The Central Limit Theorem</a></li>
+<li class="chapter" data-level="6.2" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#properties-of-the-normal-distribution"><i class="fa fa-check"></i><b>6.2</b> Properties of the Normal Distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#sampling-and-sample-means"><i class="fa fa-check"></i><b>6.3</b> Sampling and Sample Means</a></li>
+<li class="chapter" data-level="6.4" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#summary-4"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html"><i class="fa fa-check"></i><b>7</b> Making Decisions with Statistics</a><ul>
+<li class="chapter" data-level="7.1" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#basics-of-decision-theory"><i class="fa fa-check"></i><b>7.1</b> Basics of Decision Theory</a></li>
+<li class="chapter" data-level="7.2" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#null-hypothesis-testing"><i class="fa fa-check"></i><b>7.2</b> Null Hypothesis Testing</a></li>
+<li class="chapter" data-level="7.3" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#effect-sizes"><i class="fa fa-check"></i><b>7.3</b> Effect sizes</a></li>
+<li class="chapter" data-level="7.4" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#summary-5"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html"><i class="fa fa-check"></i><b>8</b> Frequency claims</a><ul>
+<li class="chapter" data-level="8.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#what-are-frequency-claims"><i class="fa fa-check"></i><b>8.1</b> What are frequency claims?</a></li>
+<li class="chapter" data-level="8.2" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#binomial-tests"><i class="fa fa-check"></i><b>8.2</b> Binomial tests</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#using-different-probabilities"><i class="fa fa-check"></i><b>8.2.1</b> Using different probabilities</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests"><i class="fa fa-check"></i><b>8.3</b> Chi-square tests</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests-with-more-than-two-outcomes"><i class="fa fa-check"></i><b>8.3.1</b> Chi-square tests with more than two outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#summary-6"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="association-claims-1.html"><a href="association-claims-1.html"><i class="fa fa-check"></i><b>9</b> Association Claims</a><ul>
+<li class="chapter" data-level="9.1" data-path="association-claims-1.html"><a href="association-claims-1.html#what-are-association-claims"><i class="fa fa-check"></i><b>9.1</b> What are association claims</a></li>
+<li class="chapter" data-level="9.2" data-path="association-claims-1.html"><a href="association-claims-1.html#correlation"><i class="fa fa-check"></i><b>9.2</b> Correlation</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="association-claims-1.html"><a href="association-claims-1.html#calculating-correlations"><i class="fa fa-check"></i><b>9.2.1</b> Calculating correlations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="association-claims-1.html"><a href="association-claims-1.html#using-linear-regression"><i class="fa fa-check"></i><b>9.3</b> Using Linear Regression</a></li>
+<li class="chapter" data-level="9.4" data-path="association-claims-1.html"><a href="association-claims-1.html#evaluating-linear-regressions"><i class="fa fa-check"></i><b>9.4</b> Evaluating linear regressions</a></li>
+<li class="chapter" data-level="9.5" data-path="association-claims-1.html"><a href="association-claims-1.html#linear-regression-in-r"><i class="fa fa-check"></i><b>9.5</b> Linear Regression in R</a></li>
+<li class="chapter" data-level="9.6" data-path="association-claims-1.html"><a href="association-claims-1.html#limitations-to-linear-regression-and-correlation"><i class="fa fa-check"></i><b>9.6</b> Limitations to linear regression and correlation</a></li>
+<li class="chapter" data-level="9.7" data-path="association-claims-1.html"><a href="association-claims-1.html#summary-7"><i class="fa fa-check"></i><b>9.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html"><i class="fa fa-check"></i><b>10</b> One Sample Mean Claims</a><ul>
+<li class="chapter" data-level="10.1" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#one-sample-mean-claims-1"><i class="fa fa-check"></i><b>10.1</b> One sample mean claims</a></li>
+<li class="chapter" data-level="10.2" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-z-test"><i class="fa fa-check"></i><b>10.2</b> The Z-test</a></li>
+<li class="chapter" data-level="10.3" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-one-sample-t-test"><i class="fa fa-check"></i><b>10.3</b> The One-Sample T-test</a></li>
+<li class="chapter" data-level="10.4" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#confidence-intervals-with-one-sample"><i class="fa fa-check"></i><b>10.4</b> Confidence Intervals with One Sample</a></li>
+<li class="chapter" data-level="10.5" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#calculating-t-tests-and-confidence-intervals-in-r"><i class="fa fa-check"></i><b>10.5</b> Calculating T-tests and Confidence Intervals in R</a></li>
+<li class="chapter" data-level="10.6" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#summary-8"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="two-mean-claims.html"><a href="two-mean-claims.html"><i class="fa fa-check"></i><b>11</b> Two Mean Claims</a><ul>
+<li class="chapter" data-level="11.1" data-path="two-mean-claims.html"><a href="two-mean-claims.html#what-are-we-testing-with-two-mean-claims"><i class="fa fa-check"></i><b>11.1</b> What are we testing with two-mean claims?</a></li>
+<li class="chapter" data-level="11.2" data-path="two-mean-claims.html"><a href="two-mean-claims.html#paired-samples-t-test"><i class="fa fa-check"></i><b>11.2</b> Paired Samples T-test</a></li>
+<li class="chapter" data-level="11.3" data-path="two-mean-claims.html"><a href="two-mean-claims.html#independent-samples-t-test"><i class="fa fa-check"></i><b>11.3</b> Independent Samples T-test</a></li>
+<li class="chapter" data-level="11.4" data-path="two-mean-claims.html"><a href="two-mean-claims.html#effect-sizes-1"><i class="fa fa-check"></i><b>11.4</b> Effect sizes</a></li>
+<li class="chapter" data-level="11.5" data-path="two-mean-claims.html"><a href="two-mean-claims.html#the-logic-of-t-tests-and-experimental-design"><i class="fa fa-check"></i><b>11.5</b> The logic of t-tests and experimental design</a></li>
+<li class="chapter" data-level="11.6" data-path="two-mean-claims.html"><a href="two-mean-claims.html#doing-two-sample-t-tests-in-r"><i class="fa fa-check"></i><b>11.6</b> Doing two-sample t-tests in R</a></li>
+<li class="chapter" data-level="11.7" data-path="two-mean-claims.html"><a href="two-mean-claims.html#summary-9"><i class="fa fa-check"></i><b>11.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html"><i class="fa fa-check"></i><b>12</b> Claims With More Than Two Means: ANOVA</a><ul>
+<li class="chapter" data-level="12.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#how-to-do-an-anova"><i class="fa fa-check"></i><b>12.1</b> How to do an ANOVA</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-between"><i class="fa fa-check"></i><b>12.1.1</b> Calculating Sums of Squares Between</a></li>
+<li class="chapter" data-level="12.1.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-within"><i class="fa fa-check"></i><b>12.1.2</b> Calculating Sums of Squares Within</a></li>
+<li class="chapter" data-level="12.1.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-total"><i class="fa fa-check"></i><b>12.1.3</b> Calculating Sums of Squares Total</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-the-rest"><i class="fa fa-check"></i><b>12.2</b> Calculating the rest</a></li>
+<li class="chapter" data-level="12.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#doing-an-example"><i class="fa fa-check"></i><b>12.3</b> Doing an example</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#the-null-and-alternative-hypothesis"><i class="fa fa-check"></i><b>12.3.1</b> The null and alternative hypothesis</a></li>
+<li class="chapter" data-level="12.3.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares"><i class="fa fa-check"></i><b>12.3.2</b> Calculating Sums of Squares</a></li>
+<li class="chapter" data-level="12.3.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-degrees-of-freedom-and-mean-squares"><i class="fa fa-check"></i><b>12.3.3</b> Calculating Degrees of Freedom and Mean Squares</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#anova-in-r"><i class="fa fa-check"></i><b>12.4</b> ANOVA in R</a></li>
+<li class="chapter" data-level="12.5" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#summary-10"><i class="fa fa-check"></i><b>12.5</b> Summary</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics: The Story of Numbers</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-r" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Introduction to R</h1>
+<p>In this chapter, you will learn about the R statistical language and how to use it to analyze data. Specifically, we’ll cover:</p>
+<ol style="list-style-type: decimal">
+<li>What is R and how do we use R and RStudio to do statistical analysis</li>
+<li>What is the basic structure of R? How does R work? This will include understanding what variables, functions, and packages are.</li>
+<li>How do we enter data into R? This will involve understanding how to use packages to import data that comes from other sources?</li>
+<li>How do we do basic analyses in R? This will involve understanding how to use functions to calculate descriptive statistics.</li>
+</ol>
+<div id="what-is-r" class="section level2">
+<h2><span class="header-section-number">4.1</span> What is R?</h2>
+<p>I have a secret to share. I used R to write this book. All the (not so) pretty graphs and functions were generated in R. I even used R to make up some of the data that I “collected” in other chapters. So R is powerful and done right, it can be beautiful.</p>
+<p>In this book, I’ll discuss how to do some of the statistical tests and calculations by hand, but everyone uses computers to do this today. Once you try to calculate some of these stats by hand, you will start to understand why this is. Since computers are amazing at crunching numbers, there are a lot of different programs which can do statistical analyses. In my experience there are three types of programs you can use:</p>
+<ol style="list-style-type: decimal">
+<li><p>Spreadsheet programs: Examples include Excel, Google Docs, etc. These are programs where you can enter lists of numbers and do basic calculations. They are good for entering data and I usually use them to enter in numbers. They only have limited statistical capabilities. Once you are beyond means and standard deviations, these programs are not easy to use and can even lead to some big mistakes.</p></li>
+<li><p>Commercial stats programs. Examples include SAS and SPSS. They are programs written for doing statistical analyses. They can do a lot of different things, and many of them are relatively easy to use. However, they are very expensive, with licenses that can be in the thousands of dollars. Unless you are independently wealthy or work somewhere which has bought one of these programs, you may not get to use them.</p></li>
+<li><p>Open source programs: Open-source programs are programs where the code is available for anyone to use and modify. Volunteers write these programs and give the code away for free. So, anyone can modify and edit it to make it what they want. This means that most open-source programs are free. Free is good, right? However, there’s a downside. Since the people writing the program are volunteers and are not getting paid to write the program directly, these programs can often be hard to use.</p></li>
+</ol>
+<p>R is an open-source statistical programming language. A programming language is a set of commands that are interpreted by an interpreter to do something. What that means is that a user will give R a command, or a list of commands, and get an output. So instead of clicking with a mouse, what a user will do is type a command and get an answer. A command could be something really simple. Here are some commands written below. In this book, the commands will be written in this <code>blocky font</code> and will often have the color highlighting that’s listed below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">3</span> +<span class="st"> </span><span class="dv">5</span>
+<span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">22</span>,<span class="dv">44</span>,<span class="dv">99</span>,<span class="dv">311</span>))
+numbers =<span class="st"> </span><span class="dv">1</span>:<span class="dv">100</span>
+<span class="kw">t.test</span>(DV~IV, <span class="dt">data=</span>mydata)
+<span class="kw">print</span>(<span class="st">&quot;I love R&quot;</span>)</code></pre></div>
+<p>R comes with a set of commands built into it called the base package. These are the first commands made with R and they cover basic math functions, data entry functions, and statistics functions. But the power of R is that there are functions to do almost anything that any statistician would ever want. And if there is a new stats test or new function that doesn’t exist, you can write your own. The best part is that you usually don’t have to write your own because someone else has probably already done it. People have written thousands of add-on packages you can add to do all sorts of analyses. We will use a lot of these packages this in this class.</p>
+<p>So R is free, and has thousands of add-ons. It sounds wonderful, right? If it weren’t free, wouldn’t I be trying to sell it? But there’s a catch. R is a programming language and that’s difficult to use if you don’t have experience programming. Plus, as programming languages go, R is not the easiest to use. So you might struggle with R. However, whenever you struggle with R, just remember you can pay several thousand dollars and get a commercial program which is only slightly easier to use.</p>
+<p>Now, how do I get R. You can download R from the cran-r-project website: <a href="https://cran.r-project.org" class="uri">https://cran.r-project.org</a>. This gives versions for Windows, Mac, and Linux. The website has installation instructions. Once you install R, you should see something like this.</p>
+<div class="figure">
+<img src="images/ch4_image1.png" alt="Basic R installation" />
+<p class="caption">Basic R installation</p>
+</div>
+<p>If you click around, you may find this hard to use. It has some menus but they are not very helpful. What I recommend doing is downloading a program called RStudio to use with R. RStudio is a program called an integrated development environment (IDE) for R. It’s a program that runs on top of R and makes it easier to use R. As you get more advanced using R, it will be more helpful. You can download and install RStudio at the website <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a></p>
+<p>Once you install RStudio, you can open it instead of opening R. It should look like this:</p>
+<div class="figure">
+<img src="images/ch4_image2.png" alt="Basic RStudio Installation" />
+<p class="caption">Basic RStudio Installation</p>
+</div>
+<p>Here is what RStudio looks like, with an image of me typing this book at this moment:</p>
+<div class="figure">
+<img src="images/ch4_image3.png" alt="My current RStudio" />
+<p class="caption">My current RStudio</p>
+</div>
+<p>It is important to note that both R and RStudio will be on your computer, so you can either of them. RStudio needs R but R does not need RStudio. However, I strongly recommend opening RStudio, instead of opening basic R.</p>
+</div>
+<div id="the-basics-of-r" class="section level2">
+<h2><span class="header-section-number">4.2</span> The basics of R</h2>
+<p>If you open RStudio, you should see something like this. Let me give you a brief tour of some of the different features of RStudio.</p>
+<div class="figure">
+<img src="images/ch4_image2.png" alt="Basic RStudio Installation" />
+<p class="caption">Basic RStudio Installation</p>
+</div>
+<p>RStudio has two different panes. On the left side, you have what is called the console. This is where you can enter in your R commands, which we will do in a minute. On the right side, you have two other windows which are helpful. The top-right window contains something called your <strong>workspace</strong>. This is a list of all the functions, variables, and other things you have in R at one time. And at the bottom right, you will see a window with several tabs, such as files, plots, packages, and help. This contains additional information which may be useful.</p>
+<div id="basic-math-functions" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> Basic Math Functions</h3>
+<p>As mentioned in the last section, R is a programming language. You do some input and get some output. The input are called commands and you run them by typing them in the console and pressing enter. At its simplest, R is like a big calculator. For instance, I could type the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">38</span> +<span class="st"> </span><span class="dv">74</span></code></pre></div>
+<pre><code>## [1] 112</code></pre>
+<p>As a note, any command I show you in R will be in the shaded box like the box above. Additionally, the output that you would see in the R Console will be listed below the command. In this case, the output says “[1] 112”.</p>
+<p>Some basic math functions in R are listed here:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Symbol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Addition</td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td>Subtraction</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>Multiplication</td>
+<td>*</td>
+</tr>
+<tr class="even">
+<td>Division</td>
+<td>/ (forward slash)</td>
+</tr>
+<tr class="odd">
+<td>Exponent</td>
+<td>^</td>
+</tr>
+</tbody>
+</table>
+<p>If I wanted to multiply 24 and 8, I would type this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">24</span>*<span class="dv">8</span></code></pre></div>
+<pre><code>## [1] 192</code></pre>
+<p>I get 192. You might be wondering what the 1 in brackets means. It means that R is outputting one number and that its value is 192. This is helpful if R outputs a list of numbers. The number in brackets tells me what number in the list is the value immediately to its right. For instance, if it said [33], then I would know that the value immediately to the right of the [33] is the thirty-third element.</p>
+<p>With that said, let’s try to type some commands and see what the output is. Try typing the following commands: (note that I didn’t output the answers below).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">45</span> +<span class="dv">39</span>
+<span class="dv">34562</span> *<span class="st"> </span><span class="dv">24728</span>
+<span class="dv">854</span>/<span class="dv">2</span>
+<span class="dv">11</span>^<span class="dv">3</span></code></pre></div>
+</div>
+<div id="objects" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Objects</h3>
+<p>If this was all that R could do, it would be no better than a calculator. The power in R is that we can do a lot more, and the first element of this power is the concept of <strong>objects</strong>. An object (also known as a variable in other programming languages) is something created in R that stores something. An object is like a box. The box stores something and the thing stored in the box can change, depending on the context.</p>
+<p>There are many types of objects depending on what is stored in the object. The simplest object is a variable, which is an object that stores one value. A variable is something that stands for one value, usually a number but it can also be a string of letters.</p>
+<p>The simplest variable might be the one you remember from algebra, the letter x. If we want to make x equal 1, we would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">1</span></code></pre></div>
+<p>That’s because there is nothing to be output. R simply does the command without a word. But if you look to the top right of your RStudio screen, you might see a change to your workspace. It will say under Values, x and 1.</p>
+<div class="figure">
+<img src="images/ch4_image4.png" alt="Values" />
+<p class="caption">Values</p>
+</div>
+<p>When assigning variables, we always put the variable on the left, then equals, and then the value to assign on the right. If this confuses you, you can use another way to assign values, which uses an arrow, made up with a less-than sign and a dash, which looks like &lt;-.</p>
+<p>So you could type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">1</span></code></pre></div>
+<p>Many R people like this way of assigning variables, but it is a way of assigning variables that is particular to R whereas using equals is something done in many programming language. The choice is up to you, but since I used other programming languages before learning R, I use the equals to assign variables.</p>
+<p>Variables can have any name. You could use a single letter, or longer letters. You can also use numbers and some symbols, as long as the variable starts with a letter. However, I recommend sticking with letters. Here are a few examples:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">3</span>
+y =<span class="st"> </span><span class="dv">11</span>
+number =<span class="st"> </span><span class="dv">24</span>
+name =<span class="st"> &quot;Sarah&quot;</span></code></pre></div>
+<p>Notice in the last example I used letters instead of numbers. If I put letters in quotes, I can assign letters or any other characters to a variable, called a string.</p>
+<p>I can also do math with variables. Look at the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">4</span>
+z =<span class="st"> </span><span class="dv">12</span>
+z -<span class="st"> </span>x</code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<p>Notice now I get an output when I type z - x. This is because R is calculating the value for z minus the value for x and then outputting it in the screen. I can also use this to use one variable to set the value for another variable.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">11</span>
+y =<span class="st"> </span>x</code></pre></div>
+<p>In this case, I set the value y to equal what x was, which is 11. Notice that if I mix up the order of x and y, I get an error:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">14</span>
+x =<span class="st"> </span>k</code></pre></div>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;k&#39; not found</code></pre>
+<p>In this case, I get an error, because R is trying to set the variable x to be what the variable k is, and since there’s no variable k, there’s no value for x.</p>
+<p>Objects can hold more than one number as well. If you type the following, you will get an error:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span></code></pre></div>
+<p>That’s because R has no idea what is going on. R assumes you are assigning the value 1 to x, and then there are a bunch of other letters randomly added to the command. Whenever R gets input it doesn’t understand it give you an error. So, to enter multiple numbers, you can use something called a function. In R, all functions are a command followed by parenthesis. What is contained in the parenthesis is the input to the function. Each function takes the inputs, does something, and then sends an output, either to the screen (if nothing is given with equals), or to an object.</p>
+<p>The simplest command for R is one called concatenate, which means to put more than one item into a list. Since concatenate is a long word and I generally can’t spell it right, R just shortened it to <code>c()</code>. So type the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)</code></pre></div>
+<p>This is simply a command that tells R that you’re making a <strong>vector</strong>, or a variable with more than one number. Try typing the following examples:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ages =<span class="st"> </span><span class="kw">c</span>( <span class="dv">19</span>, <span class="dv">21</span>, <span class="dv">24</span>, <span class="dv">27</span>)
+IQ =<span class="st"> </span><span class="kw">c</span>(<span class="dv">97</span>, <span class="dv">132</span>, <span class="dv">88</span>, <span class="dv">101</span>, <span class="dv">94</span>, <span class="dv">107</span>)
+presidents =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;George&#39;</span>,<span class="st">&#39;John&#39;</span>,<span class="st">&#39;Thomas&#39;</span>)</code></pre></div>
+<p>Vectors are powerful because you can use them to enter variables and do statistics on the variables.</p>
+<p>An important thing to note is that like most computer languages, R is case sensitive. So if you make a variable “Ages”, it is different from “ages”, or “AGES”. If you are like me, you will make many errors by forgetting how you capitalized variables. My solution is to never capitalize anything unless it’s a standard abbreviation which is always capitalized, like “IQ”.</p>
+</div>
+<div id="data-frames" class="section level3">
+<h3><span class="header-section-number">4.2.3</span> Data frames</h3>
+<p>There are many ways to enter data into R, but the one that I use most commonly is a dataframe. A dataframe is a table with rows and columns. Each column represents a variable and each row represents an observation. This is the same way as we mentioned in Chapter 2.</p>
+<p>A table may look like this:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">name</th>
+<th align="center">sex</th>
+<th align="center">test1</th>
+<th align="center">test2</th>
+<th align="center">test3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">April</td>
+<td align="center">F</td>
+<td align="center">85</td>
+<td align="center">79</td>
+<td align="center">80</td>
+</tr>
+<tr class="even">
+<td align="center">Bret</td>
+<td align="center">M</td>
+<td align="center">77</td>
+<td align="center">80</td>
+<td align="center">64</td>
+</tr>
+<tr class="odd">
+<td align="center">Cassie</td>
+<td align="center">F</td>
+<td align="center">69</td>
+<td align="center">64</td>
+<td align="center">90</td>
+</tr>
+<tr class="even">
+<td align="center">Deshauna</td>
+<td align="center">F</td>
+<td align="center">98</td>
+<td align="center">93</td>
+<td align="center">81</td>
+</tr>
+<tr class="odd">
+<td align="center">Egor</td>
+<td align="center">M</td>
+<td align="center">89</td>
+<td align="center">90</td>
+<td align="center">99</td>
+</tr>
+</tbody>
+</table>
+<p>Each row corresponds a subject (in psychology, usually this is a person) and each column is a variable. By following each row, we can see all the values for a particular person. If we wanted to see Deshauna’s scores, we would follow the fourth row.</p>
+<p>This format of data is called tidy data and it makes it much easier to set up data. You can read more about this format in the book linked <a href="http://r4ds.had.co.nz/tidy-data.html">here</a>.</p>
+<p>To make a data frame in R, I have to create several variables on their own using the <code>c()</code> command and then combine them using the <code>data.frame()</code> command. Here is how I would make the data frame in the table above. In this case, I am naming the data frame “grades”.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">name =<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;April&#39;</span>,<span class="st">&#39;Bret&#39;</span>,<span class="st">&#39;Cassie&#39;</span>,<span class="st">&#39;Deshauna&#39;</span>,<span class="st">&#39;Egor&#39;</span>)
+sex =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;F&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;M&quot;</span>)
+test1 =<span class="st"> </span><span class="kw">c</span>(<span class="dv">85</span>,<span class="dv">77</span>,<span class="dv">69</span>,<span class="dv">98</span>,<span class="dv">89</span>)
+test2=<span class="kw">c</span>(<span class="dv">79</span>,<span class="dv">80</span>,<span class="dv">64</span>,<span class="dv">93</span>,<span class="dv">90</span>)
+test3=<span class="kw">c</span>(<span class="dv">80</span>,<span class="dv">64</span>,<span class="dv">90</span>,<span class="dv">81</span>,<span class="dv">99</span>)
+grades =<span class="st"> </span><span class="kw">data.frame</span>(name,sex,test1,test2,test3)</code></pre></div>
+<p>If you type the name of the dataframe into R, you will see the dataframe listed, like this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades</code></pre></div>
+<pre><code>##       name sex test1 test2 test3
+## 1    April   F    85    79    80
+## 2     Bret   M    77    80    64
+## 3   Cassie   F    69    64    90
+## 4 Deshauna   F    98    93    81
+## 5     Egor   M    89    90    99</code></pre>
+<p>Now, it might be helpful to access various parts of the dataframe. If you want to see just a single variable or column, you can use the following notation:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dataframe$variable</code></pre></div>
+<p>To view the scores for test 1, we would type</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades$test1</code></pre></div>
+<pre><code>## [1] 85 77 69 98 89</code></pre>
+<p>We can also create new columns by doing math to other columns. If we want to create a variable that has the total number of points in a class, we would do the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades$total =<span class="st"> </span>grades$test1 +<span class="st"> </span>grades$test2 +<span class="st"> </span>grades$test3</code></pre></div>
+<p>Now if we want to see our new variable, we can type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades$total</code></pre></div>
+<pre><code>## [1] 244 221 223 272 278</code></pre>
+<p>If you want to see a data frame, you can look at them by using the View() command. So you would type the following to view grades:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">View</span>(grades)</code></pre></div>
+<p>This has to be a capital V. In RStudio, this will pop up a window above your console with the data frame entered. This is how it looks in RStudio.</p>
+<div class="figure">
+<img src="images/ch4_image5.png" alt="Viewing a dataframe in RStudio" />
+<p class="caption">Viewing a dataframe in RStudio</p>
+</div>
+<p>Notice how RStudio has four windows. The top-right window shows what you are viewing. If you want to close it out, you can click the little x by the tab that says “grades”. With R, you can have many data frames open at once. If you see the top-right window, it should have a tab called “workspace”. The R workspace is the list of all the objects you have, including vectors and dataframes. You can also see all that is in your workspace by typing:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>()</code></pre></div>
+<p>This is a weird command because there are two parentheses with nothing in them. Occasionally we have commands that have no inputs. We put the parentheses () at the end so that R knows this is a command</p>
+<p>If you want to back up your workspace, you can save your workspace by going to the Session -&gt; Save Workspace As. menu. You can also load previously saved workspaces by going to Session -&gt; Load Workspace. Loading a workspace doesn’t delete your previous workspace; it just adds to them, like a desk getting more cluttered.</p>
+<p>Finally, to remove items, you can use the <code>rm()</code> command, putting the name of the object in the parenthesis. So to remove the vector containing names, you could type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(name)</code></pre></div>
+<p>This is a good way to keep your workspace clean, because the more you have in your workspace, the more memory it uses. If you’re working with big files, workspaces can get very large.</p>
+</div>
+</div>
+<div id="inputting-data-into-r" class="section level2">
+<h2><span class="header-section-number">4.3</span> Inputting data into R</h2>
+<p>Inputting data into R by making vectors and using the <code>data.frame()</code> command is awkward, especially for a lot of data. It’s much easier to input your data into a spreadsheet and then import the data from the spreadsheet into R. I will discuss two ways to input data: One is using .csv files using a spreadsheet program and the second is using the gsheet package which allows you to input data from a spreadsheet on Google sheets.</p>
+<div id="inputting-data-from-a-.csv-file" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Inputting data from a .csv file</h3>
+<p>Any spreadsheet program, such as Microsoft Excel or Google Docs, will allow you to export data using the csv file format. CSV stands for comma separated values, and it is a common way to store a table of data. To save data as a .csv file, you should select this as an option when saving a spreadsheet. For instance, you would select the following in Excel:</p>
+<div class="figure">
+<img src="images/ch4_image6.png" alt="Exporting a spreadsheet as a .csv file" />
+<p class="caption">Exporting a spreadsheet as a .csv file</p>
+</div>
+<p>Before you save the spreadsheet, there are a few steps you can do to make sure the data are imported into R.</p>
+<ol style="list-style-type: decimal">
+<li><p>Data frames have data listed so that each column is a different variable and each row is a unique observation. So data must be exactly rectangular. Each row must have a value in all the columns and each column must have a value in all the rows.</p></li>
+<li><p>The first row should contain column names. This isn’t necessary, but is a lot easier than doing it without. Column names should be simple names with no spaces or other non-letter characters. If you want to use multiple words, you can separate them with a period or underscore. Examples might be: “reaction_time” or date.of.birth.</p></li>
+<li><p>Each column should contain all the same type of data, other than the column names. If a column contains numeric data, <em>do not mix any other types of characters</em>. This includes text or other non-numeric symbols except decimal points (like numbers with commas). If a column has both numbers and text, R will assume that variable is all text strings and turn the numbers into the wrong variable.</p></li>
+</ol>
+<div class="figure">
+<img src="images/ch4_image7.png" alt="Good data entry" />
+<p class="caption">Good data entry</p>
+</div>
+<p>This is an example of good data. Each column has a value in all the rows and there are all the same type of data.</p>
+<div class="figure">
+<img src="images/ch4_image8.png" alt="Bad data entry" />
+<p class="caption">Bad data entry</p>
+</div>
+<p>This is terrible data entry. The Peter row is not full and the word absent is written into the row for test 1. When this dataframe is read into R, it will not read correctly. R will assume that the column for “test1” are strings, rather than numbers.</p>
+<p>If you are missing data, you should use the letters NA (capital N and capital A). R uses this for data which are missing. Handling missing data is a pain and beyond the scope of this book, so I will try to avoid it as much as possible.</p>
+<p>Once you have written your table, you should save it as a .csv file. For instance, this is listed in Excel as “CSV (comma delimited)”. Once you save your data, you can input the data into RStudio by clicking Import Dataset in the environment window (or clicking File -&gt; Import Dataset -&gt; From CSV). This pops up the following window:</p>
+<div class="figure">
+<img src="images/ch4_image9.png" alt="Import Dataset" />
+<p class="caption">Import Dataset</p>
+</div>
+<p>Here you would select the .csv file you saved and then if you set up the data correctly, it should import into R.</p>
+<p>Once you have input your spreadsheet into R, you should make sure it looks right by typing View(x), replacing x with whatever named your dataframe. If it does not look right, you may have to adjust how you put your data into R.</p>
+<p>One final note: you might input your data and see a bunch of extra rows or extra columns added to your data. This is because Excel added empty rows or columns to the csv file that it should not have. To fix that, open your file in excel, select only the data you want, just the rectangle containing your rows and columns, and copy that to a new spreadsheet and immediately save it as a csv file.</p>
+<p>In this book, many of the examples will be saved as csv files. I like to use these because they are usable on any operating system and don’t require a non-free program like Excel or SPSS to use. You can use several free programs to make csv files, such as LibreOffice or an online program like Google Docs.</p>
+</div>
+<div id="importing-data-from-google-sheets" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Importing data from Google Sheets</h3>
+<p>Many of my students use Google Sheets, a part of Google Drive, to enter their data. We can take data straight from Google Sheets and import it into R by using a package called gsheet. As mentioned above, a package is an set of addon functions that someone wrote for R. To use these addons, we have to first install them. We would do that by using the install.packages() command. To install gsheet, you would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;gsheet&#39;</span>)</code></pre></div>
+<p>If you do this for the first time, R might ask you to select a mirror, which is a server which holds all the packages for R. You should select one close to your physical location. Then you may see a bunch of characters appear, and hopefully no errors.</p>
+<p>You only have to install packages once. However, you need to load a package each time you use R. To do this, you would type:</p>
+<p>This loads the package into R.</p>
+<p>Now to import a spreadsheet into R, you will first need to enter the data into Google Sheets just like mentioned above, and then get the shareable link. This link is available by selecting the “Share” icon in Google Sheets, and then clicking the “Get Shareable link” in the dialog box that appears. Once you have the link, you would paste it in the following command. This command saves the spreadsheet at the link below to the data frame d.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d =<span class="st"> </span><span class="kw">gsheet2tbl</span>(<span class="st">&#39;https://docs.google.com/spreadsheets/d/1zew/edit?usp=sharing&#39;</span>)</code></pre></div>
+</div>
+</div>
+<div id="descriptive-statistics-in-r" class="section level2">
+<h2><span class="header-section-number">4.4</span> Descriptive statistics in R</h2>
+<p>R has some functions which allow for us to get descriptive statistics for variables and dataframes.</p>
+<p>The simplest of these are the built-in functions <code>mean()</code>, <code>median()</code>, and <code>sd()</code> which give the mean, median, and standard deviation. These functions take one argument, which is a list of numbers. If we want to calculate the mean of a list of numbers, we would do it this way:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">47</span>,<span class="dv">92</span>,<span class="dv">38</span>,<span class="dv">74</span>)
+<span class="kw">mean</span>(x)</code></pre></div>
+<pre><code>## [1] 52.6</code></pre>
+<p>Instead of assigning numbers to a variable, we can <strong>nest</strong> the <code>c()</code> function inside of the <code>mean()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">47</span>,<span class="dv">92</span>,<span class="dv">38</span>,<span class="dv">74</span>))</code></pre></div>
+<pre><code>## [1] 52.6</code></pre>
+<p>Both of these do the same thing.</p>
+<p>These functions can also be used with data frames to get the means of variables. In this case, to select the use the $ character, we can select only the column. We would type <code>dataframe$column</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(grades$test1)</code></pre></div>
+<pre><code>## [1] 83.6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(grades$test2)</code></pre></div>
+<pre><code>## [1] 11.38859</code></pre>
+<p>If we take the data frame we made in the last section, called grades, we can get some summary statistics by using the <code>summary()</code> function that is built into R.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(grades)</code></pre></div>
+<pre><code>##        name   sex       test1          test2          test3     
+##  April   :1   F:3   Min.   :69.0   Min.   :64.0   Min.   :64.0  
+##  Bret    :1   M:2   1st Qu.:77.0   1st Qu.:79.0   1st Qu.:80.0  
+##  Cassie  :1         Median :85.0   Median :80.0   Median :81.0  
+##  Deshauna:1         Mean   :83.6   Mean   :81.2   Mean   :82.8  
+##  Egor    :1         3rd Qu.:89.0   3rd Qu.:90.0   3rd Qu.:90.0  
+##                     Max.   :98.0   Max.   :93.0   Max.   :99.0  
+##      total      
+##  Min.   :221.0  
+##  1st Qu.:223.0  
+##  Median :244.0  
+##  Mean   :247.6  
+##  3rd Qu.:272.0  
+##  Max.   :278.0</code></pre>
+<p>This gives us the mean of every variable, along with the minimum, first quartile (25th percentile), median, third quartile (75th percentile), and maximum. This is helpful but does not include the standard deviation, which is a commonly reported statistic. We can use another function, the <code>describe()</code> function, to look at many descriptive statistics for all the data at once. The describe function is in the psych package, so we have to install that first. (See the section on importing data for more about installing packages). We only have to install the psych package once.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;psych&#39;</span>)</code></pre></div>
+<p>Then we would type the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(psych)
+<span class="kw">describe</span>(grades)</code></pre></div>
+<pre><code>##       vars n  mean    sd median trimmed   mad min max range  skew kurtosis
+## name*    1 5   3.0  1.58      3     3.0  1.48   1   5     4  0.00    -1.91
+## sex*     2 5   1.4  0.55      1     1.4  0.00   1   2     1  0.29    -2.25
+## test1    3 5  83.6 11.13     85    83.6 11.86  69  98    29 -0.04    -1.81
+## test2    4 5  81.2 11.39     80    81.2 14.83  64  93    29 -0.38    -1.66
+## test3    5 5  82.8 13.03     81    82.8 13.34  64  99    35 -0.19    -1.63
+## total    6 5 247.6 26.67    244   247.6 34.10 221 278    57  0.09    -2.18
+##          se
+## name*  0.71
+## sex*   0.24
+## test1  4.98
+## test2  5.09
+## test3  5.83
+## total 11.93</code></pre>
+<!--
+##Basic graphs in R
+
+Through the ggplot2 package, R has powerful graphing features. There are whole books written about how to use the ggplot2 package to make graphs. A good primer is at this [website](http://r4ds.had.co.nz/data-visualisation.html).
+
+The ggplot2 package can be installed using this command:
+
+
+```r
+install.packages('ggplot2')
+```
+
+Once we install the package, we can load it and create a plot using the qplot() command. In this case, I am creating a histogram of the values for the grades in exam 1.
+
+
+```r
+library(ggplot2)
+qplot(x = test1, data=grades)
+```
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+<img src="04-chapter4_files/figure-html/unnamed-chunk-35-1.png" width="672" />
+
+-->
+</div>
+<div id="summary-2" class="section level2">
+<h2><span class="header-section-number">4.5</span> Summary</h2>
+<p>This chapter only gives the basics of how to use R. However, we will use R in the rest of this book in order to illustrate the concepts that we will cover. In addition, I will also describe how to do the various statistical tests and procedures in R, along with describing basics about the theory behind the test.</p>
+<p>The point of this book is to help you know how to analyze data by knowing which techniques to apply, when to apply them, why you are applying them, and what the results tell us. R helps us tremendously in doing this.</p>
+<p>After this chapter, you should be able to do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Be able to understand how to install R and open R and RStudio. After this, you should be able to know the main parts of the RStudio window and know how to use R like a calculator.</li>
+<li>Understand what variables and commands are and how to use them. Know how to make a variable (single number), vector (list of numbers) using the <code>c()</code> command, and how to make a dataframe out of a series of vectors.</li>
+<li>Be able to import data into R using a .csv file and optionally importing data from Google Sheets using the gsheets package.</li>
+<li>Be able to get basic summary statistics from R using the <code>mean()</code>, <code>median()</code> and <code>sd()</code> command and get summary statistics from a dataframe using the <code>summary()</code> command and the <code>describe()</code> command from the psych package.</li>
+</ol>
+
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.3.2</code></pre>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-distributions-and-descriptive-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="probability-and-samples.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

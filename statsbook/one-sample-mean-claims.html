@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Statistics: The Story of Numbers</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="An Introduction to Psychology Statistics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Statistics: The Story of Numbers" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An Introduction to Psychology Statistics" />
+  <meta name="github-repo" content="rgfran" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Statistics: The Story of Numbers" />
+  
+  <meta name="twitter:description" content="An Introduction to Psychology Statistics" />
+  
+
+<meta name="author" content="Robert G. Franklin, Jr.">
+
+
+<meta name="date" content="2017-07-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="association-claims-1.html">
+<link rel="next" href="two-mean-claims.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The Story of Numbers</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Part 1: Basic Concepts</b></span></li>
+<li class="chapter" data-level="1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html"><i class="fa fa-check"></i><b>1</b> Chapter 1: Statistical Stories</a><ul>
+<li class="chapter" data-level="1.1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-1-to-catch-a-thief"><i class="fa fa-check"></i><b>1.1</b> Story 1: To catch a thief</a></li>
+<li class="chapter" data-level="1.2" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-2-the-quirks-of-what-we-dont-see"><i class="fa fa-check"></i><b>1.2</b> Story 2: The quirks of what we don’t see</a></li>
+<li class="chapter" data-level="1.3" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-3-what-causes-cancer"><i class="fa fa-check"></i><b>1.3</b> Story 3: What causes cancer</a></li>
+<li class="chapter" data-level="1.4" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-4-simpsons-paradox"><i class="fa fa-check"></i><b>1.4</b> Story 4: Simpson’s Paradox</a></li>
+<li class="chapter" data-level="1.5" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#the-takeaway"><i class="fa fa-check"></i><b>1.5</b> The takeaway</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html"><i class="fa fa-check"></i><b>2</b> Chapter 2: How We Use Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-are-data"><i class="fa fa-check"></i><b>2.1</b> What are data?</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#getting-data"><i class="fa fa-check"></i><b>2.2</b> Getting data</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-can-we-use-data-for"><i class="fa fa-check"></i><b>2.3</b> What can we use data for?</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#where-do-data-come-from"><i class="fa fa-check"></i><b>2.4</b> Where do data come from?</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#how-accurate-are-our-data"><i class="fa fa-check"></i><b>2.5</b> How accurate are our data?</a></li>
+<li class="chapter" data-level="2.6" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#claims-about-data"><i class="fa fa-check"></i><b>2.6</b> Claims about data</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#frequency-claims"><i class="fa fa-check"></i><b>2.6.1</b> Frequency claims</a></li>
+<li class="chapter" data-level="2.6.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#association-claims"><i class="fa fa-check"></i><b>2.6.2</b> Association claims</a></li>
+<li class="chapter" data-level="2.6.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#mean-claims"><i class="fa fa-check"></i><b>2.6.3</b> Mean claims</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#summary"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html"><i class="fa fa-check"></i><b>3</b> Data, Distributions and Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-idea-of-describing-data"><i class="fa fa-check"></i><b>3.1</b> The idea of describing data</a></li>
+<li class="chapter" data-level="3.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#distributions-and-summarizing-data"><i class="fa fa-check"></i><b>3.2</b> Distributions and summarizing data</a></li>
+<li class="chapter" data-level="3.3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#plotting-distributions"><i class="fa fa-check"></i><b>3.3</b> Plotting distributions</a></li>
+<li class="chapter" data-level="3.4" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#using-descriptive-statistics-to-characterize-distributions"><i class="fa fa-check"></i><b>3.4</b> Using Descriptive Statistics to Characterize Distributions</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#central-tendency"><i class="fa fa-check"></i><b>3.4.1</b> Central tendency</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#measures-of-variance"><i class="fa fa-check"></i><b>3.4.2</b> Measures of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-importance-of-descriptive-statistics"><i class="fa fa-check"></i><b>3.5</b> The importance of descriptive statistics</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summarizing-populations"><i class="fa fa-check"></i><b>3.5.1</b> Summarizing Populations</a></li>
+<li class="chapter" data-level="3.5.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#mistakes-with-descriptive-statistics"><i class="fa fa-check"></i><b>3.5.2</b> Mistakes with descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summary-1"><i class="fa fa-check"></i><b>3.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>4</b> Introduction to R</a><ul>
+<li class="chapter" data-level="4.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-is-r"><i class="fa fa-check"></i><b>4.1</b> What is R?</a></li>
+<li class="chapter" data-level="4.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-basics-of-r"><i class="fa fa-check"></i><b>4.2</b> The basics of R</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#basic-math-functions"><i class="fa fa-check"></i><b>4.2.1</b> Basic Math Functions</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#objects"><i class="fa fa-check"></i><b>4.2.2</b> Objects</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-frames"><i class="fa fa-check"></i><b>4.2.3</b> Data frames</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-into-r"><i class="fa fa-check"></i><b>4.3</b> Inputting data into R</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-from-a-.csv-file"><i class="fa fa-check"></i><b>4.3.1</b> Inputting data from a .csv file</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#importing-data-from-google-sheets"><i class="fa fa-check"></i><b>4.3.2</b> Importing data from Google Sheets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#descriptive-statistics-in-r"><i class="fa fa-check"></i><b>4.4</b> Descriptive statistics in R</a></li>
+<li class="chapter" data-level="4.5" data-path="introduction-to-r.html"><a href="introduction-to-r.html#summary-2"><i class="fa fa-check"></i><b>4.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability-and-samples.html"><a href="probability-and-samples.html"><i class="fa fa-check"></i><b>5</b> Probability and Samples</a><ul>
+<li class="chapter" data-level="5.1" data-path="probability-and-samples.html"><a href="probability-and-samples.html#what-is-probability"><i class="fa fa-check"></i><b>5.1</b> What is probability?</a></li>
+<li class="chapter" data-level="5.2" data-path="probability-and-samples.html"><a href="probability-and-samples.html#calculating-probability-of-events"><i class="fa fa-check"></i><b>5.2</b> Calculating probability of events</a></li>
+<li class="chapter" data-level="5.3" data-path="probability-and-samples.html"><a href="probability-and-samples.html#probability-and-sampling"><i class="fa fa-check"></i><b>5.3</b> Probability and sampling</a></li>
+<li class="chapter" data-level="5.4" data-path="probability-and-samples.html"><a href="probability-and-samples.html#summary-3"><i class="fa fa-check"></i><b>5.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html"><i class="fa fa-check"></i><b>6</b> The Normal Distribution and Sampling</a><ul>
+<li class="chapter" data-level="6.1" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#the-central-limit-theorem"><i class="fa fa-check"></i><b>6.1</b> The Central Limit Theorem</a></li>
+<li class="chapter" data-level="6.2" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#properties-of-the-normal-distribution"><i class="fa fa-check"></i><b>6.2</b> Properties of the Normal Distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#sampling-and-sample-means"><i class="fa fa-check"></i><b>6.3</b> Sampling and Sample Means</a></li>
+<li class="chapter" data-level="6.4" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#summary-4"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html"><i class="fa fa-check"></i><b>7</b> Making Decisions with Statistics</a><ul>
+<li class="chapter" data-level="7.1" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#basics-of-decision-theory"><i class="fa fa-check"></i><b>7.1</b> Basics of Decision Theory</a></li>
+<li class="chapter" data-level="7.2" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#null-hypothesis-testing"><i class="fa fa-check"></i><b>7.2</b> Null Hypothesis Testing</a></li>
+<li class="chapter" data-level="7.3" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#effect-sizes"><i class="fa fa-check"></i><b>7.3</b> Effect sizes</a></li>
+<li class="chapter" data-level="7.4" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#summary-5"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html"><i class="fa fa-check"></i><b>8</b> Frequency claims</a><ul>
+<li class="chapter" data-level="8.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#what-are-frequency-claims"><i class="fa fa-check"></i><b>8.1</b> What are frequency claims?</a></li>
+<li class="chapter" data-level="8.2" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#binomial-tests"><i class="fa fa-check"></i><b>8.2</b> Binomial tests</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#using-different-probabilities"><i class="fa fa-check"></i><b>8.2.1</b> Using different probabilities</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests"><i class="fa fa-check"></i><b>8.3</b> Chi-square tests</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests-with-more-than-two-outcomes"><i class="fa fa-check"></i><b>8.3.1</b> Chi-square tests with more than two outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#summary-6"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="association-claims-1.html"><a href="association-claims-1.html"><i class="fa fa-check"></i><b>9</b> Association Claims</a><ul>
+<li class="chapter" data-level="9.1" data-path="association-claims-1.html"><a href="association-claims-1.html#what-are-association-claims"><i class="fa fa-check"></i><b>9.1</b> What are association claims</a></li>
+<li class="chapter" data-level="9.2" data-path="association-claims-1.html"><a href="association-claims-1.html#correlation"><i class="fa fa-check"></i><b>9.2</b> Correlation</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="association-claims-1.html"><a href="association-claims-1.html#calculating-correlations"><i class="fa fa-check"></i><b>9.2.1</b> Calculating correlations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="association-claims-1.html"><a href="association-claims-1.html#using-linear-regression"><i class="fa fa-check"></i><b>9.3</b> Using Linear Regression</a></li>
+<li class="chapter" data-level="9.4" data-path="association-claims-1.html"><a href="association-claims-1.html#evaluating-linear-regressions"><i class="fa fa-check"></i><b>9.4</b> Evaluating linear regressions</a></li>
+<li class="chapter" data-level="9.5" data-path="association-claims-1.html"><a href="association-claims-1.html#linear-regression-in-r"><i class="fa fa-check"></i><b>9.5</b> Linear Regression in R</a></li>
+<li class="chapter" data-level="9.6" data-path="association-claims-1.html"><a href="association-claims-1.html#limitations-to-linear-regression-and-correlation"><i class="fa fa-check"></i><b>9.6</b> Limitations to linear regression and correlation</a></li>
+<li class="chapter" data-level="9.7" data-path="association-claims-1.html"><a href="association-claims-1.html#summary-7"><i class="fa fa-check"></i><b>9.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html"><i class="fa fa-check"></i><b>10</b> One Sample Mean Claims</a><ul>
+<li class="chapter" data-level="10.1" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#one-sample-mean-claims-1"><i class="fa fa-check"></i><b>10.1</b> One sample mean claims</a></li>
+<li class="chapter" data-level="10.2" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-z-test"><i class="fa fa-check"></i><b>10.2</b> The Z-test</a></li>
+<li class="chapter" data-level="10.3" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-one-sample-t-test"><i class="fa fa-check"></i><b>10.3</b> The One-Sample T-test</a></li>
+<li class="chapter" data-level="10.4" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#confidence-intervals-with-one-sample"><i class="fa fa-check"></i><b>10.4</b> Confidence Intervals with One Sample</a></li>
+<li class="chapter" data-level="10.5" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#calculating-t-tests-and-confidence-intervals-in-r"><i class="fa fa-check"></i><b>10.5</b> Calculating T-tests and Confidence Intervals in R</a></li>
+<li class="chapter" data-level="10.6" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#summary-8"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="two-mean-claims.html"><a href="two-mean-claims.html"><i class="fa fa-check"></i><b>11</b> Two Mean Claims</a><ul>
+<li class="chapter" data-level="11.1" data-path="two-mean-claims.html"><a href="two-mean-claims.html#what-are-we-testing-with-two-mean-claims"><i class="fa fa-check"></i><b>11.1</b> What are we testing with two-mean claims?</a></li>
+<li class="chapter" data-level="11.2" data-path="two-mean-claims.html"><a href="two-mean-claims.html#paired-samples-t-test"><i class="fa fa-check"></i><b>11.2</b> Paired Samples T-test</a></li>
+<li class="chapter" data-level="11.3" data-path="two-mean-claims.html"><a href="two-mean-claims.html#independent-samples-t-test"><i class="fa fa-check"></i><b>11.3</b> Independent Samples T-test</a></li>
+<li class="chapter" data-level="11.4" data-path="two-mean-claims.html"><a href="two-mean-claims.html#effect-sizes-1"><i class="fa fa-check"></i><b>11.4</b> Effect sizes</a></li>
+<li class="chapter" data-level="11.5" data-path="two-mean-claims.html"><a href="two-mean-claims.html#the-logic-of-t-tests-and-experimental-design"><i class="fa fa-check"></i><b>11.5</b> The logic of t-tests and experimental design</a></li>
+<li class="chapter" data-level="11.6" data-path="two-mean-claims.html"><a href="two-mean-claims.html#doing-two-sample-t-tests-in-r"><i class="fa fa-check"></i><b>11.6</b> Doing two-sample t-tests in R</a></li>
+<li class="chapter" data-level="11.7" data-path="two-mean-claims.html"><a href="two-mean-claims.html#summary-9"><i class="fa fa-check"></i><b>11.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html"><i class="fa fa-check"></i><b>12</b> Claims With More Than Two Means: ANOVA</a><ul>
+<li class="chapter" data-level="12.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#how-to-do-an-anova"><i class="fa fa-check"></i><b>12.1</b> How to do an ANOVA</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-between"><i class="fa fa-check"></i><b>12.1.1</b> Calculating Sums of Squares Between</a></li>
+<li class="chapter" data-level="12.1.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-within"><i class="fa fa-check"></i><b>12.1.2</b> Calculating Sums of Squares Within</a></li>
+<li class="chapter" data-level="12.1.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-total"><i class="fa fa-check"></i><b>12.1.3</b> Calculating Sums of Squares Total</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-the-rest"><i class="fa fa-check"></i><b>12.2</b> Calculating the rest</a></li>
+<li class="chapter" data-level="12.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#doing-an-example"><i class="fa fa-check"></i><b>12.3</b> Doing an example</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#the-null-and-alternative-hypothesis"><i class="fa fa-check"></i><b>12.3.1</b> The null and alternative hypothesis</a></li>
+<li class="chapter" data-level="12.3.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares"><i class="fa fa-check"></i><b>12.3.2</b> Calculating Sums of Squares</a></li>
+<li class="chapter" data-level="12.3.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-degrees-of-freedom-and-mean-squares"><i class="fa fa-check"></i><b>12.3.3</b> Calculating Degrees of Freedom and Mean Squares</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#anova-in-r"><i class="fa fa-check"></i><b>12.4</b> ANOVA in R</a></li>
+<li class="chapter" data-level="12.5" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#summary-10"><i class="fa fa-check"></i><b>12.5</b> Summary</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics: The Story of Numbers</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="one-sample-mean-claims" class="section level1">
+<h1><span class="header-section-number">Chapter 10</span> One Sample Mean Claims</h1>
+<p>In this chapter, you will learn:</p>
+<ol style="list-style-type: decimal">
+<li>What a one-group mean claim is, why we would use it, and be able to give some examples of a one-group mean claim</li>
+<li>How to apply what you learned in Modules 6 and 7 to calculate a z-test by hand and evaluate the p-value associated with the null hypothesis by using the <code>pnorm()</code> command in R</li>
+<li>What the t-distribution is and how to conduct a one-sample t-test by hand and in R by applying null hypothesis testing</li>
+<li>What a one-sample confidence interval is and how to calculate it by hand and in R.</li>
+</ol>
+<div id="one-sample-mean-claims-1" class="section level2">
+<h2><span class="header-section-number">10.1</span> One sample mean claims</h2>
+<p>I broke up the claims in this book into three categories: frequency claims, association claims, and mean claims. The next three chapters will evaluate different types of mean claims.</p>
+<p>A <strong>mean claim</strong> is a claim that we are testing about the mean of a group. I break them down into three types: claims about one mean, claims about two means, and claims about two or more means.</p>
+<p>One sample mean claims are claims where we test whether a sample mean is equal to a population mean. This is testing the question of whether a sample is part of a population. If the sample is part of the population, then the sample mean (<span class="math inline">\(\bar{x}\)</span>) should be equal to the population mean (<span class="math inline">\(\mu\)</span>). Or mathematically:</p>
+<p><span class="math display">\[\bar{x} = \mu\]</span></p>
+<p>Two sample mean claims involve comparing whether two sample means are from the same population mean. If the two sample means come from the same population, then the sample means are equal. Mathematically, this is:</p>
+<p><span class="math display">\[\bar{x}_1 = \bar{x}_2\]</span></p>
+<p>Two or more sample mean claims involve comparing two groups or more. They test the hypothesis that all of the means are from the same population. Mathematically, this is:</p>
+<p><span class="math display">\[\bar{x}_1 = \bar{x}_2 = \bar{x}_3 = \ldots\ = \bar{x}_n\]</span></p>
+<p>Two sample mean claims and two or more sample mean claims will be covered more in Chapters 11 and 12.</p>
+<p>In this chapter, we are focusing on claims about a population and a sample. What this means conceptually is that we have a sample and we want to test whether that sample came from the population by comparing the sample mean to the population mean.</p>
+<p>Here are some examples of a one sample mean claim. For instance, I may know that the average life expectancy of females in a certain country is 78 years. I may want to test whether people in a coastal village (the sample) lives significantly longer on average than the population.</p>
+<p>Another example: I know that the mean IQ in the population is 100 (in fact the IQ test is defined so that this is the case). I want to test whether preschoolers at a certain preschool (the sample) have a higher IQ than the population at large.</p>
+<p>A third example: I know that the mean number of items that people can remember on a certain memory test is 30 items. I want to test whether people who learned a mnemonic technique can increase their performance on the test. I teach a sample of people the technique and then test whether they remember more than 30 items.</p>
+<p>In each of these examples, I am comparing a sample to see whether that sample came from the a population. Combining this with null hypothesis testing and decision theory, I can apply this technique to examine inferences about experiments. The logic of this section will be a bit weird, so be warned. The concepts I am going to talk about here are not hard, but they tend to be complicated because they seem backward and counter-intuitive. We’ll talk about this with the z-test</p>
+</div>
+<div id="the-z-test" class="section level2">
+<h2><span class="header-section-number">10.2</span> The Z-test</h2>
+<p>In the module on decision theories, we talked about the idea of a null hypothesis and an alternative hypothesis. This logic can be used to make decisions about data. It uses the following logic: we set up a null and alternative hypothesis, we examine our data to determine the chance our data would occur if the null hypothesis is true, and if that chance is sufficiently low, we reject the null hypothesis.</p>
+<p>We can use this logic to answer other questions as well. Here’s one example. Many researchers have suggested that smoking during pregnancy can reduce birth weight. We can test this by using some of the logic we’ve learned so far. This uses a technique called a z-test.</p>
+<p>The z-test is a way of testing the probability that we would get a sample with a certain mean from a population with a certain mean and standard deviation. Combining this with null hypothesis testing, we would assert a null hypothesis that the sample is part of the population. The alternative hypothesis is that the sample is not part of the population. If the chance of getting this sample is sufficiently low, given the null hypothesis, then we reject the null hypothesis.</p>
+<p>If I reject the null hypothesis, I conclude that the sample is not likely part of the population. This means that there is some reason that the sample that makes it different from the population, and if I set up an experiment carefully, I can decide that this reason is due to my experiment.</p>
+<p>Let’s do an example looking if maternal birth weight affects smoking. Based on data from thousands of babies, full term babies from non-smoking mothers have a birth weight of 3600 g and a standard deviation of 400 g. Assume I measured the birth weight of 25 babies whose mothers smoked during pregnancy and found their birth weight to be 3350 g. If smoking affected birth weight, then the sample of babies born to mothers who smoked would not be from the same population as babies born to non-smoking mothers.</p>
+<p>Here are the steps of the z-test:</p>
+<ol style="list-style-type: decimal">
+<li><p>I set null and alternative hypotheses. In this case, the null hypothesis is that the sample is part of the population. This means, that the sample is part of the population, which would imply that there is no relationship between maternal smoking and birth weight, since there is no significant difference between smoking and nonsmoking mothers. The alternative hypothesis is that the sample is not part of the population. This would mean that babies born to smoking mothers are a different population than babies born to nonsmoking mothers, which suggests a relationship between smoking and birth weight.</p></li>
+<li><p>Find out the probability of getting a sample with the sample mean or more extreme, given the null hypothesis is true. To do this, we find out the z-score of the sample using the same method we learned about in Module 6. We answer the question: what is the chance we would get a sample of 25 babies whose mean weight is 3400 g, given the population mean is 3600 g and has a population standard deviation of 400g. To do this, we find the z-score using the following formula:</p></li>
+</ol>
+<p><span class="math display">\[ Z = \frac{\bar{X} - \mu}{\text{SE}}\]</span> where <span class="math display">\[\text{SE} = \frac{s}{\sqrt{n}}\]</span></p>
+<p>In this case, we would plug in the numbers and find:</p>
+<p><span class="math display">\[Z = \frac{3400 - 3600}{\frac{400}{\sqrt{25}}} = 2.5\]</span> So we get a z-score of -2.5. Now to find out the probability of getting a z-score of -2.5 or more extreme, we would do the following in R:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(-<span class="fl">2.5</span>) +<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span><span class="kw">pnorm</span>(<span class="fl">2.5</span>)) </code></pre></div>
+<p>Why the complicated formula? The first part of this gives us the chance of getting a sample with a z-score below -2.5. The second part gives us the chance of getting a sample with a z-score above 2.5. We want to see the chance we would get a z-score more extreme than 2.5. That could be negative or positive. This is because if the sample is not part of the population, the sample mean could be significantly higher or significantly lower. In order to avoid this complicated formula, we can just do the following, since the z-distribution is symmetrical:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(-<span class="fl">2.5</span>) *<span class="st"> </span><span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 0.01241933</code></pre>
+<p>In this case, we would get a p of .012. That means, if we sampled 25 individuals from the population with a mean birth weight of 3600g and a standard deviation of 400g, the chance of getting a sample of 25 individuals with a mean birth weight of 3400g is 1.2%. That is pretty unlikely, and would be below <span class="math inline">\(\alpha = .05\)</span>, so we would reject the null hypothesis. This gives us the conclusion: smoking mothers have babies with significantly lower birth weights than nonsmoking mothers.</p>
+</div>
+<div id="the-one-sample-t-test" class="section level2">
+<h2><span class="header-section-number">10.3</span> The One-Sample T-test</h2>
+<p>The z-test is a useful tool trying to determine whether a sample is part of a population. In order to do it, we must know the population mean and the population standard deviation, as well as the sample mean. In many cases, however, we do not know what the standard deviation is.</p>
+<p>Let’s take an example from animal research. I want to examine if rats can learn to press a blue lever for food and ignore a green lever, that is identical. In this experiment, I train 16 rats to press a blue lever and to ignore a green lever. In order to see if they know color and not location, I place them in a different box with levers in different places and count how many times they press the new blue lever and the new green lever. Since rats press lots of things, I use as my dependent variable the percent of times that the rat pressed the blue lever. For each rat I take the percent of time that rat pressed the blue lever. In this, I find out that the rats pressed the blue lever .58 (58%) of the time with a standard deviation of .14 (14%).</p>
+<p>If the rat is only pressing the levers randomly, then the rat should press the blue lever 50% of the time. However, if the rat can tell the difference between blue and green, the rat should press the blue lever a different value than 50% of the time. They will likely press the blue lever more often than the green lever, but there is a chance they will press the green lever more than the blue lever. I want to test whether the rats push the lever 50% of the time or if they press the lever a significantly different amount of time than 50%.</p>
+<p>In this experiment I set the null hypothesis as the rats press the lever at a level no different than expected by chance (50%) and the alternative hypothesis is that the rats press the lever at a rate different than expected by chance, different than 50%.</p>
+<p>I want to do a z-test but one thing is missing. I know the population mean, .5 (50%), but not a population standard deviation. In that case, we can use the sample standard deviation as a proxy for the population standard deviation. Using the sample standard deviation can be a good substitute, but there is a problem. Our sample standard deviation, just like the sample mean, is an estimate. The bigger our sample, the more precise the estimate.</p>
+<p>This leads to two concepts. First, sample standard deviations are imprecise, so we have to use a different distribution than the z-distribution. Second, that different distribution has to have a different shape with different sample sizes, because the accuracy of the sample standard deviation as an estimate gets bigger as the sample size increases.</p>
+<p>The new distribution we use is called the t-distribution. It is like the normal distribution and looks similar, but it has a different shape given different sample sizes. The smaller the sample size, the flatter and wider the t-distribution is. As the sample size goes up, the t-distribution gets narrower and starts to look more like the normal distribution, such that for very large samples, the t distribution becomes almost identical to the normal distribution. Notice in the figure below that the t-distribution gets closer to normal</p>
+<p><img src="10-onemeanclaims_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>With the exception of the different distribution, the logic of a one-sample t-test is the same. It uses a very similar formula as the z-test:</p>
+<p><span class="math display">\[t = \frac{\bar{X} - \mu}{\frac{s}{\sqrt{n}}}\]</span></p>
+<p>Notice the only difference is that we swapped out the population standard deviation <span class="math inline">\(\sigma\)</span> for the sample standard deviation <span class="math inline">\(s\)</span>.</p>
+<p>If we go back to the example with the rats, we have a sample with a mean of .58, a standard deviation of .14, and we want to test whether that is significantly more than the mean of .5 we would expect by chance. We would do the following:</p>
+<p><span class="math display">\[t = \frac{.58 - .5}{\frac{.14}{\sqrt{16}}} = 2.29\]</span></p>
+<p>In this case, we get a value of t= 2.29. Now we have to figure out the chance we would get a t of 2.29 or more by chance alone, as predicted by the null hypothesis. We can use the t-distribution to figure this out.</p>
+<p>However, as mentioned above, the t-distribution is different with different sample sizes. Our estimate of the population’s standard deviation is more precise with a larger sample. To examine this, we have to determine the degrees of freedom with the t-test. For a t-test, the degrees of freedom are equal to n-1. This is the value we will use for the rest of the t-test. In our example, with a sample size of 16 rats, the degrees of freedom are 15.</p>
+<p>I can do this by typing the following command into R, substituting the value I got for t for t and the degrees of freedom for <code>df</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span> – <span class="kw">pt</span>(t, df))*<span class="dv">2</span></code></pre></div>
+<p>This is a complicated command. If you just want the answer, feel free to skip the next couple of paragraphs, because they may be confusing. The reason this R formula is complicated is for several reasons. We want to calculate the area under the edges of the t-distribution, or the chance we get a value more extreme than 2.29. The R command <code>pt()</code> gives us the chance of getting a t-value of less than t. Because of that, we have to calculate <code>1-pt()</code> this command because we are interested in values more than t.</p>
+<p>But this doesn’t explain why I multiply it all by 2. This is because we use a concept called two-sided hypotheses. When we set an alternative hypothesis, we have set it to say that the value is not equal to a certain value. For instance, in the rat example above, we set the alternative hypothesis that the rats did not push the lever 50% of the time. This could mean that they pressed the lever more than 50% of the time, or less than 50% of the time. In this case, we would consider our results to be significant if it is the case they push the lever more or less than 50% of the time.</p>
+<p>This is why we are interested in finding the chance we got a t of more than 2.29, or a t of less than -2.29. However, we might only be interested in setting a null hypothesis that the rats pressed the lever more than 50% of the time and unconcerned if the rats pressed the lever less than 50% of the time. This is called a one-sided hypothesis and is generally more powerful. In this case, you would use the formula</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> – <span class="kw">pt</span>(t, df)</code></pre></div>
+<p>One sided hypotheses are not often used in psychology so I do not present them here. They make a lot of sense in some cases, but generally, we would be interested if we find results that are very large and opposite of what we expect. For instance, in the rat study, if the rats pressed the green lever more than the blue lever, that would be an interesting hypothesis. So this is why generally most people use two-sided hypotheses regardless.</p>
+<p>If this is confusing to you, just stick to the two-sided hypotheses. In this case, if we enter the following into R, we get the p value associated with our test:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span> -<span class="st"> </span><span class="kw">pt</span>(<span class="fl">2.29</span>, <span class="dv">15</span>))*<span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 0.03693081</code></pre>
+<p>This would equal .037. So we get a p-value of .037, which given it is less than .05, would lead us to reject the null hypothesis.</p>
+<p>Now, how do we report this in APA format? APA format, as you may know, is very, very picky and many times doesn’t seem to make sense. We use the following format, which is similar to the way we report correlations:</p>
+<p><em>t</em>(<span class="math inline">\(df\)</span>) = t-value, <em>p</em> = p-value (note that t and p are italicized)</p>
+<p>In this case, we would report: <em>t</em>(15) = 2.29, <em>p</em> = .037.</p>
+</div>
+<div id="confidence-intervals-with-one-sample" class="section level2">
+<h2><span class="header-section-number">10.4</span> Confidence Intervals with One Sample</h2>
+<p>The logic of t-tests can be used to assess another important question with samples. If we draw a sample with certain values, what does that tell us about the population? Or another way of putting it: how reliable is our sample as an estimate of the underlying population.</p>
+<p>Imagine I want to know the average reaction time of college students is. I conduct a study with a sample of 100 randomly-selected people and find an average reaction time of 450 milliseconds (ms), with a standard deviation of 80 ms. I want to know what this tells me what the mean reaction time of the population of all college students. I know my sample is not an exact estimate, and that the population mean is likely to be different from my estimate. But how much variability should I expect.</p>
+<p>Confidence intervals give us a way of determining this. Because of the standard deviation, I can have an idea of a range in which I would expect the population mean to be Based on what we’ve learned before, the best guess of the population mean is the sample mean. However, we know that our sample could have randomly picked people with very fast reaction times and the population mean is a lot slower than 450 ms. Or I could have picked people with very slow reaction times and my real population mean is a lot faster than 450 ms.</p>
+<p>Confidence intervals give me a range of certainty about the estimate. They have two values, a lower bound and an upper bound, that give me a range of certainty about my estimate. For instance, we typically talk about 95% confidence intervals. A 95% confidence interval is a procedure that asserts that if the true population mean is outside of our confidence interval, then the sample that caused that estimate had a 5% or less chance of happening.</p>
+<p>A confidence interval gives us certainty about how likely we are to find the population mean in other experiments.</p>
+<p>To calculate a confidence interval, I have to do the following:</p>
+<ol style="list-style-type: decimal">
+<li>I have to get a sample mean and standard deviation.</li>
+<li>I have to calculate what is called a critical T-value. That is the t-value that is associated with the confidence interval size. For instance, for a 95% confidence interval, we need to figure out what value of t covers 95% of the t-distribution. This would mean, that the area of the t-distribution between –t and +t would equal .95. To figure this out, we can type the following into R:</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">-(<span class="dv">1</span>*<span class="kw">qt</span>((<span class="dv">1</span>-p)/<span class="dv">2</span>, df))</code></pre></div>
+<p>This is another long formula, but all you have to add is the value for p, which is the size of the confidence interval, .95 for a 95% confidence interval, and the degrees of freedom of the sample. In this case, we would type the following</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">-(<span class="dv">1</span>*<span class="kw">qt</span>((<span class="dv">1</span><span class="fl">-.95</span>)/<span class="dv">2</span>, <span class="dv">99</span>))</code></pre></div>
+<p>This gives us a value of 1.98. The 95% confidence interval is then solved by doing this:</p>
+<p><span class="math display">\[\bar{x} \pm t_\text{crit} \mathbin{\cdot} \text{SE}\]</span> <span class="math display">\[450 \pm 1.98 \mathbin{\cdot} \frac{80}{\sqrt{100}}\]</span> <span class="math display">\[ 450 \pm 15.8 \]</span></p>
+<p>Based on this, we can get a range of values where we are 95% certain by using this method, we would find the population mean. This gives us a degree of certainty we have about our estimate. For instance, we would not be very surprised if the reaction time in the population was really 440 ms, because that is in our confidence interval. However, it is very unlikely the population reaction time is really 500 ms., which is well outside our confidence interval.</p>
+<p>Based on this, we can get a range of values where we are 95% certain by using this method, we would find the population mean. This gives us a degree of certainty we have about our estimate. For instance, we would not be very surprised if the reaction time in the population was really 440 ms, because that is in our confidence interval. However, it is very unlikely the population reaction time is really 500 ms., which is well outside our confidence interval.</p>
+<p>This would equal .037. So we get a p-value of .037, which given it is less than .05, would lead us to reject the null hypothesis.</p>
+</div>
+<div id="calculating-t-tests-and-confidence-intervals-in-r" class="section level2">
+<h2><span class="header-section-number">10.5</span> Calculating T-tests and Confidence Intervals in R</h2>
+<p>R does not have a built-in function to do z-tests. This isn’t a bad idea because z-tests are rare. In fact, in my several years of doing research, I can only think of a few times where I did a z-test. Those times, I had to look up the steps and do it by hand.</p>
+<p>However, t-tests are much more common, and are very easy to do in R.</p>
+<p>For instance, we may have the following numbers representing the number of hours people slept in a class and we want to see if our class slept significantly differently than 8 hours, which might be the average:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sleep =<span class="st"> </span><span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">5</span>,<span class="dv">9</span>)</code></pre></div>
+<p>This enters the data into R. To do a t-test, we would use the <code>t.test()</code> command. This command has two parts. The first part is the sample data, given as a list of numbers. In this case, we’ll use the sleep data we just entered. The second part is the value we give for mu. Mu is the value we want to test as the population parameter (<span class="math inline">\(\mu\)</span>), which is 8 hours of sleep. This gives us the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(sleep, <span class="dt">mu=</span><span class="dv">8</span>)</code></pre></div>
+<pre><code>## 
+##  One Sample t-test
+## 
+## data:  sleep
+## t = -2.6128, df = 9, p-value = 0.02814
+## alternative hypothesis: true mean is not equal to 8
+## 95 percent confidence interval:
+##  4.828148 7.771852
+## sample estimates:
+## mean of x 
+##       6.3</code></pre>
+<p>The second line here gives us our value for t, degrees of freedom, and the p-value. Note in this example that t is negative. R gives negative values for t if the sample mean is below the population mean. However, people usually report t-values as positive and so you can change the sign since t is a symmetrical distribution.</p>
+<p>Below this is the 95% confidence interval, which ranges from 4.82 to 7.77. In the last part, it gives the mean amount of hours of sleep, 6.3</p>
+</div>
+<div id="summary-8" class="section level2">
+<h2><span class="header-section-number">10.6</span> Summary</h2>
+<p>After reading this chapter, you should know and/or be able to do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Know what a one-group mean claim is and why we would use it</li>
+<li>Know how to calculate a z-test by hand and evaluate the p-value associated with the null hypothesis by using the pnorm() command in R</li>
+<li>Know what the t-distribution is and how to conduct a one-sample t-test by hand and in R</li>
+<li>Know how to use null hypothesis testing with a one-sample t-test and how to generate null and alternative hypotheses and make the correct decision given</li>
+<li>Know how to calculate the degrees of freedom for a t-test and how to report a t-test statistic using APA formatting</li>
+<li>Know what a confidence interval is and how to calculate a one-sample confidence interval. Know how to get the critical t-value for a given confidence interval using the qt() command and calculate the confidence interval</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="association-claims-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="two-mean-claims.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

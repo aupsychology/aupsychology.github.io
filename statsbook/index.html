@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Statistics: The Story of Numbers</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="An Introduction to Psychology Statistics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Statistics: The Story of Numbers" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An Introduction to Psychology Statistics" />
+  <meta name="github-repo" content="rgfran" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Statistics: The Story of Numbers" />
+  
+  <meta name="twitter:description" content="An Introduction to Psychology Statistics" />
+  
+
+<meta name="author" content="Robert G. Franklin, Jr.">
+
+
+<meta name="date" content="2017-07-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="chapter-1-statistical-stories.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The Story of Numbers</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Part 1: Basic Concepts</b></span></li>
+<li class="chapter" data-level="1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html"><i class="fa fa-check"></i><b>1</b> Chapter 1: Statistical Stories</a><ul>
+<li class="chapter" data-level="1.1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-1-to-catch-a-thief"><i class="fa fa-check"></i><b>1.1</b> Story 1: To catch a thief</a></li>
+<li class="chapter" data-level="1.2" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-2-the-quirks-of-what-we-dont-see"><i class="fa fa-check"></i><b>1.2</b> Story 2: The quirks of what we don’t see</a></li>
+<li class="chapter" data-level="1.3" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-3-what-causes-cancer"><i class="fa fa-check"></i><b>1.3</b> Story 3: What causes cancer</a></li>
+<li class="chapter" data-level="1.4" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-4-simpsons-paradox"><i class="fa fa-check"></i><b>1.4</b> Story 4: Simpson’s Paradox</a></li>
+<li class="chapter" data-level="1.5" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#the-takeaway"><i class="fa fa-check"></i><b>1.5</b> The takeaway</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html"><i class="fa fa-check"></i><b>2</b> Chapter 2: How We Use Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-are-data"><i class="fa fa-check"></i><b>2.1</b> What are data?</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#getting-data"><i class="fa fa-check"></i><b>2.2</b> Getting data</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-can-we-use-data-for"><i class="fa fa-check"></i><b>2.3</b> What can we use data for?</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#where-do-data-come-from"><i class="fa fa-check"></i><b>2.4</b> Where do data come from?</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#how-accurate-are-our-data"><i class="fa fa-check"></i><b>2.5</b> How accurate are our data?</a></li>
+<li class="chapter" data-level="2.6" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#claims-about-data"><i class="fa fa-check"></i><b>2.6</b> Claims about data</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#frequency-claims"><i class="fa fa-check"></i><b>2.6.1</b> Frequency claims</a></li>
+<li class="chapter" data-level="2.6.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#association-claims"><i class="fa fa-check"></i><b>2.6.2</b> Association claims</a></li>
+<li class="chapter" data-level="2.6.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#mean-claims"><i class="fa fa-check"></i><b>2.6.3</b> Mean claims</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#summary"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html"><i class="fa fa-check"></i><b>3</b> Data, Distributions and Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-idea-of-describing-data"><i class="fa fa-check"></i><b>3.1</b> The idea of describing data</a></li>
+<li class="chapter" data-level="3.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#distributions-and-summarizing-data"><i class="fa fa-check"></i><b>3.2</b> Distributions and summarizing data</a></li>
+<li class="chapter" data-level="3.3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#plotting-distributions"><i class="fa fa-check"></i><b>3.3</b> Plotting distributions</a></li>
+<li class="chapter" data-level="3.4" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#using-descriptive-statistics-to-characterize-distributions"><i class="fa fa-check"></i><b>3.4</b> Using Descriptive Statistics to Characterize Distributions</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#central-tendency"><i class="fa fa-check"></i><b>3.4.1</b> Central tendency</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#measures-of-variance"><i class="fa fa-check"></i><b>3.4.2</b> Measures of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-importance-of-descriptive-statistics"><i class="fa fa-check"></i><b>3.5</b> The importance of descriptive statistics</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summarizing-populations"><i class="fa fa-check"></i><b>3.5.1</b> Summarizing Populations</a></li>
+<li class="chapter" data-level="3.5.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#mistakes-with-descriptive-statistics"><i class="fa fa-check"></i><b>3.5.2</b> Mistakes with descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summary-1"><i class="fa fa-check"></i><b>3.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>4</b> Introduction to R</a><ul>
+<li class="chapter" data-level="4.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-is-r"><i class="fa fa-check"></i><b>4.1</b> What is R?</a></li>
+<li class="chapter" data-level="4.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-basics-of-r"><i class="fa fa-check"></i><b>4.2</b> The basics of R</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#basic-math-functions"><i class="fa fa-check"></i><b>4.2.1</b> Basic Math Functions</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#objects"><i class="fa fa-check"></i><b>4.2.2</b> Objects</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-frames"><i class="fa fa-check"></i><b>4.2.3</b> Data frames</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-into-r"><i class="fa fa-check"></i><b>4.3</b> Inputting data into R</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-from-a-.csv-file"><i class="fa fa-check"></i><b>4.3.1</b> Inputting data from a .csv file</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#importing-data-from-google-sheets"><i class="fa fa-check"></i><b>4.3.2</b> Importing data from Google Sheets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#descriptive-statistics-in-r"><i class="fa fa-check"></i><b>4.4</b> Descriptive statistics in R</a></li>
+<li class="chapter" data-level="4.5" data-path="introduction-to-r.html"><a href="introduction-to-r.html#summary-2"><i class="fa fa-check"></i><b>4.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability-and-samples.html"><a href="probability-and-samples.html"><i class="fa fa-check"></i><b>5</b> Probability and Samples</a><ul>
+<li class="chapter" data-level="5.1" data-path="probability-and-samples.html"><a href="probability-and-samples.html#what-is-probability"><i class="fa fa-check"></i><b>5.1</b> What is probability?</a></li>
+<li class="chapter" data-level="5.2" data-path="probability-and-samples.html"><a href="probability-and-samples.html#calculating-probability-of-events"><i class="fa fa-check"></i><b>5.2</b> Calculating probability of events</a></li>
+<li class="chapter" data-level="5.3" data-path="probability-and-samples.html"><a href="probability-and-samples.html#probability-and-sampling"><i class="fa fa-check"></i><b>5.3</b> Probability and sampling</a></li>
+<li class="chapter" data-level="5.4" data-path="probability-and-samples.html"><a href="probability-and-samples.html#summary-3"><i class="fa fa-check"></i><b>5.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html"><i class="fa fa-check"></i><b>6</b> The Normal Distribution and Sampling</a><ul>
+<li class="chapter" data-level="6.1" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#the-central-limit-theorem"><i class="fa fa-check"></i><b>6.1</b> The Central Limit Theorem</a></li>
+<li class="chapter" data-level="6.2" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#properties-of-the-normal-distribution"><i class="fa fa-check"></i><b>6.2</b> Properties of the Normal Distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#sampling-and-sample-means"><i class="fa fa-check"></i><b>6.3</b> Sampling and Sample Means</a></li>
+<li class="chapter" data-level="6.4" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#summary-4"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html"><i class="fa fa-check"></i><b>7</b> Making Decisions with Statistics</a><ul>
+<li class="chapter" data-level="7.1" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#basics-of-decision-theory"><i class="fa fa-check"></i><b>7.1</b> Basics of Decision Theory</a></li>
+<li class="chapter" data-level="7.2" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#null-hypothesis-testing"><i class="fa fa-check"></i><b>7.2</b> Null Hypothesis Testing</a></li>
+<li class="chapter" data-level="7.3" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#effect-sizes"><i class="fa fa-check"></i><b>7.3</b> Effect sizes</a></li>
+<li class="chapter" data-level="7.4" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#summary-5"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html"><i class="fa fa-check"></i><b>8</b> Frequency claims</a><ul>
+<li class="chapter" data-level="8.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#what-are-frequency-claims"><i class="fa fa-check"></i><b>8.1</b> What are frequency claims?</a></li>
+<li class="chapter" data-level="8.2" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#binomial-tests"><i class="fa fa-check"></i><b>8.2</b> Binomial tests</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#using-different-probabilities"><i class="fa fa-check"></i><b>8.2.1</b> Using different probabilities</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests"><i class="fa fa-check"></i><b>8.3</b> Chi-square tests</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests-with-more-than-two-outcomes"><i class="fa fa-check"></i><b>8.3.1</b> Chi-square tests with more than two outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#summary-6"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="association-claims-1.html"><a href="association-claims-1.html"><i class="fa fa-check"></i><b>9</b> Association Claims</a><ul>
+<li class="chapter" data-level="9.1" data-path="association-claims-1.html"><a href="association-claims-1.html#what-are-association-claims"><i class="fa fa-check"></i><b>9.1</b> What are association claims</a></li>
+<li class="chapter" data-level="9.2" data-path="association-claims-1.html"><a href="association-claims-1.html#correlation"><i class="fa fa-check"></i><b>9.2</b> Correlation</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="association-claims-1.html"><a href="association-claims-1.html#calculating-correlations"><i class="fa fa-check"></i><b>9.2.1</b> Calculating correlations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="association-claims-1.html"><a href="association-claims-1.html#using-linear-regression"><i class="fa fa-check"></i><b>9.3</b> Using Linear Regression</a></li>
+<li class="chapter" data-level="9.4" data-path="association-claims-1.html"><a href="association-claims-1.html#evaluating-linear-regressions"><i class="fa fa-check"></i><b>9.4</b> Evaluating linear regressions</a></li>
+<li class="chapter" data-level="9.5" data-path="association-claims-1.html"><a href="association-claims-1.html#linear-regression-in-r"><i class="fa fa-check"></i><b>9.5</b> Linear Regression in R</a></li>
+<li class="chapter" data-level="9.6" data-path="association-claims-1.html"><a href="association-claims-1.html#limitations-to-linear-regression-and-correlation"><i class="fa fa-check"></i><b>9.6</b> Limitations to linear regression and correlation</a></li>
+<li class="chapter" data-level="9.7" data-path="association-claims-1.html"><a href="association-claims-1.html#summary-7"><i class="fa fa-check"></i><b>9.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html"><i class="fa fa-check"></i><b>10</b> One Sample Mean Claims</a><ul>
+<li class="chapter" data-level="10.1" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#one-sample-mean-claims-1"><i class="fa fa-check"></i><b>10.1</b> One sample mean claims</a></li>
+<li class="chapter" data-level="10.2" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-z-test"><i class="fa fa-check"></i><b>10.2</b> The Z-test</a></li>
+<li class="chapter" data-level="10.3" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-one-sample-t-test"><i class="fa fa-check"></i><b>10.3</b> The One-Sample T-test</a></li>
+<li class="chapter" data-level="10.4" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#confidence-intervals-with-one-sample"><i class="fa fa-check"></i><b>10.4</b> Confidence Intervals with One Sample</a></li>
+<li class="chapter" data-level="10.5" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#calculating-t-tests-and-confidence-intervals-in-r"><i class="fa fa-check"></i><b>10.5</b> Calculating T-tests and Confidence Intervals in R</a></li>
+<li class="chapter" data-level="10.6" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#summary-8"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="two-mean-claims.html"><a href="two-mean-claims.html"><i class="fa fa-check"></i><b>11</b> Two Mean Claims</a><ul>
+<li class="chapter" data-level="11.1" data-path="two-mean-claims.html"><a href="two-mean-claims.html#what-are-we-testing-with-two-mean-claims"><i class="fa fa-check"></i><b>11.1</b> What are we testing with two-mean claims?</a></li>
+<li class="chapter" data-level="11.2" data-path="two-mean-claims.html"><a href="two-mean-claims.html#paired-samples-t-test"><i class="fa fa-check"></i><b>11.2</b> Paired Samples T-test</a></li>
+<li class="chapter" data-level="11.3" data-path="two-mean-claims.html"><a href="two-mean-claims.html#independent-samples-t-test"><i class="fa fa-check"></i><b>11.3</b> Independent Samples T-test</a></li>
+<li class="chapter" data-level="11.4" data-path="two-mean-claims.html"><a href="two-mean-claims.html#effect-sizes-1"><i class="fa fa-check"></i><b>11.4</b> Effect sizes</a></li>
+<li class="chapter" data-level="11.5" data-path="two-mean-claims.html"><a href="two-mean-claims.html#the-logic-of-t-tests-and-experimental-design"><i class="fa fa-check"></i><b>11.5</b> The logic of t-tests and experimental design</a></li>
+<li class="chapter" data-level="11.6" data-path="two-mean-claims.html"><a href="two-mean-claims.html#doing-two-sample-t-tests-in-r"><i class="fa fa-check"></i><b>11.6</b> Doing two-sample t-tests in R</a></li>
+<li class="chapter" data-level="11.7" data-path="two-mean-claims.html"><a href="two-mean-claims.html#summary-9"><i class="fa fa-check"></i><b>11.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html"><i class="fa fa-check"></i><b>12</b> Claims With More Than Two Means: ANOVA</a><ul>
+<li class="chapter" data-level="12.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#how-to-do-an-anova"><i class="fa fa-check"></i><b>12.1</b> How to do an ANOVA</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-between"><i class="fa fa-check"></i><b>12.1.1</b> Calculating Sums of Squares Between</a></li>
+<li class="chapter" data-level="12.1.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-within"><i class="fa fa-check"></i><b>12.1.2</b> Calculating Sums of Squares Within</a></li>
+<li class="chapter" data-level="12.1.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-total"><i class="fa fa-check"></i><b>12.1.3</b> Calculating Sums of Squares Total</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-the-rest"><i class="fa fa-check"></i><b>12.2</b> Calculating the rest</a></li>
+<li class="chapter" data-level="12.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#doing-an-example"><i class="fa fa-check"></i><b>12.3</b> Doing an example</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#the-null-and-alternative-hypothesis"><i class="fa fa-check"></i><b>12.3.1</b> The null and alternative hypothesis</a></li>
+<li class="chapter" data-level="12.3.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares"><i class="fa fa-check"></i><b>12.3.2</b> Calculating Sums of Squares</a></li>
+<li class="chapter" data-level="12.3.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-degrees-of-freedom-and-mean-squares"><i class="fa fa-check"></i><b>12.3.3</b> Calculating Degrees of Freedom and Mean Squares</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#anova-in-r"><i class="fa fa-check"></i><b>12.4</b> ANOVA in R</a></li>
+<li class="chapter" data-level="12.5" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#summary-10"><i class="fa fa-check"></i><b>12.5</b> Summary</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics: The Story of Numbers</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Statistics: The Story of Numbers</h1>
+<h4 class="author"><em>Robert G. Franklin, Jr.</em></h4>
+<h4 class="date"><em>2017-07-19</em></h4>
+</div>
+<div id="preface" class="section level1 unnumbered">
+<h1>Preface</h1>
+<p>This book has three purposes:</p>
+<p>Purpose 1: Remove any fear of statistics</p>
+<p>When I tell people I teach psychology, I get one of two responses. One response is “that’s interesting” and we talk about something fascinating about behavior or the mind. Another response is “I have a [insert relative] who you really need to talk to”, followed to some allusion to clinical psychology. Either way, they ask what I teach and I say, proudly, “Statistics”! (Yes, with the exclamation point).</p>
+<p>It won’t surprise you that the response is usually disgust. Or fear. People are afraid of statistics and those who practice it. If it weren’t for lawyers, statisticians would be the most hated profession. There are quotes like “don’t you know 90% of statistics are made up.” (Really, it’s 79.2% of statistics that are made up, but who is counting).</p>
+<p>People associate statistics with lies and so they’re afraid of statistics. It’s no coincidence the best known book about Statistics is called <em>How to Lie with Statistics</em>. The reason for this is that we don’t understand where the lies come from.</p>
+<p>Statistics can be used in two ways. One way is to twist numbers to fit the facts that we want to believe. The other way is that statistics can tell us hidden truths about the world. Statistics tell stories to those who want to put the effort into finding out the answers. Once we know this, I think statistics becomes a lot more interesting.</p>
+<p>Purpose 2: Teach you how to consume statistics</p>
+<p>It’s important to note that there are a lot of bad statistics out there. One thing which might be even worse than statisticians twisting numbers to fit their own story is when people take good statistics and make bad conclusions with them.</p>
+<p>If you are pursuing a psychology degree, you’re going to read a lot of psychology papers. Each of these papers will have statistics buried within them. Most of the students who review papers will skip most of these sections and just accept the conclusions the authors gave. But you, the student who completes this class, will have the power to do more than this. You will be able to go behind the curtain and find out what these numbers really mean.</p>
+<p>And you will be able to go to these numbers and actually use them. For instance, a paper may tell you that there is a link between meditating and increasing meditating. You might want to decide, “should I start meditating”, especially if you’re the type of person who doesn’t like sitting still to meditate. The question will be: does meditating improve my happiness enough to make it worth the effort? With what we learn in this class, you can answer that.</p>
+<p>Purpose 3: Teach you how to conduct statistics</p>
+<p>This section has two parts. The first is the ability to graphically present data. Well after you have graduated and decided that you would rather make money in the real world rather than trying to make school your career, you may have to do a presentation where you show statistics using graphs.</p>
+<p>You might be tempted to make the mistake of using bad charts, such as 3d bar graphs. But then you will remember this class and how awful those charts are. And you will make simple and elegant graphs which convey all the relevant information in a way that will make your colleagues proud and more importantly, your boss happy.</p>
+<p>The second part is to actually conduct statistics. In a research methods class, or perhaps pursuing a masters or dissertation, or at some other point in your life, you may want to analyze data. This part will teach you how to do this, how to find out the true story of your data, and how to avoid the biases and mistakes which are lurking around to snatch the unsuspecting statistician. You will be able to find the truth.</p>
+<p>How this book is structured</p>
+<p>This book is more practical than math-heavy. It has many examples and will talk about what you should do, why you should do it, and how you should do it. It will try to explain which techniques you do and what situations you do them.</p>
+<p>I will also teach this using the statistical language R. Computers make stats easy, but the computers are not very easy to use. Many of the software packages are very expensive, but R is free. That’s why I use it. It’s not the easiest thing to use, but once you use it, it becomes very powerful. In fact, R is so powerful, I’m using it to write this book! R can be used to do almost anything in statistics and data science, because it is open-source and thousands of wonderful people have written free extensions, called packages, which allow R to do thousands of things.</p>
+
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="chapter-1-statistical-stories.html" class="navigation navigation-next navigation-unique" aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

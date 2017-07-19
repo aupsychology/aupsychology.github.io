@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Statistics: The Story of Numbers</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="An Introduction to Psychology Statistics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Statistics: The Story of Numbers" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An Introduction to Psychology Statistics" />
+  <meta name="github-repo" content="rgfran" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Statistics: The Story of Numbers" />
+  
+  <meta name="twitter:description" content="An Introduction to Psychology Statistics" />
+  
+
+<meta name="author" content="Robert G. Franklin, Jr.">
+
+
+<meta name="date" content="2017-07-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="probability-and-samples.html">
+<link rel="next" href="making-decisions-with-statistics.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The Story of Numbers</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Part 1: Basic Concepts</b></span></li>
+<li class="chapter" data-level="1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html"><i class="fa fa-check"></i><b>1</b> Chapter 1: Statistical Stories</a><ul>
+<li class="chapter" data-level="1.1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-1-to-catch-a-thief"><i class="fa fa-check"></i><b>1.1</b> Story 1: To catch a thief</a></li>
+<li class="chapter" data-level="1.2" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-2-the-quirks-of-what-we-dont-see"><i class="fa fa-check"></i><b>1.2</b> Story 2: The quirks of what we don’t see</a></li>
+<li class="chapter" data-level="1.3" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-3-what-causes-cancer"><i class="fa fa-check"></i><b>1.3</b> Story 3: What causes cancer</a></li>
+<li class="chapter" data-level="1.4" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-4-simpsons-paradox"><i class="fa fa-check"></i><b>1.4</b> Story 4: Simpson’s Paradox</a></li>
+<li class="chapter" data-level="1.5" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#the-takeaway"><i class="fa fa-check"></i><b>1.5</b> The takeaway</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html"><i class="fa fa-check"></i><b>2</b> Chapter 2: How We Use Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-are-data"><i class="fa fa-check"></i><b>2.1</b> What are data?</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#getting-data"><i class="fa fa-check"></i><b>2.2</b> Getting data</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-can-we-use-data-for"><i class="fa fa-check"></i><b>2.3</b> What can we use data for?</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#where-do-data-come-from"><i class="fa fa-check"></i><b>2.4</b> Where do data come from?</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#how-accurate-are-our-data"><i class="fa fa-check"></i><b>2.5</b> How accurate are our data?</a></li>
+<li class="chapter" data-level="2.6" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#claims-about-data"><i class="fa fa-check"></i><b>2.6</b> Claims about data</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#frequency-claims"><i class="fa fa-check"></i><b>2.6.1</b> Frequency claims</a></li>
+<li class="chapter" data-level="2.6.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#association-claims"><i class="fa fa-check"></i><b>2.6.2</b> Association claims</a></li>
+<li class="chapter" data-level="2.6.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#mean-claims"><i class="fa fa-check"></i><b>2.6.3</b> Mean claims</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#summary"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html"><i class="fa fa-check"></i><b>3</b> Data, Distributions and Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-idea-of-describing-data"><i class="fa fa-check"></i><b>3.1</b> The idea of describing data</a></li>
+<li class="chapter" data-level="3.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#distributions-and-summarizing-data"><i class="fa fa-check"></i><b>3.2</b> Distributions and summarizing data</a></li>
+<li class="chapter" data-level="3.3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#plotting-distributions"><i class="fa fa-check"></i><b>3.3</b> Plotting distributions</a></li>
+<li class="chapter" data-level="3.4" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#using-descriptive-statistics-to-characterize-distributions"><i class="fa fa-check"></i><b>3.4</b> Using Descriptive Statistics to Characterize Distributions</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#central-tendency"><i class="fa fa-check"></i><b>3.4.1</b> Central tendency</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#measures-of-variance"><i class="fa fa-check"></i><b>3.4.2</b> Measures of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-importance-of-descriptive-statistics"><i class="fa fa-check"></i><b>3.5</b> The importance of descriptive statistics</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summarizing-populations"><i class="fa fa-check"></i><b>3.5.1</b> Summarizing Populations</a></li>
+<li class="chapter" data-level="3.5.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#mistakes-with-descriptive-statistics"><i class="fa fa-check"></i><b>3.5.2</b> Mistakes with descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summary-1"><i class="fa fa-check"></i><b>3.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>4</b> Introduction to R</a><ul>
+<li class="chapter" data-level="4.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-is-r"><i class="fa fa-check"></i><b>4.1</b> What is R?</a></li>
+<li class="chapter" data-level="4.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-basics-of-r"><i class="fa fa-check"></i><b>4.2</b> The basics of R</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#basic-math-functions"><i class="fa fa-check"></i><b>4.2.1</b> Basic Math Functions</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#objects"><i class="fa fa-check"></i><b>4.2.2</b> Objects</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-frames"><i class="fa fa-check"></i><b>4.2.3</b> Data frames</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-into-r"><i class="fa fa-check"></i><b>4.3</b> Inputting data into R</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-from-a-.csv-file"><i class="fa fa-check"></i><b>4.3.1</b> Inputting data from a .csv file</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#importing-data-from-google-sheets"><i class="fa fa-check"></i><b>4.3.2</b> Importing data from Google Sheets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#descriptive-statistics-in-r"><i class="fa fa-check"></i><b>4.4</b> Descriptive statistics in R</a></li>
+<li class="chapter" data-level="4.5" data-path="introduction-to-r.html"><a href="introduction-to-r.html#summary-2"><i class="fa fa-check"></i><b>4.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability-and-samples.html"><a href="probability-and-samples.html"><i class="fa fa-check"></i><b>5</b> Probability and Samples</a><ul>
+<li class="chapter" data-level="5.1" data-path="probability-and-samples.html"><a href="probability-and-samples.html#what-is-probability"><i class="fa fa-check"></i><b>5.1</b> What is probability?</a></li>
+<li class="chapter" data-level="5.2" data-path="probability-and-samples.html"><a href="probability-and-samples.html#calculating-probability-of-events"><i class="fa fa-check"></i><b>5.2</b> Calculating probability of events</a></li>
+<li class="chapter" data-level="5.3" data-path="probability-and-samples.html"><a href="probability-and-samples.html#probability-and-sampling"><i class="fa fa-check"></i><b>5.3</b> Probability and sampling</a></li>
+<li class="chapter" data-level="5.4" data-path="probability-and-samples.html"><a href="probability-and-samples.html#summary-3"><i class="fa fa-check"></i><b>5.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html"><i class="fa fa-check"></i><b>6</b> The Normal Distribution and Sampling</a><ul>
+<li class="chapter" data-level="6.1" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#the-central-limit-theorem"><i class="fa fa-check"></i><b>6.1</b> The Central Limit Theorem</a></li>
+<li class="chapter" data-level="6.2" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#properties-of-the-normal-distribution"><i class="fa fa-check"></i><b>6.2</b> Properties of the Normal Distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#sampling-and-sample-means"><i class="fa fa-check"></i><b>6.3</b> Sampling and Sample Means</a></li>
+<li class="chapter" data-level="6.4" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#summary-4"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html"><i class="fa fa-check"></i><b>7</b> Making Decisions with Statistics</a><ul>
+<li class="chapter" data-level="7.1" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#basics-of-decision-theory"><i class="fa fa-check"></i><b>7.1</b> Basics of Decision Theory</a></li>
+<li class="chapter" data-level="7.2" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#null-hypothesis-testing"><i class="fa fa-check"></i><b>7.2</b> Null Hypothesis Testing</a></li>
+<li class="chapter" data-level="7.3" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#effect-sizes"><i class="fa fa-check"></i><b>7.3</b> Effect sizes</a></li>
+<li class="chapter" data-level="7.4" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#summary-5"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html"><i class="fa fa-check"></i><b>8</b> Frequency claims</a><ul>
+<li class="chapter" data-level="8.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#what-are-frequency-claims"><i class="fa fa-check"></i><b>8.1</b> What are frequency claims?</a></li>
+<li class="chapter" data-level="8.2" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#binomial-tests"><i class="fa fa-check"></i><b>8.2</b> Binomial tests</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#using-different-probabilities"><i class="fa fa-check"></i><b>8.2.1</b> Using different probabilities</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests"><i class="fa fa-check"></i><b>8.3</b> Chi-square tests</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests-with-more-than-two-outcomes"><i class="fa fa-check"></i><b>8.3.1</b> Chi-square tests with more than two outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#summary-6"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="association-claims-1.html"><a href="association-claims-1.html"><i class="fa fa-check"></i><b>9</b> Association Claims</a><ul>
+<li class="chapter" data-level="9.1" data-path="association-claims-1.html"><a href="association-claims-1.html#what-are-association-claims"><i class="fa fa-check"></i><b>9.1</b> What are association claims</a></li>
+<li class="chapter" data-level="9.2" data-path="association-claims-1.html"><a href="association-claims-1.html#correlation"><i class="fa fa-check"></i><b>9.2</b> Correlation</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="association-claims-1.html"><a href="association-claims-1.html#calculating-correlations"><i class="fa fa-check"></i><b>9.2.1</b> Calculating correlations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="association-claims-1.html"><a href="association-claims-1.html#using-linear-regression"><i class="fa fa-check"></i><b>9.3</b> Using Linear Regression</a></li>
+<li class="chapter" data-level="9.4" data-path="association-claims-1.html"><a href="association-claims-1.html#evaluating-linear-regressions"><i class="fa fa-check"></i><b>9.4</b> Evaluating linear regressions</a></li>
+<li class="chapter" data-level="9.5" data-path="association-claims-1.html"><a href="association-claims-1.html#linear-regression-in-r"><i class="fa fa-check"></i><b>9.5</b> Linear Regression in R</a></li>
+<li class="chapter" data-level="9.6" data-path="association-claims-1.html"><a href="association-claims-1.html#limitations-to-linear-regression-and-correlation"><i class="fa fa-check"></i><b>9.6</b> Limitations to linear regression and correlation</a></li>
+<li class="chapter" data-level="9.7" data-path="association-claims-1.html"><a href="association-claims-1.html#summary-7"><i class="fa fa-check"></i><b>9.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html"><i class="fa fa-check"></i><b>10</b> One Sample Mean Claims</a><ul>
+<li class="chapter" data-level="10.1" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#one-sample-mean-claims-1"><i class="fa fa-check"></i><b>10.1</b> One sample mean claims</a></li>
+<li class="chapter" data-level="10.2" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-z-test"><i class="fa fa-check"></i><b>10.2</b> The Z-test</a></li>
+<li class="chapter" data-level="10.3" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-one-sample-t-test"><i class="fa fa-check"></i><b>10.3</b> The One-Sample T-test</a></li>
+<li class="chapter" data-level="10.4" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#confidence-intervals-with-one-sample"><i class="fa fa-check"></i><b>10.4</b> Confidence Intervals with One Sample</a></li>
+<li class="chapter" data-level="10.5" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#calculating-t-tests-and-confidence-intervals-in-r"><i class="fa fa-check"></i><b>10.5</b> Calculating T-tests and Confidence Intervals in R</a></li>
+<li class="chapter" data-level="10.6" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#summary-8"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="two-mean-claims.html"><a href="two-mean-claims.html"><i class="fa fa-check"></i><b>11</b> Two Mean Claims</a><ul>
+<li class="chapter" data-level="11.1" data-path="two-mean-claims.html"><a href="two-mean-claims.html#what-are-we-testing-with-two-mean-claims"><i class="fa fa-check"></i><b>11.1</b> What are we testing with two-mean claims?</a></li>
+<li class="chapter" data-level="11.2" data-path="two-mean-claims.html"><a href="two-mean-claims.html#paired-samples-t-test"><i class="fa fa-check"></i><b>11.2</b> Paired Samples T-test</a></li>
+<li class="chapter" data-level="11.3" data-path="two-mean-claims.html"><a href="two-mean-claims.html#independent-samples-t-test"><i class="fa fa-check"></i><b>11.3</b> Independent Samples T-test</a></li>
+<li class="chapter" data-level="11.4" data-path="two-mean-claims.html"><a href="two-mean-claims.html#effect-sizes-1"><i class="fa fa-check"></i><b>11.4</b> Effect sizes</a></li>
+<li class="chapter" data-level="11.5" data-path="two-mean-claims.html"><a href="two-mean-claims.html#the-logic-of-t-tests-and-experimental-design"><i class="fa fa-check"></i><b>11.5</b> The logic of t-tests and experimental design</a></li>
+<li class="chapter" data-level="11.6" data-path="two-mean-claims.html"><a href="two-mean-claims.html#doing-two-sample-t-tests-in-r"><i class="fa fa-check"></i><b>11.6</b> Doing two-sample t-tests in R</a></li>
+<li class="chapter" data-level="11.7" data-path="two-mean-claims.html"><a href="two-mean-claims.html#summary-9"><i class="fa fa-check"></i><b>11.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html"><i class="fa fa-check"></i><b>12</b> Claims With More Than Two Means: ANOVA</a><ul>
+<li class="chapter" data-level="12.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#how-to-do-an-anova"><i class="fa fa-check"></i><b>12.1</b> How to do an ANOVA</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-between"><i class="fa fa-check"></i><b>12.1.1</b> Calculating Sums of Squares Between</a></li>
+<li class="chapter" data-level="12.1.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-within"><i class="fa fa-check"></i><b>12.1.2</b> Calculating Sums of Squares Within</a></li>
+<li class="chapter" data-level="12.1.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-total"><i class="fa fa-check"></i><b>12.1.3</b> Calculating Sums of Squares Total</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-the-rest"><i class="fa fa-check"></i><b>12.2</b> Calculating the rest</a></li>
+<li class="chapter" data-level="12.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#doing-an-example"><i class="fa fa-check"></i><b>12.3</b> Doing an example</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#the-null-and-alternative-hypothesis"><i class="fa fa-check"></i><b>12.3.1</b> The null and alternative hypothesis</a></li>
+<li class="chapter" data-level="12.3.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares"><i class="fa fa-check"></i><b>12.3.2</b> Calculating Sums of Squares</a></li>
+<li class="chapter" data-level="12.3.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-degrees-of-freedom-and-mean-squares"><i class="fa fa-check"></i><b>12.3.3</b> Calculating Degrees of Freedom and Mean Squares</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#anova-in-r"><i class="fa fa-check"></i><b>12.4</b> ANOVA in R</a></li>
+<li class="chapter" data-level="12.5" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#summary-10"><i class="fa fa-check"></i><b>12.5</b> Summary</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics: The Story of Numbers</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-normal-distribution-and-sampling" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> The Normal Distribution and Sampling</h1>
+<p>In this chapter, you will learn:</p>
+<ol style="list-style-type: decimal">
+<li>What the central limit theorem is and how it explains why the normal distribution is so common in nature</li>
+<li>The properties of the normal distribution, including its shape</li>
+<li>What Z-scoring (or scaling) data is and why it is important</li>
+<li>How to use z-scores to calculate percentiles based on the normal distribution</li>
+<li>What sample distributions are, what the law of large numbers means, what standard error is, and how to calculate standard error</li>
+</ol>
+<div id="the-central-limit-theorem" class="section level2">
+<h2><span class="header-section-number">6.1</span> The Central Limit Theorem</h2>
+<p>If we measure a population and plot the distribution of the values we measured, what we find is many distributions in nature have the same shape. For instance, if you think about a person’s height or IQ, or how introverted a person is, or how anxious they are, the distribution will have the same shape. There will be a few values that are low, most values are in the middle, close to average, and a few are well above average.</p>
+<p>Why do they all have the same shape? There are two critical theorems in statistics, which we will discuss in this module. They are the foundations for why we can even do statistics at all, which is why they are so profound. The first principle we’ll discuss is the central limit theorem.</p>
+<p>The <strong>central limit theorem</strong> indicates that if you take the sum of many distributions, then that resulting distribution will have the same shape, regardless of the shapes of the underlying distributions that are added together. No matter what the shape of the original distributions, they will fit this new shape, called the normal distribution, or colloquially, a bell curve.</p>
+<p>So what does this mean? Take a person’s height. Whatever a person’s height will be is the product of many, many different processes. There are hundreds of genes which can make a person tall or short. There are hormonal factors, there are dietary factors (did you eat your vegetables?), and so forth. Each of those factors is its own distribution with an individual having different numbers for each of these factors. Whatever your height ends up being is the sum of all these variables put together.</p>
+<p>The central limit theorem shows up in all sorts of places. For instance, if you flip a coin, you have two possibilities, each with a 50% chance of happening. This would lead to a uniform distribution, in which all the possibilities have the same chance of happening. However, if you assign heads as 1 and tails as 0 and flip ten coins and add them up, each time leading to its own distribution, your new distribution will look normal.</p>
+<p>That’s what I did in the table below. I flipped ten coins, ten times, assigning 1 for heads and 0 for tails (since I’m lazy, I had a computer do it for me). Then I took the sum of the ten coins in each trial. Even though the outcomes were either 0 or 1, almost every time the mean of the 10 coin flips was in the middle. Most of the sums or means were around the middle value with a couple which were farther away. If you graph a histogram of the sum, it has a shape where most values are in the middle with only a few values on each side.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Trial</th>
+<th align="left">1</th>
+<th align="left">2</th>
+<th align="left">3</th>
+<th align="left">4</th>
+<th align="left">5</th>
+<th align="left">6</th>
+<th align="left">7</th>
+<th align="left">8</th>
+<th align="left">9</th>
+<th align="left">10</th>
+<th align="left">Sum</th>
+<th align="left">Mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">8</td>
+<td align="left">0.8</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">6</td>
+<td align="left">0.6</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">3</td>
+<td align="left">0.3</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">6</td>
+<td align="left">0.6</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">5</td>
+<td align="left">0.5</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">5</td>
+<td align="left">0.5</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">5</td>
+<td align="left">0.5</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">4</td>
+<td align="left">0.4</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">5</td>
+<td align="left">0.5</td>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">1</td>
+<td align="left">3</td>
+<td align="left">0.3</td>
+</tr>
+</tbody>
+</table>
+<p><img src="06-chapter6_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>There are a few points to add about the central limit theorem. What it means is that as you take the sum of many distributions, the result will approach a normal distribution. It won’t look exactly like a normal distribution, unless there are many distributions added together with many different observations. This is why if you graph the histogram of the example above, it won’t look precisely like a normal distribution.</p>
+<p>The power of the central limit theorem is in how general it is. We don’t have to know the underlying variables which make up a distribution. We also do not have to know how many variables there are. In the example of height or IQ, we don’t know all the genes and environmental factors which influence these variables. However we can know they will fit a normal distribution because we know there are a lot of variables.</p>
+<p>There are some cases where normal distributions may not occur. In some cases, a normal distribution will be skewed. For instance, we discussed in Module 3 about how grades tend to be negatively skewed, with most people having high grades and a few people having very low grades. This is caused by a ceiling effect. A <strong>ceiling effect</strong> is when a distribution is constrained from having very high values. Essentially, there is a maximum grade you can score. You can’t do better than perfect on any assignment.</p>
+<p>The reverse of this is called a <strong>floor effect</strong>. A floor effect is the idea that there is a minimum value that you can’t get below. We talked about income as having a positive skew, with most people having relatively low incomes and a few people having very high incomes. This is because it is impossible to make less than zero dollars as income. However, there is no maximum income.</p>
+<p>Distributions that have ceiling and floor effects are often normal distributions but the ceiling or floor is preventing the normal distribution from happening. So if the ceiling or floor were removed, the distribution would approach a normal distribution. If for instance my assignments in a class did not have a maximum grade of an 100, I might get a more normal distribution in a class. But this is impossible in many cases, such as income, so those distributions always end up skewed.</p>
+<p>In the next sections, we’ll talk about this normal distribution and precisely why it is so powerful.</p>
+</div>
+<div id="properties-of-the-normal-distribution" class="section level2">
+<h2><span class="header-section-number">6.2</span> Properties of the Normal Distribution</h2>
+<p>The beauty of the central limit theorem is that, with a few exceptions, the sum of distributions will always approach the same distribution, which we call the normal distribution. So what that means is that if we know about the normal distribution, we can know a lot about a population’s, even without measuring all the population.</p>
+<p>The normal distribution is a very interesting distribution. It is symmetrical, with the mean, median, and mode all being the same value. It will always have the same symmetrical shape. Because it has the same shape, we can figure out the entire distribution if we only have two numbers, the mean and the standard deviation.</p>
+<p>Since we know the shape of the normal distribution, we can generate percentiles for the distribution, by just knowing the population’s mean and standard deviation. Since the normal distribution is always the same shape, and the area beneath a distribution reflects the percentage of observations which are in a certain range, we can know what percentile a specific value is as well as what percent of the distribution are between two values.</p>
+<p>The easiest way to do this is by using an idea called z-scoring or standardizing. Since all normal distributions are the same shape, we can convert one distribution to another distribution by just varying the mean and the standard deviation. In order to calculate information about a distribution, we often convert a specific distribution to one where the mean is zero and the standard deviation is 1. This distribution is called the standard normal distribution.</p>
+<p>Look at the example below. For instance, IQ is a normal distribution with a mean of 100 and a standard deviation of 15. Likewise, SAT subtest scores are a normal distribution with a mean of roughly 500 and a standard deviation of 100. If we wanted to compare IQ scores with SAT scores, we need to put them in the same scale. That way, we can compare the scores.</p>
+<p>In order to put scores on a z-score distribution or the standard normal distribution, we do the following formula: <span class="math display">\[z = \frac{x - \mu}{\sigma}\]</span></p>
+<p>For each score, take that value and subtract the mean from it. Then we divide that value by the distribution’s standard deviation. If we do this for each item on a distribution, this creates a new distribution with new values. The new distribution will have a mean of 0 and a standard deviation of 1. Every observation is still in the same relative place, but the new distribution is now on a standard scale.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Original SAT Score</th>
+<th align="left">Original IQ Score</th>
+<th align="left">Z-score SAT Score</th>
+<th align="left">Z-score IQ Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">620</td>
+<td align="left">105</td>
+<td align="left">1.2</td>
+<td align="left">0.33</td>
+</tr>
+<tr class="even">
+<td align="left">520</td>
+<td align="left">95</td>
+<td align="left">0.2</td>
+<td align="left">-0.33</td>
+</tr>
+<tr class="odd">
+<td align="left">470</td>
+<td align="left">90</td>
+<td align="left">-0.3</td>
+<td align="left">-0.67</td>
+</tr>
+<tr class="even">
+<td align="left">580</td>
+<td align="left">120</td>
+<td align="left">0.8</td>
+<td align="left">1.33</td>
+</tr>
+<tr class="odd">
+<td align="left">630</td>
+<td align="left">125</td>
+<td align="left">1.3</td>
+<td align="left">1.67</td>
+</tr>
+<tr class="even">
+<td align="left">440</td>
+<td align="left">98</td>
+<td align="left">-0.6</td>
+<td align="left">-0.13</td>
+</tr>
+<tr class="odd">
+<td align="left">540</td>
+<td align="left">100</td>
+<td align="left">0.4</td>
+<td align="left">0</td>
+</tr>
+<tr class="even">
+<td align="left">380</td>
+<td align="left">90</td>
+<td align="left">-1.2</td>
+<td align="left">-0.67</td>
+</tr>
+<tr class="odd">
+<td align="left">500</td>
+<td align="left">120</td>
+<td align="left">0</td>
+<td align="left">1.33</td>
+</tr>
+<tr class="even">
+<td align="left">510</td>
+<td align="left">88</td>
+<td align="left">0.1</td>
+<td align="left">-0.8</td>
+</tr>
+<tr class="odd">
+<td align="left">490</td>
+<td align="left">100</td>
+<td align="left">-0.1</td>
+<td align="left">0</td>
+</tr>
+<tr class="even">
+<td align="left">520</td>
+<td align="left">96</td>
+<td align="left">0.2</td>
+<td align="left">-0.27</td>
+</tr>
+<tr class="odd">
+<td align="left">460</td>
+<td align="left">90</td>
+<td align="left">-0.4</td>
+<td align="left">-0.67</td>
+</tr>
+</tbody>
+</table>
+<p>The z-score essentially tells me how many standard deviations a score is from the mean. A z-score of 2 is two standard deviations above the mean. A z-score of -1.5 is 1.5 standard deviations below the mean. With z-scores it is a simple step to then find out one’s relative percentile rank. Since we have the z-score, we know where someone is on the distribution. Percentile is the percent of people below a certain score, so all we have to do is calculate the percent of people below a certain score. This is equal to the area under the standard normal distribution below a certain value. For instance, in the figure below, the z-score is -1.5. The area below -1.5 is shaded in red and reflects the percentage of observations below a z-score of -1.5.</p>
+<p>Now calculating this area under a curve involves finding an approximation of the integral of the normal distribution function, which are extremely hard to calculate. Traditionally, we would look up these calculations in a table. However, we can do this easily using R. We can do this easily in R using the <code>pnorm()</code> function. We just type <code>pnorm(z)</code>, replacing z with our z-score. and that gives us the area below a certain value on the normal distribution. This is equal to the z-score.</p>
+<p>For example, to get the probability of a z-score of -1.5 or less, we would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(-<span class="fl">1.5</span>)</code></pre></div>
+<pre><code>## [1] 0.0668072</code></pre>
+<p>This indicates that a z-score of -1.5 is in the 6.7th percentile. 6.7% of observations are below this value. If we want to know the percent of observations which are above this value, we can just do the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span>-<span class="kw">pnorm</span>(-<span class="fl">1.5</span>)</code></pre></div>
+<pre><code>## [1] 0.9331928</code></pre>
+<p>Since the area under the normal distribution is equal to 1, 1-pnorm(z) gives us the percent of observations that are above a certain value.</p>
+<p>When people calculate percentile ranks, this is often the method they use. Most distributions, such as height, follow roughly normal distributions. So using this method, you can calculate the percentile rank of any value if you know the mean and standard deviation of the distribution, using the following steps:</p>
+<ol style="list-style-type: decimal">
+<li>Calculate the score to a z-score using the distribution’s mean and SD</li>
+<li>Type <code>pnorm(z)</code> to find out the percent of the distribution below a certain value.</li>
+</ol>
+<p>Percentile rank comes up in a lot of settings. For instance, many standardized tests will report a student’s performance in terms of their percentile rank. Rather than knowing that a student scored a 142 on a standardized test, it is much more informative to know that they scored in the 74th percentile.</p>
+<p>Another instance is determining what is normal weight for a newborn baby. It’s important to know whether a newborn is a healthy weight. Since, there is no absolute standard for what constitutes a healthy weight, what doctors do is use studies where they collect the weight and height of lots of babies and determine what the average weight and height of newborns born at a certain week in pregnancy would be. Then they can use this to determine how big a certain newborn is.</p>
+<p>The average weight of a newborn girl is approximately 7.5 pounds, with a standard deviation of .6 pounds. If I assume that newborn baby weights are normally distributed, I can answer the question as to what percentile rank a certain newborn is. For instance, if a newborn girl is 6 pounds, 8 ounces (6.5 lbs), what percentile rank is she?</p>
+<p>Using what we learned before, first we would figure out the z-score associated with that weight.</p>
+<p><span class="math display">\[z = \frac{x - \mu}{\sigma} = \frac{6.5 - 7.5}{.6} = -1.67\]</span></p>
+<p>Now to find the area under the normal curve for a z-score of -1.67 or below, we would type the following into R:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(-<span class="fl">1.67</span>)</code></pre></div>
+<pre><code>## [1] 0.04745968</code></pre>
+<p>So we get .048, or the 4.8th percentile. This means that 4.8% of newborn girls have a weight lower than this newborn girl.</p>
+<p>The things we give us a way to solve another problem. If we take a distribution and select one observation by chance, what is the chance that this observation is above a certain value, or below a certain value, or in a certain range.</p>
+<p>The mean IQ is 100, with a standard deviation of 15. If I select a person from random, what is the chance that this person has an IQ above 115? We can use what we learned in the last module to answer this question.</p>
+<p>Remember, when every outcome has an equal chance of being selected, probability is the number of outcomes we want divided by the total number of outcomes. Another way of saying this is by saying that probability is the percent of the outcomes we want, if all outcomes have an equal chance of being selected. In the example above, this would mean that the probability of selecting a person with an IQ above 115 is equal to the percent of people who have an IQ above 115.</p>
+<!--This part needs some work -->
+<p>From what we learned above, we can figure this out. To find out the percent of the distribution with an IQ above 115, what we have to do is to take the z-score of an IQ of 115. This z-score equals: <span class="math display">\[\frac{115-100}{15} = 1\]</span></p>
+<p>Now we need to find the percent of the normal distribution with a z-score above 1. We can use the pnorm command to do this. Remember that the total area of the distribution is 1, and that <code>pnorm(z)</code> gives the area of the distribution below a certain value. If we know that, we can figure out that the area above a specific z-score is <code>1-pnorm(z)</code>. In this case, we would type in <code>1-pnorm(1)</code> into R, and that would give us the answer, .159.</p>
+<p>So 15.9% of the population has an IQ above 115, which means that we have a 15.9% chance of selecting an individual with an IQ above 115.</p>
+<p>We can use this logic to answer other questions as well. For instance, what’s the chance we select a person with an IQ between 95 and 105? This problem might seem hard at first, but we can use a couple of tricks to solve it. To solve this, we just need to figure out the area under the normal distribution of an IQ between 95 and 105. Remember again that the total area under the total distribution is 1. So what we can do is find out the percent of the distribution that has an IQ below 95 and the percent of the distribution with an IQ above 105. Then, the rest of the distribution is the percent with an IQ between 95 and 105.</p>
+<div class="figure">
+<img src="images/ch6_image1.png" alt="Solving the IQ problem" />
+<p class="caption">Solving the IQ problem</p>
+</div>
+<p>I worked out this problem above. If you look at the figure, I have the normal distribution broken into three parts. The green area is the percent with an IQ below 95. The red area is the percent with an IQ between 95 and 105. The blue area is the percent with an IQ above 105. First I find out the area of the green part, which I get by getting the z-score of an IQ of 95, which equals -.33. Typing <code>pnorm(-.33)</code> leads to 37% of the distribution. Then I find out the area of the red part. I find the z-score of 105, which is .33. Then I have to do <code>1-pnorm(.33)</code> because I want to find the area with a z-score above .33. This leads also to 37% of the distribution, which is not surprising since the normal distribution is symmetrical. Now what’s left is the red part of the distribution, or 26%. If 26% of the distribution has an IQ between 95 and 105, then I have a 26% chance of selecting a person with an IQ between 95 and 105, given that I select a person randomly.</p>
+</div>
+<div id="sampling-and-sample-means" class="section level2">
+<h2><span class="header-section-number">6.3</span> Sampling and Sample Means</h2>
+<p>This is where we can start to talk about the idea of sampling and sampling distributions. A sample is selecting one or more observations from a population. In the section above, we learned how to calculate the probability of selecting a single sample with a certain value. However, most of our samples are samples of more than a single observation.</p>
+<p>Here’s an example. Above, we discussed the chance of selecting a single person with an IQ above 115. We might want to answer a different question: what is the chance of selecting four people whose mean IQ is 115 or above? This is a different question.</p>
+<p>First, let’s think about this conceptually. Which is more likely: I select four people who have a mean IQ of 115 or greater between all four of them or the chance I select one person with an IQ of 115 or greater?</p>
+<p>It’s much more likely to select one person with an IQ of 115 or greater than to select four people with a mean IQ of 115 or greater. No, because instead of just selecting one person, I have to select four people. The probability I select one person at random with an IQ greater than 115 is 15.9%; But to select four people with a mean IQ of 115 or greater, I have to select people with very high IQs more than once. If I randomly selected one person with an IQ below 115, the other three people need to have a mean IQ even higher than 115 so that the overall mean is still 115 or greater.</p>
+<p>To calculate the exact probability of selecting 4 people with a mean IQ of 115 or greater, we are going to consider a new distribution, called a distribution of sample means. Every distribution we’ve seen so far involves the distribution of single scores. However, what happens when instead of taking a distribution of single numbers, we take a distribution that is made up of the mean of repeated samples. So, I take a sample, take the mean of that sample, and then do that again and again. This makes a new distribution.</p>
+<p>The <strong>distribution of sample means</strong> is a theoretical distribution that would occur if we took an infinite number of samples of a certain size from a population, took the mean of each sample, and plotted the frequency of getting each value for the mean. We can’t take an infinite number of samples, but we can use math and probability to know what would happen if we did take an infinite number of samples and calculated the sample mean.</p>
+<p>To go back to my example above, instead of taking the sample of a single person’s IQ, I am taking the sample of the means of groups of four individuals and looking at their mean IQ. When I do this, several different things happen.</p>
+<ol style="list-style-type: decimal">
+<li>Each sample mean is different. If I take four people at random, I will get a different mean IQ every time. Sometimes I’ll select four people and each of their IQ will be high, and the mean will be high. Sometimes, I’ll select four people and each of their IQs will be low, and so the mean will be low. But most of the time, I’ll select some people with high IQs, some with low, and some in the middle, which leads to a mean IQ in the middle.</li>
+<li>This new sample distribution will be normally distributed. This is the central limit theorem in action. Remember, the mean of several distributions will be normally distributed, regardless of the individual distributions. In this case, the sample distribution is the mean of the same distribution taken repeatedly. So the new sample mean distribution will be normally distributed.</li>
+<li>The new sample mean distribution will have the same mean as the mean of the original distribution. This is called the law of large numbers. As we take more samples, of any size, the mean of the samples will approach the population mean. This can be shown with a nice mathematical proof, but here’s a way to think about it. When selecting samples, some of the samples will be above the original mean and some will be below the original mean. Over time, the mean of the sample means will have the same mean as the original distribution.</li>
+<li>The sample mean distribution will have a new standard deviation that is different than the original distribution. This standard deviation will be smaller than the original distribution. This relates to the point discussed above. If I take a sample of four people, their average IQ is more likely to be closer to 100 than if I take a single person at random. For instance, to select four people with an IQ of above 115, I’d have to randomly select four pretty smart people. Or I might select three very smart people and one average person. Either way, this is much less likely than just selecting one pretty smart person. The new standard deviation of the sample distribution is smaller than the original distribution’s standard deviation, and the standard deviation gets smaller with larger samples.</li>
+</ol>
+<p>The new distribution has two important properties to know based on what is discussed above. The sample mean distribution is a normal distribution that has the same mean as the original distribution, but a different standard deviation. This new standard deviation is called the standard error and it is the calculated by taking the standard deviation of the old distribution and dividing it by the square root of the sample size.</p>
+<p><span class="math display">\[SE = \frac{\sigma}{\sqrt{n}}\]</span></p>
+<p>Since standard error is calculated by dividing by the square root of the sample size, the sample mean distribution shape changes with different size samples, getting smaller as samples get larger. The sample mean distribution becomes narrower with larger sample sizes.</p>
+<div class="figure">
+<img src="https://www.nature.com/article-assets/npg/nmeth/journal/v10/n9/images/nmeth.2613-F3.jpg" alt="Law of large numbers" />
+<p class="caption">Law of large numbers</p>
+</div>
+<p>As the size of the sample gets bigger, the sample mean distribution gets smaller, and is normal, regardless of the shape of the original distribution.</p>
+<p>Back to IQ, if we take samples of 4 individuals, we will create a new distribution of sample means. This distribution of sample means will have a mean of 100, which is the same mean of the original distribution. However, the standard deviation of this distribution of sample means, the standard error, will be 7.5, or 15 divided by the square root of 4. If we take samples of 9 individuals, the standard error is now 5, or 15 divided by the square root of 9.</p>
+<p>So now we get to answer the problem we started with. What is the chance that we select a sample of 4 people with a mean IQ of 115? What we have to do is calculate a new z-score, based on the sample mean distribution. The sample mean distribution of a 4-person sample has a mean of 100 because the sample mean distribution mean equals the original distribution’s mean. The standard error is as follows:</p>
+<p><span class="math display">\[SE = \frac{15}{\sqrt{4}} = 7.5\]</span>.</p>
+<p>Now to find the chance of selecting 4 people with a mean IQ of above 115, we use the same ideas we used for selecting 1 person, only with a different distribution, using the standard error instead of the standard deviation.</p>
+<p>In this case, we have to find the z-score of 115 from a distribution with a mean of 100 and a standard deviation of 7.5. In this case, the z-score would be 2. Then we would take the chance of selecting a z score above 2, which would be <code>1-pnorm(2)</code> or .022. So there is a 2.2% chance if we select three people, their mean IQ will be above 115. This is much lower chance than the chance of selecting just one person, which is 15.9%.</p>
+<p>To summarize, here is how we calculate the chance of selecting a sample of of <span class="math inline">\(n\)</span> individuals with a mean of <span class="math inline">\(\bar{x}\)</span> or greater (or less) from a distribution with a population mean of <span class="math inline">\(\mu\)</span> and a population standard deviation of <span class="math inline">\(\sigma\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>We find the z-score of the sample distribution. We can do this with the following formula:</li>
+</ol>
+<p><span class="math display">\[Z = \frac{\bar{x} - \mu}{\frac{\sigma}{\sqrt{n}}}\]</span> This combines the z-score formula and the standard error formulas indicated above.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Then we find the likelihood of getting <span class="math inline">\(\bar{x}\)</span> or above by using the <code>1-pnorm(z)</code> command in R or the likelihood of getting <span class="math inline">\(\bar{x}\)</span> or below</li>
+</ol>
+<!-- Maybe to include this section
+##Sampling and Inferential Statistics
+-->
+</div>
+<div id="summary-4" class="section level2">
+<h2><span class="header-section-number">6.4</span> Summary</h2>
+<p>This section covered a lot of important theory for statistics. The reason this is important is because we almost always deal with samples when we do research in behavioral sciences. It is rare to actually evaluate every member of a population, so we want to use samples to allow us to <em>infer</em> information about the population.</p>
+<p>The central limit theorem allows us to theorize that normal distributions will happen in a lot of places in nature. This allows us to know things about populations even though we never measure the entire population. Because we know the information about the normal distribution, then we can apply the techniques in this chapter to know about samples.</p>
+<p>After reading this chapter, you should be able to:</p>
+<ol style="list-style-type: decimal">
+<li>Articulate what the central limit theorem is and why it is important</li>
+<li>Know properties about the normal distribution, including its shape</li>
+<li>Apply what you know about the normal distribution and z-scores to calculate the probability of drawing an observation with a certain value from a normal distribution</li>
+<li>Know what sample mean distributions are and how the law of large numbers applies to them</li>
+<li>Be able to determine standard error, or the standard deviation of the sample mean and calculate the z-score and the probability of selecting a sample with a certain value, given a certain sample size.</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="probability-and-samples.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="making-decisions-with-statistics.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Statistics: The Story of Numbers</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="An Introduction to Psychology Statistics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Statistics: The Story of Numbers" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An Introduction to Psychology Statistics" />
+  <meta name="github-repo" content="rgfran" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Statistics: The Story of Numbers" />
+  
+  <meta name="twitter:description" content="An Introduction to Psychology Statistics" />
+  
+
+<meta name="author" content="Robert G. Franklin, Jr.">
+
+
+<meta name="date" content="2017-07-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="one-sample-mean-claims.html">
+<link rel="next" href="claims-with-more-than-two-means-anova.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The Story of Numbers</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Part 1: Basic Concepts</b></span></li>
+<li class="chapter" data-level="1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html"><i class="fa fa-check"></i><b>1</b> Chapter 1: Statistical Stories</a><ul>
+<li class="chapter" data-level="1.1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-1-to-catch-a-thief"><i class="fa fa-check"></i><b>1.1</b> Story 1: To catch a thief</a></li>
+<li class="chapter" data-level="1.2" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-2-the-quirks-of-what-we-dont-see"><i class="fa fa-check"></i><b>1.2</b> Story 2: The quirks of what we don’t see</a></li>
+<li class="chapter" data-level="1.3" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-3-what-causes-cancer"><i class="fa fa-check"></i><b>1.3</b> Story 3: What causes cancer</a></li>
+<li class="chapter" data-level="1.4" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-4-simpsons-paradox"><i class="fa fa-check"></i><b>1.4</b> Story 4: Simpson’s Paradox</a></li>
+<li class="chapter" data-level="1.5" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#the-takeaway"><i class="fa fa-check"></i><b>1.5</b> The takeaway</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html"><i class="fa fa-check"></i><b>2</b> Chapter 2: How We Use Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-are-data"><i class="fa fa-check"></i><b>2.1</b> What are data?</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#getting-data"><i class="fa fa-check"></i><b>2.2</b> Getting data</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-can-we-use-data-for"><i class="fa fa-check"></i><b>2.3</b> What can we use data for?</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#where-do-data-come-from"><i class="fa fa-check"></i><b>2.4</b> Where do data come from?</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#how-accurate-are-our-data"><i class="fa fa-check"></i><b>2.5</b> How accurate are our data?</a></li>
+<li class="chapter" data-level="2.6" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#claims-about-data"><i class="fa fa-check"></i><b>2.6</b> Claims about data</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#frequency-claims"><i class="fa fa-check"></i><b>2.6.1</b> Frequency claims</a></li>
+<li class="chapter" data-level="2.6.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#association-claims"><i class="fa fa-check"></i><b>2.6.2</b> Association claims</a></li>
+<li class="chapter" data-level="2.6.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#mean-claims"><i class="fa fa-check"></i><b>2.6.3</b> Mean claims</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#summary"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html"><i class="fa fa-check"></i><b>3</b> Data, Distributions and Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-idea-of-describing-data"><i class="fa fa-check"></i><b>3.1</b> The idea of describing data</a></li>
+<li class="chapter" data-level="3.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#distributions-and-summarizing-data"><i class="fa fa-check"></i><b>3.2</b> Distributions and summarizing data</a></li>
+<li class="chapter" data-level="3.3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#plotting-distributions"><i class="fa fa-check"></i><b>3.3</b> Plotting distributions</a></li>
+<li class="chapter" data-level="3.4" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#using-descriptive-statistics-to-characterize-distributions"><i class="fa fa-check"></i><b>3.4</b> Using Descriptive Statistics to Characterize Distributions</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#central-tendency"><i class="fa fa-check"></i><b>3.4.1</b> Central tendency</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#measures-of-variance"><i class="fa fa-check"></i><b>3.4.2</b> Measures of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-importance-of-descriptive-statistics"><i class="fa fa-check"></i><b>3.5</b> The importance of descriptive statistics</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summarizing-populations"><i class="fa fa-check"></i><b>3.5.1</b> Summarizing Populations</a></li>
+<li class="chapter" data-level="3.5.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#mistakes-with-descriptive-statistics"><i class="fa fa-check"></i><b>3.5.2</b> Mistakes with descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summary-1"><i class="fa fa-check"></i><b>3.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>4</b> Introduction to R</a><ul>
+<li class="chapter" data-level="4.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-is-r"><i class="fa fa-check"></i><b>4.1</b> What is R?</a></li>
+<li class="chapter" data-level="4.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-basics-of-r"><i class="fa fa-check"></i><b>4.2</b> The basics of R</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#basic-math-functions"><i class="fa fa-check"></i><b>4.2.1</b> Basic Math Functions</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#objects"><i class="fa fa-check"></i><b>4.2.2</b> Objects</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-frames"><i class="fa fa-check"></i><b>4.2.3</b> Data frames</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-into-r"><i class="fa fa-check"></i><b>4.3</b> Inputting data into R</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-from-a-.csv-file"><i class="fa fa-check"></i><b>4.3.1</b> Inputting data from a .csv file</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#importing-data-from-google-sheets"><i class="fa fa-check"></i><b>4.3.2</b> Importing data from Google Sheets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#descriptive-statistics-in-r"><i class="fa fa-check"></i><b>4.4</b> Descriptive statistics in R</a></li>
+<li class="chapter" data-level="4.5" data-path="introduction-to-r.html"><a href="introduction-to-r.html#summary-2"><i class="fa fa-check"></i><b>4.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability-and-samples.html"><a href="probability-and-samples.html"><i class="fa fa-check"></i><b>5</b> Probability and Samples</a><ul>
+<li class="chapter" data-level="5.1" data-path="probability-and-samples.html"><a href="probability-and-samples.html#what-is-probability"><i class="fa fa-check"></i><b>5.1</b> What is probability?</a></li>
+<li class="chapter" data-level="5.2" data-path="probability-and-samples.html"><a href="probability-and-samples.html#calculating-probability-of-events"><i class="fa fa-check"></i><b>5.2</b> Calculating probability of events</a></li>
+<li class="chapter" data-level="5.3" data-path="probability-and-samples.html"><a href="probability-and-samples.html#probability-and-sampling"><i class="fa fa-check"></i><b>5.3</b> Probability and sampling</a></li>
+<li class="chapter" data-level="5.4" data-path="probability-and-samples.html"><a href="probability-and-samples.html#summary-3"><i class="fa fa-check"></i><b>5.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html"><i class="fa fa-check"></i><b>6</b> The Normal Distribution and Sampling</a><ul>
+<li class="chapter" data-level="6.1" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#the-central-limit-theorem"><i class="fa fa-check"></i><b>6.1</b> The Central Limit Theorem</a></li>
+<li class="chapter" data-level="6.2" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#properties-of-the-normal-distribution"><i class="fa fa-check"></i><b>6.2</b> Properties of the Normal Distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#sampling-and-sample-means"><i class="fa fa-check"></i><b>6.3</b> Sampling and Sample Means</a></li>
+<li class="chapter" data-level="6.4" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#summary-4"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html"><i class="fa fa-check"></i><b>7</b> Making Decisions with Statistics</a><ul>
+<li class="chapter" data-level="7.1" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#basics-of-decision-theory"><i class="fa fa-check"></i><b>7.1</b> Basics of Decision Theory</a></li>
+<li class="chapter" data-level="7.2" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#null-hypothesis-testing"><i class="fa fa-check"></i><b>7.2</b> Null Hypothesis Testing</a></li>
+<li class="chapter" data-level="7.3" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#effect-sizes"><i class="fa fa-check"></i><b>7.3</b> Effect sizes</a></li>
+<li class="chapter" data-level="7.4" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#summary-5"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html"><i class="fa fa-check"></i><b>8</b> Frequency claims</a><ul>
+<li class="chapter" data-level="8.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#what-are-frequency-claims"><i class="fa fa-check"></i><b>8.1</b> What are frequency claims?</a></li>
+<li class="chapter" data-level="8.2" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#binomial-tests"><i class="fa fa-check"></i><b>8.2</b> Binomial tests</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#using-different-probabilities"><i class="fa fa-check"></i><b>8.2.1</b> Using different probabilities</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests"><i class="fa fa-check"></i><b>8.3</b> Chi-square tests</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests-with-more-than-two-outcomes"><i class="fa fa-check"></i><b>8.3.1</b> Chi-square tests with more than two outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#summary-6"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="association-claims-1.html"><a href="association-claims-1.html"><i class="fa fa-check"></i><b>9</b> Association Claims</a><ul>
+<li class="chapter" data-level="9.1" data-path="association-claims-1.html"><a href="association-claims-1.html#what-are-association-claims"><i class="fa fa-check"></i><b>9.1</b> What are association claims</a></li>
+<li class="chapter" data-level="9.2" data-path="association-claims-1.html"><a href="association-claims-1.html#correlation"><i class="fa fa-check"></i><b>9.2</b> Correlation</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="association-claims-1.html"><a href="association-claims-1.html#calculating-correlations"><i class="fa fa-check"></i><b>9.2.1</b> Calculating correlations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="association-claims-1.html"><a href="association-claims-1.html#using-linear-regression"><i class="fa fa-check"></i><b>9.3</b> Using Linear Regression</a></li>
+<li class="chapter" data-level="9.4" data-path="association-claims-1.html"><a href="association-claims-1.html#evaluating-linear-regressions"><i class="fa fa-check"></i><b>9.4</b> Evaluating linear regressions</a></li>
+<li class="chapter" data-level="9.5" data-path="association-claims-1.html"><a href="association-claims-1.html#linear-regression-in-r"><i class="fa fa-check"></i><b>9.5</b> Linear Regression in R</a></li>
+<li class="chapter" data-level="9.6" data-path="association-claims-1.html"><a href="association-claims-1.html#limitations-to-linear-regression-and-correlation"><i class="fa fa-check"></i><b>9.6</b> Limitations to linear regression and correlation</a></li>
+<li class="chapter" data-level="9.7" data-path="association-claims-1.html"><a href="association-claims-1.html#summary-7"><i class="fa fa-check"></i><b>9.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html"><i class="fa fa-check"></i><b>10</b> One Sample Mean Claims</a><ul>
+<li class="chapter" data-level="10.1" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#one-sample-mean-claims-1"><i class="fa fa-check"></i><b>10.1</b> One sample mean claims</a></li>
+<li class="chapter" data-level="10.2" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-z-test"><i class="fa fa-check"></i><b>10.2</b> The Z-test</a></li>
+<li class="chapter" data-level="10.3" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-one-sample-t-test"><i class="fa fa-check"></i><b>10.3</b> The One-Sample T-test</a></li>
+<li class="chapter" data-level="10.4" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#confidence-intervals-with-one-sample"><i class="fa fa-check"></i><b>10.4</b> Confidence Intervals with One Sample</a></li>
+<li class="chapter" data-level="10.5" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#calculating-t-tests-and-confidence-intervals-in-r"><i class="fa fa-check"></i><b>10.5</b> Calculating T-tests and Confidence Intervals in R</a></li>
+<li class="chapter" data-level="10.6" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#summary-8"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="two-mean-claims.html"><a href="two-mean-claims.html"><i class="fa fa-check"></i><b>11</b> Two Mean Claims</a><ul>
+<li class="chapter" data-level="11.1" data-path="two-mean-claims.html"><a href="two-mean-claims.html#what-are-we-testing-with-two-mean-claims"><i class="fa fa-check"></i><b>11.1</b> What are we testing with two-mean claims?</a></li>
+<li class="chapter" data-level="11.2" data-path="two-mean-claims.html"><a href="two-mean-claims.html#paired-samples-t-test"><i class="fa fa-check"></i><b>11.2</b> Paired Samples T-test</a></li>
+<li class="chapter" data-level="11.3" data-path="two-mean-claims.html"><a href="two-mean-claims.html#independent-samples-t-test"><i class="fa fa-check"></i><b>11.3</b> Independent Samples T-test</a></li>
+<li class="chapter" data-level="11.4" data-path="two-mean-claims.html"><a href="two-mean-claims.html#effect-sizes-1"><i class="fa fa-check"></i><b>11.4</b> Effect sizes</a></li>
+<li class="chapter" data-level="11.5" data-path="two-mean-claims.html"><a href="two-mean-claims.html#the-logic-of-t-tests-and-experimental-design"><i class="fa fa-check"></i><b>11.5</b> The logic of t-tests and experimental design</a></li>
+<li class="chapter" data-level="11.6" data-path="two-mean-claims.html"><a href="two-mean-claims.html#doing-two-sample-t-tests-in-r"><i class="fa fa-check"></i><b>11.6</b> Doing two-sample t-tests in R</a></li>
+<li class="chapter" data-level="11.7" data-path="two-mean-claims.html"><a href="two-mean-claims.html#summary-9"><i class="fa fa-check"></i><b>11.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html"><i class="fa fa-check"></i><b>12</b> Claims With More Than Two Means: ANOVA</a><ul>
+<li class="chapter" data-level="12.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#how-to-do-an-anova"><i class="fa fa-check"></i><b>12.1</b> How to do an ANOVA</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-between"><i class="fa fa-check"></i><b>12.1.1</b> Calculating Sums of Squares Between</a></li>
+<li class="chapter" data-level="12.1.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-within"><i class="fa fa-check"></i><b>12.1.2</b> Calculating Sums of Squares Within</a></li>
+<li class="chapter" data-level="12.1.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-total"><i class="fa fa-check"></i><b>12.1.3</b> Calculating Sums of Squares Total</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-the-rest"><i class="fa fa-check"></i><b>12.2</b> Calculating the rest</a></li>
+<li class="chapter" data-level="12.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#doing-an-example"><i class="fa fa-check"></i><b>12.3</b> Doing an example</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#the-null-and-alternative-hypothesis"><i class="fa fa-check"></i><b>12.3.1</b> The null and alternative hypothesis</a></li>
+<li class="chapter" data-level="12.3.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares"><i class="fa fa-check"></i><b>12.3.2</b> Calculating Sums of Squares</a></li>
+<li class="chapter" data-level="12.3.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-degrees-of-freedom-and-mean-squares"><i class="fa fa-check"></i><b>12.3.3</b> Calculating Degrees of Freedom and Mean Squares</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#anova-in-r"><i class="fa fa-check"></i><b>12.4</b> ANOVA in R</a></li>
+<li class="chapter" data-level="12.5" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#summary-10"><i class="fa fa-check"></i><b>12.5</b> Summary</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics: The Story of Numbers</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="two-mean-claims" class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> Two Mean Claims</h1>
+<p>In this section, you will learn:</p>
+<ol style="list-style-type: decimal">
+<li>What a two-group mean claim is and how to test it</li>
+<li>Know the difference between an independent and paired samples (dependent) t-test and when to use each of them</li>
+<li>How to calculate a paired samples (dependent) t-test and independent samples t-test by hand</li>
+<li>How to calculate each of these t-tests using R</li>
+</ol>
+<div id="what-are-we-testing-with-two-mean-claims" class="section level2">
+<h2><span class="header-section-number">11.1</span> What are we testing with two-mean claims?</h2>
+<p>Many hypotheses in research use the same premise: is the mean of one group different from the mean of another group? This occurs in a diverse number of situations. For instance, you may wonder if a low-fat diet leads to more weight loss than a low-carb diet. Or you might ask whether anxious individuals’ mean level of anxiety is lower after taking a medicine than before taking a medicine. This might also involve testing whether people are more honest when they think they are being watched than when they think they are not being watched.</p>
+<p>The experimental method in science involves making a hypothesis and testing that hypothesis. In many cases we are testing whether one group is different than another group. Often this logic involves taking a sample of individuals, randomly assigning those people to two groups, and then treating those groups in different ways. The idea about this is that the two groups are equal in every way except the one factor we want to measure.</p>
+<p>A classic way of doing this is by having one group be a <em>control group</em> which does not get a manipulation and then having an <em>experimental group</em> which does receive a manipulation. For instance, one group might receive a drug whereas the other group receives a placebo that does not contain the drug. Another way of doing this is having two different groups which get two different kinds of manipulations.</p>
+<p>Here’s an example. There is a theory that the color red might make people feel more threatened because it is a “hot” color. Based on this, a scientist may develop the theory that comments written in red will seem more negative than comments written in blue. To test this idea, the experimenter takes 100 participants and then has them give a speech. After the speech, the experimenter gives each person the same feedback, with some positive attributes and some negative attribues. The only difference is that 50 people get the feedback written in red ink and 50 get the feedback written in blue ink. Then the experimenter asks the participants to rate on a 10 point scale “how negative or positive does this feedback seem”? with a 1 rating meaning very negative, 5 being neither negative or positive, and 10 indicating very positive.</p>
+<p>In this example, the experimenter wants to see if the participants rate the feedback more negatively, giving a lower rating, when it is red. The experimenter takes the average rating for the 50 participants reading the feedback in red and the average rating of the 50 participants reading the feedback in blue. The reason the researcher takes the average is that in both of the conditions there may be people who rate the feedback as very positive, just because those people are naturally biased to see anything more positively. Likewise, there are some people who rate the feedback very negatively in both conditions for the opposite reason; they see everything as very negative, regardless of color. By using the mean of 50 participants, those individual differences will cancel out since by randomly assigning people to each group, we should have a relatively equal number of positive and negative people in each group.</p>
+<p>Imagine the researcher finds out that the 50 people rating the feedback in red has a mean rating of 4 out of 10 and the 50 people rating the feedback in blue has a mean rating of 5. Does that mean the experimenter’s idea worked?</p>
+<p>You may be thinking that this might just have happened by chance. For some reason it just so happened that the people in the red group rated the feedback as more negative than the people in the blue group, not because of the color of the ink but due to random chance that people who were more likely to rate feedback as more negative happened to be assigned to the red group. Just as there is a chance I can flip a coin and get heads 20 times in a row, there’s a chance this could happen as well. However, the lower this chance is, the more likely the effect is due to my hypothesis; there is something different with reading feedback written in red versus feedback written in blue.</p>
+<p>This is the idea of testing two-group hypothses. We can apply null hypothesis testing to these questions if we think of this in terms of populations. When we select two groups and do an experiment to treat those groups differently, we are trying to create two populations. That means, when people are in group A, they should be fundamentally different than group B. The logic is that if our experiment is working, it would take people who are in one population in the beginning and then make them two different populations. In the example above, if the color of feedback affects how people respond to the feedback, people reading feedback written in red should be a different population than those who read feedback written in blue. If color does not matter, than the red group should be no different than the blue group.</p>
+<p>When I have two groups, I set up a null hypothesis that the two groups are part of the same population. This implies that the thing that I argue makes those two groups different does not matter or is so irrelevant that it would not make the two groups different populations. Conversely, the alternative hypothesis is that the two groups are not part of the same population. Now this can be for one of two reasons. It can be that the manipulation I did, such as printing the feedback in red or blue ink makes the groups different. Or it could be that something else I am not aware of, called a confound, makes the two groups different. For instance, I may have had a bad experimental design where I smiled when I gave people the feedback in blue whereas I frowned when I gave people the feedback written in red. In that case, the two groups are from a different population, but for reasons different than what I was aware of.</p>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="26%" />
+<col width="60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Two-group hypotheses</th>
+<th>Hypothesis</th>
+<th>This implies:</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Null hypothesis</td>
+<td>The two groups are part of the same population</td>
+<td>The thing I think makes the two groups different is irrelevant or does not make the groups different.</td>
+</tr>
+<tr class="even">
+<td>Alternative hypothesis</td>
+<td>The two groups are not part of the same population</td>
+<td>The thing I think makes the two groups different (or something else I am not aware of) makes the two groups different.</td>
+</tr>
+</tbody>
+</table>
+<p>There are two types of two-group hypotheses. In one case, we are measuring two groups that are independent of each other. Group A is not related to Group B. In this case, there are different people in group A versus group B. This is called an independent sample and will be the foundation of an independent samples t-test we will discuss in section C.</p>
+<p>However, it may be the case that I have the same participants and measure them twice. Imagine if I wanted to test whether a 60 minute lecture on self-esteem increases people’s performance in a class. I could measure their performance on an exam before the lecture and then an exam after the lecture. In this case, the same participants are measured twice. This is called a paired samples or dependent samples t-test and will be discussed in section B.</p>
+</div>
+<div id="paired-samples-t-test" class="section level2">
+<h2><span class="header-section-number">11.2</span> Paired Samples T-test</h2>
+<p>I saw a study once that suggested that eating chocolate can help you lose weight. This sounded like an exciting study, but it turns out the entire study was fabricated as a way to demonstrate problems with the scientific process and science journalism. However, the idea still might be true.</p>
+<p>If we wanted to test whether eating chocolate would help you lose weight, or any other diet-related hypothesis, we might design an experiment like this: We take a group of people, measure their weight, have them eat the new diet we wanted to test for a period of time, and then measure their weight again. We could take 50 people, have them eat normally but eat a bar of chocolate each day, and weigh them again after 4 weeks.</p>
+<p>This is a kind of design called a <strong>pre-test/post-test design</strong>. It involves taking a group of people, testing them before doing an experiment, doing the experiment, and testing the people after the experiment. It is a very powerful design because we can control for many extraneous factors which might be different in each group. Since the same people are being measured twice, we can ensure that each group has the same personality and other factors which might vary if we have two groups with two different sets of people. However, many designs cannot be done using a pre-test/post-test design. For instance, it would be difficult to do the red versus blue colored feedback experiment discussed in the last section, since we are interested in feelings after getting feedback. It would not make sense to receive feedback in blue ink, rate your feelings, and then repeat the study and receive the same feedback in red ink.</p>
+<p>When doing a pre-test/post-test design, the null hypothesis is that the pre-test observations and the post-test observations are from the same population, which suggests nothing has changed during the period between the pre-test and post-test. If chocolate does nothing for weight loss, there should be no difference between pre-test and post-test designs. Some people would have an increase of weight, some would have a decrease, and some would have no change. There would be no mean change in the difference. Conversely, the alternative hypothesis is that the pre-test and post-test are from different populations, which indicates that something changed between the pre-test and post-test.</p>
+<p>The test used to examine pre-test/post-test designs is the paired samples (or dependent samples) t-test. The paired-samples t-test is a variant of the one-sample t-test we discussed in the last module. In the last module, we discussed that the one-sample t-test tests whether a sample is different from a population mean.</p>
+<p>The paired-samples t-test extends this logic by using difference scores. If we take the difference between the post-test and pre-test for each individual, we will create difference scores. In the instance of the chocolate weight loss study, we would take each individual’s post-diet weight minus their pre-diet weight. This would give us a difference score for each individual.</p>
+<p>With these difference scores, we can start to examine our hypothesis. If chocolate does not affect weight, the difference scores should have a mean close to zero. Some people’s weight might go up, some people’s weight might go down, and some people would stay the same. However, if chocolate does affect weight, the difference scores should be different from zero. If chocolate helps people lose weight, then most people would see a negative difference score (lower weight after the diet). The opposite could be true, where chocolate would actually increase weight, because it is chocolate after all. In that case, most of the difference scores would be positive with higher post-diet weight. In either case, the difference scores are different from zero.</p>
+<p>The paired-samples t-test takes difference scores and then does a one-sample t-test comparing the difference from zero. As mentioned above, the null hypothesis is that there should be no difference between the pre-test and post-test samples. This is the same thing as saying the difference scores should be zero. The paired-samples t-test essentially is dividing the mean difference by the standard error of the difference. Remember the t-test formula is as follows.</p>
+<p><span class="math display">\[t = \frac{\bar{X} - \mu}{\frac{s}{\sqrt{n}}}\]</span></p>
+<p>In the case of the paired-samples t-test, we take the difference between the post-test and the pre-test and generate the following, with the mean of the differences and the standard deviation of the differences.</p>
+<p><span class="math display">\[t = \frac{\bar{X}_\text{diff} - 0}{SE} \text{   where   } SE = \frac{s_\text{diff}}{\sqrt{n}} \]</span> This gives us a t-statistic with degrees of freedom equaling n – 1, or the number of participants minus 1. If we had 50 people do the diet study, this would be 49 degrees of freedom, even though we have 100 observations (50 observations before the diet and 50 observations after the diet).</p>
+<p>Imagine I did this study where I had 12 people do the diet study discussed above and got the results listed in the table below.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Before Diet</th>
+<th>After Diet</th>
+<th>Difference</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>191</td>
+<td>183</td>
+<td>-8</td>
+</tr>
+<tr class="even">
+<td>188</td>
+<td>175</td>
+<td>-13</td>
+</tr>
+<tr class="odd">
+<td>200</td>
+<td>204</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>180</td>
+<td>176</td>
+<td>-4</td>
+</tr>
+<tr class="odd">
+<td>185</td>
+<td>184</td>
+<td>-1</td>
+</tr>
+<tr class="even">
+<td>174</td>
+<td>170</td>
+<td>-4</td>
+</tr>
+<tr class="odd">
+<td>155</td>
+<td>136</td>
+<td>-19</td>
+</tr>
+<tr class="even">
+<td>164</td>
+<td>159</td>
+<td>-5</td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>126</td>
+<td>-2</td>
+</tr>
+<tr class="even">
+<td>225</td>
+<td>215</td>
+<td>-10</td>
+</tr>
+<tr class="odd">
+<td>211</td>
+<td>213</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>233</td>
+<td>218</td>
+<td>-15</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Mean</td>
+<td>-6.25</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Standard Deviation</td>
+<td>6.95603</td>
+</tr>
+</tbody>
+</table>
+<p>Notice in this example, I take the weight after the diet minus the weight before the diet, and then take the mean and the standard deviation of those difference scores. Then I take those numbers and do a one-sample t-test using those difference scores.</p>
+<p><span class="math display">\[t = \frac{6.25 - 0}{\frac{6.95}{\sqrt{12}}} = -3.125 \]</span></p>
+<p>A couple of notes here: If the post-test is smaller than the pre-test, t will be negative. However, convention usually dictates that t-values are reported as positive, and since the t-distribution is symmetrical this does not change our results. When finding the p-value in R, the value for t must be positive. Second, there are 12 pairs of individuals, so we have 11 degrees of freedom.</p>
+<p>Using the command in the last chapter, we can find out the p-value of getting a t-value of 3.125 or more extreme by the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span> -<span class="st"> </span><span class="kw">pt</span>(<span class="fl">3.125</span>, <span class="dv">11</span>))*<span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 0.009663434</code></pre>
+<p>This <span class="math inline">\(p=.009\)</span>, which indicates there is a .009 chance (.9%) chance that these results would have occurred if the null hypothesis is true, that is if there is no difference between pre-test and post-test. Thus, we would reject the null hypothesis.</p>
+</div>
+<div id="independent-samples-t-test" class="section level2">
+<h2><span class="header-section-number">11.3</span> Independent Samples T-test</h2>
+<p>If we have two groups that are independent, that is, the two groups are not the same individuals, we can do an independent samples t-test. The formula for this test is the same t-test formula, but it has a few important tweaks.</p>
+<p>We’ll use an example from the psychology of numbers for this study. A researcher may have the idea that people think underestimate how big something is if the numbers presented use fewer digits. For instance, $4 million may seem like less money than $4,000,000. The researcher believes that because people often see large money values like $2.4 trillion as written as numbers with words rather than as only digits (e.g. $2,400,000,000,000), they may not appreciate how big it is.</p>
+<p>The researcher has participants read a news article about Social Security and how the Social Security program will be facing a $1 billion dollar shortfall. One group of participants reads the number as $1 billion whereas the other group reads the number as $1,000,000,000. After reading the article, participants rate on a 7 point scale how much of a problem they think the Social Security shortfall is. The researcher predicts the participants will think it is a bigger problem in the condition where the number is presented as only digits.</p>
+<p>In this case, there are two groups of participants and each participant is only in one group. This is called a crossed design, because a given participant is only in one group. To analyze the differences between the groups, we would do an independent samples t-test.</p>
+<p>Before we get started, we’ll use a few definitions. The groups are arbitrarily assigned. One group is called group 1 and the other is called group 2. Each group has a mean and a standard deviation. The null hypothesis is that the two groups come from the same population and means that the mean of group 1 is equal to the mean of group 2. The alternative is that the two groups are from two different populations and that the mean of group 1 is different from the mean of group 2. Again, since groups are assigned arbitrarily, it will not matter if it is a negative t-statistic or a positive t-statistic. Finally, the two groups do not need an equal number of people, as we’ll see below.</p>
+<p>The basic t-test formula for independent samples t-tests is this:</p>
+<p><span class="math display">\[t = \frac{\bar{x}_1 - \bar{x}_2}{SE}\]</span></p>
+<p>Generally, standard error is the standard deviation divided by the square root of n. However, in an independent-samples t-test, we have two standard deviations, one for each group. If I had my experiment above, I would have the standard deviation for the group that read the story with the number expressed as words versus the group that read the story with the number expressed as digits. To calculate the standard error for the t-test, I have to somehow combine the two standard deviations into a “pooled” standard deviation. Standard deviations cannot be averaged together, so I use a more complex formula for this.</p>
+<p><span class="math display">\[s_p = \sqrt{\frac{(n_1-1)s_{X_1}^2+(n_2-1)s_{X_2}^2}{n_1+n_2-2}}\]</span> This formula creates the pooled standard deviation. It is long because it weights each standard deviation based on the number of people in each sample. Since each group may have a different number of observations, we have to multiply the standard deviation of each group separately.</p>
+<p>Combining this to the other formula, we get this formula for an independent samples t-test.</p>
+<p><span class="math display">\[t = \frac{\bar {X}_1 - \bar{X}_2}{s_p \cdot \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}\]</span></p>
+<p>These formulas are complicated but if you have the right numbers, calculating a t-test by hand is simple, just plugging the correct numbers in the correct spots.</p>
+<p>Here is how we do it:</p>
+<ol style="list-style-type: decimal">
+<li>Take each group, label one group “Group 1” and one group “Group 2”. Whichever one you pick as group 1 or 2 is arbitrary, but I generally assign the group I expect to have a larger mean as group 1 and the group I expect to have a smaller mean as group 2. Then set up the null and alternative hypotheses.</li>
+<li>Find the following for each group: n (number of samples), , (that sample mean) and s (that sample standard deviation. In the formulas, which group each sample reflects is indicated with a subscript.</li>
+<li>Plug the sample standard deviations and n into the pooled standard deviation formula to get the pooled standard deviation (sx1x2)</li>
+<li>Plug the rest of the numbers into the equation to get t.</li>
+<li>Find the degrees of freedom, which is n1 + n2 – 2 (total number of observations in both groups minus 2)</li>
+<li>Use the following command in R to get the p value, given you have the t-value and degrees of freedom: <code>(1-pt(t, df))*2</code></li>
+</ol>
+<p>I’ll work through an example here. Imagine I wanted to see whether students in a traditional seated class or in an online class learned more material. I give both groups of students a final exam and use their scores on this exam for my dependent variable. I will give you the mean and standard deviations for this example:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Seated class</th>
+<th>Online class</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sample mean</td>
+<td>82</td>
+<td>75</td>
+</tr>
+<tr class="even">
+<td>Sample SD</td>
+<td>9</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>n</td>
+<td>21</td>
+<td>33</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s go through the steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>Assign groups and set up null and alternative hypotheses. I will assign seated class to group 1 and online class as group 2. The null hypothesis is that the two groups are from the same population implying there are no differences between the two groups. The alternative hypothesis is that the two groups are from different populations, implying the two groups are from the same population.</p></li>
+<li><p>Calculate means, SDs, and n for each group. Done. If you need more help with this, consult the module on summary statistics.</p></li>
+<li><p>Find the pooled SD. Here is how that may work:</p></li>
+</ol>
+<p><span class="math display">\[s_p = \sqrt{\frac{(21-1)9^2+(33-1)13^2}{21+33-2}}\]</span></p>
+<p><span class="math display">\[s_p = \sqrt{\frac{20 \cdot 81 +32 \cdot 169}{52}} = 11.6\]</span></p>
+<p>Step 4: plugging this in the t formula:</p>
+<p><span class="math display">\[t = \frac{82-75}{11.6 \cdot \sqrt{\frac{1}{21}+\frac{1}{33}}} = 2.23\]</span></p>
+<p>Step 5: Find degrees of freedom. These are equal to the total number of observations minus 2. In this case it is 52.</p>
+<p>Step 6, find out the P value associated with T. To calculate this, we would type the following into R:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span>-<span class="kw">pt</span>(<span class="fl">2.23</span>, <span class="dv">52</span>))*<span class="dv">2</span></code></pre></div>
+<pre><code>## [1] 0.03008958</code></pre>
+<p>This gives us a <span class="math inline">\(p = .030\)</span>. This is below the generally accepted <span class="math inline">\(\alpha = .05\)</span>, so we would reject the null hypothesis and conclude the groups are different. Given that the mean for the seated class is higher than the mean for the online class, we would conclude that the seated class performed significantly better on the exam. Whether that was due to the seated versus online nature of the classes or due to another confound is a question for research design.</p>
+</div>
+<div id="effect-sizes-1" class="section level2">
+<h2><span class="header-section-number">11.4</span> Effect sizes</h2>
+<p>When we investigate hypotheses using null hypotheses testing, we are examining how likely our data are given the null hypothesis is true. When used in a two-sample hypothesis, this is generally saying whether the two groups are the same or different. Generally this is because we want to say whether the characteristic that makes the two groups different, or the independent variable, causes a change in the dependent variable. This characteristic might be two different types of diet, or two different types of classes, or examining differences between girls and boys.</p>
+<p>This approach tells us how sure we are that there is a difference between the group but it says nothing about an important question: whether there is a small difference between the groups or a large difference between the groups.</p>
+<p>Here’s an example: research shows that a diet where a person reduces their sodium intake may reduce one’s blood pressure. In this case, the null hypothesis is that those who have the low-sodium diet are from the same population as the group who does not have a low-sodium diet. The alternative hypothesis is that the two groups are not from the same population, which suggests that one group has a lower blood pressure than the other group.</p>
+<p>When I use null hypothesis testing, I will either reject or retain the null hypothesis, which helps me to answer the question of: does having a low-sodium diet help me to reduce blood pressure? However, this ignores a related question which may be of interest: how much does a low sodium diet reduce blood pressure?</p>
+<p>This is the idea of effect size, as we discussed in Module 7. Effect sizes in two group hypotheses can be represented by the difference between the groups. One way of measuring effect size is by using a concept called Cohen’s D. Conceptually, Cohen’s D is a measure of the difference between two groups in terms of standard deviations. A Cohen’s D of 1 means that the two groups are one standard deviation apart.</p>
+<p>To calculate this, you can use the following formula, assuming you have t, based on Rosenthal &amp; Rosnow (1984):</p>
+<p><span class="math display">\[d = \frac{2t}{\sqrt{df}}\]</span></p>
+<p><span class="math display">\[d = \frac{2 \cdot 2.23}{\sqrt{52}} = .52\]</span></p>
+<p>Cohen suggested the following criteria to evaluate D:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Effect size</th>
+<th>Type of effect</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>d &lt; .3</td>
+<td>Small</td>
+</tr>
+<tr class="even">
+<td>d &gt; .3 and d &lt; .7</td>
+<td>Medium</td>
+</tr>
+<tr class="odd">
+<td>d &gt; .7</td>
+<td>Large</td>
+</tr>
+</tbody>
+</table>
+<p>What this means is that if the difference between two groups is less than .3 standard deviations, the effect was small and generally not interesting. If the effect is between .3 and .7 standard deviations, the effect is a medium effect, which may be interesting</p>
+</div>
+<div id="the-logic-of-t-tests-and-experimental-design" class="section level2">
+<h2><span class="header-section-number">11.5</span> The logic of t-tests and experimental design</h2>
+<p>One important element of designing experiments is designing our experiments so that they work. If we are testing whether there is a difference between two groups, we want to do our best to find a difference if a difference exists between the two groups. Using a t-test, there are three important elements you can do to make sure your experiment has the best chance of working.</p>
+<p>This is a concept called <strong>statistical power</strong> or the ability to find an effect if one is present. We want to make sure our designs are as powerful as possible. To have more powerful designs, we want to make t-statistics bigger, because the bigger the t-statistic, the smaller the p-value and the more likely we reject the null hypothesis. How do we make the t-statistic bigger?</p>
+<p>As noted in the section above, the t-test formula is:</p>
+<p><span class="math display">\[t = \frac{\bar{x}_1 - \bar{x}_2}{SE}\]</span></p>
+<p>We can describe this another way:</p>
+<p><span class="math display">\[t = \frac{\text{Effect}}{\text{Error}}\]</span></p>
+<p>The effect is the difference between the two groups. We’ve measured this in terms of effect size. If we want to find an effect, we want to make the effect as strong as possible. This means making the difference between the two groups as clear as possible. From a research point of view, we want to make the characteristic that divides the two groups as obvious as possible.</p>
+<p>The second characterisic is error. To make t bigger, we want to make the error smaller. Error is measured by <span class="math inline">\(\frac{s}{\sqrt{n}}\)</span> and there are two ways to make this smaller. First, we can reduce <span class="math inline">\(s\)</span> or the standard deviation. This is done by making our experiment as controlled as possible. The last way is by increasing <span class="math inline">\(n\)</span>. Bigger <span class="math inline">\(n\)</span> leads to bigger t-statistics and make it more likely that an effect is significant.</p>
+<p>What does this mean to you? When designing an experiment, do the following: 1. Make your effect as big as possible. Make it as clear as possible what you are testing. For instance, if you are testing the effect of red ink versus blue ink, make sure the participants see a lot of red ink and a lot of blue ink. Sometimes a manipulation has to be subtle so that participants don’t catch on to the experiment, but making manipulations as obvious as possible helps make experiments more likely to work 2. Reduce error. Try to make sure you reduce as many sources of error as you can. 3. Use large sample sizes. Try to use as many people as you can in order to test an experiment. Generally, you should have at least 30 participants in a study, unless you have a strong reason not to.</p>
+</div>
+<div id="doing-two-sample-t-tests-in-r" class="section level2">
+<h2><span class="header-section-number">11.6</span> Doing two-sample t-tests in R</h2>
+<p>T-tests in R are very simple and use the same <code>t.test()</code> command we used for one-sample t-tests. There are two ways of doing this, depending on how you set up your data. Imagine I have a dataframe that looks like the following:</p>
+<table>
+<thead>
+<tr class="header">
+<th>GroupA</th>
+<th>GroupB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>13</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<p>I could put this into R using the following notation:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">GroupA =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">3</span>)
+GroupB =<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">13</span>,<span class="dv">15</span>)
+d =<span class="st"> </span><span class="kw">data.frame</span>(GroupA,GroupB)</code></pre></div>
+<p>To do a t-test comparing the groups, I would use the t-test command. If my data are set up where I am comparing two different columns, I would do the following commands. However, I have to tell R if it is a paired-samples or independent samples t-test. In the commands below, assume I have two vectors or columns, one named A and one named B.</p>
+<p>For the paired samples t-test:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(A, B, <span class="dt">paired =</span> T)</code></pre></div>
+<p>For the independent samples t-test:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(A, B, <span class="dt">paired =</span> F) </code></pre></div>
+<p>In the example given here, if I wanted to do a paired samples t-test, I would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(d$GroupA, d$GroupB, <span class="dt">paired =</span> T)</code></pre></div>
+<p>And if I wanted to do an independent samples t-test, I would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(d$GroupA, d$GroupB, <span class="dt">paired =</span> F)</code></pre></div>
+<p>If I do this, (for the paired samples t-test), I will get the following output:</p>
+<pre><code>## 
+##  Paired t-test
+## 
+## data:  d$GroupA and d$GroupB
+## t = -1.652, df = 5, p-value = 0.1594
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -10.64999   2.31666
+## sample estimates:
+## mean of the differences 
+##               -4.166667</code></pre>
+</div>
+<div id="summary-9" class="section level2">
+<h2><span class="header-section-number">11.7</span> Summary</h2>
+<p>After doing this chapter, you should be able to know and/or do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Know what two-sample mean claims are and when to do them. Also know what the difference is between a paired and independent-samples t-test.</li>
+<li>Know how to apply null hypothesis testing to two-sample mean claims</li>
+<li>Know how to calculate a two-sample t-test by hand, whether it is a paired or independent-samples test.</li>
+<li>Know some ways to increase t-statistics in order to make experiments more powerful</li>
+<li>Know how to calculate two-sample t-tests in R.</li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="one-sample-mean-claims.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="claims-with-more-than-two-means-anova.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

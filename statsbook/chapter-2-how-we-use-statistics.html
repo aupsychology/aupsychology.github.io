@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Statistics: The Story of Numbers</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="An Introduction to Psychology Statistics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Statistics: The Story of Numbers" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An Introduction to Psychology Statistics" />
+  <meta name="github-repo" content="rgfran" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Statistics: The Story of Numbers" />
+  
+  <meta name="twitter:description" content="An Introduction to Psychology Statistics" />
+  
+
+<meta name="author" content="Robert G. Franklin, Jr.">
+
+
+<meta name="date" content="2017-07-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="chapter-1-statistical-stories.html">
+<link rel="next" href="data-distributions-and-descriptive-statistics.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The Story of Numbers</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Part 1: Basic Concepts</b></span></li>
+<li class="chapter" data-level="1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html"><i class="fa fa-check"></i><b>1</b> Chapter 1: Statistical Stories</a><ul>
+<li class="chapter" data-level="1.1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-1-to-catch-a-thief"><i class="fa fa-check"></i><b>1.1</b> Story 1: To catch a thief</a></li>
+<li class="chapter" data-level="1.2" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-2-the-quirks-of-what-we-dont-see"><i class="fa fa-check"></i><b>1.2</b> Story 2: The quirks of what we don’t see</a></li>
+<li class="chapter" data-level="1.3" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-3-what-causes-cancer"><i class="fa fa-check"></i><b>1.3</b> Story 3: What causes cancer</a></li>
+<li class="chapter" data-level="1.4" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-4-simpsons-paradox"><i class="fa fa-check"></i><b>1.4</b> Story 4: Simpson’s Paradox</a></li>
+<li class="chapter" data-level="1.5" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#the-takeaway"><i class="fa fa-check"></i><b>1.5</b> The takeaway</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html"><i class="fa fa-check"></i><b>2</b> Chapter 2: How We Use Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-are-data"><i class="fa fa-check"></i><b>2.1</b> What are data?</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#getting-data"><i class="fa fa-check"></i><b>2.2</b> Getting data</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-can-we-use-data-for"><i class="fa fa-check"></i><b>2.3</b> What can we use data for?</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#where-do-data-come-from"><i class="fa fa-check"></i><b>2.4</b> Where do data come from?</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#how-accurate-are-our-data"><i class="fa fa-check"></i><b>2.5</b> How accurate are our data?</a></li>
+<li class="chapter" data-level="2.6" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#claims-about-data"><i class="fa fa-check"></i><b>2.6</b> Claims about data</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#frequency-claims"><i class="fa fa-check"></i><b>2.6.1</b> Frequency claims</a></li>
+<li class="chapter" data-level="2.6.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#association-claims"><i class="fa fa-check"></i><b>2.6.2</b> Association claims</a></li>
+<li class="chapter" data-level="2.6.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#mean-claims"><i class="fa fa-check"></i><b>2.6.3</b> Mean claims</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#summary"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html"><i class="fa fa-check"></i><b>3</b> Data, Distributions and Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-idea-of-describing-data"><i class="fa fa-check"></i><b>3.1</b> The idea of describing data</a></li>
+<li class="chapter" data-level="3.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#distributions-and-summarizing-data"><i class="fa fa-check"></i><b>3.2</b> Distributions and summarizing data</a></li>
+<li class="chapter" data-level="3.3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#plotting-distributions"><i class="fa fa-check"></i><b>3.3</b> Plotting distributions</a></li>
+<li class="chapter" data-level="3.4" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#using-descriptive-statistics-to-characterize-distributions"><i class="fa fa-check"></i><b>3.4</b> Using Descriptive Statistics to Characterize Distributions</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#central-tendency"><i class="fa fa-check"></i><b>3.4.1</b> Central tendency</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#measures-of-variance"><i class="fa fa-check"></i><b>3.4.2</b> Measures of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-importance-of-descriptive-statistics"><i class="fa fa-check"></i><b>3.5</b> The importance of descriptive statistics</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summarizing-populations"><i class="fa fa-check"></i><b>3.5.1</b> Summarizing Populations</a></li>
+<li class="chapter" data-level="3.5.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#mistakes-with-descriptive-statistics"><i class="fa fa-check"></i><b>3.5.2</b> Mistakes with descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summary-1"><i class="fa fa-check"></i><b>3.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>4</b> Introduction to R</a><ul>
+<li class="chapter" data-level="4.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-is-r"><i class="fa fa-check"></i><b>4.1</b> What is R?</a></li>
+<li class="chapter" data-level="4.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-basics-of-r"><i class="fa fa-check"></i><b>4.2</b> The basics of R</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#basic-math-functions"><i class="fa fa-check"></i><b>4.2.1</b> Basic Math Functions</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#objects"><i class="fa fa-check"></i><b>4.2.2</b> Objects</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-frames"><i class="fa fa-check"></i><b>4.2.3</b> Data frames</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-into-r"><i class="fa fa-check"></i><b>4.3</b> Inputting data into R</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-from-a-.csv-file"><i class="fa fa-check"></i><b>4.3.1</b> Inputting data from a .csv file</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#importing-data-from-google-sheets"><i class="fa fa-check"></i><b>4.3.2</b> Importing data from Google Sheets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#descriptive-statistics-in-r"><i class="fa fa-check"></i><b>4.4</b> Descriptive statistics in R</a></li>
+<li class="chapter" data-level="4.5" data-path="introduction-to-r.html"><a href="introduction-to-r.html#summary-2"><i class="fa fa-check"></i><b>4.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability-and-samples.html"><a href="probability-and-samples.html"><i class="fa fa-check"></i><b>5</b> Probability and Samples</a><ul>
+<li class="chapter" data-level="5.1" data-path="probability-and-samples.html"><a href="probability-and-samples.html#what-is-probability"><i class="fa fa-check"></i><b>5.1</b> What is probability?</a></li>
+<li class="chapter" data-level="5.2" data-path="probability-and-samples.html"><a href="probability-and-samples.html#calculating-probability-of-events"><i class="fa fa-check"></i><b>5.2</b> Calculating probability of events</a></li>
+<li class="chapter" data-level="5.3" data-path="probability-and-samples.html"><a href="probability-and-samples.html#probability-and-sampling"><i class="fa fa-check"></i><b>5.3</b> Probability and sampling</a></li>
+<li class="chapter" data-level="5.4" data-path="probability-and-samples.html"><a href="probability-and-samples.html#summary-3"><i class="fa fa-check"></i><b>5.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html"><i class="fa fa-check"></i><b>6</b> The Normal Distribution and Sampling</a><ul>
+<li class="chapter" data-level="6.1" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#the-central-limit-theorem"><i class="fa fa-check"></i><b>6.1</b> The Central Limit Theorem</a></li>
+<li class="chapter" data-level="6.2" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#properties-of-the-normal-distribution"><i class="fa fa-check"></i><b>6.2</b> Properties of the Normal Distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#sampling-and-sample-means"><i class="fa fa-check"></i><b>6.3</b> Sampling and Sample Means</a></li>
+<li class="chapter" data-level="6.4" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#summary-4"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html"><i class="fa fa-check"></i><b>7</b> Making Decisions with Statistics</a><ul>
+<li class="chapter" data-level="7.1" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#basics-of-decision-theory"><i class="fa fa-check"></i><b>7.1</b> Basics of Decision Theory</a></li>
+<li class="chapter" data-level="7.2" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#null-hypothesis-testing"><i class="fa fa-check"></i><b>7.2</b> Null Hypothesis Testing</a></li>
+<li class="chapter" data-level="7.3" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#effect-sizes"><i class="fa fa-check"></i><b>7.3</b> Effect sizes</a></li>
+<li class="chapter" data-level="7.4" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#summary-5"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html"><i class="fa fa-check"></i><b>8</b> Frequency claims</a><ul>
+<li class="chapter" data-level="8.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#what-are-frequency-claims"><i class="fa fa-check"></i><b>8.1</b> What are frequency claims?</a></li>
+<li class="chapter" data-level="8.2" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#binomial-tests"><i class="fa fa-check"></i><b>8.2</b> Binomial tests</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#using-different-probabilities"><i class="fa fa-check"></i><b>8.2.1</b> Using different probabilities</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests"><i class="fa fa-check"></i><b>8.3</b> Chi-square tests</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests-with-more-than-two-outcomes"><i class="fa fa-check"></i><b>8.3.1</b> Chi-square tests with more than two outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#summary-6"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="association-claims-1.html"><a href="association-claims-1.html"><i class="fa fa-check"></i><b>9</b> Association Claims</a><ul>
+<li class="chapter" data-level="9.1" data-path="association-claims-1.html"><a href="association-claims-1.html#what-are-association-claims"><i class="fa fa-check"></i><b>9.1</b> What are association claims</a></li>
+<li class="chapter" data-level="9.2" data-path="association-claims-1.html"><a href="association-claims-1.html#correlation"><i class="fa fa-check"></i><b>9.2</b> Correlation</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="association-claims-1.html"><a href="association-claims-1.html#calculating-correlations"><i class="fa fa-check"></i><b>9.2.1</b> Calculating correlations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="association-claims-1.html"><a href="association-claims-1.html#using-linear-regression"><i class="fa fa-check"></i><b>9.3</b> Using Linear Regression</a></li>
+<li class="chapter" data-level="9.4" data-path="association-claims-1.html"><a href="association-claims-1.html#evaluating-linear-regressions"><i class="fa fa-check"></i><b>9.4</b> Evaluating linear regressions</a></li>
+<li class="chapter" data-level="9.5" data-path="association-claims-1.html"><a href="association-claims-1.html#linear-regression-in-r"><i class="fa fa-check"></i><b>9.5</b> Linear Regression in R</a></li>
+<li class="chapter" data-level="9.6" data-path="association-claims-1.html"><a href="association-claims-1.html#limitations-to-linear-regression-and-correlation"><i class="fa fa-check"></i><b>9.6</b> Limitations to linear regression and correlation</a></li>
+<li class="chapter" data-level="9.7" data-path="association-claims-1.html"><a href="association-claims-1.html#summary-7"><i class="fa fa-check"></i><b>9.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html"><i class="fa fa-check"></i><b>10</b> One Sample Mean Claims</a><ul>
+<li class="chapter" data-level="10.1" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#one-sample-mean-claims-1"><i class="fa fa-check"></i><b>10.1</b> One sample mean claims</a></li>
+<li class="chapter" data-level="10.2" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-z-test"><i class="fa fa-check"></i><b>10.2</b> The Z-test</a></li>
+<li class="chapter" data-level="10.3" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-one-sample-t-test"><i class="fa fa-check"></i><b>10.3</b> The One-Sample T-test</a></li>
+<li class="chapter" data-level="10.4" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#confidence-intervals-with-one-sample"><i class="fa fa-check"></i><b>10.4</b> Confidence Intervals with One Sample</a></li>
+<li class="chapter" data-level="10.5" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#calculating-t-tests-and-confidence-intervals-in-r"><i class="fa fa-check"></i><b>10.5</b> Calculating T-tests and Confidence Intervals in R</a></li>
+<li class="chapter" data-level="10.6" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#summary-8"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="two-mean-claims.html"><a href="two-mean-claims.html"><i class="fa fa-check"></i><b>11</b> Two Mean Claims</a><ul>
+<li class="chapter" data-level="11.1" data-path="two-mean-claims.html"><a href="two-mean-claims.html#what-are-we-testing-with-two-mean-claims"><i class="fa fa-check"></i><b>11.1</b> What are we testing with two-mean claims?</a></li>
+<li class="chapter" data-level="11.2" data-path="two-mean-claims.html"><a href="two-mean-claims.html#paired-samples-t-test"><i class="fa fa-check"></i><b>11.2</b> Paired Samples T-test</a></li>
+<li class="chapter" data-level="11.3" data-path="two-mean-claims.html"><a href="two-mean-claims.html#independent-samples-t-test"><i class="fa fa-check"></i><b>11.3</b> Independent Samples T-test</a></li>
+<li class="chapter" data-level="11.4" data-path="two-mean-claims.html"><a href="two-mean-claims.html#effect-sizes-1"><i class="fa fa-check"></i><b>11.4</b> Effect sizes</a></li>
+<li class="chapter" data-level="11.5" data-path="two-mean-claims.html"><a href="two-mean-claims.html#the-logic-of-t-tests-and-experimental-design"><i class="fa fa-check"></i><b>11.5</b> The logic of t-tests and experimental design</a></li>
+<li class="chapter" data-level="11.6" data-path="two-mean-claims.html"><a href="two-mean-claims.html#doing-two-sample-t-tests-in-r"><i class="fa fa-check"></i><b>11.6</b> Doing two-sample t-tests in R</a></li>
+<li class="chapter" data-level="11.7" data-path="two-mean-claims.html"><a href="two-mean-claims.html#summary-9"><i class="fa fa-check"></i><b>11.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html"><i class="fa fa-check"></i><b>12</b> Claims With More Than Two Means: ANOVA</a><ul>
+<li class="chapter" data-level="12.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#how-to-do-an-anova"><i class="fa fa-check"></i><b>12.1</b> How to do an ANOVA</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-between"><i class="fa fa-check"></i><b>12.1.1</b> Calculating Sums of Squares Between</a></li>
+<li class="chapter" data-level="12.1.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-within"><i class="fa fa-check"></i><b>12.1.2</b> Calculating Sums of Squares Within</a></li>
+<li class="chapter" data-level="12.1.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-total"><i class="fa fa-check"></i><b>12.1.3</b> Calculating Sums of Squares Total</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-the-rest"><i class="fa fa-check"></i><b>12.2</b> Calculating the rest</a></li>
+<li class="chapter" data-level="12.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#doing-an-example"><i class="fa fa-check"></i><b>12.3</b> Doing an example</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#the-null-and-alternative-hypothesis"><i class="fa fa-check"></i><b>12.3.1</b> The null and alternative hypothesis</a></li>
+<li class="chapter" data-level="12.3.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares"><i class="fa fa-check"></i><b>12.3.2</b> Calculating Sums of Squares</a></li>
+<li class="chapter" data-level="12.3.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-degrees-of-freedom-and-mean-squares"><i class="fa fa-check"></i><b>12.3.3</b> Calculating Degrees of Freedom and Mean Squares</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#anova-in-r"><i class="fa fa-check"></i><b>12.4</b> ANOVA in R</a></li>
+<li class="chapter" data-level="12.5" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#summary-10"><i class="fa fa-check"></i><b>12.5</b> Summary</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics: The Story of Numbers</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chapter-2-how-we-use-statistics" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Chapter 2: How We Use Statistics</h1>
+<p>In this chapter, you will learn:</p>
+<ol style="list-style-type: decimal">
+<li>What are some of the basic terms we use in behavioral science statistics?</li>
+<li>What are data and where do they come from?</li>
+<li>What is reliability and validity and how do they influence data?</li>
+<li>What are the types of claims we make about data?</li>
+</ol>
+<div id="what-are-data" class="section level2">
+<h2><span class="header-section-number">2.1</span> What are data?</h2>
+<p>Before we can learn the story of numbers, there are a few terms we must define. I know definitions can seem boring and as a reader, you’re already tempted to skim this chapter. Fight the temptation! Understanding these definitions will make it a lot easier to understand how we use numbers to answer questions.</p>
+<p>Statistics is a story about <strong>data</strong>, which is a catch-all term for things we are analyzing. Data can be anything from a random list of numbers to the text of a Shakespeare play. For the purposes of this class, data are a series of individual values called data points, often grouped in variables and observations.</p>
+<p>A <strong>variable</strong> is something that we can measure with a series of data points. It is simply a list of data points where each value reflects a different data point. Examples of variables are things such as the names of students in your class, the addresses of your aunts and uncles, the time of day people were born, the height of basketball players, and so forth. Notice that variables take many different forms of data, such as numbers, text, or times.</p>
+<p>A variable in and of itself may not be that useful. For instance, a variable called age may have the values 33, 21, 48, 12, 69. And a variable called name could have the values “Fiona”, “Serena”, “Octavius”, “Kasper”, “Marshall”, and “Elena”. These two variables together can become more powerful if we connect them.</p>
+<p>A dataset, as defined here, is a set of data, grouped in variables and <strong>observations</strong>, or related data points between variables that are connected. When we present and analyze data, we will always use columns to represent variables and rows to represent related observations. Often, each row will represent an individual person, with each column being specific information about a person. For instance, variables might be name, address, sex, age, and birthday. Each row would represent a person. Or, in an experiment, a row may represent a different participant, with their scores on each variable of interest, such as a different column for each type of personality test they took. Here’s an example, with each row indicating a different person and each column indicating different variables:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Age</th>
+<th>Favorite type of food</th>
+<th>Spatial Navigation Test Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ravi</td>
+<td>37</td>
+<td>Italian</td>
+<td>41</td>
+</tr>
+<tr class="even">
+<td>Mandala</td>
+<td>24</td>
+<td>Peruvian</td>
+<td>56</td>
+</tr>
+<tr class="odd">
+<td>Reese</td>
+<td>18</td>
+<td>Mexican</td>
+<td>39</td>
+</tr>
+<tr class="even">
+<td>David</td>
+<td>57</td>
+<td>Chinese</td>
+<td>24</td>
+</tr>
+</tbody>
+</table>
+<p>Setting up your data correctly is very important. I would say 50% of the stats questions I get from students doing research projects are about how to set up data. If you set up your data in this format, with rows representing related observations and columns representing variables, you’ll be set. I’ll talk more about this in Chapter 4, but it’s good to start thinking of data this way.</p>
+</div>
+<div id="getting-data" class="section level2">
+<h2><span class="header-section-number">2.2</span> Getting data</h2>
+<p>When we measure variables, we are interested in measuring <strong>populations</strong>, which is the group we are interested in measuring. We decide what group we are interested in making conclusions about based on what we are interested in studying. The population of interest can be as big or as small as we want them to be. In psychology, we may be interested in all humans, or a subset, like all children between the ages 2-4, or all younger siblings. Or our groups may be more limited. A pollster might only be interested in registered voters in a specific county.</p>
+<p>Usually, we can’t measure all the members of a population, so we have to use samples. A <strong>sample</strong> is any subset of a population. A person conducting a survey may only ask some of the shoppers in a store about their attitudes in order to assess what shoppers overall think about the store. Pollsters only ask a subset of voters to find out which candidates are likely to be elected. The hope with samples is that we can use samples to understand the population. But since samples do not measure the entire population, they are never exact.</p>
+</div>
+<div id="what-can-we-use-data-for" class="section level2">
+<h2><span class="header-section-number">2.3</span> What can we use data for?</h2>
+<p>In my experience, statistics can be used to do three things with data: Describe, Infer, and Predict. Statistics has several branches, and separate branches for each of these processes.</p>
+<p>The first purpose of statistics is to describe and summarize data, which is generally called <strong>descriptive statistics</strong>, or the branch of statistics dedicated to using techniques to effectively describe data. This includes summary statistics such as means and standard deviations, which can give us an idea about large amounts of data. This also involves graphs, which can transform many numbers into beautiful and informative figures.</p>
+<p><strong>Inferential statistics</strong> is a branch of statistics concerned with using samples to understand and make conclusions about populations. Samples are subsets of populations and every sample may be different. I may want to find out what colors are popular. If I ask 20 people at random what their favorite color is, I would get one set of results. Then if I ask a different set of people their favorite color, I would likely get different results. Inferential statistics helps us to make conclusions about populations with samples.</p>
+<p><strong>Models</strong> are mathematical functions which allow us to use data to predict. They can be simple lines or complex models which can use millions of variables to predict the weather. Models are never perfect but can be very useful if used correctly.</p>
+</div>
+<div id="where-do-data-come-from" class="section level2">
+<h2><span class="header-section-number">2.4</span> Where do data come from?</h2>
+<p>I am a psychologist. I became a research psychologist because psychology is hard. I believe psychologists make some of the best statisticians because psychology is so difficult.</p>
+<p>Psychology is hard because what we study is really hard to observe. Psychology can be defined as “the study of the brain, mind, and behavior”. But how does one observe these things and then turn those observations into data? Behavior is fairly easy to observe, but psychologists are interested in all those unseen processes in the mind as well. How do you measure a thought? An emotion? A memory? No one in the right mind (pun definitely intended) would deny that there is a mind and that mental concepts like memory, attention, thoughts, emotions, and so forth are real. But how do we measure them?</p>
+<p>Science used to be about measuring things we could observe with our basic senses. For instance, physicists could observe ideas like momentum and energy. They could agree on basic definitions of these concepts, like agreeing that temperature could be measured by how much mercury expanded in a tube. This ability to objectively observe phenomena is one of the most important elements of science and is one reason many people used to consider psychology not to be a science. To address these concerns, behaviorists wanted to apply this approach to psychology and only study stimuli and behaviors which could be objectively observed and ignore mental processes which cannot be observed.</p>
+<p>Fortunately, science has moved well beyond this basic definition. Now we accept we can study phenomena that we can’t directly observe if we can <strong>operationalize</strong> them. Operationalization is where we get our data from. When we measure something, we have a conceptual idea of what we want to measure, which is called a <strong>construct</strong>. A construct is a set of concepts that is usually subjective and generally has a theoretical meaning. A construct is often something that we know exists and can often easily understand but is often hard to define. For instance, you can try defining time. You can take a minute, or if you’re a philosopher, take a life-time (another awful pun!). We all know what time is, but it’s very hard to explain the concept.</p>
+<p>Color is another example. It’s really hard to define different colors precisely, and if you’ve ever had an argument about whether something is sea green or robin’s-egg blue, this becomes obvious. But we generally agree on what certain colors are. Taking a shade of color and calling it “blue” is operationalizing.</p>
+<p>In statistics, we like to be precise about operationalizing. An operational definition is a precise set of steps that takes a concept and turns it into a specific datapoint. Operational definitions have to be clearly defined and able to be reproduced in many different circumstances. Here are some examples of operationalizing color:</p>
+<ol style="list-style-type: decimal">
+<li>Take the wavelength of the light reflected by a color and say that certain colors are certain wavelengths as measured by a specific machine.</li>
+<li>Ask a famous artist to label colors based on their expertise</li>
+<li>Ask twenty people to choose what word best describes a particular shade of color</li>
+</ol>
+<p>Each of those definitions has problems. There is no correct way to operationalize a concept but there are many wrong ways, and some ways are clearly better than other ways. Here is another example. I want to operationalize how fast schoolchildren can run. I could do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Ask children to tell me whether they consider themselves “fast”, “average”, or “not fast”</li>
+<li>Have children run a 100m dash and time them with a stopwatch</li>
+<li>Have children run a 1 mile race and write down what place they finished in, such as first place, second place, etc.</li>
+</ol>
+<p>Each of these definitions gives us a clear datapoint I can associate with each child. The steps are reproducible, such that any person could generate similar data using the same definition. However, each of these definitions measure different concepts. How fast a person can run is a broad concept. It could reflect speed in a short distance or speed in a long distance. It could reflect how fast people run in a race versus how fast they run alone.</p>
+<p>Like what was mentioned in the last section, some operational definitions are better than others. If a person wants to make data fit a specific story, then they can change the definition to make that story look better. For instance, if a new police commissioner wants to show that they have reduced crime, one thing they can do is redefine crime itself. For instance, many crime surveys ignore crime in prison, which suggests that crime statistics themselves are biased and placing more people in prison doesn’t reduce crime rates, but only shifts the crime to prisons, where it <a href="http://www.slate.com/articles/news_and_politics/politics/2014/06/prison_crime_rate_the_u_s_violent_crime_rate_is_falling_partly_because_the.html">won’t be counted</a>.</p>
+</div>
+<div id="how-accurate-are-our-data" class="section level2">
+<h2><span class="header-section-number">2.5</span> How accurate are our data?</h2>
+<p>When we use the word “accuracy”, we’re measuring how much our numbers match the thing they are supposed to measure. In science, accuracy consists of two principles: validity and reliability. <strong>Reliability</strong> is the degree to which our measurements are stable or consistent. For instance, if we measure the same thing repeatedly, will we get the same results? <strong>Validity</strong> is the degree to which our data reflect the concept we are trying to assess. There are many types of validity, which are much better discussed in a research methods textbook. But I’ll give a brief overview here.</p>
+<p>One example is my fitness tracker, which is a band I wear on my arm that estimates how many steps I take, floors I climb, and my heart rate. My fitness tracker also tells me how many miles I’ve walked today. A reliable fitness tracker will give the same estimates each time I do the same amount of walking. For instance, if I walk ten laps around a track, the amount of steps it says I took each lap should be similar, since each lap is the same distance. If it measures .2 miles one lap and then .9 miles the next lap, the reliability is probably very low.</p>
+<p>High reliability doesn’t necessarily mean high accuracy. Imagine every time I run a mile, the fitness tracker says I only ran .8 miles. The readings are reliable, because they are close to one another, but they are reliably underestimating my distance. Or likewise, my tracker might double-count each step. Each time I run a mile, it suggests I ran 2 miles. It is reliable but it is reliably overestimating my data.</p>
+<p>Validity is a much more philosophical concept than reliability, and one that is often outside of the scope of statistics. At its simplest, validity represents whether the data I collect are a good measure of the concept. In the steps example above, it captures how well my fitness tracker actually captures steps. If the fitness tracker is close to the actual number of steps, it is valid.</p>
+<p>However, the true concept of validity is beyond accuracy. This is because validity also represents how well variables are operationalized. Simple to operationalize variables like steps are easy to examine, but most variables in psychology are harder to operationalize. Many examples of how people misuse statistics come from using less valid operational definitions. Like I mentioned above, redefining crime by not counting prison crime may cause crime rates to decline as more people are incarcerated. This may make it appear like crime is less likely and that higher rates of incarceration reduces crime. If you are trying to count the number of times that a crime happens, this might not be a very valid definition. However, if you’re trying to use crime as an index of how safe it is outside of prison, prison crime is probably less relevant. The number of assaults in a prison has very little to do with one’s likelihood of being assaulted.</p>
+<p>The final thing to note is that variables can be either reliable or valid or both (or neither). A reliable but not valid variable will give the same answer each time, but overestimate or underestimate the variable. For instance, if I have a blood pressure machine that always reads my blood pressure as 10 points higher than it really is, it is reliable but not valid. A variable can be valid but not reliable. If for instance my fitness tracker sometimes overestimates and sometimes underestimates my steps, but on average is pretty close to the actual number of steps I take, it would be valid but not reliable.</p>
+</div>
+<div id="claims-about-data" class="section level2">
+<h2><span class="header-section-number">2.6</span> Claims about data</h2>
+<p>We want to figure out what kind of stories data are telling. Many times we do this by having specific questions and using data to answer those questions. In psychology, we often do this by designing experiments with the purpose of answering specific types of questions, which I will call claims.</p>
+<div id="frequency-claims" class="section level3">
+<h3><span class="header-section-number">2.6.1</span> Frequency claims</h3>
+<p>The first type of claim are <strong>frequency claims</strong>. These are claims about how often or how frequently something happens. If I am interested in how frequently something occurs in a group of people or if something is more frequent in one group of people versus another group of people, this would be a frequency claim.</p>
+<p>A frequency claim may be a poll examining what percent of people will vote for a specific candidate. It might be an analysis about what percent of the population has a specific attitude or belief. It could be a measure of whether a mental disorder occurs more frequently in a certain sample than in the population at large.</p>
+<p>It could be a comparison between two groups, like if I set up an experiment comparing children who saw a violent TV show versus children who did not. My hypothesis is that a greater percentage of children who saw the violent TV show would engage in violent play than the percentage of children who did not see the violent TV show.</p>
+<p>Frequency claims almost always compare <strong>categorical variables</strong>, which are variables that only indicate what category a person is in and nothing else. A categorical variable can be a word, such as “female” or “student”. They indicate what group a person is in. There can be cases where categorical variables are <strong>dichotomous</strong> or where there are only two options for groups. Often these are cases where the options are yes or no, like if I indicated whether a person is a smoker or is not a smoker.</p>
+<p>Categorical variables can also be numbers, but in this case the numbers are only indicating what group a person is in. They do not have any other meaning. Zip codes are an example. For example, the zip code 33472 is not 10000 more anything than the zip code 22472. In this case, the numbers only tell us what category a person lives in. Whether a zip code is higher or lower means nothing; it could just as easily be expressed as a word. The important reason for this is because doing math on categorical numbers is meaningless. For instance, the total zip code of a group of data would be meaningless.</p>
+<p>In some cases, we <strong>dummy code</strong> categories using numbers. For instance, I may code a variable indicating smoking status as 0 for non-smoker or 1 for smoker. Even though I’m using numbers, the numbers only indicate category and the fact that one category is coded 0 and the other 1 doesn’t mean the latter category is more or better or higher in any way.</p>
+</div>
+<div id="association-claims" class="section level3">
+<h3><span class="header-section-number">2.6.2</span> Association claims</h3>
+<p>Association claims are claims where a person is examining whether two or more variables are related to one another. This includes ideas such as correlation or even examining whether one variable predicts another variable.</p>
+<p>In association claims, sometimes we just want to see whether two variables are related. For instance, we could examine if there’s an association between how extraverted a person is and how many friends they have. Or I could examine whether there’s a an association between a person’s relationship satisfaction and how much time they spend with their partner. Or I could see whether the amount of words in a list is associated with how many words a person remembers.</p>
+<p>In some association claims, I want to examine whether two variables are related without having any idea whether one variable is causing the other variable. However, in other cases, I may have a clear idea that one variable is causing another variable. For instance, I may have the hypothesis that the amount of time a couple spends together is related to their relationship satisfaction. In that case, I would call the amount of time a <strong>predictor variable</strong> and the relationship satisfaction the <strong>outcome variable</strong>. Sometimes people call these independent and dependent variables respectively, though independent variables usually refer to variables where the experimenter manipulates something.</p>
+<p>Association claims are measured by correlations and regressions. The key to know about association claims is this: even though we may have an idea which variable causes the other variable, we can never know for sure. This is why I go around shouting “correlation does not imply causation”. I may think that the amount of time a couple spends together is causing their relationship satisfaction, but the opposite may be true. Relationship satisfaction may be the thing which causes a couple to spend time together or not.</p>
+<p>Correlation may not imply causation but often it’s as good as we can get in science. This is because it’s often unethical or impossible to test things using real experiments, where we carefully manipulate a variable and see how it affects another variable. One example is the well-known link between smoking and cancer. This is only a correlation because we can’t do a study where we assign one group to smoke for many years and assign another group to not smoke for many years and examine which group gets cancer more. That experiment would be impossible. When comparing the biological evidence that there are many carcinogens in cigarette smoke with the strong correlation between the amount and time a person smokes and their likelihood of cancer, we can make a very strong case that smoking causes cancer.</p>
+</div>
+<div id="mean-claims" class="section level3">
+<h3><span class="header-section-number">2.6.3</span> Mean claims</h3>
+<p>The third type of claims are what I call <strong>mean claims</strong> or claims about the mean (or average) of a sample. These claims are questions examining whether the mean of something in a sample is different from a population or whether the mean of something is higher in one group than another group.</p>
+<p>I might examine whether there is a difference in the mean GPA of high schoolers who play sports versus those who do not. Or I might want to look at whether the mean score on an anxiety measure is lower in a group of people who meditate regularly than the population at large. Another example might be looking whether there is differences in mean reaction time in a group that drank no coffee, versus a group who drank one cup, or a group who drank two cups.</p>
+<p>In all those cases, I have a measure which can be turned into a number for each person in my study. Then I look at whether the mean of that number (the average) is different in one group versus another group or whether the mean of a sample is the same or different from the population.</p>
+<p>A mean claim is different from a frequency claim because a mean claim involves a variable that is not categorical but can be a number which is averaged. Mean claims involve means which are usually not percents or proportions or frequencies.</p>
+</div>
+</div>
+<div id="summary" class="section level2">
+<h2><span class="header-section-number">2.7</span> Summary</h2>
+<p>To summarize, there are a lot of things we can use statistics for. In this chapter, you should have learned about the following terms:</p>
+<ol style="list-style-type: decimal">
+<li>Principles of data</li>
+</ol>
+<ul>
+<li>Data</li>
+<li>Observations</li>
+<li>Population</li>
+<li>Sample</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Types of statistics</li>
+</ol>
+<ul>
+<li>Descriptive Statistics</li>
+<li>Inferential Statistics</li>
+<li>Models</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Where do data come from</li>
+</ol>
+<ul>
+<li>Construct</li>
+<li>Operationalize</li>
+<li>Reliability</li>
+<li>Validity</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Types of claims</li>
+</ol>
+<ul>
+<li>Frequency claims</li>
+<li>Categorical variable</li>
+<li>Dichotomous variable</li>
+<li>Dummy code</li>
+<li>Association claims</li>
+<li>Predictor variable</li>
+<li>Outcome variable</li>
+<li>Mean claims</li>
+</ul>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chapter-1-statistical-stories.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-distributions-and-descriptive-statistics.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

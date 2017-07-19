@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Statistics: The Story of Numbers</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="An Introduction to Psychology Statistics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Statistics: The Story of Numbers" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="An Introduction to Psychology Statistics" />
+  <meta name="github-repo" content="rgfran" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Statistics: The Story of Numbers" />
+  
+  <meta name="twitter:description" content="An Introduction to Psychology Statistics" />
+  
+
+<meta name="author" content="Robert G. Franklin, Jr.">
+
+
+<meta name="date" content="2017-07-19">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="making-decisions-with-statistics.html">
+<link rel="next" href="association-claims-1.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">The Story of Numbers</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Part 1: Basic Concepts</b></span></li>
+<li class="chapter" data-level="1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html"><i class="fa fa-check"></i><b>1</b> Chapter 1: Statistical Stories</a><ul>
+<li class="chapter" data-level="1.1" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-1-to-catch-a-thief"><i class="fa fa-check"></i><b>1.1</b> Story 1: To catch a thief</a></li>
+<li class="chapter" data-level="1.2" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-2-the-quirks-of-what-we-dont-see"><i class="fa fa-check"></i><b>1.2</b> Story 2: The quirks of what we don’t see</a></li>
+<li class="chapter" data-level="1.3" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-3-what-causes-cancer"><i class="fa fa-check"></i><b>1.3</b> Story 3: What causes cancer</a></li>
+<li class="chapter" data-level="1.4" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#story-4-simpsons-paradox"><i class="fa fa-check"></i><b>1.4</b> Story 4: Simpson’s Paradox</a></li>
+<li class="chapter" data-level="1.5" data-path="chapter-1-statistical-stories.html"><a href="chapter-1-statistical-stories.html#the-takeaway"><i class="fa fa-check"></i><b>1.5</b> The takeaway</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html"><i class="fa fa-check"></i><b>2</b> Chapter 2: How We Use Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-are-data"><i class="fa fa-check"></i><b>2.1</b> What are data?</a></li>
+<li class="chapter" data-level="2.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#getting-data"><i class="fa fa-check"></i><b>2.2</b> Getting data</a></li>
+<li class="chapter" data-level="2.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#what-can-we-use-data-for"><i class="fa fa-check"></i><b>2.3</b> What can we use data for?</a></li>
+<li class="chapter" data-level="2.4" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#where-do-data-come-from"><i class="fa fa-check"></i><b>2.4</b> Where do data come from?</a></li>
+<li class="chapter" data-level="2.5" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#how-accurate-are-our-data"><i class="fa fa-check"></i><b>2.5</b> How accurate are our data?</a></li>
+<li class="chapter" data-level="2.6" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#claims-about-data"><i class="fa fa-check"></i><b>2.6</b> Claims about data</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#frequency-claims"><i class="fa fa-check"></i><b>2.6.1</b> Frequency claims</a></li>
+<li class="chapter" data-level="2.6.2" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#association-claims"><i class="fa fa-check"></i><b>2.6.2</b> Association claims</a></li>
+<li class="chapter" data-level="2.6.3" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#mean-claims"><i class="fa fa-check"></i><b>2.6.3</b> Mean claims</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="chapter-2-how-we-use-statistics.html"><a href="chapter-2-how-we-use-statistics.html#summary"><i class="fa fa-check"></i><b>2.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html"><i class="fa fa-check"></i><b>3</b> Data, Distributions and Descriptive Statistics</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-idea-of-describing-data"><i class="fa fa-check"></i><b>3.1</b> The idea of describing data</a></li>
+<li class="chapter" data-level="3.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#distributions-and-summarizing-data"><i class="fa fa-check"></i><b>3.2</b> Distributions and summarizing data</a></li>
+<li class="chapter" data-level="3.3" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#plotting-distributions"><i class="fa fa-check"></i><b>3.3</b> Plotting distributions</a></li>
+<li class="chapter" data-level="3.4" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#using-descriptive-statistics-to-characterize-distributions"><i class="fa fa-check"></i><b>3.4</b> Using Descriptive Statistics to Characterize Distributions</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#central-tendency"><i class="fa fa-check"></i><b>3.4.1</b> Central tendency</a></li>
+<li class="chapter" data-level="3.4.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#measures-of-variance"><i class="fa fa-check"></i><b>3.4.2</b> Measures of Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#the-importance-of-descriptive-statistics"><i class="fa fa-check"></i><b>3.5</b> The importance of descriptive statistics</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summarizing-populations"><i class="fa fa-check"></i><b>3.5.1</b> Summarizing Populations</a></li>
+<li class="chapter" data-level="3.5.2" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#mistakes-with-descriptive-statistics"><i class="fa fa-check"></i><b>3.5.2</b> Mistakes with descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="data-distributions-and-descriptive-statistics.html"><a href="data-distributions-and-descriptive-statistics.html#summary-1"><i class="fa fa-check"></i><b>3.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="introduction-to-r.html"><a href="introduction-to-r.html"><i class="fa fa-check"></i><b>4</b> Introduction to R</a><ul>
+<li class="chapter" data-level="4.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#what-is-r"><i class="fa fa-check"></i><b>4.1</b> What is R?</a></li>
+<li class="chapter" data-level="4.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#the-basics-of-r"><i class="fa fa-check"></i><b>4.2</b> The basics of R</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#basic-math-functions"><i class="fa fa-check"></i><b>4.2.1</b> Basic Math Functions</a></li>
+<li class="chapter" data-level="4.2.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#objects"><i class="fa fa-check"></i><b>4.2.2</b> Objects</a></li>
+<li class="chapter" data-level="4.2.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#data-frames"><i class="fa fa-check"></i><b>4.2.3</b> Data frames</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-into-r"><i class="fa fa-check"></i><b>4.3</b> Inputting data into R</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="introduction-to-r.html"><a href="introduction-to-r.html#inputting-data-from-a-.csv-file"><i class="fa fa-check"></i><b>4.3.1</b> Inputting data from a .csv file</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introduction-to-r.html"><a href="introduction-to-r.html#importing-data-from-google-sheets"><i class="fa fa-check"></i><b>4.3.2</b> Importing data from Google Sheets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introduction-to-r.html"><a href="introduction-to-r.html#descriptive-statistics-in-r"><i class="fa fa-check"></i><b>4.4</b> Descriptive statistics in R</a></li>
+<li class="chapter" data-level="4.5" data-path="introduction-to-r.html"><a href="introduction-to-r.html#summary-2"><i class="fa fa-check"></i><b>4.5</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="probability-and-samples.html"><a href="probability-and-samples.html"><i class="fa fa-check"></i><b>5</b> Probability and Samples</a><ul>
+<li class="chapter" data-level="5.1" data-path="probability-and-samples.html"><a href="probability-and-samples.html#what-is-probability"><i class="fa fa-check"></i><b>5.1</b> What is probability?</a></li>
+<li class="chapter" data-level="5.2" data-path="probability-and-samples.html"><a href="probability-and-samples.html#calculating-probability-of-events"><i class="fa fa-check"></i><b>5.2</b> Calculating probability of events</a></li>
+<li class="chapter" data-level="5.3" data-path="probability-and-samples.html"><a href="probability-and-samples.html#probability-and-sampling"><i class="fa fa-check"></i><b>5.3</b> Probability and sampling</a></li>
+<li class="chapter" data-level="5.4" data-path="probability-and-samples.html"><a href="probability-and-samples.html#summary-3"><i class="fa fa-check"></i><b>5.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html"><i class="fa fa-check"></i><b>6</b> The Normal Distribution and Sampling</a><ul>
+<li class="chapter" data-level="6.1" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#the-central-limit-theorem"><i class="fa fa-check"></i><b>6.1</b> The Central Limit Theorem</a></li>
+<li class="chapter" data-level="6.2" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#properties-of-the-normal-distribution"><i class="fa fa-check"></i><b>6.2</b> Properties of the Normal Distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#sampling-and-sample-means"><i class="fa fa-check"></i><b>6.3</b> Sampling and Sample Means</a></li>
+<li class="chapter" data-level="6.4" data-path="the-normal-distribution-and-sampling.html"><a href="the-normal-distribution-and-sampling.html#summary-4"><i class="fa fa-check"></i><b>6.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html"><i class="fa fa-check"></i><b>7</b> Making Decisions with Statistics</a><ul>
+<li class="chapter" data-level="7.1" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#basics-of-decision-theory"><i class="fa fa-check"></i><b>7.1</b> Basics of Decision Theory</a></li>
+<li class="chapter" data-level="7.2" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#null-hypothesis-testing"><i class="fa fa-check"></i><b>7.2</b> Null Hypothesis Testing</a></li>
+<li class="chapter" data-level="7.3" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#effect-sizes"><i class="fa fa-check"></i><b>7.3</b> Effect sizes</a></li>
+<li class="chapter" data-level="7.4" data-path="making-decisions-with-statistics.html"><a href="making-decisions-with-statistics.html#summary-5"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html"><i class="fa fa-check"></i><b>8</b> Frequency claims</a><ul>
+<li class="chapter" data-level="8.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#what-are-frequency-claims"><i class="fa fa-check"></i><b>8.1</b> What are frequency claims?</a></li>
+<li class="chapter" data-level="8.2" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#binomial-tests"><i class="fa fa-check"></i><b>8.2</b> Binomial tests</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#using-different-probabilities"><i class="fa fa-check"></i><b>8.2.1</b> Using different probabilities</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests"><i class="fa fa-check"></i><b>8.3</b> Chi-square tests</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#chi-square-tests-with-more-than-two-outcomes"><i class="fa fa-check"></i><b>8.3.1</b> Chi-square tests with more than two outcomes</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="frequency-claims-1.html"><a href="frequency-claims-1.html#summary-6"><i class="fa fa-check"></i><b>8.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="association-claims-1.html"><a href="association-claims-1.html"><i class="fa fa-check"></i><b>9</b> Association Claims</a><ul>
+<li class="chapter" data-level="9.1" data-path="association-claims-1.html"><a href="association-claims-1.html#what-are-association-claims"><i class="fa fa-check"></i><b>9.1</b> What are association claims</a></li>
+<li class="chapter" data-level="9.2" data-path="association-claims-1.html"><a href="association-claims-1.html#correlation"><i class="fa fa-check"></i><b>9.2</b> Correlation</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="association-claims-1.html"><a href="association-claims-1.html#calculating-correlations"><i class="fa fa-check"></i><b>9.2.1</b> Calculating correlations</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="association-claims-1.html"><a href="association-claims-1.html#using-linear-regression"><i class="fa fa-check"></i><b>9.3</b> Using Linear Regression</a></li>
+<li class="chapter" data-level="9.4" data-path="association-claims-1.html"><a href="association-claims-1.html#evaluating-linear-regressions"><i class="fa fa-check"></i><b>9.4</b> Evaluating linear regressions</a></li>
+<li class="chapter" data-level="9.5" data-path="association-claims-1.html"><a href="association-claims-1.html#linear-regression-in-r"><i class="fa fa-check"></i><b>9.5</b> Linear Regression in R</a></li>
+<li class="chapter" data-level="9.6" data-path="association-claims-1.html"><a href="association-claims-1.html#limitations-to-linear-regression-and-correlation"><i class="fa fa-check"></i><b>9.6</b> Limitations to linear regression and correlation</a></li>
+<li class="chapter" data-level="9.7" data-path="association-claims-1.html"><a href="association-claims-1.html#summary-7"><i class="fa fa-check"></i><b>9.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html"><i class="fa fa-check"></i><b>10</b> One Sample Mean Claims</a><ul>
+<li class="chapter" data-level="10.1" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#one-sample-mean-claims-1"><i class="fa fa-check"></i><b>10.1</b> One sample mean claims</a></li>
+<li class="chapter" data-level="10.2" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-z-test"><i class="fa fa-check"></i><b>10.2</b> The Z-test</a></li>
+<li class="chapter" data-level="10.3" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#the-one-sample-t-test"><i class="fa fa-check"></i><b>10.3</b> The One-Sample T-test</a></li>
+<li class="chapter" data-level="10.4" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#confidence-intervals-with-one-sample"><i class="fa fa-check"></i><b>10.4</b> Confidence Intervals with One Sample</a></li>
+<li class="chapter" data-level="10.5" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#calculating-t-tests-and-confidence-intervals-in-r"><i class="fa fa-check"></i><b>10.5</b> Calculating T-tests and Confidence Intervals in R</a></li>
+<li class="chapter" data-level="10.6" data-path="one-sample-mean-claims.html"><a href="one-sample-mean-claims.html#summary-8"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="two-mean-claims.html"><a href="two-mean-claims.html"><i class="fa fa-check"></i><b>11</b> Two Mean Claims</a><ul>
+<li class="chapter" data-level="11.1" data-path="two-mean-claims.html"><a href="two-mean-claims.html#what-are-we-testing-with-two-mean-claims"><i class="fa fa-check"></i><b>11.1</b> What are we testing with two-mean claims?</a></li>
+<li class="chapter" data-level="11.2" data-path="two-mean-claims.html"><a href="two-mean-claims.html#paired-samples-t-test"><i class="fa fa-check"></i><b>11.2</b> Paired Samples T-test</a></li>
+<li class="chapter" data-level="11.3" data-path="two-mean-claims.html"><a href="two-mean-claims.html#independent-samples-t-test"><i class="fa fa-check"></i><b>11.3</b> Independent Samples T-test</a></li>
+<li class="chapter" data-level="11.4" data-path="two-mean-claims.html"><a href="two-mean-claims.html#effect-sizes-1"><i class="fa fa-check"></i><b>11.4</b> Effect sizes</a></li>
+<li class="chapter" data-level="11.5" data-path="two-mean-claims.html"><a href="two-mean-claims.html#the-logic-of-t-tests-and-experimental-design"><i class="fa fa-check"></i><b>11.5</b> The logic of t-tests and experimental design</a></li>
+<li class="chapter" data-level="11.6" data-path="two-mean-claims.html"><a href="two-mean-claims.html#doing-two-sample-t-tests-in-r"><i class="fa fa-check"></i><b>11.6</b> Doing two-sample t-tests in R</a></li>
+<li class="chapter" data-level="11.7" data-path="two-mean-claims.html"><a href="two-mean-claims.html#summary-9"><i class="fa fa-check"></i><b>11.7</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html"><i class="fa fa-check"></i><b>12</b> Claims With More Than Two Means: ANOVA</a><ul>
+<li class="chapter" data-level="12.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#how-to-do-an-anova"><i class="fa fa-check"></i><b>12.1</b> How to do an ANOVA</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-between"><i class="fa fa-check"></i><b>12.1.1</b> Calculating Sums of Squares Between</a></li>
+<li class="chapter" data-level="12.1.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-within"><i class="fa fa-check"></i><b>12.1.2</b> Calculating Sums of Squares Within</a></li>
+<li class="chapter" data-level="12.1.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares-total"><i class="fa fa-check"></i><b>12.1.3</b> Calculating Sums of Squares Total</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-the-rest"><i class="fa fa-check"></i><b>12.2</b> Calculating the rest</a></li>
+<li class="chapter" data-level="12.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#doing-an-example"><i class="fa fa-check"></i><b>12.3</b> Doing an example</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#the-null-and-alternative-hypothesis"><i class="fa fa-check"></i><b>12.3.1</b> The null and alternative hypothesis</a></li>
+<li class="chapter" data-level="12.3.2" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-sums-of-squares"><i class="fa fa-check"></i><b>12.3.2</b> Calculating Sums of Squares</a></li>
+<li class="chapter" data-level="12.3.3" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#calculating-degrees-of-freedom-and-mean-squares"><i class="fa fa-check"></i><b>12.3.3</b> Calculating Degrees of Freedom and Mean Squares</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#anova-in-r"><i class="fa fa-check"></i><b>12.4</b> ANOVA in R</a></li>
+<li class="chapter" data-level="12.5" data-path="claims-with-more-than-two-means-anova.html"><a href="claims-with-more-than-two-means-anova.html#summary-10"><i class="fa fa-check"></i><b>12.5</b> Summary</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics: The Story of Numbers</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="frequency-claims-1" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Frequency claims</h1>
+<p>In this chapter, we will learn about frequency claims. This will cover:</p>
+<ol style="list-style-type: decimal">
+<li>What are frequency claims and when do we use them to evaluate hypotheses?</li>
+<li>What is the binomial test and how can we use it to test the likelihood that a sample proportion is from a given population?</li>
+<li>What is a chi-square test and how do we use it to generate hypotheses about whether two sample proportions are from the same population?</li>
+<li>How do we apply the principles of null hypothesis testing to binomial tests and chi-square tests in order to generate null and alternative hypotheses based on freuqency claims?</li>
+</ol>
+<div id="what-are-frequency-claims" class="section level2">
+<h2><span class="header-section-number">8.1</span> What are frequency claims?</h2>
+<p>If you read a lot of news, like I do, you will often see an article about a scientific study that says that group X is more likely to get some sort of disease than group Y. Or something like “people who do X are so many times less likely to suffer from Y than other people”. These frequency claims are everywhere in research, in psychology, biostatistics, and in lots of other fields as well.</p>
+<p>A <strong>frequency claim</strong> is a claim, or a hypothesis, about the frequency that something happens in a sample. It may involve questions like if something is more frequent in one group versus another group. Or it could be a claim that a frequency of events is so unlikely to happen by chance, that something special is going on.</p>
+<p>What makes something a question involving frequency is that the outcome or dependent variable (the variable we measure) is a <strong>categorical variable</strong>. A categorical variable is a variable where the different levels, or possibilities for the variable, are unordered and do not have <strong>cardinality</strong>, i.e., no group is more than any other group. In many cases, the outcome variable is <strong>dichotomous</strong>, which means there are only two possible outcomes. Many variables end up this way: yes/no, hit/miss, dead/alive, in/out. All of these involve frequency claims, which we will consider in this module.</p>
+<p>In this module, we will consider two types of statistical techniques to evaluate frequency claims. The first is a binomial test. This is a test which examines the chance a given outcome will happen, given a baseline probability. The second technique is a chi-square test. This is a case which investigates proportions given one (or more) variables.</p>
+<p>The binomial test is what we would consider if we want to see if a sample came from a population. For instance, we may know that in a population, 7% of people are diagnosed with depression in a given year. We may want to know the likelihood it would happen, that if we selected 30 people, what is the chance we would find that 6 or more (20% or greater) would be diagnosed with depression in the last year? In the binomial test, the critical comparison is comparing a sample to a population.</p>
+<p>The chi-square test is most often used as a way of comparing whether two proportions are equal to one another. For instance, I may want to examine if children who watch a certain violent TV show are more likely to get in trouble than children who do not watch a certain popular violent TV show. I find that of the 80 children who watch the violent TV show, 60 did not get in trouble whereas 20 did. However, of the 125 children who did not watch the violent TV show, 118 did not get in trouble whereas only 7 did. As described below, in the case of the chi-square test, we are testing the likelihood that those two proportions (the children who watch the show versus the children who did not watch the show) are from the same population.</p>
+</div>
+<div id="binomial-tests" class="section level2">
+<h2><span class="header-section-number">8.2</span> Binomial tests</h2>
+<p>I did a study recently when I wanted to investigate whether court judges who were running for election were more likely to get elected if they looked more competent than their opponent. I had participants who did not know who these judges were see the faces of two candidates running in a judicial election and determine which judge they thought was the more competent-looking judge. If given a pair of people to evaluate, people generally agree as to which person looks more competent, even if people are unable to describe what specific facial features make a person look more competent.</p>
+<p>For each pair of elections, one candidate was perceived as more competent than the other candidate. If facial competence did not play a role in how judges get elected, then we would expect that 50% of the time, the more competent judge would be elected and 50% of the time the less competent judge would be elected. However, if more competent judges are more likely to be elected, then they would get elected more than 50% of the time. They would not get elected 100% of the time because there are other factors at play, such as their stances on issues, their campaigning, and so forth.</p>
+<p>To analyze this, I could do what is called a <strong>binomial test</strong>. A binomial test is a test which examines the likelihood of getting a sample of a certain size with a certain number of successes from a population where there is a certain chance of success. People use the word “success” to refer to the outcome they want to investigate, and it does not necessarily mean a good outcome. So for instance, I may investigate the chance that I get 8 or more heads (successes) if I flip a coin ten times with a 50% chance of heads.</p>
+<p>Then I apply null hypothesis testing to this logic. The idea is that if the probability of getting that sample is sufficiently low, below the alpha level, then I would conclude that the sample did not come from the population. I set the null hypothesis to be that my sample came from the same population and that the proportion of successes in my sample is not significantly different from the population. The alternative hypothesis is that the proportion of successes is significantly different from the population.</p>
+<p>For instance, I might test whether the coin I mentioned in the last paragraph is biased and lands on heads greater than 50% of the time. Since I got heads 8 out of 10 times, I would find the probability I would get 8 or more heads when flipping a coin ten times. To find out the chance that I would get 8 or more heads if I flip a coin ten times, I would need to find out all the possible outcomes of flipping a coin 10 times and then count how many of those outcomes involve 8 heads. I could start out by listing them, with H indicating heads and T indicating tails. I could list HHHHHHHHHH, HHHHHHHHHT and so on. However, with <span class="math inline">\(2^8\)</span> or 256 possible outcomes, this would take forever.</p>
+<p>Fortunately, I can use the binomial distribution to calculate this for me. Like we mention in module 6, a probability distribution plot is a plot showing each outcome on the X axis and the probability of that outcome on the y-axis. There is a formula which calculates the chance of getting X successes in n trials given a p chance of success. However, using R, we can just calculate this using the <code>dbinom()</code> command. For example, the chance we get 8 heads in 10 trials, with a likelihood of success of .5 would be:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dbinom</span>(<span class="dv">8</span>,<span class="dv">10</span>,.<span class="dv">5</span>)</code></pre></div>
+<pre><code>## [1] 0.04394531</code></pre>
+<p>There is a <span class="math inline">\(p = .044\)</span> or 4.4% chance of getting 8 heads if we flip a coin ten times. We can plot the results for each coin flip below:</p>
+<p><img src="08-frequencyclaims_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>To find out the chance I would get 8 or more heads from a coin, I can add up the chance I would get 8 heads, the chance I would get 9 heads, and the chance I would get 10 heads. This would add to <span class="math inline">\(p = .055\)</span>, or 5.5%. This would be greater than the traditionally accepted alpha of <span class="math inline">\(p = .05\)</span>, so I would fail to reject the null hypothesis. Even though I fail to reject the null hypothesis, the p value is practically very close to significant, so I would still be wary of the coin. As noted in the module on null hypothesis testing, failing to reject the null is not proof of the null hypothesis being correct.</p>
+<p>With all of this, there is a simpler way to do a binomial test in R using the <code>binom.test()</code> command. This command has four parts:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(x, n, p, <span class="dt">alternative =</span> (<span class="st">&quot;two-sided&quot;</span>, <span class="st">&quot;less&quot;</span>, <span class="st">&quot;greater&quot;</span>))</code></pre></div>
+<p>The first part is x, or the number of successes. The second is n, or the number of trials. The third is p, or the probability of success.</p>
+<p>The last part is alternative and it is where I list one of three options for the alternative hypothesis. If I want to test what the chance is I get x or <em>more</em> successes, I would use “greater”. For instance, to see the chance I get 8 or more heads out of 10 trials, I would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">8</span>,<span class="dv">10</span>,.<span class="dv">5</span>,<span class="dt">alternative =</span> <span class="st">&quot;greater&quot;</span>)</code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  8 and 10
+## number of successes = 8, number of trials = 10, p-value = 0.05469
+## alternative hypothesis: true probability of success is greater than 0.5
+## 95 percent confidence interval:
+##  0.4930987 1.0000000
+## sample estimates:
+## probability of success 
+##                    0.8</code></pre>
+<p>In the output above, I can see the p-value in the second line, which is the p-value of success. Note in the third line, my alternative hypothesis is that the probability of success is <em>greater than .05</em>. If I want to see the chance I get 2 or fewer heads, I would type the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">2</span>,<span class="dv">10</span>,.<span class="dv">5</span>,<span class="dt">alternative =</span> <span class="st">&quot;less&quot;</span>)</code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  2 and 10
+## number of successes = 2, number of trials = 10, p-value = 0.05469
+## alternative hypothesis: true probability of success is less than 0.5
+## 95 percent confidence interval:
+##  0.0000000 0.5069013
+## sample estimates:
+## probability of success 
+##                    0.2</code></pre>
+<p>Notice in the output, that the chance to get 2 or fewer heads is the same as getting 8 or more heads. This is because the binomial distribution is symmetrical if <span class="math inline">\(p=.5\)</span>.</p>
+<p>The final option is called a <strong>two-tailed test</strong>. This is the probability that I get significantly different than the population probability, whether it is higher or lower than the original probability. For instance, I may suspect that a coin is biased but not know what direction it is biased, whether it gives more heads or more tails than normal. In this case, my null hypothesis is <em>significantly different from .05</em> though I do not care whether it is higher or lower.</p>
+<p>If I do a two-tailed test, I am computing the probability I would get a result of a certain probability or more extreme in either direction. For instance, if want to do a two-tailed test with my coin that gave me 8 or more heads in 10 trials, I would calculate the probability of getting 8 heads in 10 trials <em>and</em> the probability of getting 2 or fewer heads in 10 trials. See the plot below, noticing the red bars:</p>
+<p><img src="08-frequencyclaims_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>A two-tailed test is appropriate if you want to examine whether a sample is different from a probability but you have no hypothesis whether the sample probability is more likely or less likely than the baseline probability. It is more conservative than a one-tailed test, meaning is less likely to reject the null hypothesis given the same circumstances. For instance, if I calculate a two-tailed test using the <code>binom.test()</code> command, I would get the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">2</span>,<span class="dv">10</span>,.<span class="dv">5</span>,<span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  2 and 10
+## number of successes = 2, number of trials = 10, p-value = 0.1094
+## alternative hypothesis: true probability of success is not equal to 0.5
+## 95 percent confidence interval:
+##  0.02521073 0.55609546
+## sample estimates:
+## probability of success 
+##                    0.2</code></pre>
+<p>Notice how the probability is <span class="math inline">\(p = .109\)</span>, which is double of the one-sided test.</p>
+<p>So I can take this logic back to my study on whether competence affected electoral outcomes. For example, I may have found that in 200 elections, the more competent judge won 120 elections. Since I have the hypothesis that competent judges are more likely to win elections, a one-sided test testing whether the probability is greater than <span class="math inline">\(p = .05\)</span> is most appropriate. I would type the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">120</span>,<span class="dv">200</span>,.<span class="dv">5</span>,<span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)</code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  120 and 200
+## number of successes = 120, number of trials = 200, p-value =
+## 0.002843
+## alternative hypothesis: true probability of success is greater than 0.5
+## 95 percent confidence interval:
+##  0.5396838 1.0000000
+## sample estimates:
+## probability of success 
+##                    0.6</code></pre>
+<p>In this case, there is a <span class="math inline">\(p=.003\)</span> chance that more competent judges would win elections 120 or more times if facial competence plays no role in electoral outcomes.</p>
+<div id="using-different-probabilities" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Using different probabilities</h3>
+<p>All of the above examples have a probability of <span class="math inline">\(p = .5\)</span> for the outcome. However, this is not always the case. For instance, I may want to investigate the probability that individuals in a certain town are more likely to suffer from depression than the population at large. In the example above I note that in a population 7% of people are diagnosed with depression each year. However, in a certain stressful company, 6 of the 30 individuals working there suffer from depression. I want to test if that rate is significantly larger than the population.</p>
+<p>I would set the null hypothesis as the rate of depression in that company as being not significantly more than the population and the alternative hypothesis is that the rate of depression in that company is significantly more than the population. I could test this using the binom.test function, with 6 successes (note again successes does not mean good things in this context) out of 30 trials and a probability of success in the population of .07. As noted by tradition, I set my alpha level as .05, and would reject the null if the probability is below alpha.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">6</span>,<span class="dv">30</span>,.<span class="dv">07</span>,<span class="dt">alternative =</span> <span class="st">&quot;greater&quot;</span>)</code></pre></div>
+<pre><code>## 
+##  Exact binomial test
+## 
+## data:  6 and 30
+## number of successes = 6, number of trials = 30, p-value = 0.01623
+## alternative hypothesis: true probability of success is greater than 0.07
+## 95 percent confidence interval:
+##  0.09087406 1.00000000
+## sample estimates:
+## probability of success 
+##                    0.2</code></pre>
+<p>In this case, I would reject the null hypothesis because the p-value is less than .05 and conclude that workers in this company are significantly more likely to suffer from depression than the population at large.</p>
+</div>
+</div>
+<div id="chi-square-tests" class="section level2">
+<h2><span class="header-section-number">8.3</span> Chi-square tests</h2>
+<p>The binomial test works well if we want to know whether a sample’s proportion fits a population’s proportion. However, in some cases we want to compare the proportion of two or more groups. This might occur because we don’t know the population’s proportion or because we are specifically interested in two groups that might be different from the population.</p>
+<p>For instance, I may want to test two interventions designed to keep at-risk children from trying illegal drugs. I randomly assign children to be in one program or the other program. I have one program which I call the Danger Program that uses a class to teach children about the dangers of drug use. The second program I call the Mentor Program which does not focus on the negatives of drug use but instead encourages children to have a positive, healthy life without drugs, and pairs children with teenage mentors who do not use drugs. After doing the programs, I wait a year and then I have a survey where I ask each child whether or not they tried illegal drugs in the last year. I find the data below:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Program</th>
+<th align="left">Used drugs</th>
+<th align="left">Did not use drugs</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Danger</td>
+<td align="left">28</td>
+<td align="left">57</td>
+</tr>
+<tr class="even">
+<td align="left">Mentor</td>
+<td align="left">11</td>
+<td align="left">58</td>
+</tr>
+</tbody>
+</table>
+<p>Based on this table, I might think that my program worked. Drug use is lower in the Mentor Program. However, this could have happened by chance that I by chance randomly assigned the children more likely to use drugs to the Danger program.</p>
+<p>The chi-square test analyzes this problem. In the chi-square test, the null hypothesis is that the proportions in each of the groups are statistically the same. That would mean that my predictor variable (the program the child was assigned to) is unrelated to my outcome variable (whether or not a child used drugs). This is called <strong>independence</strong> and means that the two variables are independent. The alternative hypothesis is that the proportions in the two different groups are not statistically the same. This would imply the variables are <strong>dependent</strong> or that the predictor variable and the outcome variable. This means the two variables are related, but does not say how they are related.</p>
+<p>When we do a chi-square test, we usually have the idea that one variable is the one which is “causing” the change on the other variable. In this case, I think the program causes a change in drug use. I usually call the “causing” variable the predictor variable and the other variable as the outcome variable. However, based on the math about how a chi-square test works, it does not matter which variable is the predictor and which one is the outcome, or which order I enter the data.</p>
+<p>To do a chi-square test, we have to enter the data into R as a data frame with the frequencies for each condition. To do this, we have to make a variable for each predictor variable, with the values for each of the different outcomes, and then put them into a data frame. Then I do the chi-square test by typing <code>chisq.test()</code>. I would type the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">danger =<span class="st"> </span><span class="kw">c</span>(<span class="dv">28</span>,<span class="dv">57</span>)
+mentor =<span class="st"> </span><span class="kw">c</span>(<span class="dv">11</span>,<span class="dv">58</span>)
+d =<span class="st"> </span><span class="kw">data.frame</span>(danger,mentor)
+<span class="kw">chisq.test</span>(d)</code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  d
+## X-squared = 4.9553, df = 1, p-value = 0.02601</code></pre>
+<p>The chi-square test gives me my chi-square statistic, the degrees of freedom, and the p-value. As with the other null hypothesis tests, the p-value is testing whether the probability I would get these frequencies if the null hypothesis is true. If that probability is below alpha (usually .05), then I reject the null hypothesis. In this case, I would reject the null hypothesis and conclude that the two variables, program and drug use are related. A significant chi-square statistic does not say in which way they are related, but in this case, we can clearly see that it is because fewer children who did the mentor program used drugs than the danger program.</p>
+<div id="chi-square-tests-with-more-than-two-outcomes" class="section level3">
+<h3><span class="header-section-number">8.3.1</span> Chi-square tests with more than two outcomes</h3>
+<p>We do not have to have dichotomous data when doing a chi-square test. We can have variables where there are more than two possible outcomes. In one example of a student experiment, the investigators wanted to see whether people preferred birth order personalities that were similar to their own or different from their own. There is a controversial idea that dates back to the psychologist Alfred Adler that first-born children will have a different personality than middle-born children and last-born children. The idea of this study was that participants would read personality profiles of people and pick which one they were most likely to date. The people had first-born and last-born children pick which personality they liked and found the following:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Participant Birth Order</th>
+<th align="left">First</th>
+<th align="left">Middle</th>
+<th align="left">Last</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">First-born</td>
+<td align="left">32</td>
+<td align="left">40</td>
+<td align="left">11</td>
+</tr>
+<tr class="even">
+<td align="left">Last-born</td>
+<td align="left">20</td>
+<td align="left">54</td>
+<td align="left">29</td>
+</tr>
+</tbody>
+</table>
+<p>To analyze this, we have a participant’s birth order as the predictor and the type of personality they preferred as the outcome variable. I set up my null hypothesis that one’s birth order has no effect on the personality they pick and the alternate hypothesis that one’s birth order does have an effect on the personality they pick. To do a chi-square test, I have to enter the data like before, but instead of entering in two numbers for each condition of the predictor variable, I will enter three, the number who preferred the first-born personality, the middle child personality, and the last-born personality.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">first =<span class="st"> </span><span class="kw">c</span>(<span class="dv">32</span>,<span class="dv">40</span>,<span class="dv">11</span>)
+last =<span class="st"> </span><span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">54</span>,<span class="dv">29</span>)
+d =<span class="st"> </span><span class="kw">data.frame</span>(first,last)
+<span class="kw">chisq.test</span>(d)</code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  d
+## X-squared = 10.93, df = 2, p-value = 0.004232</code></pre>
+<p>I find here that the p-value is less than .05, which leads me to reject the null hypothesis. That just means I conclude there is a relationship between one’s birth order and the personality they pick. Now, what I am really interested is in what that relationship may be. It could be the case that people are more likely to prefer the birth order most similar to their own. Or it could be that people are more likely to prefer the birth order that is different from their own. In order to interpret the data, then I look at the numbers themselves and try to figure out the story. In this case, it is clear that people tend to prefer the middle-born personality, probably because that personality is said to be laid-back and good at relating with people. However, people who do not prefer the middle-child personality tend to like their own birth order, suggesting that similarity is what matters.</p>
+<p>Interpreting the data like this may be subjective and the more variables and possibilities I have, the more complicated and subjective this gets. For instance, if I had middle-children and only-children in this study, I could have four different levels for my predictor variable. In this study, we omitted those variables because there were not many participants who fit that category, but it did make things simpler.</p>
+</div>
+</div>
+<div id="summary-6" class="section level2">
+<h2><span class="header-section-number">8.4</span> Summary</h2>
+<p>In this chapter, we covered the idea of frequency claims. A frequency claim is a claim where we assert that how often something occurs in a population. The two types covered here are binomial tests and chi-square tests. Binomial tests examine whether the frequency something occurs in a sample is the same or different than in a populaton. Chi-square tests examine whether the frequency something occurs in one sample is the same or different than in another sample.</p>
+<p>After this chapter, you should be able to:</p>
+<ol style="list-style-type: decimal">
+<li>Know what is meant by a frequency claim</li>
+<li>Know how to apply null hypothesis testing to binomial tests and generate null hypotheses and alternative hypotheses</li>
+<li>Know how to conduct a binomial test using R and how to interpret the output</li>
+<li>Know how to set up null and alternative hypotheses for a chi-square test and know when to conduct these tests</li>
+<li>Know how to do a chi-square test in R</li>
+</ol>
+
+<!-- Function that generates random correlations used below -->
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="making-decisions-with-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="association-claims-1.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
