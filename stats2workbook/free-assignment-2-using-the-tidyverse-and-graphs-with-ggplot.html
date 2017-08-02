@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Workbook for Statistics 2</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Workbook for Statistics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Workbook for Statistics 2" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Workbook for Statistics" />
+  <meta name="github-repo" content="aupsychology" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Workbook for Statistics 2" />
+  
+  <meta name="twitter:description" content="Workbook for Statistics" />
+  
+
+<meta name="author" content="Robert G. Franklin Jr.">
+
+
+<meta name="date" content="2017-08-02">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="interactive-assignment-4-graphs-with-ggplot.html">
+<link rel="next" href="interactive-assignment-5-regression-in-r.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats 2 Workbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Interactive Assignment 1: Introduction to R</a><ul>
+<li class="chapter" data-level="1.1" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#doing-basic-math-in-r"><i class="fa fa-check"></i><b>1.1</b> Doing basic math in R</a></li>
+<li class="chapter" data-level="1.2" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#objects"><i class="fa fa-check"></i><b>1.2</b> Objects</a></li>
+<li class="chapter" data-level="1.3" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#creating-data-frames"><i class="fa fa-check"></i><b>1.3</b> Creating data frames</a></li>
+<li class="chapter" data-level="1.4" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#part-2-inputting-data-from-other-sources."><i class="fa fa-check"></i><b>1.4</b> Part 2: inputting data from other sources.</a></li>
+<li class="chapter" data-level="1.5" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#terms-and-concepts-to-know"><i class="fa fa-check"></i><b>1.5</b> Terms and concepts to know:</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html"><i class="fa fa-check"></i><b>2</b> Interactive Assignment 2: Reviewing Inferential Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#part-1-summary-statistics"><i class="fa fa-check"></i><b>2.1</b> Part 1: Summary Statistics</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#examining-gender-differences-using-t-tests"><i class="fa fa-check"></i><b>2.1.1</b> Examining Gender Differences Using T-tests</a></li>
+<li class="chapter" data-level="2.1.2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#correlation-with-r"><i class="fa fa-check"></i><b>2.1.2</b> Correlation with R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html"><i class="fa fa-check"></i><b>3</b> Free Assignment 1: Reviewing R</a><ul>
+<li class="chapter" data-level="3.1" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> Basic descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Interactive Assignment 3: The tidyverse</a></li>
+<li class="chapter" data-level="5" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>5</b> Interactive Assignment 4: Graphs with ggplot</a><ul>
+<li class="chapter" data-level="5.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#using-ggplot-to-create-histograms"><i class="fa fa-check"></i><b>5.1</b> Using ggplot to create histograms</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#creating-scatterplots-using-ggplot"><i class="fa fa-check"></i><b>5.1.1</b> Creating scatterplots using ggplot</a></li>
+<li class="chapter" data-level="5.1.2" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#editing-other-plot-elements"><i class="fa fa-check"></i><b>5.1.2</b> Editing other plot elements</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><a href="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>6</b> Free Assignment 2: Using the Tidyverse and graphs with ggplot</a></li>
+<li class="chapter" data-level="7" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html"><i class="fa fa-check"></i><b>7</b> Interactive Assignment 5 - Regression in R</a><ul>
+<li class="chapter" data-level="7.1" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#simple-regression"><i class="fa fa-check"></i><b>7.1</b> Simple Regression</a></li>
+<li class="chapter" data-level="7.2" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#adding-a-control-variable-multiple-regression"><i class="fa fa-check"></i><b>7.2</b> Adding a control variable: Multiple Regression</a></li>
+<li class="chapter" data-level="7.3" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#plotting-a-regression-line-using-ggplot"><i class="fa fa-check"></i><b>7.3</b> Plotting a regression line using ggplot</a></li>
+<li class="chapter" data-level="7.4" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#summary"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="free-assignment-4-regression-and-multiple-regression-in-r.html"><a href="free-assignment-4-regression-and-multiple-regression-in-r.html"><i class="fa fa-check"></i><b>8</b> Free Assignment 4 - Regression and multiple regression in R</a></li>
+<li class="chapter" data-level="9" data-path="free-assignment-5-regression-and-sports.html"><a href="free-assignment-5-regression-and-sports.html"><i class="fa fa-check"></i><b>9</b> Free Assignment 5: Regression and Sports</a></li>
+<li class="chapter" data-level="10" data-path="interactive-assignment-7-moderation-in-multiple-regression.html"><a href="interactive-assignment-7-moderation-in-multiple-regression.html"><i class="fa fa-check"></i><b>10</b> Interactive Assignment 7: Moderation in Multiple Regression</a><ul>
+<li class="chapter" data-level="10.1" data-path="interactive-assignment-7-moderation-in-multiple-regression.html"><a href="interactive-assignment-7-moderation-in-multiple-regression.html#using-moderation-in-regression"><i class="fa fa-check"></i><b>10.1</b> Using moderation in regression</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="free-assignment-6-moderation-with-r.html"><a href="free-assignment-6-moderation-with-r.html"><i class="fa fa-check"></i><b>11</b> Free Assignment 6: Moderation with R</a></li>
+<li class="chapter" data-level="12" data-path="interactive-assignment-8-between-subject-anova.html"><a href="interactive-assignment-8-between-subject-anova.html"><i class="fa fa-check"></i><b>12</b> Interactive Assignment 8: Between-subject ANOVA</a></li>
+<li class="chapter" data-level="13" data-path="free-assignment-7-between-subject-anova.html"><a href="free-assignment-7-between-subject-anova.html"><i class="fa fa-check"></i><b>13</b> Free Assignment 7: Between-subject ANOVA</a></li>
+<li class="chapter" data-level="14" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html"><i class="fa fa-check"></i><b>14</b> Interactive Assignment 9: Within-subject ANOVA</a><ul>
+<li class="chapter" data-level="14.1" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html#graphing-with-error-bars"><i class="fa fa-check"></i><b>14.1</b> Graphing with error bars</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="free-assignment-8-within-subject-anova.html"><a href="free-assignment-8-within-subject-anova.html"><i class="fa fa-check"></i><b>15</b> Free Assignment 8: Within-subject ANOVA</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Workbook for Statistics 2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot" class="section level1">
+<h1><span class="header-section-number">6</span> Free Assignment 2: Using the Tidyverse and graphs with ggplot</h1>
+<p>This assignment will build on a lot of the work in Interactive Assignments 3 and 4. We will use the same data that we used in Interactive Assignment 4 where we examined how older and younger adults rated the facial appearance of older and younger faces.</p>
+<p>In this assignment, we will need the <code>tidyverse</code> and <code>ggplot</code> libraries. Fortunately, ggplot is part of the <code>tidyverse</code> so all we have to load is the <code>tidyverse</code> package.</p>
+<p><strong>Step 1</strong>: Go ahead and load the tidyverse package.</p>
+<p>Now we should load the data that was used in Interactive Assignment 4.</p>
+<p><strong>Step 2</strong>: Go ahead and load that file as the data.frame <code>face</code>, just like you did for Interactive Assignment 4.</p>
+<p>As a reminder from Interactive Assignment 4, these data are a series of face ratings and were used in several studies looking at how older adult (older than 65 years) and younger adult (18-30) raters perceive older and younger adult faces. The variables are as follows:</p>
+<p>*FaceSex - the sex of each face rated (F for female, M for male)</p>
+<p>*FaceAgeGroup - the age group of each face rated (OA for older adult faces, YA for younger adult faces)</p>
+<p>*FaceAgeNumber - the numeric age of the individual rated</p>
+<p>*ag.old and ag.young - ratings of aggressiveness by older adult and younger adult raters respectively</p>
+<p><em>at.old and at.young - ratings of attractiveness by older adult and younger adult raters respectively </em>ba.old and ba.young - ratings of babyfaceness by older adult and younger adult raters respectively <em>co.old and co.young - ratings of competence by older adult and younger adult raters respectively </em>he.old and he.young - ratings of health by older adult and younger adult raters respectively *un.old and un.young - ratings of untrustworthiness by older adult and younger adult raters respectively</p>
+<p>In this assignment, we are going to look at differences between older faces and younger faces. The first step is to create two new data frames. One data frame will be for older faces and one data frame will be for younger faces. As we discussed in Interactive Assignment 3, you can use the <code>filter()</code> command to create a data frame that contains only rows that fit a certain condition.</p>
+<p><strong>Step 3</strong>: Use the <code>filter()</code> command to create a new data frame called “face.of” which only contains older faces, or those faces where the variable FaceAgeGroup is equal to “OA”.</p>
+<p><strong>Step 4</strong>: Use the <code>filter()</code> command to create a new data frame called “face.ya” which only contains younger faces, or faces where the variable FaceAgeGroup is equal to “YA”.</p>
+<p>Using ggplot, create a histogram for the aggressiveness rating variables for older faces using the variables ag.old and ag.young for the dataframe face.of. Make your histogram have 10 bins, have bars that have black lines and dark red fill.</p>
+<p>Your histogram for ag.old should look like this:</p>
+<p><img src="06-FreeAssignment2_ggplot_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Question 1: What pattern do you see with the two histograms? Do the ratings appear to be normally distributed?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Step 5</strong> Now create two histograms for the aggressiveness variables for the younger faces. The only difference is that instead of using the data frame “face.of”, you should use the data frame “face.yf”.</p>
+<p>Question 2: What pattern do you see with the two histograms of younger adult faces? Do the ratings appear to be similar to the ratings for older adult faces?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Now we are going to do a scatterplot, looking at the correlation between aggressiveness ratings by older raters and aggressiveness ratings by younger raters. We want to see whether the correlation is stronger for older faces or is it stronger for younger faces. That is, do older and younger adults agree more when rating how aggressive older faces are or do they agree more when rating how aggressive younger faces are?</p>
+<p><strong>Step 6</strong> Create a scatterplot looking at the relationship between ag.old and ag.young for older faces. When making your scatterplot, make sure that you have the following features:</p>
+<p><em>your plot title should say “Older Faces” so that we know that this plot is for older faces only </em>your x axis label and y axis label should say “Older Adult Raters” and “Younger Adult Raters” on the correct axis, depending on which one you plot on the x axis and which one you plot on the y axis.</p>
+<p>You can change the other elements such as the type of points and colors to anything you want. Your plot should look like the plot below:</p>
+<p><img src="06-FreeAssignment2_ggplot_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><strong>Step 7</strong> Create the same plot you did in Step 6 only instead using younger faces. Make sure you change the title, but everything else can be the same.</p>
+<p>Question 3: Compare the plot for older faces and younger faces. Does it look like the correlation is stronger for older faces or younger faces? Does it look like it is the same?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>One concept we will talk about later in this class is the idea of a <strong>moderator</strong>. A moderator is a third variable that affects or <em>moderates</em> the relationship between two variables. In this case, the age of the face may be a moderator, since the relationship between the two variables ag.old and ag.young is different for different values of the moderator.</p>
+<p><strong>Step 8</strong> Use the <code>cor.test()</code> function to see whether the correlation between ag.old and ag.young is different for the older faces versus the younger faces.</p>
+<p>Question 4: What are the correlations? Do the results support your answer for Question 3?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Question 5: Repeat steps 5 - 8 for the competence ratings (the variables co.old and co.young), producing a histogram, a scatterplot, and the correlations for the competence ratings. What patterns do you see and what do you conclude? Are the results similar or different from the results for aggressiveness?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="interactive-assignment-4-graphs-with-ggplot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="interactive-assignment-5-regression-in-r.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

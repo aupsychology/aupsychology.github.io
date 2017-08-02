@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Workbook for Statistics 2</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Workbook for Statistics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Workbook for Statistics 2" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Workbook for Statistics" />
+  <meta name="github-repo" content="aupsychology" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Workbook for Statistics 2" />
+  
+  <meta name="twitter:description" content="Workbook for Statistics" />
+  
+
+<meta name="author" content="Robert G. Franklin Jr.">
+
+
+<meta name="date" content="2017-08-02">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="interactive-assignment-3-the-tidyverse.html">
+<link rel="next" href="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats 2 Workbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Interactive Assignment 1: Introduction to R</a><ul>
+<li class="chapter" data-level="1.1" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#doing-basic-math-in-r"><i class="fa fa-check"></i><b>1.1</b> Doing basic math in R</a></li>
+<li class="chapter" data-level="1.2" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#objects"><i class="fa fa-check"></i><b>1.2</b> Objects</a></li>
+<li class="chapter" data-level="1.3" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#creating-data-frames"><i class="fa fa-check"></i><b>1.3</b> Creating data frames</a></li>
+<li class="chapter" data-level="1.4" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#part-2-inputting-data-from-other-sources."><i class="fa fa-check"></i><b>1.4</b> Part 2: inputting data from other sources.</a></li>
+<li class="chapter" data-level="1.5" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#terms-and-concepts-to-know"><i class="fa fa-check"></i><b>1.5</b> Terms and concepts to know:</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html"><i class="fa fa-check"></i><b>2</b> Interactive Assignment 2: Reviewing Inferential Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#part-1-summary-statistics"><i class="fa fa-check"></i><b>2.1</b> Part 1: Summary Statistics</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#examining-gender-differences-using-t-tests"><i class="fa fa-check"></i><b>2.1.1</b> Examining Gender Differences Using T-tests</a></li>
+<li class="chapter" data-level="2.1.2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#correlation-with-r"><i class="fa fa-check"></i><b>2.1.2</b> Correlation with R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html"><i class="fa fa-check"></i><b>3</b> Free Assignment 1: Reviewing R</a><ul>
+<li class="chapter" data-level="3.1" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> Basic descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Interactive Assignment 3: The tidyverse</a></li>
+<li class="chapter" data-level="5" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>5</b> Interactive Assignment 4: Graphs with ggplot</a><ul>
+<li class="chapter" data-level="5.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#using-ggplot-to-create-histograms"><i class="fa fa-check"></i><b>5.1</b> Using ggplot to create histograms</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#creating-scatterplots-using-ggplot"><i class="fa fa-check"></i><b>5.1.1</b> Creating scatterplots using ggplot</a></li>
+<li class="chapter" data-level="5.1.2" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#editing-other-plot-elements"><i class="fa fa-check"></i><b>5.1.2</b> Editing other plot elements</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><a href="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>6</b> Free Assignment 2: Using the Tidyverse and graphs with ggplot</a></li>
+<li class="chapter" data-level="7" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html"><i class="fa fa-check"></i><b>7</b> Interactive Assignment 5 - Regression in R</a><ul>
+<li class="chapter" data-level="7.1" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#simple-regression"><i class="fa fa-check"></i><b>7.1</b> Simple Regression</a></li>
+<li class="chapter" data-level="7.2" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#adding-a-control-variable-multiple-regression"><i class="fa fa-check"></i><b>7.2</b> Adding a control variable: Multiple Regression</a></li>
+<li class="chapter" data-level="7.3" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#plotting-a-regression-line-using-ggplot"><i class="fa fa-check"></i><b>7.3</b> Plotting a regression line using ggplot</a></li>
+<li class="chapter" data-level="7.4" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#summary"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="free-assignment-4-regression-and-multiple-regression-in-r.html"><a href="free-assignment-4-regression-and-multiple-regression-in-r.html"><i class="fa fa-check"></i><b>8</b> Free Assignment 4 - Regression and multiple regression in R</a></li>
+<li class="chapter" data-level="9" data-path="free-assignment-5-regression-and-sports.html"><a href="free-assignment-5-regression-and-sports.html"><i class="fa fa-check"></i><b>9</b> Free Assignment 5: Regression and Sports</a></li>
+<li class="chapter" data-level="10" data-path="interactive-assignment-7-moderation-in-multiple-regression.html"><a href="interactive-assignment-7-moderation-in-multiple-regression.html"><i class="fa fa-check"></i><b>10</b> Interactive Assignment 7: Moderation in Multiple Regression</a><ul>
+<li class="chapter" data-level="10.1" data-path="interactive-assignment-7-moderation-in-multiple-regression.html"><a href="interactive-assignment-7-moderation-in-multiple-regression.html#using-moderation-in-regression"><i class="fa fa-check"></i><b>10.1</b> Using moderation in regression</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="free-assignment-6-moderation-with-r.html"><a href="free-assignment-6-moderation-with-r.html"><i class="fa fa-check"></i><b>11</b> Free Assignment 6: Moderation with R</a></li>
+<li class="chapter" data-level="12" data-path="interactive-assignment-8-between-subject-anova.html"><a href="interactive-assignment-8-between-subject-anova.html"><i class="fa fa-check"></i><b>12</b> Interactive Assignment 8: Between-subject ANOVA</a></li>
+<li class="chapter" data-level="13" data-path="free-assignment-7-between-subject-anova.html"><a href="free-assignment-7-between-subject-anova.html"><i class="fa fa-check"></i><b>13</b> Free Assignment 7: Between-subject ANOVA</a></li>
+<li class="chapter" data-level="14" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html"><i class="fa fa-check"></i><b>14</b> Interactive Assignment 9: Within-subject ANOVA</a><ul>
+<li class="chapter" data-level="14.1" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html#graphing-with-error-bars"><i class="fa fa-check"></i><b>14.1</b> Graphing with error bars</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="free-assignment-8-within-subject-anova.html"><a href="free-assignment-8-within-subject-anova.html"><i class="fa fa-check"></i><b>15</b> Free Assignment 8: Within-subject ANOVA</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Workbook for Statistics 2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="interactive-assignment-4-graphs-with-ggplot" class="section level1">
+<h1><span class="header-section-number">5</span> Interactive Assignment 4: Graphs with ggplot</h1>
+<p>After completing this lab, you should be able to do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Know how to use the ggplot function to create plots in R</li>
+<li>Know how to use ggplot to create a scatter plot and to fit a line of best fit to the scatter plot</li>
+<li>Know how to use functions in ggplot to change the appearance of a plot</li>
+<li>Know how to add functions to plots to change the labels on the plots</li>
+</ol>
+<p>This assignment will discuss some of the basics about creating a plot with ggplot. GGplot is very powerful but it can be very complicated. Before doing this assignment, you should read through <a href="http://r4ds.had.co.nz/data-visualisation.html">Chapter 3 of R for Data Science</a>.</p>
+<p>The first thing we have to do is to install the ggplot package and to load it. So type the following into R:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(ggplot2)
+<span class="kw">library</span>(ggplot2)</code></pre></div>
+<p>The data for these assignments are available as a download on Canvas as the file IA4graph.csv (Files are also available at github )</p>
+<p>These data are a series of face ratings and were used in several studies looking at how older adult (older than 65 years) and younger adult (18-30) raters perceive older and younger adult faces. The raters rated the faces on 6 characteristics: aggressiveness, attractiveness, babyfaceness, competence, health, and untrustworthiness. The ratings were on a 7 point scale with 1 indicating very low and 7 indicating very high.</p>
+<p>Each row represnts a different face. The variables (columns) are as follows:</p>
+<p>*FaceSex - the sex of each face rated (F for female, M for male)</p>
+<p>*FaceAgeGroup - the age group of each face rated (OA for older adult faces, YA for younger adult faces)</p>
+<p>*FaceAgeNumber - the numeric age of the individual rated</p>
+<p>*ag.old and ag.young - ratings of aggressiveness by older adult and younger adult raters respectively</p>
+<p><em>at.old and at.young - ratings of attractiveness by older adult and younger adult raters respectively </em>ba.old and ba.young - ratings of babyfaceness by older adult and younger adult raters respectively <em>co.old and co.young - ratings of competence by older adult and younger adult raters respectively </em>he.old and he.young - ratings of health by older adult and younger adult raters respectively *un.old and un.young - ratings of untrustworthiness by older adult and younger adult raters respectively</p>
+<p>Load the file into the dataset face by typing the following command and selecting the .csv file when the file select dialog appears</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">face =<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">file.choose</span>())</code></pre></div>
+<p>If you look in the environment window on the top left part of the screen, you should see that the data.frame “face” is loaded. Let’s look at the data by typing <code>View(face)</code></p>
+<p>In this study, the authors were interested in testing whether older adult raters would agree with younger adult raters when rating a face. To test this question, the authors would look at whether there was a correlation between older adult ratings for a trait and younger adult ratings of a trait. To calculate a correlation test, we can use the <code>cor.test()</code> function like mentioned in Interactive Assignment 2.</p>
+<p>Before doing this, we would like to look at the descriptives of our data in order to see whether there are any outliers and what the means are for each rating. To do this, we can load the <code>psych</code> library and use the <code>describe</code> command.</p>
+<ol style="list-style-type: decimal">
+<li>Load the psych library and use the describe command to calculate the mean and the standard deviation of the ag.old, ag.young, at.old, at.young, ba.old, ba.young, co.old, co.young, he.old, he.young, un.old, and un.young variables. Use this to fill out the following table:</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Rating</th>
+<th align="left">Mean</th>
+<th align="left">SD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ag.old</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">ag.young</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">at.old</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">at.young</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">ba.old</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">ba.young</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">co.old</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">co.young</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">he.old</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">he.young</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">un.old</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">un.young</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" style="list-style-type: decimal">
+<li>Based on these means, what pattern do you see? Which traits do older adults rate more highly on average? Which traits do younger adults rate more highly, on average?</li>
+</ol>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<ol start="3" style="list-style-type: decimal">
+<li>Many researchers have speculated older adults show a <strong>positivity bias</strong> where they tend to rate events as being more positive than younger adults. Given that these were the same faces rated by older adults and younger adults, do you think there’s evidence of the positivity bias here?</li>
+</ol>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<div id="using-ggplot-to-create-histograms" class="section level2">
+<h2><span class="header-section-number">5.1</span> Using ggplot to create histograms</h2>
+<p>Now we are going to use ggplot to visualize our data. The first thing we are going to do is to describe the parts of ggplot. When generating each plot, the plot command has three parts:</p>
+<ol style="list-style-type: decimal">
+<li>The ggplot() command, which tells us our data frame and the data we are going to plot</li>
+<li><strong>Geoms</strong>, which are elements that we plot on the main plot. A geom might be a line graph, a bar graph, or any other graphic element we put on the plot</li>
+<li><strong>Aesthetics</strong> which are elements used to modify the plot. These are extra commands which can modify the plot or geoms (like saying how thick a line is)</li>
+</ol>
+<p>GGplot uses several different functions which are all technically one command. When we do this in R, we can put the command on several lines, but separate each line with a + at the end of each line. When a line ends with a +, R knows that the command is not complete and that there are more functions to add. Note that when we type the commands for ggplot, we end each line with a +, except for the last line.</p>
+<p>The first thing we are going to do is to build a histogram of each rating. We will start with ag.old to create a simple histogram.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old)) </code></pre></div>
+<p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>There are two lines I typed here. In the first line, I indicated the data by using the <code>ggplot()</code> command. The first argument is the data frame, the <code>data = face</code>.</p>
+<p>The final part is the <em>geom</em> we want, which is the layer or type of graph we have. In this case, it’s a histogram. In this geom, I want to tell ggplot which data to graph. To do this, I have to use an aesthetic. This is why I type <code>aes(x = ag.old)</code>.</p>
+<p>When calculating a histogram, sometimes we want to set how many bars or <strong>bins</strong> we have in the histogram. GGplot sets 30 as a default. We can change that by adding an option to the <code>geom_histogram()</code> part. Try typing the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old), <span class="dt">bins =</span> <span class="dv">10</span>) </code></pre></div>
+<p>You might also want to edit the graph as well. We can feed some options to <code>geom_histogram()</code> in order to edit the graph:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old), <span class="dt">bins =</span> <span class="dv">10</span>, <span class="dt">color =</span> <span class="st">&#39;red&#39;</span>, <span class="dt">fill =</span> <span class="st">&#39;darkblue&#39;</span>) </code></pre></div>
+<p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Here I used the <code>color</code> argument to set the color of the lines and the <code>fill</code> argument to set the color of the bars. There are a lot of colors built into R and to see all your options, you can type: <code>colors()</code></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Using what is written above, make a histogram with 15 bars with each bar having a black outline and a gray fill. (You can pick what shade of gray you’d like). It should look like this. Note below what code you would use to write this:</li>
+</ol>
+<p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<ol start="5" style="list-style-type: decimal">
+<li>Using what is written above, make histograms for all the other variables (ag.young, at.old, at.young, ba.old, ba.young, co.old, co.young, he.old, he.young, un.old, and un.young). Do they look like they are normally distributed? Do any seem to have any strange patterns or outliers?</li>
+</ol>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<div id="creating-scatterplots-using-ggplot" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Creating scatterplots using ggplot</h3>
+<p>A histogram graphs the distribution of one variable whereas a scatterplot graphs the relationship of two variables. This allows us to look at whether two variables are associated.</p>
+<p>In this study, the researchers were examining whether the ratings by older adults and the ratings by younger adults would be correlated, indicating that they agreed on which faces were high in aggressiveness, competence, and so forth.</p>
+<p>To create a scatterplot, we will use the <code>geom_point()</code> option, but most of the rest of the commands will be similar. The only other difference is that I have to give the <code>geom_point()</code> argument two variables, rather than one.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old, <span class="dt">y =</span> ag.young)) </code></pre></div>
+<p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>This plot has all the information we need, but it looks a bit ugly. To make the plot look nicer, we can add options to the <code>geom_point()</code> function. Here are some options you can use to make it look nicer:</p>
+<p><em>size: sets the default size of the points (default is 1) </em>shape: a number which sets the shape of the points (you can find which points are associated with which shapes <a href="http://sape.inf.usi.ch/quick-reference/ggplot2/shape">here</a>) *color: sets the color of the outside of the point</p>
+<p>Here, I use each of the options to change the plot:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old, <span class="dt">y =</span> ag.young), <span class="dt">size =</span> <span class="dv">3</span>, <span class="dt">shape =</span> <span class="dv">20</span>, <span class="dt">color =</span> <span class="st">&#39;red&#39;</span>) </code></pre></div>
+<p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<ol start="6" style="list-style-type: decimal">
+<li>Using what is written above, make a scatterplot looking at the association between he.old and he.young. Try out using a different color and a different type of point. Does the relationship look like the ratings are correlated?</li>
+</ol>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+</div>
+<div id="editing-other-plot-elements" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Editing other plot elements</h3>
+<p>In ggplot, we can also edit the other elements of a plot which are on the outside using different options. We can use the <code>labs()</code> option to set the labels of the plot and change the ones that ggplot gives us by default. For instance, we may want to change the labels of the plot above</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old, <span class="dt">y =</span> ag.young), <span class="dt">size =</span> <span class="dv">3</span>, <span class="dt">shape =</span> <span class="dv">20</span>) +
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&#39;Older and younger adult ratings of aggressiveness&#39;</span>, <span class="dt">x =</span> <span class="st">&quot;Older Adult Ratings&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Younger Adult Ratings&quot;</span>)</code></pre></div>
+<p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Finally, we can use the <code>theme()</code> function to change a lot of other options in our plot. In this example below, I’ll change the size and the type of the text:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old, <span class="dt">y =</span> ag.young), <span class="dt">size =</span> <span class="dv">3</span>, <span class="dt">shape =</span> <span class="dv">20</span>) +
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&#39;Older and younger adult ratings of aggressiveness&#39;</span>, <span class="dt">x =</span> <span class="st">&quot;Older Adult Ratings&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Younger Adult Ratings&quot;</span>) +
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">16</span>, <span class="dt">family=</span><span class="st">&quot;Arial&quot;</span>))</code></pre></div>
+<p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>As you can see in the examples, you can keep adding options to the plot to change different elements to make the plot look nicer. There are options to change each of the elements, such as changing the size of the x axis font, the y axis font, the x label font, the y label font, etc.</p>
+<ol start="7" style="list-style-type: decimal">
+<li>Using what is written above, make a scatterplot looking at the association between co.old and co.young. Change the title and the labels for the plot, x-axis, and the y-axis to something else and use the <code>theme()</code> option to change the size of the font to something different. Write or paste your code below:</li>
+</ol>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="interactive-assignment-3-the-tidyverse.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

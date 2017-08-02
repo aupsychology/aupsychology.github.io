@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Workbook for Statistics 2</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Workbook for Statistics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Workbook for Statistics 2" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Workbook for Statistics" />
+  <meta name="github-repo" content="aupsychology" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Workbook for Statistics 2" />
+  
+  <meta name="twitter:description" content="Workbook for Statistics" />
+  
+
+<meta name="author" content="Robert G. Franklin Jr.">
+
+
+<meta name="date" content="2017-08-02">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="free-assignment-5-regression-and-sports.html">
+<link rel="next" href="free-assignment-6-moderation-with-r.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats 2 Workbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Interactive Assignment 1: Introduction to R</a><ul>
+<li class="chapter" data-level="1.1" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#doing-basic-math-in-r"><i class="fa fa-check"></i><b>1.1</b> Doing basic math in R</a></li>
+<li class="chapter" data-level="1.2" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#objects"><i class="fa fa-check"></i><b>1.2</b> Objects</a></li>
+<li class="chapter" data-level="1.3" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#creating-data-frames"><i class="fa fa-check"></i><b>1.3</b> Creating data frames</a></li>
+<li class="chapter" data-level="1.4" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#part-2-inputting-data-from-other-sources."><i class="fa fa-check"></i><b>1.4</b> Part 2: inputting data from other sources.</a></li>
+<li class="chapter" data-level="1.5" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#terms-and-concepts-to-know"><i class="fa fa-check"></i><b>1.5</b> Terms and concepts to know:</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html"><i class="fa fa-check"></i><b>2</b> Interactive Assignment 2: Reviewing Inferential Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#part-1-summary-statistics"><i class="fa fa-check"></i><b>2.1</b> Part 1: Summary Statistics</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#examining-gender-differences-using-t-tests"><i class="fa fa-check"></i><b>2.1.1</b> Examining Gender Differences Using T-tests</a></li>
+<li class="chapter" data-level="2.1.2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#correlation-with-r"><i class="fa fa-check"></i><b>2.1.2</b> Correlation with R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html"><i class="fa fa-check"></i><b>3</b> Free Assignment 1: Reviewing R</a><ul>
+<li class="chapter" data-level="3.1" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> Basic descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Interactive Assignment 3: The tidyverse</a></li>
+<li class="chapter" data-level="5" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>5</b> Interactive Assignment 4: Graphs with ggplot</a><ul>
+<li class="chapter" data-level="5.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#using-ggplot-to-create-histograms"><i class="fa fa-check"></i><b>5.1</b> Using ggplot to create histograms</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#creating-scatterplots-using-ggplot"><i class="fa fa-check"></i><b>5.1.1</b> Creating scatterplots using ggplot</a></li>
+<li class="chapter" data-level="5.1.2" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#editing-other-plot-elements"><i class="fa fa-check"></i><b>5.1.2</b> Editing other plot elements</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><a href="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>6</b> Free Assignment 2: Using the Tidyverse and graphs with ggplot</a></li>
+<li class="chapter" data-level="7" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html"><i class="fa fa-check"></i><b>7</b> Interactive Assignment 5 - Regression in R</a><ul>
+<li class="chapter" data-level="7.1" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#simple-regression"><i class="fa fa-check"></i><b>7.1</b> Simple Regression</a></li>
+<li class="chapter" data-level="7.2" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#adding-a-control-variable-multiple-regression"><i class="fa fa-check"></i><b>7.2</b> Adding a control variable: Multiple Regression</a></li>
+<li class="chapter" data-level="7.3" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#plotting-a-regression-line-using-ggplot"><i class="fa fa-check"></i><b>7.3</b> Plotting a regression line using ggplot</a></li>
+<li class="chapter" data-level="7.4" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#summary"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="free-assignment-4-regression-and-multiple-regression-in-r.html"><a href="free-assignment-4-regression-and-multiple-regression-in-r.html"><i class="fa fa-check"></i><b>8</b> Free Assignment 4 - Regression and multiple regression in R</a></li>
+<li class="chapter" data-level="9" data-path="free-assignment-5-regression-and-sports.html"><a href="free-assignment-5-regression-and-sports.html"><i class="fa fa-check"></i><b>9</b> Free Assignment 5: Regression and Sports</a></li>
+<li class="chapter" data-level="10" data-path="interactive-assignment-7-moderation-in-multiple-regression.html"><a href="interactive-assignment-7-moderation-in-multiple-regression.html"><i class="fa fa-check"></i><b>10</b> Interactive Assignment 7: Moderation in Multiple Regression</a><ul>
+<li class="chapter" data-level="10.1" data-path="interactive-assignment-7-moderation-in-multiple-regression.html"><a href="interactive-assignment-7-moderation-in-multiple-regression.html#using-moderation-in-regression"><i class="fa fa-check"></i><b>10.1</b> Using moderation in regression</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="free-assignment-6-moderation-with-r.html"><a href="free-assignment-6-moderation-with-r.html"><i class="fa fa-check"></i><b>11</b> Free Assignment 6: Moderation with R</a></li>
+<li class="chapter" data-level="12" data-path="interactive-assignment-8-between-subject-anova.html"><a href="interactive-assignment-8-between-subject-anova.html"><i class="fa fa-check"></i><b>12</b> Interactive Assignment 8: Between-subject ANOVA</a></li>
+<li class="chapter" data-level="13" data-path="free-assignment-7-between-subject-anova.html"><a href="free-assignment-7-between-subject-anova.html"><i class="fa fa-check"></i><b>13</b> Free Assignment 7: Between-subject ANOVA</a></li>
+<li class="chapter" data-level="14" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html"><i class="fa fa-check"></i><b>14</b> Interactive Assignment 9: Within-subject ANOVA</a><ul>
+<li class="chapter" data-level="14.1" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html#graphing-with-error-bars"><i class="fa fa-check"></i><b>14.1</b> Graphing with error bars</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="free-assignment-8-within-subject-anova.html"><a href="free-assignment-8-within-subject-anova.html"><i class="fa fa-check"></i><b>15</b> Free Assignment 8: Within-subject ANOVA</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Workbook for Statistics 2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="interactive-assignment-7-moderation-in-multiple-regression" class="section level1">
+<h1><span class="header-section-number">10</span> Interactive Assignment 7: Moderation in Multiple Regression</h1>
+<p>This assignment covers the following skills:</p>
+<ol style="list-style-type: decimal">
+<li>How to conduct a multiple regression with a dichotomous interaction term in R</li>
+<li>How to interpret the output from a moderation analysis in R</li>
+<li>How to plot a moderation analysis using ggplot, by dividing groups into different colors and plotting separate regression lines for each group</li>
+<li>How to use <code>facet_wrap()</code> to create figures in ggplot with multiple plots</li>
+<li>How to break down interactions using simple regression.</li>
+</ol>
+<p>The idea of moderation is that the relationship between two variables may be affected (or moderated) by a third variable. In regression, this means that the relationship between the independent variable and the dependent variable varies due to a third variable, called a moderating variable.</p>
+<p>The logic of moderation can allow us to test a lot of psychological hypotheses. In this lab, we will walk through how we examine what moderation is on a conceptual level and how it works to test a psychological theory.</p>
+<p>The cross-race effect in face memory is the well-established effect that people remember faces of their own race better than other races. People generally report saying faces of other races “all look alike” and do worse in memory tests when trying to remember faces of other races. One possible mechanism for this effect is <em>mental state complexity</em>, which is a rating of how much a person seems to be expressing a complex emotion or mental state mental state. Some faces appear to be blank and have no emotional content, some faces appear to have some emotional content, whereas some faces seem to be having complex mental states, which are uniquely human.</p>
+<p>The idea of this study was to test three things:</p>
+<ol style="list-style-type: decimal">
+<li>Do people think faces of their own race express more complex mental states than faces of other races?</li>
+<li>Do people remember faces of their own race better?</li>
+<li>Does face race moderate the relationship between complexity and memory?</li>
+</ol>
+<p>In this study, White participants rated the mental state complexity of White and Black faces. Then they were given a memory test of those faces. They saw the faces they rated along with other new faces and had to decide whether each face was a face they saw previously or a new face they had never seen before.</p>
+<p>When completing this lab, make sure you create a script with all your commands as we have done in previousl labs.</p>
+<p><strong>Step 1</strong>: In this lab, we will use the tidyverse package so go ahead and load that package.</p>
+<p><strong>Step 2</strong>: Now load the data from the file ‘IA7data.csv’ into R to the dataframe ‘face’</p>
+<p>Face should have the following variables: face: the filename of the face race – the race of the face. mean_acc – the mean of distracter_acc and target_acc complexity_rating – rating of the mental state complexity of the face on a 7 point scale.</p>
+<p><strong>Step 3</strong>: Create a scatterplot of the data to see how memory relates to mental state complexity. Using ggplot, generate a graph with <code>complexity_rating</code> on the X axis and <code>mean_acc</code> on the Y axis. Make sure the plot has a title and labels. Also include a regression line of best fit.</p>
+<ol style="list-style-type: decimal">
+<li>What does the plot look like? Do you think there is a relationship between the two variables?</li>
+</ol>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>2.How does the regression look? Does it look like a significant relationship?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Step 4</strong>: Create a regression using complexity_rating as a predictor of mean_acc.</p>
+<p>Question 3: What is the regression equation from this regression? What is the t-value of complexity as a predictor? What is the p-value? Is it a significant predictor?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Step 5:</strong> Now let’s see if there is an effect of race on complexity. Conduct a t-test comparing complexity between White and Black individuals. Use race as the grouping variable and complexity_rating as the DV.</p>
+<p>Question 4: Is there a significant effect of complexity? What are the t and p values? What are the means for each group?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Step 6</strong>: Do the same as question 4 looking at if there is a difference in mean_acc for different race groups.</p>
+<p>Question 5: Is accuracy higher for White or Black faces? What are the means for each group, the t-value, and the p-value?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<div id="using-moderation-in-regression" class="section level2">
+<h2><span class="header-section-number">10.1</span> Using moderation in regression</h2>
+<p>Now we’ve found an answer for the first two hypotheses we wanted to test (see page 1). The third hypothesis is that the relationship between complexity and accuracy would be different for Black versus White faces. Now enter in the following to look at the interaction</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">i =<span class="st"> </span><span class="kw">lm</span>(mean_acc~complexity_rating*race, <span class="dt">data=</span>face)
+<span class="kw">summary</span>(i)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = mean_acc ~ complexity_rating * race, data = face)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.24062 -0.06673  0.01484  0.06648  0.18720 
+## 
+## Coefficients:
+##                             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                  0.56340    0.09710   5.802 1.42e-07 ***
+## complexity_rating            0.01512    0.02807   0.539   0.5917    
+## racewhite                   -0.19933    0.14269  -1.397   0.1665    
+## complexity_rating:racewhite  0.08102    0.04073   1.989   0.0503 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.1054 on 76 degrees of freedom
+## Multiple R-squared:  0.2402, Adjusted R-squared:  0.2103 
+## F-statistic: 8.011 on 3 and 76 DF,  p-value: 0.0001045</code></pre>
+<p>The output here has three variables in addition to the intercept. The first two variables give us the effect of complexity_rating and race as a predictor. In this case, the first two variables are the <em>main effects</em> or the effects of the independent variable and the moderator variable itself.</p>
+<p>The reason R calls the ‘race’ variable ‘racewhite’ is that R uses the group “white” as the default group and compares the Black faces to the White faces. In this case, both of these variables are different than the regressions you listed above. This is because we have added the moderator variable.</p>
+<p>In a regression with a moderator variable, the <em>main effects</em> are not very important because they are superceded by the effect of the <strong>interaction variable</strong> or the variable which examines whether the relationship between the independent variable and dependent variable varies as a function of the moderator variable.</p>
+<p>In this case, the interaction variable is listed as ‘complexity_rating:racewhite’. It is marginally significant.</p>
+<p>When we have an interaction, what this means is that we expect the relationship between complexity and face memory to be different for the different values of the moderator variable. That is, the relationship between complexity and face memory is different for Black faces than for White faces. It could be that for one group of faces, the relationship is a positive correlation and for the other group it is a negative correlation. Or it could be that for one group there is no correlation and for another group, it is a positive correlation.</p>
+<p>One of the best ways to interpret an interaction is to visualize the interaction using ggplot. We can create a plot with ggplot where we divide the data for White faces and for Black faces and plot different regression lines for each group.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face, <span class="kw">aes</span>(<span class="dt">x =</span> complexity_rating, <span class="dt">y =</span> mean_acc, <span class="dt">color =</span> race)) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&#39;lm&#39;</span>, <span class="dt">se =</span> F) +
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Complexity Rating&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Mean Accuracy&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Interaction between Complexity and Race Predicting Mean Accuracy&quot;</span>)</code></pre></div>
+<p><img src="10-IA7_moderation_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><strong>Step 7</strong>: Try typing the plot above and seeing if you can change some of the appearance options involved with the plot.</p>
+<p>This ggplot code has a few changes from how we have done it before. Instead of putting the <code>aes()</code> option inside of the <code>geom_point()</code> and <code>geom_smooth()</code>, I put it in the main <code>ggplot()</code> command. The reason I can do this is that if I put the <code>aes()</code> option in the <code>ggplot()</code> command, then it automatically adds that option to every <code>geom</code> command. It saves some typing.</p>
+<p>The other main change is that I added the <code>color = race</code> option. This tells ggplot that I want to dide my data by the variable race <code>geom_point()</code> and <code>geom_smooth()</code> options, it divides the plot bythe</p>
+<p>A second way we can do the same plot is to create two plots, one for Black faces and one for White faces. We can do this by using the <code>facet_wrap()</code> option. The following code does this. Notice that the code is the same, except I removed the <code>color = 'race'</code> option.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face, <span class="kw">aes</span>(<span class="dt">x =</span> complexity_rating, <span class="dt">y =</span> mean_acc)) +
+<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&#39;lm&#39;</span>, <span class="dt">se =</span> F) +
+<span class="st">  </span><span class="kw">facet_wrap</span>(~race) +
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Complexity Rating&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Mean Accuracy&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Interaction between Complexity and Race Predicting Mean Accuracy&quot;</span>)</code></pre></div>
+<p><img src="10-IA7_moderation_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>You may wonder what the <code>facet_wrap(~race)</code> means. What this means is that I am grouping the plot by race. If I want to make the plot have the graphs on top of each other, with two rows with one column, I can add this as an option to <code>facet_wrap()</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face, <span class="kw">aes</span>(<span class="dt">x =</span> complexity_rating, <span class="dt">y =</span> mean_acc)) +
+<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&#39;lm&#39;</span>, <span class="dt">se =</span> F) +
+<span class="st">  </span><span class="kw">facet_wrap</span>(~race, <span class="dt">nrow =</span> <span class="dv">2</span>) +
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Complexity Rating&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Mean Accuracy&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;Interaction between Complexity and Race Predicting Mean Accuracy&quot;</span>)</code></pre></div>
+<p><img src="10-IA7_moderation_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Another way we can interpret interactions is to divide our data into groups based on the moderator. Then we can do simple linear regressions for each group and see how the coefficients compare. In this case, this would mean dividing our data and Since we have a signficant interaction, we know that the difference between the two groups is different.</p>
+<p><strong>Step 8</strong>: Using the <code>filter()</code> command, create two data frames, one named ‘face.black’ and one named ‘face.white’ which contain only Black and White faces respectively.</p>
+<p><strong>Step 9</strong>: With each of these dataframes conduct a simple regression with complexity predicting memory.</p>
+<p>Question 6: What are the results you get for the regression? Please note the b-value, t-value, and p-value for each condition. Do these results relate to the results you see in the graph?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Question 7: Based on these results, do you think that the data support the hypotheses? What are some potential limitations or cautions with these data? (examples may include: too small sample size, outliers, data are not normally distributed, ceiling or floor effects, and so forth)</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="free-assignment-5-regression-and-sports.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="free-assignment-6-moderation-with-r.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

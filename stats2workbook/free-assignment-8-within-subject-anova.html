@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Workbook for Statistics 2</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Workbook for Statistics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Workbook for Statistics 2" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Workbook for Statistics" />
+  <meta name="github-repo" content="aupsychology" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Workbook for Statistics 2" />
+  
+  <meta name="twitter:description" content="Workbook for Statistics" />
+  
+
+<meta name="author" content="Robert G. Franklin Jr.">
+
+
+<meta name="date" content="2017-08-02">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="interactive-assignment-9-within-subject-anova.html">
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats 2 Workbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Interactive Assignment 1: Introduction to R</a><ul>
+<li class="chapter" data-level="1.1" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#doing-basic-math-in-r"><i class="fa fa-check"></i><b>1.1</b> Doing basic math in R</a></li>
+<li class="chapter" data-level="1.2" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#objects"><i class="fa fa-check"></i><b>1.2</b> Objects</a></li>
+<li class="chapter" data-level="1.3" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#creating-data-frames"><i class="fa fa-check"></i><b>1.3</b> Creating data frames</a></li>
+<li class="chapter" data-level="1.4" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#part-2-inputting-data-from-other-sources."><i class="fa fa-check"></i><b>1.4</b> Part 2: inputting data from other sources.</a></li>
+<li class="chapter" data-level="1.5" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#terms-and-concepts-to-know"><i class="fa fa-check"></i><b>1.5</b> Terms and concepts to know:</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html"><i class="fa fa-check"></i><b>2</b> Interactive Assignment 2: Reviewing Inferential Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#part-1-summary-statistics"><i class="fa fa-check"></i><b>2.1</b> Part 1: Summary Statistics</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#examining-gender-differences-using-t-tests"><i class="fa fa-check"></i><b>2.1.1</b> Examining Gender Differences Using T-tests</a></li>
+<li class="chapter" data-level="2.1.2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#correlation-with-r"><i class="fa fa-check"></i><b>2.1.2</b> Correlation with R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html"><i class="fa fa-check"></i><b>3</b> Free Assignment 1: Reviewing R</a><ul>
+<li class="chapter" data-level="3.1" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> Basic descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Interactive Assignment 3: The tidyverse</a></li>
+<li class="chapter" data-level="5" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>5</b> Interactive Assignment 4: Graphs with ggplot</a><ul>
+<li class="chapter" data-level="5.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#using-ggplot-to-create-histograms"><i class="fa fa-check"></i><b>5.1</b> Using ggplot to create histograms</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#creating-scatterplots-using-ggplot"><i class="fa fa-check"></i><b>5.1.1</b> Creating scatterplots using ggplot</a></li>
+<li class="chapter" data-level="5.1.2" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#editing-other-plot-elements"><i class="fa fa-check"></i><b>5.1.2</b> Editing other plot elements</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><a href="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>6</b> Free Assignment 2: Using the Tidyverse and graphs with ggplot</a></li>
+<li class="chapter" data-level="7" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html"><i class="fa fa-check"></i><b>7</b> Interactive Assignment 5 - Regression in R</a><ul>
+<li class="chapter" data-level="7.1" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#simple-regression"><i class="fa fa-check"></i><b>7.1</b> Simple Regression</a></li>
+<li class="chapter" data-level="7.2" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#adding-a-control-variable-multiple-regression"><i class="fa fa-check"></i><b>7.2</b> Adding a control variable: Multiple Regression</a></li>
+<li class="chapter" data-level="7.3" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#plotting-a-regression-line-using-ggplot"><i class="fa fa-check"></i><b>7.3</b> Plotting a regression line using ggplot</a></li>
+<li class="chapter" data-level="7.4" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#summary"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="free-assignment-4-regression-and-multiple-regression-in-r.html"><a href="free-assignment-4-regression-and-multiple-regression-in-r.html"><i class="fa fa-check"></i><b>8</b> Free Assignment 4 - Regression and multiple regression in R</a></li>
+<li class="chapter" data-level="9" data-path="free-assignment-5-regression-and-sports.html"><a href="free-assignment-5-regression-and-sports.html"><i class="fa fa-check"></i><b>9</b> Free Assignment 5: Regression and Sports</a></li>
+<li class="chapter" data-level="10" data-path="interactive-assignment-7-moderation-in-multiple-regression.html"><a href="interactive-assignment-7-moderation-in-multiple-regression.html"><i class="fa fa-check"></i><b>10</b> Interactive Assignment 7: Moderation in Multiple Regression</a><ul>
+<li class="chapter" data-level="10.1" data-path="interactive-assignment-7-moderation-in-multiple-regression.html"><a href="interactive-assignment-7-moderation-in-multiple-regression.html#using-moderation-in-regression"><i class="fa fa-check"></i><b>10.1</b> Using moderation in regression</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="free-assignment-6-moderation-with-r.html"><a href="free-assignment-6-moderation-with-r.html"><i class="fa fa-check"></i><b>11</b> Free Assignment 6: Moderation with R</a></li>
+<li class="chapter" data-level="12" data-path="interactive-assignment-8-between-subject-anova.html"><a href="interactive-assignment-8-between-subject-anova.html"><i class="fa fa-check"></i><b>12</b> Interactive Assignment 8: Between-subject ANOVA</a></li>
+<li class="chapter" data-level="13" data-path="free-assignment-7-between-subject-anova.html"><a href="free-assignment-7-between-subject-anova.html"><i class="fa fa-check"></i><b>13</b> Free Assignment 7: Between-subject ANOVA</a></li>
+<li class="chapter" data-level="14" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html"><i class="fa fa-check"></i><b>14</b> Interactive Assignment 9: Within-subject ANOVA</a><ul>
+<li class="chapter" data-level="14.1" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html#graphing-with-error-bars"><i class="fa fa-check"></i><b>14.1</b> Graphing with error bars</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="free-assignment-8-within-subject-anova.html"><a href="free-assignment-8-within-subject-anova.html"><i class="fa fa-check"></i><b>15</b> Free Assignment 8: Within-subject ANOVA</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Workbook for Statistics 2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="free-assignment-8-within-subject-anova" class="section level1">
+<h1><span class="header-section-number">15</span> Free Assignment 8: Within-subject ANOVA</h1>
+<p>This assignment will cover how to conduct within-subject and mixed-subject ANOVAs in R. It builds on Interactive Assignment 9 which discusses how to use the <code>ez</code> package to do ANOVA design.</p>
+<p><strong>Step 1</strong>: Before we get started, load the <code>ez</code> package and the <code>tidyverse</code> package.</p>
+<p>The dataset for this homework investigate how older and younger adults perceive faces and rate them on several characteristics. Older and younger adult participants each rated older and younger faces on the characteristics below. The variables you will need are described below.</p>
+<p>ID – participant ID number raterage – a between-subject factor for participant age, with either “old” or “young” ratergender – participant gender: either “F” or “M” ag.rate – average ratings of aggressiveness at.rate – average rating of attractiveness ba.rate – average rating of babyfaceness co.rate – average rating of competence he.rate – average rating of health un.rate – average rating of untrustworthiness faceage – a within-subject variable which indicates the age of the face, with values “oldface” and “youngface”</p>
+<p>In this dataset, I have older and younger adult raters rating older and younger adult faces. To simplify things a bit and save me some typing, I will use the abbreviations OR and YR to refer to Older Raters and Younger Raters and OF and YF to refer to Older Faces and Younger Faces, respectively.</p>
+<p>They are the same data as we used in Interactive Assignment 4, on graphing, but they are structured a bit differently. In that assignment, I had the ratings for older adults and younger adults in separate columns but in this assignment, the ratings for older adults and for younger adults are in the same column, which is how ez requires us to format the data.</p>
+<p>In this assignment, the dependent variables will be the face ratings for aggressiveness, attractiveness, babyfaceness, competence, health, and untrustworthiness.</p>
+<p><strong>Step 2</strong>: Load the data named “FA8rate.csv” into R as the data frame “rate”, for ratings.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ez)
+<span class="kw">library</span>(tidyverse)</code></pre></div>
+<pre><code>## Warning: package &#39;tidyverse&#39; was built under R version 3.3.2</code></pre>
+<pre><code>## Loading tidyverse: ggplot2
+## Loading tidyverse: tibble
+## Loading tidyverse: tidyr
+## Loading tidyverse: readr
+## Loading tidyverse: purrr
+## Loading tidyverse: dplyr</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.3.2</code></pre>
+<pre><code>## Warning: package &#39;tidyr&#39; was built under R version 3.3.2</code></pre>
+<pre><code>## Conflicts with tidy packages ----------------------------------------------</code></pre>
+<pre><code>## filter(): dplyr, stats
+## lag():    dplyr, stats</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rate =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;data/FA8rate.csv&#39;</span>)</code></pre></div>
+<p><strong>Step 3</strong>: Use the <code>aggregate</code> command in order to fill out tables with the means for each rating, separating the ratings by face age and by rater age. So you will have four means, the mean for older raters (OR) rating older faces (OF), OR rating younger faces (YF), YR rating OF, and YR rating YF.</p>
+<p>To get the means for aggressiveness, you would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(ag.rate~raterage*faceage, <span class="dt">data =</span> rate, <span class="dt">FUN =</span> mean)</code></pre></div>
+<pre><code>##   raterage   faceage  ag.rate
+## 1      old   oldface 3.817839
+## 2    young   oldface 3.350521
+## 3      old youngface 3.996978
+## 4    young youngface 3.512032</code></pre>
+<p>Question 1: Using what you get in Step 3, fill out the following tables with the means. I already filled out the Aggressiveness table.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Aggressiveness</th>
+<th align="left">OR</th>
+<th align="left">YR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">OF</td>
+<td align="left">3.82</td>
+<td align="left">3.35</td>
+</tr>
+<tr class="even">
+<td align="left">YF</td>
+<td align="left">4.00</td>
+<td align="left">3.51</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Attractiveness</th>
+<th align="left">OR</th>
+<th align="left">YR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">OF</td>
+<td align="left">     </td>
+<td align="left">     </td>
+</tr>
+<tr class="even">
+<td align="left">YF</td>
+<td align="left">     </td>
+<td align="left">     </td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Babyfaceness</th>
+<th align="left">OR</th>
+<th align="left">YR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">OF</td>
+<td align="left">     </td>
+<td align="left">     </td>
+</tr>
+<tr class="even">
+<td align="left">YF</td>
+<td align="left">     </td>
+<td align="left">     </td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Competence</th>
+<th align="left">OR</th>
+<th align="left">YR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">OF</td>
+<td align="left">     </td>
+<td align="left">     </td>
+</tr>
+<tr class="even">
+<td align="left">YF</td>
+<td align="left">     </td>
+<td align="left">     </td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Health</th>
+<th align="left">OR</th>
+<th align="left">YR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">OF</td>
+<td align="left">     </td>
+<td align="left">     </td>
+</tr>
+<tr class="even">
+<td align="left">YF</td>
+<td align="left">     </td>
+<td align="left">     </td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Untrustworthiness</th>
+<th align="left">OR</th>
+<th align="left">YR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">OF</td>
+<td align="left">     </td>
+<td align="left">     </td>
+</tr>
+<tr class="even">
+<td align="left">YF</td>
+<td align="left">     </td>
+<td align="left">     </td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 2</strong>: Use ggplot to create bar graphs of each of the 6 dependent variables with separate bars for face age and rater age (using faceage and raterage as the independent variables). Make sure to add error bars representing standard error. You can also use the <code>coord_cartesian()</code> function to change the scale of the y axis. For instance, your plot for aggressiveness should look like the following:</p>
+<p><img src="15-FA8_within_ANOVA_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Question 2: Based on the plots and the tables of the means, do you predict any interactions?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Now we are going to conduct the ANOVAs, using face age and rater age as independent variables predicting the dependent variable of aggressiveness ratings (ag.rate).</p>
+<p>Question 4: Which of these independent variables (if any) are between-subject variables? Which are within-subject variables (since this is a lab on within-subject and mixed ANOVA, one of these has to be a within-subject variable).</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Step 3</strong>:Type the following to look at face age (faceage) and rater age (raterage) as independent variables predicting the dependent variable of aggressiveness ratings (ag.rate).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ezANOVA</span>(rate, <span class="dt">dv =</span> .(ag.rate), <span class="dt">wid =</span> .(ID), <span class="dt">within =</span> .(faceage), <span class="dt">between =</span> .(raterage))</code></pre></div>
+<pre><code>## Warning: Collapsing data to cell means. *IF* the requested effects are a
+## subset of the full design, you must use the &quot;within_full&quot; argument, else
+## results may be inaccurate.</code></pre>
+<pre><code>## $ANOVA
+##             Effect DFn DFd         F          p p&lt;.05          ges
+## 2         raterage   1  30 6.2652118 0.01798802     * 1.525502e-01
+## 3          faceage   1  30 5.0061221 0.03283715     * 2.251707e-02
+## 4 raterage:faceage   1  30 0.0134071 0.90859136       6.168922e-05</code></pre>
+<p>Question 5: When you type the following, what results do you get?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Step 4</strong>: Changing the code above, conduct ANOVAs using face age and rater age predicting the other five face ratings, at.rate, ba.rate, co.rate, he.rate, and un.rate.</p>
+<p>Question 6: Now I want you to report your results using APA formatting.</p>
+<p>If you have a significant main effect or interaction, you need to explain why you think there was a main effect or interaction. For main effects, all you have to do is indicate which level was higher. For interactions, you should interpret them by eyeballing the graphs and means and trying to explain why there is an interaction.</p>
+<p>For instance, this is how I would report the results for aggressiveness rating.</p>
+<p>We conducted a 2(face age: older vs younger) X 2(participant age: older versus younger) mixed ANOVA with face age as a within-subject variable and participant age as a between-subject variable. We found a significant main effect of rater age, F(1,30) = 6.27, p = .018, indicating that older participants rated faces more aggressively than younger participants. We also found a significant main effect of face age, F(1,30) = 5.01, p = .032, as younger faces were rated more aggressively than older faces. There was no significant interaction, F(1,30) = .013, p = .91.</p>
+<p>Results for attractiveness:</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Results for babyfaceness:</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Results for competence:</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Results for health:</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Results for untrustworthiness:</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Question 7: What do you think the story is with this data? Pick one of the rating variables (other than aggressiveness) and try to explain why you think there were these main effects and interactions. I’m not going to grade this based on your interpretation; instead, I want you to try your best to interpret the data using what you know about the world.</p>
+<p>For example, I may explain the aggressiveness rating by stating that there is a main effect of face age because overall, people find older faces less aggressive than younger faces. This may be because people have a stereotype that older adults are less aggressive. There is a main effect of rater age because older adults rated faces more aggressively than younger adults. This may be because older adults are more skeptical of people in general.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="interactive-assignment-9-within-subject-anova.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

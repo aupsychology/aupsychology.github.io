@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Workbook for Statistics 2</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta name="description" content="Workbook for Statistics">
+  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Workbook for Statistics 2" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Workbook for Statistics" />
+  <meta name="github-repo" content="aupsychology" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Workbook for Statistics 2" />
+  
+  <meta name="twitter:description" content="Workbook for Statistics" />
+  
+
+<meta name="author" content="Robert G. Franklin Jr.">
+
+
+<meta name="date" content="2017-08-02">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="free-assignment-6-moderation-with-r.html">
+<link rel="next" href="free-assignment-7-between-subject-anova.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats 2 Workbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html"><i class="fa fa-check"></i><b>1</b> Interactive Assignment 1: Introduction to R</a><ul>
+<li class="chapter" data-level="1.1" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#doing-basic-math-in-r"><i class="fa fa-check"></i><b>1.1</b> Doing basic math in R</a></li>
+<li class="chapter" data-level="1.2" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#objects"><i class="fa fa-check"></i><b>1.2</b> Objects</a></li>
+<li class="chapter" data-level="1.3" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#creating-data-frames"><i class="fa fa-check"></i><b>1.3</b> Creating data frames</a></li>
+<li class="chapter" data-level="1.4" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#part-2-inputting-data-from-other-sources."><i class="fa fa-check"></i><b>1.4</b> Part 2: inputting data from other sources.</a></li>
+<li class="chapter" data-level="1.5" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#terms-and-concepts-to-know"><i class="fa fa-check"></i><b>1.5</b> Terms and concepts to know:</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html"><i class="fa fa-check"></i><b>2</b> Interactive Assignment 2: Reviewing Inferential Statistics</a><ul>
+<li class="chapter" data-level="2.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#part-1-summary-statistics"><i class="fa fa-check"></i><b>2.1</b> Part 1: Summary Statistics</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#examining-gender-differences-using-t-tests"><i class="fa fa-check"></i><b>2.1.1</b> Examining Gender Differences Using T-tests</a></li>
+<li class="chapter" data-level="2.1.2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#correlation-with-r"><i class="fa fa-check"></i><b>2.1.2</b> Correlation with R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html"><i class="fa fa-check"></i><b>3</b> Free Assignment 1: Reviewing R</a><ul>
+<li class="chapter" data-level="3.1" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> Basic descriptive statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Interactive Assignment 3: The tidyverse</a></li>
+<li class="chapter" data-level="5" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>5</b> Interactive Assignment 4: Graphs with ggplot</a><ul>
+<li class="chapter" data-level="5.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#using-ggplot-to-create-histograms"><i class="fa fa-check"></i><b>5.1</b> Using ggplot to create histograms</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#creating-scatterplots-using-ggplot"><i class="fa fa-check"></i><b>5.1.1</b> Creating scatterplots using ggplot</a></li>
+<li class="chapter" data-level="5.1.2" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#editing-other-plot-elements"><i class="fa fa-check"></i><b>5.1.2</b> Editing other plot elements</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><a href="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>6</b> Free Assignment 2: Using the Tidyverse and graphs with ggplot</a></li>
+<li class="chapter" data-level="7" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html"><i class="fa fa-check"></i><b>7</b> Interactive Assignment 5 - Regression in R</a><ul>
+<li class="chapter" data-level="7.1" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#simple-regression"><i class="fa fa-check"></i><b>7.1</b> Simple Regression</a></li>
+<li class="chapter" data-level="7.2" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#adding-a-control-variable-multiple-regression"><i class="fa fa-check"></i><b>7.2</b> Adding a control variable: Multiple Regression</a></li>
+<li class="chapter" data-level="7.3" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#plotting-a-regression-line-using-ggplot"><i class="fa fa-check"></i><b>7.3</b> Plotting a regression line using ggplot</a></li>
+<li class="chapter" data-level="7.4" data-path="interactive-assignment-5-regression-in-r.html"><a href="interactive-assignment-5-regression-in-r.html#summary"><i class="fa fa-check"></i><b>7.4</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="free-assignment-4-regression-and-multiple-regression-in-r.html"><a href="free-assignment-4-regression-and-multiple-regression-in-r.html"><i class="fa fa-check"></i><b>8</b> Free Assignment 4 - Regression and multiple regression in R</a></li>
+<li class="chapter" data-level="9" data-path="free-assignment-5-regression-and-sports.html"><a href="free-assignment-5-regression-and-sports.html"><i class="fa fa-check"></i><b>9</b> Free Assignment 5: Regression and Sports</a></li>
+<li class="chapter" data-level="10" data-path="interactive-assignment-7-moderation-in-multiple-regression.html"><a href="interactive-assignment-7-moderation-in-multiple-regression.html"><i class="fa fa-check"></i><b>10</b> Interactive Assignment 7: Moderation in Multiple Regression</a><ul>
+<li class="chapter" data-level="10.1" data-path="interactive-assignment-7-moderation-in-multiple-regression.html"><a href="interactive-assignment-7-moderation-in-multiple-regression.html#using-moderation-in-regression"><i class="fa fa-check"></i><b>10.1</b> Using moderation in regression</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="free-assignment-6-moderation-with-r.html"><a href="free-assignment-6-moderation-with-r.html"><i class="fa fa-check"></i><b>11</b> Free Assignment 6: Moderation with R</a></li>
+<li class="chapter" data-level="12" data-path="interactive-assignment-8-between-subject-anova.html"><a href="interactive-assignment-8-between-subject-anova.html"><i class="fa fa-check"></i><b>12</b> Interactive Assignment 8: Between-subject ANOVA</a></li>
+<li class="chapter" data-level="13" data-path="free-assignment-7-between-subject-anova.html"><a href="free-assignment-7-between-subject-anova.html"><i class="fa fa-check"></i><b>13</b> Free Assignment 7: Between-subject ANOVA</a></li>
+<li class="chapter" data-level="14" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html"><i class="fa fa-check"></i><b>14</b> Interactive Assignment 9: Within-subject ANOVA</a><ul>
+<li class="chapter" data-level="14.1" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html#graphing-with-error-bars"><i class="fa fa-check"></i><b>14.1</b> Graphing with error bars</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="free-assignment-8-within-subject-anova.html"><a href="free-assignment-8-within-subject-anova.html"><i class="fa fa-check"></i><b>15</b> Free Assignment 8: Within-subject ANOVA</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Workbook for Statistics 2</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="interactive-assignment-8-between-subject-anova" class="section level1">
+<h1><span class="header-section-number">12</span> Interactive Assignment 8: Between-subject ANOVA</h1>
+<p>This assignment will cover the ideas involved with doing one-way and two-way between-subject ANOVAs in R. It will cover:</p>
+<ol style="list-style-type: decimal">
+<li>How to set up data for ANOVAs in R</li>
+<li>How to use the <code>describeBy()</code> function in the <code>psych</code> package to examine marginal means in ANOVA</li>
+<li>How to evaluate marginal means for main effects and interactions</li>
+<li>How to use the <code>aov()</code> function to do a one-way and a two-way ANOVA and interpret the output</li>
+<li>How to use <code>ggplot()</code> to graph a two-way ANOVA.</li>
+</ol>
+<p>ANOVA stands for ANanlysis Of VAriance and examines whether the variance due to an independent variable or variables is significantly greater than the natural variance within a series of data. The idea is that if an independent variable can explain a significantly greater proprotion of variance than the natural variance in the data, then that variable is important.</p>
+<p>In this lab, we will investigate data from Zellner et al. (2010) which explored how symmetry and color affected people’s preferences for food. The data are available in the dataset “IA8food.csv”.</p>
+<p><strong>Step 1</strong>: Load the data into R as a dataframe named “food”. In addition, load the tidyverse and psych packages.</p>
+<p>The variables are as follows: subject – participant number</p>
+<p>balance – whether the food was balanced or symmetrical or unbalanced</p>
+<p>color – whether the food was monochrome or colorful</p>
+<p>attractiveness – measure of how attractive participants found the food (from -100 to 100)</p>
+<p>willingness – measure of how willing people were to try the food (-100 to 100)</p>
+<p>liking – how much they reported liking the food (-100 to 100)</p>
+<p>The researchers’ main hypothesis is investigating how symmetry (the balance variable) and color affect how people view food.</p>
+<p>Question 1: What is the design of this study using ANOVA terminology? What are the factors and what are the levels?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Step 2</strong>: Use the <code>describeBy()</code> function to fill out the following table, to investigate the means and standard deviations of the main effects.</p>
+<p>For instance, to find the main effects of balance using of the attractiveness as the dependent variable, I would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">describeBy</span>(food$attractiveness, food$balance)</code></pre></div>
+<pre><code>## $asymmetrical
+##    vars  n mean    sd median trimmed   mad   min  max range skew kurtosis
+## X1    1 34 15.9 42.88   12.5   15.59 47.08 -60.7 92.9 153.6 0.08    -0.91
+##      se
+## X1 7.35
+## 
+## $symmetrical
+##    vars  n  mean    sd median trimmed   mad    min   max  range  skew
+## X1    1 34 32.75 38.37  36.99   34.22 33.14 -66.99 99.83 166.82 -0.47
+##    kurtosis   se
+## X1     -0.2 6.58
+## 
+## attr(,&quot;call&quot;)
+## by.default(data = x, INDICES = group, FUN = describe, type = type)</code></pre>
+<p>Question 2: Fill out the tables below, the first one with the means and the second one with the standard deviations. Note that I already started to fill out the tables. What main effects do you see?</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Mean</th>
+<th align="left">Attractiveness</th>
+<th align="left">Willing</th>
+<th align="left">Liking</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Symmetrical</td>
+<td align="left">32.75</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Unsymmetrical</td>
+<td align="left">15.9</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"> </td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Monochrome</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Colorful</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Standard Deviation</th>
+<th align="left">Attractiveness</th>
+<th align="left">Willing</th>
+<th align="left">Liking</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Symmetrical</td>
+<td align="left">42.88</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Unsymmetrical</td>
+<td align="left">38.37</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"> </td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Monochrome</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Colorful</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Now we want to look at the means of each group to see if there are any interactions. In order to do this, we can use the describeBy variable and give it two different variables to break down our data. In order to do this for attractiveness, we would type the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">describeBy</span>(food$attractiveness, <span class="kw">list</span>(food$balance, food$color), <span class="dt">mat=</span>T)</code></pre></div>
+<pre><code>##     item       group1     group2 vars  n     mean       sd median  trimmed
+## X11    1 asymmetrical      color    1 17 12.39941 41.29885   7.94 11.72333
+## X12    2  symmetrical      color    1 17 48.69941 22.89846  42.00 47.39467
+## X13    3 asymmetrical monochrome    1 17 19.40059 45.39939  13.78 20.06200
+## X14    4  symmetrical monochrome    1 17 16.80059 44.39952  17.68 16.85133
+##          mad    min   max  range       skew   kurtosis        se
+## X11 45.72338 -57.96 92.90 150.86 0.11536118 -0.9298756 10.016442
+## X12 23.75125  17.60 99.37  81.77 0.55513242 -0.8589993  5.553693
+## X13 51.38692 -60.70 89.58 150.28 0.01654903 -1.1328890 11.010970
+## X14 47.72489 -66.99 99.83 166.82 0.06229426 -1.0049512 10.768465</code></pre>
+<p>Notice at the end I had to add the <code>mat = T</code> option. This allows R to display the data better.</p>
+<p><strong>Step 3</strong>: Use the <code>describeBy()</code> function to examine the means for the willing and liking variable.</p>
+<p>Another way to evaluate whether there are interactions between variables is to plot them. Now we will examine how to plot means data in R with ggplot. We can do this with a bar graph.</p>
+<p>To do this in ggplot, we have to use the <code>stat_summary()</code> function, which tells ggplot to plot means, rather than the actual values themselves.</p>
+<p>In the first line, I add the data we will use, including the <code>aes()</code> function in the main <code>ggplot()</code> option. Notice that when we do a two-group ANOVA, we have two different independent variables. In ggplot, I have to assign one of these to be the “x” variable and one to be the “grouping” variable, which is in the “fill” option. It tells ggplot to “fill” the different levels of the color variable (color or monochrome) with different colors. Since each of the independent variables are separate, it is arbitrary which one I say is the “x” variable and which one is the “fill” variable.</p>
+<p>Here is the code we will use:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> food, <span class="kw">aes</span>(<span class="dt">x =</span> balance, <span class="dt">y =</span> attractiveness, <span class="dt">fill =</span> color)) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.y =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;bar&#39;</span>, <span class="dt">position =</span> <span class="st">&#39;dodge&#39;</span>)</code></pre></div>
+<p><img src="12-IA8_between_ANOVA_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Question 3: Does it look like there is an interaction between balance and color?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Question 4: Type the graph below, but switch the x variable and the fill variable. What happens to the plot?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Step 4</strong>: Change the code for graphing in order to graph the willing variable as the dependent variable. Then change the code for liking as the dependent variable</p>
+<p>Question 5: Does it look like there is an interaction between balance and color for the willing variable? What about for the liking variable?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Now after all this graphing, we will get to actually doing the ANOVA. The code to do the ANOVA with balance and color as factors predicting attractiveness is as follows:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">aov</span>(attractiveness~balance*color, <span class="dt">data =</span> food)
+<span class="kw">summary</span>(x)</code></pre></div>
+<pre><code>##               Df Sum Sq Mean Sq F value Pr(&gt;F)  
+## balance        1   4827    4827   3.083 0.0839 .
+## color          1   2635    2635   1.683 0.1992  
+## balance:color  1   6431    6431   4.108 0.0469 *
+## Residuals     64 100198    1566                 
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>In the output, the first two rows give us the sums of squares, mean squares, F, and p-value for the balance and color main effects. The last row is the interaction between balance and color.</p>
+<p>Question 6: Based on the output, are there any significant main effects? Interactions? How does this relate to what you predicted after looking at the means and the graphs?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Question 7: What do you think explains the interaction (or lack of interaction) that you found in question 6. Try to use your best guess to explain what the data mean.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Step 5</strong>: Using the code above, repeat the same steps to conduct the ANOVA using willing and liking as dependent variables, instead of attractiveness.</p>
+<p>Question 8: Based on the output, are there any significant main effects for the willing and liking variable? Interactions? How does this relate to what you predicted after looking at the means and the graphs?</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Question 9: What do you think explains the results that you found in question 8 Try to use your best guess to explain what the data mean.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="free-assignment-6-moderation-with-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="free-assignment-7-between-subject-anova.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
+
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
