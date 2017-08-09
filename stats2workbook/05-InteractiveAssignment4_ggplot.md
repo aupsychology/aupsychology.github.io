@@ -27,19 +27,19 @@ raters perceive older and younger adult faces. The raters rated the faces on 6 c
 
 Each row represnts a different face. The variables (columns) are as follows:
 
-*FaceSex - the sex of each face rated (F for female, M for male)
+* FaceSex - the sex of each face rated (F for female, M for male)
 
-*FaceAgeGroup - the age group of each face rated (OA for older adult faces, YA for younger adult faces)
+* FaceAgeGroup - the age group of each face rated (OA for older adult faces, YA for younger adult faces)
 
-*FaceAgeNumber - the numeric age of the individual rated
+* FaceAgeNumber - the numeric age of the individual rated
 
-*ag.old and ag.young - ratings of aggressiveness by older adult and younger adult raters respectively
+* ag.old and ag.young - ratings of aggressiveness by older adult and younger adult raters respectively
 
-*at.old and at.young - ratings of attractiveness by older adult and younger adult raters respectively
-*ba.old and ba.young - ratings of babyfaceness by older adult and younger adult raters respectively
-*co.old and co.young - ratings of competence by older adult and younger adult raters respectively
-*he.old and he.young - ratings of health by older adult and younger adult raters respectively
-*un.old and un.young - ratings of untrustworthiness by older adult and younger adult raters respectively
+* at.old and at.young - ratings of attractiveness by older adult and younger adult raters respectively
+* ba.old and ba.young - ratings of babyfaceness by older adult and younger adult raters respectively
+* co.old and co.young - ratings of competence by older adult and younger adult raters respectively
+* he.old and he.young - ratings of health by older adult and younger adult raters respectively
+* un.old and un.young - ratings of untrustworthiness by older adult and younger adult raters respectively
 
 Load the file into the dataset face by typing the following command and selecting the .csv file when the file select dialog appears
 
@@ -91,7 +91,7 @@ Before doing this, we would like to look at the descriptives of our data in orde
 &nbsp;
 
 
-3. Many researchers have speculated older adults show a **positivity bias** where they tend to rate events as being more positive than younger adults. Given that these were the same faces rated by older adults and younger adults, do you think there's evidence of the positivity bias here?
+3. Many researchers have speculated older adults show a *positivity bias* where they tend to rate events as being more positive than younger adults. Given that these were the same faces rated by older adults and younger adults, do you think there's evidence of the positivity bias here?
 
 &nbsp;
 
@@ -113,14 +113,13 @@ Before doing this, we would like to look at the descriptives of our data in orde
 
 Now we are going to use ggplot to visualize our data. The first thing we are going to do is to describe the parts of ggplot. When generating each plot, the plot command has three parts:
 
-1. The ggplot() command, which tells us our data frame and the data we are going to plot
+1. The `ggplot()` command, which tells us our data frame and the data we are going to plot
 2. **Geoms**, which are elements that we plot on the main plot. A geom might be a line graph, a bar graph, or any other graphic element we put on the plot
 3. **Aesthetics** which are elements used to modify the plot. These are extra commands which can modify the plot or geoms (like saying how thick a line is)
 
-GGplot uses several different functions which are all technically one command. When we do this in R, we can put the command on several lines, but separate each line with a \+ at the end of each line. When a line ends with a \+, R knows that the command is not complete and that there are more functions to add. Note that when we type the commands for ggplot, we end each line with a \+, except for the last line.
+GGplot uses several different functions which are all technically one command. To make it easier to read, many people put the different commands on different lines and separate each line with a \+ (plus sign) at the end of each line. When a line ends with a \+, R knows that the command is not complete and that there are more functions to add. Note that when we type the commands for ggplot, we end each line with a \+, except for the last line.
 
-
-The first thing we are going to do is to build a histogram of each rating. We will start with ag.old to create a simple histogram.
+The first thing we are going to do is to build a histogram of each rating. We will start with ag.old to create a simple histogram. Type the command below.
 
 
 
@@ -131,9 +130,13 @@ ggplot(data = face) +
 
 <img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
-There are two lines I typed here. In the first line, I indicated the data by using the `ggplot()` command. The first argument is the data frame, the `data = face`.  
+This is one command split across two lines. In the first line, I indicated the data by using the `ggplot()` command. The first argument is the data frame, the `data = face`.  
 
-The final part is the *geom* we want, which is the layer or type of graph we have. In this case, it's a histogram. In this geom, I want to tell ggplot which data to graph. To do this, I have to use an aesthetic. This is why I type `aes(x = ag.old)`.
+The second part is the *geom* we want, which is the type of graph we have. In ggplot, we can put many geoms on the same plot, like layers on top of one another. However, in this case, we just have one layer, which is a histogram. 
+
+In `geom_histogram()`, I want to tell ggplot which data to graph. To do this, I have to use an aesthetic. This is why I type `aes(x = ag.old)`.
+
+When you type this command, you should see a plot appear in the bottom left window in RStudio, under the "Plots" tab. 
 
 When calculating a histogram, sometimes we want to set how many bars or **bins** we have in the histogram. GGplot sets 30 as a default. We can change that by adding an option to the `geom_histogram()` part. Try typing the following:
 
@@ -153,9 +156,9 @@ ggplot(data = face) +
 
 <img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
-Here I used the `color` argument to set the color of the lines and the `fill` argument to set the color of the bars. There are a lot of colors built into R and to see all your options, you can type: `colors()`
+Here I used the `color` argument to set the color of the lines and the `fill` argument to set the color of the bars. There are a lot of colors built into R and to see all your options, you can type `colors()`.
 
-4. Using what is written above, make a histogram with 15 bars with each bar having a black outline and a gray fill. (You can pick what shade of gray you'd like). It should look like this. Note below what code you would use to write this:
+4. Using and modifying what is written above, make a histogram with 15 bars with each bar having a black outline and a gray fill. (You can pick what shade of gray you'd like). It should look like this. Note below what code you would use to write this:
 
 
 <img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-7-1.png" width="672" />
@@ -199,7 +202,7 @@ Here I used the `color` argument to set the color of the lines and the `fill` ar
 
 ###Creating scatterplots using ggplot
 
-A histogram graphs the distribution of one variable whereas a scatterplot graphs the relationship of two variables. This allows us to look at whether two variables are associated.
+A histogram graphs the distribution of one variable whereas a scatterplot graphs the relationship of two variables. This allows us to look at whether two variables are associated or correlated and whether there are any outliers or other anomalies in our data.
 
 In this study, the researchers were examining whether the ratings by older adults and the ratings by younger adults would be correlated, indicating that they agreed on which faces were high in aggressiveness, competence, and so forth.
 
@@ -259,7 +262,7 @@ In ggplot, we can also edit the other elements of a plot which are on the outsid
 
 ```r
 ggplot(data = face) + 
-  geom_point(aes(x = ag.old, y = ag.young), size = 3, shape = 20) +
+  geom_point(aes(x = ag.old, y = ag.young), size = 5, shape = 20) +
   labs(title='Older and younger adult ratings of aggressiveness', x = "Older Adult Ratings", y = "Younger Adult Ratings")
 ```
 
@@ -297,3 +300,6 @@ As you can see in the examples, you can keep adding options to the plot to chang
 
 &nbsp;
 
+###Outputting your plot
+
+When you create a plot in ggplot, you may also want to take that plot and use it in a paper or presentation. To do this, there are several ways to get the plot you should see. In the "Plots" window in RStudio, there is a button which says "Export". If you click this, you have the option to save the current plot as an image or as a pdf file. I usually save plots as an image and then insert them into a paper or presentation. You can also copy the plot to your clipboard and then paste it into another program.

@@ -3,7 +3,11 @@
 
 This assignment explores the use of the "tidyverse", or a set of R packages designed to import, format, and analyze data in "tidy" formats. 
 
-In this lab, we will cover how to: 
+In this lab, we will:
+
+1. How to use `filter()` to select part of your data
+2. How to arrange and select data using the `arrange()` and `select()` funtions
+3. How to use `mutate()` to make new columns in a dataframe.
 
 To start with the tidyverse, you need to install the package 'tidyverse', which is a collection of useful packages used to analyze data. Do the following to install it:
 
@@ -21,25 +25,18 @@ library(tidyverse)
 
 For this assignment, you are going to work through Chapter 5.1-5.5 of R for Data Science. It is available at this link: http://r4ds.had.co.nz/transform.html
 
-This assignment will teach you how to transform data by using a built-in dataset. Make sure you know the following when you're done with this assigment
-
-1. How to use `filter()` to select part of your data
-2. How to arrange and select data using the `arrange()` and `select()` funtions
-3. How to use `mutate()` to make new columns
+Read the chapter at the attached link and then answer the questions that are below when you get to them. Place your answers on this sheet.
 
 If you're ambitious, you can work through sections 5.6 and 5.7 on your own.
 
-Read the chapter and type the commands that are listed in this assignment. Answer the questions below when you get to them in the reading:
 
 1. Find all flights that:
 
-Had an arrival delay of two or more hours
-Flew to Houston (IAH or HOU)
-Were operated by United, American, or Delta
-Departed in summer (July, August, and September)
-Arrived more than two hours late, but didn’t leave late
-Were delayed by at least an hour, but made up over 30 minutes in flight
-Departed between midnight and 6am (inclusive)
+* Had an arrival delay of two or more hours
+* Flew to Houston (IAH or HOU)
+* Were operated by United, American, or Delta
+* Departed in summer (July, August, and September)
+* Arrived more than two hours late, but didn’t leave late
 
 
 &nbsp;

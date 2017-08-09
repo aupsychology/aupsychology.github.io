@@ -1,7 +1,7 @@
 --- 
 title: "Workbook for Statistics 2"
 author: "Robert G. Franklin Jr."
-date: "2017-08-02"
+date: "2017-08-08"
 site: bookdown::bookdown_site
 documentclass: book
 github-repo: aupsychology
@@ -33,6 +33,6 @@ config:
 
 # Preface {-}
 
-This is a workbook for *Statistics: The Story of Numbers* and contains exercises for each of the chapters listed there.
+This is the second workbook for *Statistics: The Story of Numbers* and contains exercises for the second set the chapters listed there (chapters 13 onward, which are not written yet).
 
 

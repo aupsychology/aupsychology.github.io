@@ -9,7 +9,7 @@ After completing this lab, you should be able to:
 2. Know how to conduct a t-test in R and interpret the output
 3. Know how to conduct a correlation in R and interpret the output.
 
-In this lab, we will use some data that some students collected for a research project previously. In this project, the researchers gave students a 
+In this lab, we will use some data that some students collected for a research project previously. In this project, the researchers gave students a series of questionnaires looking how personality traits affected a participant's likelihood to conform.
 
 First we are going to import the data. In this case, the data were entered on Google Sheets. To import data straight from Google Sheets, we can use the `gsheet` package. To install this package, we would type:
 
@@ -35,19 +35,19 @@ d = gsheet2tbl(link)
 
 Whenever you share data, you should always include a guide that tells people what each variable is and what the variables represent. In this case, the variables are named as follows:
 
-Participant: a participant number
-E: extraversion score
-A: agreeableness score
-C: conscientiousness score
-N: Neuroticism score
-O: Openness score
-Gender: gender coded F and M
-Age: participant age
-Conformity: their score on a survey about how much they would conform
-RATING: a participant's rating to the question "how much do I think I conform to others' behaviors"
-SelfEsteem: a score on a self-esteem inventory with higher scores indicating more self-esteem
+* Participant: a participant number
+* E: extraversion score
+* A: agreeableness score
+* C: conscientiousness score
+* N: Neuroticism score
+* O: Openness score
+* Gender: gender coded F and M
+* Age: participant age
+* Conformity: their score on a survey about how much they would conform
+* RATING: a participant's rating to the question "how much do I think I conform to others' behaviors"
+* SelfEsteem: a score on a self-esteem inventory with higher scores indicating more self-esteem
 
-##Part 1: Summary Statistics
+##Summary Statistics in R
 
 We are going to use the `describe()` and `describeBy` functions in the `psych` package to first look at some summary statistics. You can see more about these functions in the last assignment. First, we'll load the psych package.
 
@@ -125,7 +125,7 @@ Notice that this tells us the mean for extraversion is 25.67 with a standard dev
 
 &nbsp;
 
-###Examining Gender Differences Using T-tests
+##Examining Gender Differences Using T-tests
 
 Now we are going to see if there are any differences between male and female participants in their scores on the personality inventories and in conformity. To conduct t-tests, we can use the `t-test()` function in R. 
 
@@ -137,6 +137,8 @@ t.test(d$N, d$E)
 ```
 
 However, comparing how high extraversion is to neuroticism doesn't make sense. We want to compare a single personality trait with another variable that tells us which gender a person is. To do that, we have to enter data  different way. 
+
+In R, we use what is called a *formula notation* to describe when we want to input one variable **by** another variable. What this means is that we have a dependent variable or an outcome variable, and then we have one or more variables that tell us what groups or how to divide the dependent variable.
 
 This function has one input, but it has two variables divided with a tilde. The first variable is the dependent variable and the other is the the grouping variable that tells what category an observation is in. The independent variable must have exactly 2 levels, because a t-test only compares 2 groups. This makes the `Gender` variable a good candidate.
 
@@ -163,11 +165,9 @@ t.test(d$E~d$Gender)
 
 This is the output you should get with this test. The second line of the output is the one you are most interested in. This tells us the t value, the degrees of freedom (abbreviated df), and the p value. The degrees of freedom is a corrected value, so it is often a decimal.
 
-The 95% confidence interval is on the 5th line, and the last line has the mean of the variable for each group. Notice in this case that the group F for female is very close to the value for group M, for male, which is why this t-test is not significant.
+The 95% confidence interval is on the 5th line, and the last line has the mean of the variable for each group. Notice in this case the mean for group F, for female, is very close to the value for group M, for male, which is why this t-test is not significant.
 
-2.  Using this function, do a t-test for the other 4 personality variables and conformity. Report your t-value and p-value for each of the tests below, using APA formatting: *t*(df) = tvalue, *p* = pvalue.
-
-&nbsp;
+2.  Using this function, do a t-test for the other 4 personality variables and conformity. Report your t-value and p-value for each of the tests below, using APA formatting: *t*(df) = tvalue, *p* = pvalue, or *t*(25) = .20, *p* = .84.
 
 &nbsp;
 
@@ -195,8 +195,10 @@ The 95% confidence interval is on the 5th line, and the last line has the mean o
 
 &nbsp;
 
+&nbsp;
 
-###Correlation with R
+
+##Correlation with R
 
 The researchers were interested in whether there was a correlation between the personality variables and conformity. To test whether a correlation is present, we can use the `cor.test()` function in R. This function requires two input variables, which will be correlated. To see the correlation between Extraversion and Conformity, we would type:
 

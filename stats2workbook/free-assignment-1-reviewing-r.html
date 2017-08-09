@@ -26,7 +26,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-08-02">
+<meta name="date" content="2017-08-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -113,10 +113,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.5" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#terms-and-concepts-to-know"><i class="fa fa-check"></i><b>1.5</b> Terms and concepts to know:</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html"><i class="fa fa-check"></i><b>2</b> Interactive Assignment 2: Reviewing Inferential Statistics</a><ul>
-<li class="chapter" data-level="2.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#part-1-summary-statistics"><i class="fa fa-check"></i><b>2.1</b> Part 1: Summary Statistics</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#examining-gender-differences-using-t-tests"><i class="fa fa-check"></i><b>2.1.1</b> Examining Gender Differences Using T-tests</a></li>
-<li class="chapter" data-level="2.1.2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#correlation-with-r"><i class="fa fa-check"></i><b>2.1.2</b> Correlation with R</a></li>
-</ul></li>
+<li class="chapter" data-level="2.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#summary-statistics-in-r"><i class="fa fa-check"></i><b>2.1</b> Summary Statistics in R</a></li>
+<li class="chapter" data-level="2.2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#examining-gender-differences-using-t-tests"><i class="fa fa-check"></i><b>2.2</b> Examining Gender Differences Using T-tests</a></li>
+<li class="chapter" data-level="2.3" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#correlation-with-r"><i class="fa fa-check"></i><b>2.3</b> Correlation with R</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html"><i class="fa fa-check"></i><b>3</b> Free Assignment 1: Reviewing R</a><ul>
 <li class="chapter" data-level="3.1" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> Basic descriptive statistics</a></li>
@@ -126,6 +125,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#using-ggplot-to-create-histograms"><i class="fa fa-check"></i><b>5.1</b> Using ggplot to create histograms</a><ul>
 <li class="chapter" data-level="5.1.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#creating-scatterplots-using-ggplot"><i class="fa fa-check"></i><b>5.1.1</b> Creating scatterplots using ggplot</a></li>
 <li class="chapter" data-level="5.1.2" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#editing-other-plot-elements"><i class="fa fa-check"></i><b>5.1.2</b> Editing other plot elements</a></li>
+<li class="chapter" data-level="5.1.3" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#outputting-your-plot"><i class="fa fa-check"></i><b>5.1.3</b> Outputting your plot</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><a href="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>6</b> Free Assignment 2: Using the Tidyverse and graphs with ggplot</a></li>
@@ -177,7 +177,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>To test our hypothesis, we had participants see a face presented with an adjective and the people had to answer a question of how much they thought that adjective fit the person pictured. For instance,the adjective might be “excited” and they would answer how much they thought “excited” fit the person pictured. Afterward, the participants had to complete a memory test where the people they saw were mixed with people they had never seen before. The idea was that when a person was paired with a complex mental state adjective, that required more mentalizing, the person was more likely to be remembered than when they were presented with a basic mental state adjective which required less mentalizing.</p>
 <p>The data for this study are available as the FA1memdata.csv file. The first step is to import that data using the <code>read.csv()</code> command. Import the data to the data frame named “d” Once you import it, you should see the dataframe in your environment. It has 81 observations of 14 variables.</p>
 <p>This dataframe has several variables. You can see the variable names by clicking the data frame in the “Environment” window in the top right. Here is a guide to what the variables mean.</p>
-<p>Subject: Subject number Age: Participant Age Sex: Participant Sex novelACC: accuracy for novel items (faces in the memory test which were not seen before) seenACC: accuracy for seen items (faces in the memory test which were previously seen) overallACC: accuracy for all faces. ComplexHCH and BasicHCH: High confidence hits for faces shown with complex adjectives and basic adjectives respectively. A high confidence hit is when a person sees a face they have seen before and answers that they are very confident they saw that face before. ComplexLCH and BasicLCH: Low confidence hits for faces shown with complex adjectives and basic adjectives respectively. A low confidence hit is when a person sees a face that they have already seen and says they are only somewhat sure they have seen that face before. ComplexLCM and BasicLCM: Low confidence misses for faces shown with complex adjectives and basic adjectives respectively: A low confidence miss is when a person sees a face they have previously seen before and says that they are somewhat confident that they <em>did not</em> see that face previously. ComplexHCM and BasicHCM: High confidence misses for faces shown with complex adjectives and basic adjectives respectively. A high confidence miss is when a person sees a face they have previously seen before and says they are very confident they did not see that person before.</p>
+<ul>
+<li>Subject: Subject number</li>
+<li>Age: Participant Age</li>
+<li>Sex: Participant Sex</li>
+<li>novelACC: accuracy for novel items (faces in the memory test which were not seen before)</li>
+<li>seenACC: accuracy for seen items (faces in the memory test which were previously seen)</li>
+<li>overallACC: accuracy for all faces.</li>
+<li>ComplexHCH and BasicHCH: High confidence hits for faces shown with complex adjectives and basic adjectives respectively. A high confidence hit is when a person sees a face they have seen before and answers that they are very confident they saw that face before.</li>
+<li>ComplexLCH and BasicLCH: Low confidence hits for faces shown with complex adjectives and basic adjectives respectively. A low confidence hit is when a person sees a face that they have already seen and says they are only somewhat sure they have seen that face before.</li>
+<li>ComplexLCM and BasicLCM: Low confidence misses for faces shown with complex adjectives and basic adjectives respectively: A low confidence miss is when a person sees a face they have previously seen before and says that they are somewhat confident that they <em>did not</em> see that face previously.</li>
+<li>ComplexHCM and BasicHCM: High confidence misses for faces shown with complex adjectives and basic adjectives respectively. A high confidence miss is when a person sees a face they have previously seen before and says they are very confident they did not see that person before.</li>
+</ul>
 <p>Our theory is that memory for faces presented with complex adjectives will be better than memory for faces presented with basic adjectives. Therefore we expect the following:</p>
 <ol style="list-style-type: decimal">
 <li>Complex HCH will be higher than Basic HCH - since high confidence hits is the strongest form of memory.</li>
@@ -199,8 +210,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <ol start="2" style="list-style-type: decimal">
-<li><p>Use the describeBy function to evalulate the means and standard deviations for the novelACC, seenACC, and overallACC variable for males and females separately, using Sex as a grouping variable. Create a table to report your answers below:</p></li>
-<li><p>Mean and standard deviation for all variables (except Subject and Sex)  </p></li>
+<li>Use the describeBy function to evalulate the means and standard deviations for the novelACC, seenACC, and overallACC variable for males and females separately, using Sex as a grouping variable. Create a table to report your answers below:</li>
+</ol>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<ol style="list-style-type: decimal">
+<li>Mean and standard deviation for all variables (except Subject and Sex)  </li>
 </ol>
 <p> </p>
 <p> </p>
@@ -224,7 +245,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Now we are going to test the main hypotheses of interest. Examine whether there is a significant difference between ComplexHCH and BasicHCH. This will be a paired-samples t-test, so you will type the following into R:</li>
 </ol>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(d$ComplexHCH, d$BasicHCH, <span class="dt">paired =</span> <span class="ot">TRUE</span>)</code></pre></div>
-<p>Is there a significant difference? What does this mean (i.e., which variable is more and what does that indicate?)</p>
+<p>Is there a significant difference? Which variable has a higher mean? Do the results support the researchers’ hypothesis?</p>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -250,7 +271,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <ol start="6" style="list-style-type: decimal">
-<li>Do these results support the theory that memory is stronger for faces presented with complex adjectives than for faces presented with basic mental state adjectives? Why or why not? (you should use your answers from the previous questions to elaborate here)</li>
+<li>When looking at all the results, do these results support the theory that memory is stronger for faces presented with complex adjectives than for faces presented with basic mental state adjectives? Why or why not? You should use your answers to the questions above in order to answer these questions.</li>
 </ol>
 <p> </p>
 <p> </p>

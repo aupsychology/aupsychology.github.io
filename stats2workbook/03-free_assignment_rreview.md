@@ -20,16 +20,16 @@ The data for this study are available as the FA1memdata.csv file. The first step
 
 This dataframe has several variables. You can see the variable names by clicking the data frame in the "Environment" window in the top right. Here is a guide to what the variables mean.
 
-Subject: Subject number
-Age: Participant Age
-Sex: Participant Sex
-novelACC: accuracy for novel items (faces in the memory test which were not seen before)
-seenACC: accuracy for seen items (faces in the memory test which were previously seen)
-overallACC: accuracy for all faces.
-ComplexHCH and BasicHCH: High confidence hits for faces shown with complex adjectives and basic adjectives respectively. A high confidence hit is when a person sees a face they have seen before and answers that they are very confident they saw that face before.
-ComplexLCH and BasicLCH: Low confidence hits for faces shown with complex adjectives and basic adjectives respectively. A low confidence hit is when a person sees a face that they have already seen and says they are only somewhat sure they have seen that face before.
-ComplexLCM and BasicLCM: Low confidence misses for faces shown with complex adjectives and basic adjectives respectively: A low confidence miss is when a person sees a face they have previously seen before and says that they are somewhat confident that they *did not* see that face previously.
-ComplexHCM and BasicHCM: High confidence misses for faces shown with complex adjectives and basic adjectives respectively. A high confidence miss is when a person sees a face they have previously seen before and says they are very confident they did not see that person before.
+* Subject: Subject number
+* Age: Participant Age
+* Sex: Participant Sex
+* novelACC: accuracy for novel items (faces in the memory test which were not seen before)
+* seenACC: accuracy for seen items (faces in the memory test which were previously seen)
+* overallACC: accuracy for all faces.
+* ComplexHCH and BasicHCH: High confidence hits for faces shown with complex adjectives and basic adjectives respectively. A high confidence hit is when a person sees a face they have seen before and answers that they are very confident they saw that face before.
+* ComplexLCH and BasicLCH: Low confidence hits for faces shown with complex adjectives and basic adjectives respectively. A low confidence hit is when a person sees a face that they have already seen and says they are only somewhat sure they have seen that face before.
+* ComplexLCM and BasicLCM: Low confidence misses for faces shown with complex adjectives and basic adjectives respectively: A low confidence miss is when a person sees a face they have previously seen before and says that they are somewhat confident that they *did not* see that face previously.
+* ComplexHCM and BasicHCM: High confidence misses for faces shown with complex adjectives and basic adjectives respectively. A high confidence miss is when a person sees a face they have previously seen before and says they are very confident they did not see that person before.
 
 Our theory is that memory for faces presented with complex adjectives will be better than memory for faces presented with basic adjectives. Therefore we expect the following:
 
@@ -60,6 +60,22 @@ Using the psych package, create basic descriptive statistics to create a table t
 &nbsp;
 
 2. Use the describeBy function to evalulate the means and standard deviations for the novelACC, seenACC, and overallACC variable for males and females separately, using Sex as a grouping variable. Create a table to report your answers below:
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 
 1. Mean and standard deviation for all variables (except Subject and Sex)
@@ -106,7 +122,7 @@ Using the psych package, create basic descriptive statistics to create a table t
 t.test(d$ComplexHCH, d$BasicHCH, paired = TRUE)
 ```
 
-Is there a significant difference? What does this mean (i.e., which variable is more and what does that indicate?)
+Is there a significant difference? Which variable has a higher mean? Do the results support the researchers' hypothesis?
 
 &nbsp;
 
@@ -155,7 +171,7 @@ Is there a significant difference? What does this mean (i.e., which variable is 
 
 &nbsp;
 
-6. Do these results support the theory that memory is stronger for faces presented with complex adjectives than for faces presented with basic mental state adjectives? Why or why not? (you should use your answers from the previous questions to elaborate here)
+6. When looking at all the results, do these results support the theory that memory is stronger for faces presented with complex adjectives than for faces presented with basic mental state adjectives? Why or why not? You should use your answers to the questions above in order to answer these questions.
 
 
 &nbsp;

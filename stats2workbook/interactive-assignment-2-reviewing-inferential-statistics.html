@@ -26,7 +26,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-08-02">
+<meta name="date" content="2017-08-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -113,10 +113,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.5" data-path="interactive-assignment-1-introduction-to-r.html"><a href="interactive-assignment-1-introduction-to-r.html#terms-and-concepts-to-know"><i class="fa fa-check"></i><b>1.5</b> Terms and concepts to know:</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html"><i class="fa fa-check"></i><b>2</b> Interactive Assignment 2: Reviewing Inferential Statistics</a><ul>
-<li class="chapter" data-level="2.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#part-1-summary-statistics"><i class="fa fa-check"></i><b>2.1</b> Part 1: Summary Statistics</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#examining-gender-differences-using-t-tests"><i class="fa fa-check"></i><b>2.1.1</b> Examining Gender Differences Using T-tests</a></li>
-<li class="chapter" data-level="2.1.2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#correlation-with-r"><i class="fa fa-check"></i><b>2.1.2</b> Correlation with R</a></li>
-</ul></li>
+<li class="chapter" data-level="2.1" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#summary-statistics-in-r"><i class="fa fa-check"></i><b>2.1</b> Summary Statistics in R</a></li>
+<li class="chapter" data-level="2.2" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#examining-gender-differences-using-t-tests"><i class="fa fa-check"></i><b>2.2</b> Examining Gender Differences Using T-tests</a></li>
+<li class="chapter" data-level="2.3" data-path="interactive-assignment-2-reviewing-inferential-statistics.html"><a href="interactive-assignment-2-reviewing-inferential-statistics.html#correlation-with-r"><i class="fa fa-check"></i><b>2.3</b> Correlation with R</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html"><i class="fa fa-check"></i><b>3</b> Free Assignment 1: Reviewing R</a><ul>
 <li class="chapter" data-level="3.1" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> Basic descriptive statistics</a></li>
@@ -126,6 +125,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="5.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#using-ggplot-to-create-histograms"><i class="fa fa-check"></i><b>5.1</b> Using ggplot to create histograms</a><ul>
 <li class="chapter" data-level="5.1.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#creating-scatterplots-using-ggplot"><i class="fa fa-check"></i><b>5.1.1</b> Creating scatterplots using ggplot</a></li>
 <li class="chapter" data-level="5.1.2" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#editing-other-plot-elements"><i class="fa fa-check"></i><b>5.1.2</b> Editing other plot elements</a></li>
+<li class="chapter" data-level="5.1.3" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#outputting-your-plot"><i class="fa fa-check"></i><b>5.1.3</b> Outputting your plot</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><a href="free-assignment-2-using-the-tidyverse-and-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>6</b> Free Assignment 2: Using the Tidyverse and graphs with ggplot</a></li>
@@ -176,7 +176,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Know how to conduct a t-test in R and interpret the output</li>
 <li>Know how to conduct a correlation in R and interpret the output.</li>
 </ol>
-<p>In this lab, we will use some data that some students collected for a research project previously. In this project, the researchers gave students a</p>
+<p>In this lab, we will use some data that some students collected for a research project previously. In this project, the researchers gave students a series of questionnaires looking how personality traits affected a participant’s likelihood to conform.</p>
 <p>First we are going to import the data. In this case, the data were entered on Google Sheets. To import data straight from Google Sheets, we can use the <code>gsheet</code> package. To install this package, we would type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(gsheet)</code></pre></div>
 <p>And to load the package, we would type:</p>
@@ -185,9 +185,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">link =<span class="st"> &#39;https://docs.google.com/spreadsheets/d/1zZjEhkT4ROACTM4YsW1LTNn8al_scyu9l4_Qkzqvsew/edit?usp=sharing&#39;</span>
 d =<span class="st"> </span><span class="kw">gsheet2tbl</span>(link)</code></pre></div>
 <p>Whenever you share data, you should always include a guide that tells people what each variable is and what the variables represent. In this case, the variables are named as follows:</p>
-<p>Participant: a participant number E: extraversion score A: agreeableness score C: conscientiousness score N: Neuroticism score O: Openness score Gender: gender coded F and M Age: participant age Conformity: their score on a survey about how much they would conform RATING: a participant’s rating to the question “how much do I think I conform to others’ behaviors” SelfEsteem: a score on a self-esteem inventory with higher scores indicating more self-esteem</p>
-<div id="part-1-summary-statistics" class="section level2">
-<h2><span class="header-section-number">2.1</span> Part 1: Summary Statistics</h2>
+<ul>
+<li>Participant: a participant number</li>
+<li>E: extraversion score</li>
+<li>A: agreeableness score</li>
+<li>C: conscientiousness score</li>
+<li>N: Neuroticism score</li>
+<li>O: Openness score</li>
+<li>Gender: gender coded F and M</li>
+<li>Age: participant age</li>
+<li>Conformity: their score on a survey about how much they would conform</li>
+<li>RATING: a participant’s rating to the question “how much do I think I conform to others’ behaviors”</li>
+<li>SelfEsteem: a score on a self-esteem inventory with higher scores indicating more self-esteem</li>
+</ul>
+<div id="summary-statistics-in-r" class="section level2">
+<h2><span class="header-section-number">2.1</span> Summary Statistics in R</h2>
 <p>We are going to use the <code>describe()</code> and <code>describeBy</code> functions in the <code>psych</code> package to first look at some summary statistics. You can see more about these functions in the last assignment. First, we’ll load the psych package.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&#39;psych&#39;</span>)</code></pre></div>
 <p>In the psych package, you can use the <code>describe</code> function to get a summary about a variable, with several summary statistics. For instance, to look at a summary of the extraversion variable, we would type:</p>
@@ -225,12 +237,14 @@ d =<span class="st"> </span><span class="kw">gsheet2tbl</span>(link)</code></pre
 <p> </p>
 <p> </p>
 <p> </p>
-<div id="examining-gender-differences-using-t-tests" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Examining Gender Differences Using T-tests</h3>
+</div>
+<div id="examining-gender-differences-using-t-tests" class="section level2">
+<h2><span class="header-section-number">2.2</span> Examining Gender Differences Using T-tests</h2>
 <p>Now we are going to see if there are any differences between male and female participants in their scores on the personality inventories and in conformity. To conduct t-tests, we can use the <code>t-test()</code> function in R.</p>
 <p>There are two ways to do t-tests in R. The first way is to give R two different variables as two different arguments. For instance, if we wanted to compare to see whether extraversion is higher than neuroticism, we would type the below code.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(d$N, d$E)</code></pre></div>
 <p>However, comparing how high extraversion is to neuroticism doesn’t make sense. We want to compare a single personality trait with another variable that tells us which gender a person is. To do that, we have to enter data different way.</p>
+<p>In R, we use what is called a <em>formula notation</em> to describe when we want to input one variable <strong>by</strong> another variable. What this means is that we have a dependent variable or an outcome variable, and then we have one or more variables that tell us what groups or how to divide the dependent variable.</p>
 <p>This function has one input, but it has two variables divided with a tilde. The first variable is the dependent variable and the other is the the grouping variable that tells what category an observation is in. The independent variable must have exactly 2 levels, because a t-test only compares 2 groups. This makes the <code>Gender</code> variable a good candidate.</p>
 <p>To do a t-test for the Extraversion variable with Gender as an independent variable we would type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(d$E~d$Gender)</code></pre></div>
@@ -246,9 +260,9 @@ d =<span class="st"> </span><span class="kw">gsheet2tbl</span>(link)</code></pre
 ## mean in group F mean in group M 
 ##        25.76087        25.35714</code></pre>
 <p>This is the output you should get with this test. The second line of the output is the one you are most interested in. This tells us the t value, the degrees of freedom (abbreviated df), and the p value. The degrees of freedom is a corrected value, so it is often a decimal.</p>
-<p>The 95% confidence interval is on the 5th line, and the last line has the mean of the variable for each group. Notice in this case that the group F for female is very close to the value for group M, for male, which is why this t-test is not significant.</p>
+<p>The 95% confidence interval is on the 5th line, and the last line has the mean of the variable for each group. Notice in this case the mean for group F, for female, is very close to the value for group M, for male, which is why this t-test is not significant.</p>
 <ol start="2" style="list-style-type: decimal">
-<li>Using this function, do a t-test for the other 4 personality variables and conformity. Report your t-value and p-value for each of the tests below, using APA formatting: <em>t</em>(df) = tvalue, <em>p</em> = pvalue.</li>
+<li>Using this function, do a t-test for the other 4 personality variables and conformity. Report your t-value and p-value for each of the tests below, using APA formatting: <em>t</em>(df) = tvalue, <em>p</em> = pvalue, or <em>t</em>(25) = .20, <em>p</em> = .84.</li>
 </ol>
 <p> </p>
 <p> </p>
@@ -265,8 +279,8 @@ d =<span class="st"> </span><span class="kw">gsheet2tbl</span>(link)</code></pre
 <p> </p>
 <p> </p>
 </div>
-<div id="correlation-with-r" class="section level3">
-<h3><span class="header-section-number">2.1.2</span> Correlation with R</h3>
+<div id="correlation-with-r" class="section level2">
+<h2><span class="header-section-number">2.3</span> Correlation with R</h2>
 <p>The researchers were interested in whether there was a correlation between the personality variables and conformity. To test whether a correlation is present, we can use the <code>cor.test()</code> function in R. This function requires two input variables, which will be correlated. To see the correlation between Extraversion and Conformity, we would type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(d$E, d$Conformity)</code></pre></div>
 <pre><code>## 
@@ -318,7 +332,6 @@ d =<span class="st"> </span><span class="kw">gsheet2tbl</span>(link)</code></pre
 <p> </p>
 <p> </p>
 
-</div>
 </div>
 </div>
             </section>
