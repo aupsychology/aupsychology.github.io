@@ -26,7 +26,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-08-08">
+<meta name="date" content="2017-08-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -305,7 +305,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ol>
 <p>GGplot uses several different functions which are all technically one command. To make it easier to read, many people put the different commands on different lines and separate each line with a + (plus sign) at the end of each line. When a line ends with a +, R knows that the command is not complete and that there are more functions to add. Note that when we type the commands for ggplot, we end each line with a +, except for the last line.</p>
 <p>The first thing we are going to do is to build a histogram of each rating. We will start with ag.old to create a simple histogram. Type the command below.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old)) </code></pre></div>
 <p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>This is one command split across two lines. In the first line, I indicated the data by using the <code>ggplot()</code> command. The first argument is the data frame, the <code>data = face</code>.</p>
@@ -313,10 +313,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In <code>geom_histogram()</code>, I want to tell ggplot which data to graph. To do this, I have to use an aesthetic. This is why I type <code>aes(x = ag.old)</code>.</p>
 <p>When you type this command, you should see a plot appear in the bottom left window in RStudio, under the “Plots” tab.</p>
 <p>When calculating a histogram, sometimes we want to set how many bars or <strong>bins</strong> we have in the histogram. GGplot sets 30 as a default. We can change that by adding an option to the <code>geom_histogram()</code> part. Try typing the following:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old), <span class="dt">bins =</span> <span class="dv">10</span>) </code></pre></div>
 <p>You might also want to edit the graph as well. We can feed some options to <code>geom_histogram()</code> in order to edit the graph:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old), <span class="dt">bins =</span> <span class="dv">10</span>, <span class="dt">color =</span> <span class="st">&#39;red&#39;</span>, <span class="dt">fill =</span> <span class="st">&#39;darkblue&#39;</span>) </code></pre></div>
 <p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Here I used the <code>color</code> argument to set the color of the lines and the <code>fill</code> argument to set the color of the bars. There are a lot of colors built into R and to see all your options, you can type <code>colors()</code>.</p>
@@ -348,13 +348,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>A histogram graphs the distribution of one variable whereas a scatterplot graphs the relationship of two variables. This allows us to look at whether two variables are associated or correlated and whether there are any outliers or other anomalies in our data.</p>
 <p>In this study, the researchers were examining whether the ratings by older adults and the ratings by younger adults would be correlated, indicating that they agreed on which faces were high in aggressiveness, competence, and so forth.</p>
 <p>To create a scatterplot, we will use the <code>geom_point()</code> option, but most of the rest of the commands will be similar. The only other difference is that I have to give the <code>geom_point()</code> argument two variables, rather than one.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old, <span class="dt">y =</span> ag.young)) </code></pre></div>
 <p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<p>This plot has all the information we need, but it looks a bit ugly. To make the plot look nicer, we can add options to the <code>geom_point()</code> function. Here are some options you can use to make it look nicer:</p>
+<p>This plot has all the information we need, but it looks very simple. To make the plot look nicer, we can add options to the <code>geom_point()</code> function. Here are some options you can use to make it look nicer:</p>
 <p><em>size: sets the default size of the points (default is 1) </em>shape: a number which sets the shape of the points (you can find which points are associated with which shapes <a href="http://sape.inf.usi.ch/quick-reference/ggplot2/shape">here</a>) *color: sets the color of the outside of the point</p>
 <p>Here, I use each of the options to change the plot:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old, <span class="dt">y =</span> ag.young), <span class="dt">size =</span> <span class="dv">3</span>, <span class="dt">shape =</span> <span class="dv">20</span>, <span class="dt">color =</span> <span class="st">&#39;red&#39;</span>) </code></pre></div>
 <p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <ol start="6" style="list-style-type: decimal">
@@ -372,14 +372,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="editing-other-plot-elements" class="section level3">
 <h3><span class="header-section-number">5.1.2</span> Editing other plot elements</h3>
 <p>In ggplot, we can also edit the other elements of a plot which are on the outside using different options. We can use the <code>labs()</code> option to set the labels of the plot and change the ones that ggplot gives us by default. For instance, we may want to change the labels of the plot above</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old, <span class="dt">y =</span> ag.young), <span class="dt">size =</span> <span class="dv">5</span>, <span class="dt">shape =</span> <span class="dv">20</span>) +
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old, <span class="dt">y =</span> ag.young), <span class="dt">size =</span> <span class="dv">5</span>, <span class="dt">shape =</span> <span class="dv">20</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&#39;Older and younger adult ratings of aggressiveness&#39;</span>, <span class="dt">x =</span> <span class="st">&quot;Older Adult Ratings&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Younger Adult Ratings&quot;</span>)</code></pre></div>
 <p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Finally, we can use the <code>theme()</code> function to change a lot of other options in our plot. In this example below, I’ll change the size and the type of the text:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old, <span class="dt">y =</span> ag.young), <span class="dt">size =</span> <span class="dv">3</span>, <span class="dt">shape =</span> <span class="dv">20</span>) +
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&#39;Older and younger adult ratings of aggressiveness&#39;</span>, <span class="dt">x =</span> <span class="st">&quot;Older Adult Ratings&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Younger Adult Ratings&quot;</span>) +
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old, <span class="dt">y =</span> ag.young), <span class="dt">size =</span> <span class="dv">3</span>, <span class="dt">shape =</span> <span class="dv">20</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&#39;Older and younger adult ratings of aggressiveness&#39;</span>, <span class="dt">x =</span> <span class="st">&quot;Older Adult Ratings&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Younger Adult Ratings&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">16</span>, <span class="dt">family=</span><span class="st">&quot;Arial&quot;</span>))</code></pre></div>
 <p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>As you can see in the examples, you can keep adding options to the plot to change different elements to make the plot look nicer. There are options to change each of the elements, such as changing the size of the x axis font, the y axis font, the x label font, the y label font, etc.</p>

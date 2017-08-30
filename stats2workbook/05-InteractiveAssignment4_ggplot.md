@@ -216,7 +216,7 @@ ggplot(data = face) +
 
 <img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-8-1.png" width="672" />
 
-This plot has all the information we need, but it looks a bit ugly. To make the plot look nicer, we can add options to the `geom_point()` function. Here are some options you can use to make it look nicer:
+This plot has all the information we need, but it looks very simple. To make the plot look nicer, we can add options to the `geom_point()` function. Here are some options you can use to make it look nicer:
 
 *size: sets the default size of the points (default is 1)
 *shape: a number which sets the shape of the points (you can find which points are associated with which shapes [here](http://sape.inf.usi.ch/quick-reference/ggplot2/shape))

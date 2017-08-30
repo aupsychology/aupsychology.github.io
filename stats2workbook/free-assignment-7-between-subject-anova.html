@@ -26,7 +26,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-08-08">
+<meta name="date" content="2017-08-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -176,8 +176,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In this study, we are going to investigate whether sex and marital status predict wages. If we remember Interactive Assignment 5, we examined the wage gap in earnings, that men make more than women. So we expect to find a main effect of sex in our data. However, we’ll also investigate how marital status plays a role.</p>
 <p>First, we have to alter our data. Since the factors in our data are given as numbers, we need to change them to factor variables. To do this for sex and race, we do the following code.</p>
 <p><strong>Step 2</strong>: Type the following code into R in order to change SEX and MARR from numeric variables to factor variables.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">wages$SEX =<span class="st"> </span><span class="kw">as.factor</span>(wages$SEX)
-wages$MARR =<span class="st"> </span><span class="kw">as.factor</span>(wages$MARR)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">wages<span class="op">$</span>SEX =<span class="st"> </span><span class="kw">as.factor</span>(wages<span class="op">$</span>SEX)
+wages<span class="op">$</span>MARR =<span class="st"> </span><span class="kw">as.factor</span>(wages<span class="op">$</span>MARR)</code></pre></div>
 <p><strong>Step 3</strong>: Use the describeBy package to fill out the following table for wages to examine the main effects and the interactions:</p>
 <table>
 <thead>

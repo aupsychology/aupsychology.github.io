@@ -26,7 +26,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-08-08">
+<meta name="date" content="2017-08-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -171,7 +171,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">8</span> Free Assignment 4 - Regression and multiple regression in R</h1>
 <p>This lab will examine how various personality variables predict a person’s desire to conform. When completing this assignment, make sure you create a script that has your commands that you type in R, including the ones you paste from the assignment itself.</p>
 <p>We will use the data we previously used in Interactive Assignment 2. Here is a key to the variables:</p>
-<p>Participant: a participant number E: extraversion score A: agreeableness score C: conscientiousness score N: Neuroticism score O: Openness score Gender: gender coded F and M Age: participant age Conformity: their score on a survey about how much they would conform RATING: a participant’s rating to the question “how much do I think I conform to others’ behaviors” SelfEsteem: a score on a self-esteem inventory with higher scores indicating more self-esteem</p>
+<ul>
+<li>Participant: a participant number</li>
+<li>E: extraversion score</li>
+<li>A: agreeableness score</li>
+<li>C: conscientiousness score</li>
+<li>N: Neuroticism score</li>
+<li>O: Openness score</li>
+<li>Gender: gender coded F and M</li>
+<li>Age: participant age</li>
+<li>Conformity: their score on a survey about how much they would conform</li>
+<li>RATING: a participant’s rating to the question “how much do I think I conform to others’ behaviors”</li>
+<li>SelfEsteem: a score on a self-esteem inventory with higher scores indicating more self-esteem</li>
+</ul>
 <p>These data are available on Google Sheets and you can input it by using the following commands:</p>
 <p>First we need to load the <code>gsheet</code> package as well as <code>ggplot2</code></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(gsheet)

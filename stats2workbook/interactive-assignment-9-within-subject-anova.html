@@ -26,7 +26,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-08-08">
+<meta name="date" content="2017-08-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -220,7 +220,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## 4 gaze:emotion   1  59 6.789935 0.01158632     * 0.001329311</code></pre>
 <p>If we look at the output, we have significant effects for gaze, emotion, and the interaction. The significant main effect tells us that reaction time is different for gaze and different for emotion. Since there are only two levels, there are only two possibilities and all we have to do is look at the means. To see the means, we can use describeBy like we did in Interactive Assignment 8. Or we can use another function called aggregate.</p>
 <p>The aggregate function is a powerful function that takes data, breaks it down by variable, and does another R function. In this case, we want to break the data down by gaze and emotion (direct gaze anger, direct gaze fear, averted gaze anger, averted gaze fear) and then get the mean of each group. To do this using aggregate, we would type the following:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(RT~emotion*gaze, <span class="dt">data=</span>face, mean)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(RT<span class="op">~</span>emotion<span class="op">*</span>gaze, <span class="dt">data=</span>face, mean)</code></pre></div>
 <pre><code>##   emotion    gaze       RT
 ## 1   Anger Averted 963.1116
 ## 2    Fear Averted 985.7175
@@ -263,20 +263,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="graphing-with-error-bars" class="section level2">
 <h2><span class="header-section-number">14.1</span> Graphing with error bars</h2>
 <p>The last thing I’ll add to this lab is how to add error bars to a graph. These help us understand the interaction. To graph the accuracy data, we would type the following:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(face, <span class="kw">aes</span>(<span class="dt">x =</span> gaze, <span class="dt">y =</span> acc, <span class="dt">fill =</span> emotion)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.y =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;bar&#39;</span>, <span class="dt">position =</span> <span class="st">&#39;dodge&#39;</span>) +
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(face, <span class="kw">aes</span>(<span class="dt">x =</span> gaze, <span class="dt">y =</span> acc, <span class="dt">fill =</span> emotion)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.y =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;bar&#39;</span>, <span class="dt">position =</span> <span class="st">&#39;dodge&#39;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(.<span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
 <p><img src="14-IA9_within_ANOVA_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>If I want to add error bars, I need to add another function to ggplot. These are generally adding geoms, but since my geom is not actually the data itself but some statistic calculated from the data, I will use the <code>stat_summary()</code> function again, with the option <code>mean_se</code> instead of mean to add the error bars. This gives me error bars with standard error. In addition, I don’t want to plot a bar, but an error bar. I would type the following:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(face, <span class="kw">aes</span>(<span class="dt">x =</span> gaze, <span class="dt">y =</span> acc, <span class="dt">fill =</span> emotion)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.y =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;bar&#39;</span>, <span class="dt">position =</span> <span class="st">&#39;dodge&#39;</span>) +
-<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.data =</span> mean_se, <span class="dt">geom =</span> <span class="st">&#39;errorbar&#39;</span>, <span class="dt">position =</span> <span class="st">&#39;dodge&#39;</span>) +
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(face, <span class="kw">aes</span>(<span class="dt">x =</span> gaze, <span class="dt">y =</span> acc, <span class="dt">fill =</span> emotion)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.y =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;bar&#39;</span>, <span class="dt">position =</span> <span class="st">&#39;dodge&#39;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.data =</span> mean_se, <span class="dt">geom =</span> <span class="st">&#39;errorbar&#39;</span>, <span class="dt">position =</span> <span class="st">&#39;dodge&#39;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(.<span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
 <p><img src="14-IA9_within_ANOVA_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>A lot of times, we want to plot 95% confidence intervals as our error bars. This is useful because if one bar is greater or less than the 95% confidence interval of another bar, it is usually significantly different (with an <span class="math inline">\(\alpha = .05\)</span>) To do this, we would type the following code:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(face, <span class="kw">aes</span>(<span class="dt">x =</span> gaze, <span class="dt">y =</span> acc, <span class="dt">fill =</span> emotion)) +<span class="st"> </span>
-<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.y =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;bar&#39;</span>, <span class="dt">position =</span> <span class="st">&#39;dodge&#39;</span>) +
-<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.data =</span> mean_cl_normal, <span class="dt">geom =</span> <span class="st">&#39;errorbar&#39;</span>, <span class="dt">position =</span> <span class="st">&#39;dodge&#39;</span>) +
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(face, <span class="kw">aes</span>(<span class="dt">x =</span> gaze, <span class="dt">y =</span> acc, <span class="dt">fill =</span> emotion)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.y =</span> mean, <span class="dt">geom =</span> <span class="st">&#39;bar&#39;</span>, <span class="dt">position =</span> <span class="st">&#39;dodge&#39;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">stat_summary</span>(<span class="dt">fun.data =</span> mean_cl_normal, <span class="dt">geom =</span> <span class="st">&#39;errorbar&#39;</span>, <span class="dt">position =</span> <span class="st">&#39;dodge&#39;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(.<span class="dv">7</span>, <span class="dv">1</span>))</code></pre></div>
 <p><img src="14-IA9_within_ANOVA_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Notice that the 95% confidence intervals are bigger than the standard error estimates. Either way, the averted anger bar is lower than the rest of the bars, and this difference is statistically significant since none of the means of the other bars are within the averted anger bar.</p>

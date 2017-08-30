@@ -25,7 +25,7 @@ library(tidyverse)
 
 For this assignment, you are going to work through Chapter 5.1-5.5 of R for Data Science. It is available at this link: http://r4ds.had.co.nz/transform.html
 
-Read the chapter at the attached link and then answer the questions that are below when you get to them. Place your answers on this sheet.
+Read the chapter at the attached link and then answer the questions that are below when you get to them. Place your answers on this sheet by writing down the code or commands you would do in order to solve these problems.
 
 If you're ambitious, you can work through sections 5.6 and 5.7 on your own.
 

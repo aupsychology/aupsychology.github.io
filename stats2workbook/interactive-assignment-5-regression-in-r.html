@@ -26,7 +26,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-08-08">
+<meta name="date" content="2017-08-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -170,20 +170,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="interactive-assignment-5---regression-in-r" class="section level1">
 <h1><span class="header-section-number">7</span> Interactive Assignment 5 - Regression in R</h1>
 <p>This lab will examine how to do regression in R. In this case, we will look at how to enter a basic linear regresison in R, how to interpret the output, and how to add other control variables.</p>
+<p>If you need a primer on how to do regression, you can find one here in the <a href="https://aupsychology.github.io/statsbook/association-claims-1.html#using-linear-regression">regression chapter</a> of <em>Statistics: The Story of Numbers</em>.</p>
+<p>This lab will cover the following topics:</p>
+<ol style="list-style-type: decimal">
+<li>What is regression and what is it used for? Also, you should know what the predictor and outcome variables are.</li>
+<li>What is the idea of a control variable and why we would use it.</li>
+<li>How to interpret regressions, by creating a regression line and using that equation to predict a value for the outcome variable, given the equation.</li>
+</ol>
 <p>The data for this assignment are a set of data examining how various factors predict a person’s wage.</p>
 <p>These data are from 1985, from the <a href="www.economicswebinstitute.org/data/wagesmicrodata.xls">Economics Web Institute</a> surveying people on various attributes including how much they make. Many researchers have found convincing evidence that women make less money than men do. However, it is much more controversial why this is the case. It could be that men are more likely than women to work higher-paying jobs. It could be that men are more likely to have other factors which increase pay, such as higher education or experience. It could be that men are paid more due to discrimination.</p>
 <p>In this dataset, we are going to explore how regression can help us answer the question.</p>
 <p>The variables are as follows:</p>
-<p>ID: person ID WAGE: wage (dollars per hour) OCCUPATION: occupation(1=Management, 2=Sales, 3=Clerical , 4=Service, 5=Professional, 6=Other) SECTOR: sector of employment(0= other, 1=Manufacturing, 2=Construction) UNION: Union membership (1=yes, 0=no) EDUCATION: Years of education (12 = high school diploma, 16= completed college, etc.) EXPERIENCE: Years of work experience AGE: Age in years SEX: Sex (0 – male, 1 – female) MARR: Married (0 – no, 1 – yes) RACE: Race (0 – other, 1 – white, 2 – Hispanic) SOUTH:Southern region (1 – yes, 0 – no)</p>
-<p>The dataset is saved as the file “IA5WageData.csv”. Download this file into a folder on your computer named “IA5” and then open up a new R Script. This will contain the commands you enter in while you analyze these data. Save this script in the same folder as your csv file and then change your working directory to this folder by going to Session -&gt; Set Working Directory. When you are done with this assignment, you need to send me this script as part of the assignment.</p>
+<ul>
+<li>ID: person ID</li>
+<li>WAGE: wage (dollars per hour)</li>
+<li>OCCUPATION: occupation(1=Management, 2=Sales, 3=Clerical , 4=Service, 5=Professional, 6=Other)</li>
+<li>SECTOR: sector of employment(0= other, 1=Manufacturing, 2=Construction)</li>
+<li>UNION: Union membership (1=yes, 0=no)</li>
+<li>EDUCATION: Years of education (12 = high school diploma, 16= completed college, etc.)</li>
+<li>EXPERIENCE: Years of work experience</li>
+<li>AGE: Age in years</li>
+<li>SEX: Sex (0 – male, 1 – female)</li>
+<li>MARR: Married (0 – no, 1 – yes)</li>
+<li>RACE: Race (0 – other, 1 – white, 2 – Hispanic)</li>
+<li>SOUTH:Southern region (1 – yes, 0 – no)</li>
+</ul>
+<p>The dataset is saved as the file “IA5WageData.csv” and is available on Canvas. Download this file into a folder on your computer named “IA5” and then open up a new R Script. This will contain the commands you enter in while you analyze these data. Save this script in the same folder as your csv file and then change your working directory to this folder by going to Session -&gt; Set Working Directory. When you are done with this assignment, you need to send me this script as part of the assignment.</p>
 <p><strong>Step 1</strong>: Load this file into your R workspace as the data frame “income”. The first line of your script should look like this:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">income =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;IA5WageData.csv&quot;</span>)</code></pre></div>
-<p>Also, load the ggplot package because we will use it later in the lab:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)</code></pre></div>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.3.2</code></pre>
+<p>Also, load the tidyverse package because we will use it later in the lab:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
 <p>Make sure that the file read into R correctly. If you type <code>View(income)</code> you should get a data frame with 533 observations of 12 variables. The variables are the same ones listed above.</p>
-<p>The first thing we want to do is to make a histogram of our dependent variable. Since we are intereseted in money, WAGE is the dependent variable. <strong>Step 2</strong>: Make a histogram of WAGE, using the ggplot code we leanred about in Interactive Assignment 4.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> income) +<span class="st"> </span>
+<p>The first thing we want to do is to make a histogram of our dependent variable. Since we are intereseted in money, WAGE is the dependent variable.</p>
+<p><strong>Step 2</strong>: Make a histogram of WAGE, using the ggplot code we leanred about in Interactive Assignment 4.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> income) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_histogram</span>(<span class="kw">aes</span>(<span class="dt">x =</span> WAGE), <span class="dt">bins =</span> <span class="dv">15</span>, <span class="dt">color =</span> <span class="st">&#39;black&#39;</span>, <span class="dt">fill =</span> <span class="st">&#39;gray&#39;</span>) </code></pre></div>
 <p><img src="07-IA5_regression_multipleregression_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <ol style="list-style-type: decimal">
@@ -201,7 +221,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">7.1</span> Simple Regression</h2>
 <p>Now let’s look at a simple regression. We want to see how education predicts wages. To summarize, what we are doing here is creating a regression object in R, named x. This object contains all the regression information. Then we want a basic summary of this object, so we type the summary(x) command. This will give us the regression output.</p>
 <p>Type in the following:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">lm</span>(WAGE~EDUCATION, <span class="dt">data =</span> income)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">lm</span>(WAGE<span class="op">~</span>EDUCATION, <span class="dt">data =</span> income)
 <span class="kw">summary</span>(x)</code></pre></div>
 <pre><code>## 
 ## Call:
@@ -229,7 +249,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><span class="math display">\[y = -.69 + .74x\]</span></p>
 <p>The b coefficient is important because it tells us how much we would expect <span class="math inline">\(y\)</span> to increase if <span class="math inline">\(x\)</span> increases by 1. For each additional year of education, a person would expect to make an additional 74 cents (in 1985 dollars).</p>
 <p>The last two columns in the Coefficient section tell us whether the predictors are significant by giving a t-value and a p-value. The first row tells us whether the intercept is significantly different from zero. Since the p-value is &gt; .05, this is not significant. However, the second row tells us whether the b coefficient for education is significantly different from zero. If it is, then that indicates that education is a significant predictor of wages. Given that the t-value is very high and the p-value is very, very low, we can conclude that education is a significant predictor of wages.</p>
-<p>We will talk about the other parts of the output in a moment.</p>
+<p>We will talk about the other parts of the output in another lab.</p>
 <p><strong>Step 3</strong>: Now run a regression with SEX as a predictor of WAGE. You should get an output like this:</p>
 <pre><code>## 
 ## Call:
@@ -293,10 +313,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><span class="math display">\[y = a + b_1 x_1 + b_2 x_2 ... b_n x_n\]</span></p>
 <p>Each <span class="math inline">\(b\)</span> coefficient represents a different variable we use as a predictor.</p>
 <p>Control variables are very important because we often want to make sure a relationship between a predictor and outcome variable is not due to a third variable. For instance, the relationship between violent media such as televsion and video games and how violently a child behaves may be due to other variables, such as parenting styles or socioeconomic status. We may want to control for those variables so we can say that watching violent television predicts violent behavior, even when you control for parental neglect.</p>
-<p>In the wage study, onne reason that men may make more money than women is that men may be more experienced. There are several reasons why men may be more experienced than women. One notable reason is that women are much more likely than men to leave work to raise children. If a woman takes off 3-5 years in order to raise children, then she would be missing out on that level of experience. If this effect is big enough, women on average would have less experience than men have, and since experience is clearly a predictor of income, this could explain the wage gap.</p>
+<p>In the wage study, one reason that men may make more money than women is that men may be more experienced. There are several reasons why men may be more experienced than women. One notable reason is that women are much more likely than men to leave work to raise children. If a woman takes off 3-5 years in order to raise children, then she would be missing out on that level of experience. If this effect is big enough, women on average would have less experience than men have, and since experience is clearly a predictor of income, this could explain the wage gap.</p>
 <p>If this is the case, then controlling for experience would make the relationship between SEX and WAGE smaller. We can do that by adding this variable to our regression. Adding multiple predictor or independent variables to a regression in R is easy: we list each of the variables and separate them with a plus sign.</p>
 <p><strong>Step 5</strong>: Type the following code to do the multiple regression.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">lm</span>(WAGE~SEX+EXPERIENCE, <span class="dt">data =</span> income)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">lm</span>(WAGE<span class="op">~</span>SEX<span class="op">+</span>EXPERIENCE, <span class="dt">data =</span> income)
 <span class="kw">summary</span>(x)</code></pre></div>
 <pre><code>## 
 ## Call:
@@ -351,25 +371,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In a previous lab, we discussed creating a scatterplot. We can use ggplot to add a regression line to a scatterplot as well.</p>
 <p>Here, we are going to create a scatterplot looking at the relationship between EDUCATION and WAGE.</p>
 <p><strong>Step 7</strong>: To create a scatterplot, type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> income) +<span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> EDUCATION, <span class="dt">y =</span> WAGE))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> income) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> EDUCATION, <span class="dt">y =</span> WAGE))</code></pre></div>
 <p><img src="07-IA5_regression_multipleregression_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Now, we can add a regression line by adding the command <code>geom_smooth</code>. This adds a line that fits the data. By default, ggplot uses a line that has curves in it, but we are interested in using a linear regression so we will have to use a different setting.</p>
 <p><strong>Step 8</strong>: Type the following to add a line of best fit to the plot. Remember, to add things to a plot, we can just add them by using the plus symbol.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> income) +<span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> EDUCATION, <span class="dt">y =</span> WAGE)) +
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> income) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> EDUCATION, <span class="dt">y =</span> WAGE)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">x =</span> EDUCATION, <span class="dt">y =</span> WAGE), <span class="dt">method=</span><span class="st">&#39;lm&#39;</span>, <span class="dt">se=</span>F)</code></pre></div>
 <p><img src="07-IA5_regression_multipleregression_files/figure-html/unnamed-chunk-8-1.png" width="672" /> This gives us the following plot. Now I’ll break down what is in the <code>geom_smooth</code> command. The first part of it tells us which data are being plotted, using the <code>aes()</code> command. This is just like in the <code>geom_point()</code> command. The second part is the <code>method()</code> part. Since we are using linear regression, we type ‘lm’ in quotes. The last part tells us to turn off standard error. By default, ggplot gives a standard error with the regression line. In this case, I want to turn it off just to give you the simple line.</p>
 <p>Note that we can change how the line looks by using the same concepts we use to edit histograms and scatterplots. We could add the options <code>color()</code> or <code>size()</code> in order to change how big the line is and what color it is.</p>
-<p><strong>Step 9</strong>: Edit the code below to see how EXPERIENCE predicts WAGE. Make sure you include the code in the script you are writing.</p>
+<p>If you look at the plot for how education predicts wages, you might notice that the data have some outliers. Very few people have very low levels of education, such as below 6 years of education. It might be useful to remove those people from the analysis and see if our results hold.</p>
+<p>To do this, we would use the <code>filter()</code> command to create a temporary dataframe which only has the data we want. We can do this by <strong>nesting</strong> the filter command inside the other commands. For instance, to do the regression where we have EDUCATION predict WAGE where we only include those who have an EDUCATION greater than 5 years, we would type the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">lm</span>(EDUCATION<span class="op">~</span>WAGE, <span class="dt">data =</span> <span class="kw">filter</span>(income, EDUCATION <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span>))
+<span class="kw">summary</span>(x)</code></pre></div>
+<p>Instead of including the <code>data = income</code> like above, I used the filter command in place of it so that when R went looking for the data it wanted to use for the regression, it chose the data output by the command <code>filter(income, EDUCATION &gt; 5</code>. This idea is called <strong>nesting</strong> commands because one command is inside of another command. When writing scripts, nesting can save time, but a lot of nesting can create some difficult to read code.</p>
+<p><strong>Step 9</strong>: Change the ggplot code you typed in Step 8 to create the same graph but only including data where EDUCATION is greater than 5. Remember, you would use the same nesting idea that I used in the code snippet above. Make sure to include this code in your script.</p>
+<p><strong>Step 10</strong>: Edit the code below to see how EXPERIENCE predicts WAGE. Make sure you include the code in the script you are writing.</p>
 </div>
 <div id="summary" class="section level2">
 <h2><span class="header-section-number">7.4</span> Summary</h2>
-<p>This lab covered a lot about regression. After completing it, you should feel like you understand the following concepts, which are covered in Statistics I:</p>
-<ol style="list-style-type: decimal">
-<li>What is regression and what is it used for? Also, you should know what the predictor and outcome variables are.</li>
-<li>What is the idea of a control variable and why we would use it.</li>
-<li>How to interpret regressions, by creating a regression line and using that equation to predict a value for the outcome variable, given the equation.</li>
-</ol>
-<p>You should also start getting familiar with the following ideas:</p>
+<p>This lab covered a lot about regression. After completing it, you should be able to understand the basics of regression, which are covered in Statistics I.</p>
+<p>You should also start getting familiar with the following ideas which will be covered in the next few assignments:</p>
 <ol style="list-style-type: decimal">
 <li>How to do a simple linear regression in R as well as a multiple regression. This includes entering the commands and interpreting the output correctly.</li>
 <li>Know how to compare regressions before and after adding a control variable in order to examine whether a control variable can account for a relationship.</li>

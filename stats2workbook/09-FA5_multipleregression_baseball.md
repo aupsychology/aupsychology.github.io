@@ -9,12 +9,9 @@ In this assignment, we are going to use multiple regression to determine which s
 
 When doing this assignment, make sure you create a script which contains all your R commands. The dataset is FA5_baseball.csv and is listed on Canvas.
 
-**Step 1**: You should import this into R as a dataframe with the name `b` for baseball. I'm lazy and typing b rather than baseball will save some time. Also, load the ggplot package.
+**Step 1**: You should import this into R as a dataframe with the name `b` for baseball. I'm lazy and typing b rather than baseball will save some time. Also, load the tidyverse package.
 
 
-```
-## Warning: package 'ggplot2' was built under R version 3.3.2
-```
 
 When you load the package, check to make sure it inputted correctly. There should be 90 observations of 31 variables. The observations are for the 2014-2016 seasons and here is a guide to some of the column names. You can find out what all the column names are [here](http://www.baseball-reference.com/leagues/MLB/2016.shtml).
 
@@ -108,7 +105,7 @@ Question 2: When looking at each of these regressions, what do you think the sto
 
 Now we want to look at each league separately. 
 
-**Step 4**: Using what you learned in the tidyspace lab, create two data frames, one data frame containing only NL teams and one data frame containing only AL teams. 
+**Step 4**: Using what you learned in the tidyverse lab, create two data frames, one data frame containing only NL teams and one data frame containing only AL teams. 
 
 **Step 5**: Repeat the work you did for Step 3 for each of these new data frames and see if there are any differences between the AL and NL in the regressions. 
 

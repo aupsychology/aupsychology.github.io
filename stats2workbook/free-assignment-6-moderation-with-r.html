@@ -26,7 +26,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-08-08">
+<meta name="date" content="2017-08-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -202,8 +202,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><img src="11-FA6_moderation_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>It looks like there might not be a relationship between FWHR and Warmth-Hostiity. This may be because we are looking at all the faces, when we want to see whether there is a difference between the children and the adolescents.</p>
 <p><strong>Step 5</strong>: Use the same plot as you did for Step 4 but use the <code>color = AGE</code> option to divide the points for children versus adolescents.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> d, <span class="kw">aes</span>(<span class="dt">x =</span> FWHR, <span class="dt">y =</span> WARMHSTL, <span class="dt">color =</span> AGE)) +
-<span class="st">  </span><span class="kw">geom_point</span>() +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&#39;lm&#39;</span>, <span class="dt">se =</span> F) +
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> d, <span class="kw">aes</span>(<span class="dt">x =</span> FWHR, <span class="dt">y =</span> WARMHSTL, <span class="dt">color =</span> AGE)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&#39;lm&#39;</span>, <span class="dt">se =</span> F) <span class="op">+</span>
 <span class="st">  </span><span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;FWHR&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Warmth - Hostility&quot;</span>, <span class="dt">title =</span> <span class="st">&quot;FWHR predicting Warmth&quot;</span>)</code></pre></div>
 <p>Question 2: Does it look like there might be an interaction between FWHR and AGE, based on your plot?</p>
 <p> </p>

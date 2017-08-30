@@ -50,6 +50,10 @@ library(tidyverse)
 ```
 
 ```
+## Warning: package 'tibble' was built under R version 3.3.2
+```
+
+```
 ## Warning: package 'tidyr' was built under R version 3.3.2
 ```
 

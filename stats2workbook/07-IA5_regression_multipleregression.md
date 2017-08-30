@@ -3,6 +3,14 @@
 
 This lab will examine how to do regression in R. In this case, we will look at how to enter a basic linear regresison in R, how to interpret the output, and how to add other control variables.
 
+If you need a primer on how to do regression, you can find one here in the [regression chapter](https://aupsychology.github.io/statsbook/association-claims-1.html#using-linear-regression) of *Statistics: The Story of Numbers*. 
+
+This lab will cover the following topics:
+
+1. What is regression and what is it used for? Also, you should know what the predictor and outcome variables are.
+2. What is the idea of a control variable and why we would use it.
+3. How to interpret regressions, by creating a regression line and using that equation to predict a value for the outcome variable, given the equation.
+
 The data for this assignment are a set of data examining how various factors predict a person's wage. 
 
 These data are from 1985, from the [Economics Web Institute](www.economicswebinstitute.org/data/wagesmicrodata.xls) surveying people on various attributes including how much they make. Many researchers have found convincing evidence that women make less money than men do. However, it is much more controversial why this is the case. It could be that men are more likely than women to work higher-paying jobs. It could be that men are more likely to have other factors which increase pay, such as higher education or experience. It could be that men are paid more due to discrimination. 
@@ -11,20 +19,20 @@ In this dataset, we are going to explore how regression can help us answer the q
 
 The variables are as follows:
 
-ID: person ID
-WAGE: wage (dollars per hour)
-OCCUPATION: occupation(1=Management,   2=Sales, 3=Clerical , 4=Service, 5=Professional, 6=Other)
-SECTOR: sector of employment(0= other, 1=Manufacturing, 2=Construction)
-UNION: Union membership (1=yes, 0=no)
-EDUCATION: Years of education (12 = high school diploma, 16= completed college, etc.)
-EXPERIENCE: Years of work experience
-AGE: Age in years
-SEX: Sex (0 – male, 1 – female)
-MARR: Married (0 – no, 1 – yes)
-RACE: Race (0 – other, 1 – white, 2 – Hispanic)
-SOUTH:Southern region (1 – yes, 0 – no)
+* ID: person ID
+* WAGE: wage (dollars per hour)
+* OCCUPATION: occupation(1=Management,   2=Sales, 3=Clerical , 4=Service, 5=Professional, 6=Other)
+* SECTOR: sector of employment(0= other, 1=Manufacturing, 2=Construction)
+* UNION: Union membership (1=yes, 0=no)
+* EDUCATION: Years of education (12 = high school diploma, 16= completed college, etc.)
+* EXPERIENCE: Years of work experience
+* AGE: Age in years
+* SEX: Sex (0 – male, 1 – female)
+* MARR: Married (0 – no, 1 – yes)
+* RACE: Race (0 – other, 1 – white, 2 – Hispanic)
+* SOUTH:Southern region (1 – yes, 0 – no)
 
-The dataset is saved as the file "IA5WageData.csv". Download this file into a folder on your computer named "IA5" and then open up a new R Script. This will contain the commands you enter in while you analyze these data. Save this script in the same folder as your csv file and then change your working directory to this folder by going to Session -> Set Working Directory. When you are done with this assignment, you need to send me this script as part of the assignment.
+The dataset is saved as the file "IA5WageData.csv" and is available on Canvas. Download this file into a folder on your computer named "IA5" and then open up a new R Script. This will contain the commands you enter in while you analyze these data. Save this script in the same folder as your csv file and then change your working directory to this folder by going to Session -> Set Working Directory. When you are done with this assignment, you need to send me this script as part of the assignment.
 
 **Step 1**: Load this file into your R workspace as the data frame "income". The first line of your script should look like this:
 
@@ -33,21 +41,18 @@ The dataset is saved as the file "IA5WageData.csv". Download this file into a fo
 income = read.csv("IA5WageData.csv")
 ```
 
-Also, load the ggplot package because we will use it later in the lab:
+Also, load the tidyverse package because we will use it later in the lab:
 
 
 ```r
-library(ggplot2)
-```
-
-```
-## Warning: package 'ggplot2' was built under R version 3.3.2
+library(tidyverse)
 ```
 
 
 Make sure that the file read into R correctly. If you type `View(income)` you should get a data frame with 533 observations of 12 variables. The variables are the same ones listed above.
 
-The first thing we want to do is to make a histogram of our dependent variable. Since we are intereseted in money, WAGE is the dependent variable. 
+The first thing we want to do is to make a histogram of our dependent variable. Since we are intereseted in money, WAGE is the dependent variable.
+
 **Step 2**: Make a histogram of WAGE, using the ggplot code we leanred about in Interactive Assignment 4.
 
 
@@ -127,7 +132,7 @@ The b coefficient is important because it tells us how much we would expect $y$ 
 
 The last two columns in the Coefficient section tell us whether the predictors are significant by giving a t-value and a p-value. The first row tells us whether the intercept is significantly different from zero. Since the p-value is > .05, this is not significant. However, the second row tells us whether the b coefficient for education is significantly different from zero. If it is, then that indicates that education is a significant predictor of wages. Given that the t-value is very high and the p-value is very, very low, we can conclude that education is a significant predictor of wages.
 
-We will talk about the other parts of the output in a moment.
+We will talk about the other parts of the output in another lab.
 
 **Step 3**: Now run a regression with SEX as a predictor of WAGE. You should get an output like this:
 
@@ -225,7 +230,7 @@ Each $b$ coefficient represents a different variable we use as a predictor.
 
 Control variables are very important because we often want to make sure a relationship between a predictor and outcome variable is not due to a third variable. For instance, the relationship between violent media such as televsion and video games and how violently a child behaves may be due to other variables, such as parenting styles or socioeconomic status. We may want to control for those variables so we can say that watching violent television predicts violent behavior, even when you control for parental neglect.
 
-In the wage study, onne reason that men may make more money than women is that men may be more experienced. There are several reasons why men may be more experienced than women. One notable reason is that women are much more likely than men to leave work to raise children. If a woman takes off 3-5 years in order to raise children, then she would be missing out on that level of experience. If this effect is big enough, women on average would have less experience than men have, and since experience is clearly a predictor of income, this could explain the wage gap. 
+In the wage study, one reason that men may make more money than women is that men may be more experienced. There are several reasons why men may be more experienced than women. One notable reason is that women are much more likely than men to leave work to raise children. If a woman takes off 3-5 years in order to raise children, then she would be missing out on that level of experience. If this effect is big enough, women on average would have less experience than men have, and since experience is clearly a predictor of income, this could explain the wage gap. 
 
 If this is the case, then controlling for experience would make the relationship between SEX and WAGE smaller. We can do that by adding this variable to our regression. Adding multiple predictor or independent variables to a regression in R is easy: we list each of the variables and separate them with a plus sign. 
 
@@ -339,17 +344,29 @@ This gives us the following plot. Now I'll break down what is in the `geom_smoot
 
 Note that we can change how the line looks by using the same concepts we use to edit histograms and scatterplots. We could add the options `color()` or `size()` in order to change how big the line is and what color it is.
 
-**Step 9**: Edit the code below to see how EXPERIENCE predicts WAGE. Make sure you include the code in the script you are writing.
+If you look at the plot for how education predicts wages, you might notice that the data have some outliers. Very few people have very low levels of education, such as below 6 years of education. It might be useful to remove those people from the analysis and see if our results hold.
+
+To do this, we would use the `filter()` command to create a temporary dataframe which only has the data we want. We can do this by **nesting** the filter command inside the other commands. For instance, to do the regression where we have EDUCATION predict WAGE where we only include those who have an EDUCATION greater than 5 years, we would type the following:
+
+
+```r
+x = lm(EDUCATION~WAGE, data = filter(income, EDUCATION > 5))
+summary(x)
+```
+
+Instead of including the `data = income` like above, I used the filter command in place of it so that when R went looking for the data it wanted to use for the regression, it chose the data output by the command `filter(income, EDUCATION > 5`. This idea is called **nesting** commands because one command is inside of another command. When writing scripts, nesting can save time, but a lot of nesting can create some difficult to read code.
+
+**Step 9**: Change the ggplot code you typed in Step 8 to create the same graph but only including data where EDUCATION is greater than 5. Remember, you would use the same nesting idea that I used in the code snippet above. Make sure to include this code in your script.
+
+**Step 10**: Edit the code below to see how EXPERIENCE predicts WAGE. Make sure you include the code in the script you are writing.
+
+
 
 ##Summary
 
-This lab covered a lot about regression. After completing it, you should feel like you understand the following concepts, which are covered in Statistics I:
+This lab covered a lot about regression. After completing it, you should be able to understand the basics of regression, which are covered in Statistics I.
 
-1. What is regression and what is it used for? Also, you should know what the predictor and outcome variables are.
-2. What is the idea of a control variable and why we would use it.
-3. How to interpret regressions, by creating a regression line and using that equation to predict a value for the outcome variable, given the equation.
-
-You should also start getting familiar with the following ideas:
+You should also start getting familiar with the following ideas which will be covered in the next few assignments:
 
 1. How to do a simple linear regression in R as well as a multiple regression. This includes entering the commands and interpreting the output correctly.
 2. Know how to compare regressions before and after adding a control variable in order to examine whether a control variable can account for a relationship.

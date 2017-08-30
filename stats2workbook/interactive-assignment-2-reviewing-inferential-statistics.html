@@ -26,7 +26,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-08-08">
+<meta name="date" content="2017-08-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -178,9 +178,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ol>
 <p>In this lab, we will use some data that some students collected for a research project previously. In this project, the researchers gave students a series of questionnaires looking how personality traits affected a participant’s likelihood to conform.</p>
 <p>First we are going to import the data. In this case, the data were entered on Google Sheets. To import data straight from Google Sheets, we can use the <code>gsheet</code> package. To install this package, we would type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(gsheet)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;gsheet&#39;</span>)</code></pre></div>
 <p>And to load the package, we would type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(gsheet)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&#39;gsheet&#39;</span>)</code></pre></div>
 <p>Now to load the package, we have to use this link. You can paste in this link and then type the command below.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">link =<span class="st"> &#39;https://docs.google.com/spreadsheets/d/1zZjEhkT4ROACTM4YsW1LTNn8al_scyu9l4_Qkzqvsew/edit?usp=sharing&#39;</span>
 d =<span class="st"> </span><span class="kw">gsheet2tbl</span>(link)</code></pre></div>
@@ -203,7 +203,7 @@ d =<span class="st"> </span><span class="kw">gsheet2tbl</span>(link)</code></pre
 <p>We are going to use the <code>describe()</code> and <code>describeBy</code> functions in the <code>psych</code> package to first look at some summary statistics. You can see more about these functions in the last assignment. First, we’ll load the psych package.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&#39;psych&#39;</span>)</code></pre></div>
 <p>In the psych package, you can use the <code>describe</code> function to get a summary about a variable, with several summary statistics. For instance, to look at a summary of the extraversion variable, we would type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">describe</span>(d$E)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">describe</span>(d<span class="op">$</span>E)</code></pre></div>
 <pre><code>##    vars  n  mean   sd median trimmed  mad min max range  skew kurtosis
 ## X1    1 60 25.67 7.16     26   25.67 9.64  10  40    30 -0.01    -0.94
 ##      se
@@ -242,12 +242,12 @@ d =<span class="st"> </span><span class="kw">gsheet2tbl</span>(link)</code></pre
 <h2><span class="header-section-number">2.2</span> Examining Gender Differences Using T-tests</h2>
 <p>Now we are going to see if there are any differences between male and female participants in their scores on the personality inventories and in conformity. To conduct t-tests, we can use the <code>t-test()</code> function in R.</p>
 <p>There are two ways to do t-tests in R. The first way is to give R two different variables as two different arguments. For instance, if we wanted to compare to see whether extraversion is higher than neuroticism, we would type the below code.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(d$N, d$E)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(d<span class="op">$</span>N, d<span class="op">$</span>E)</code></pre></div>
 <p>However, comparing how high extraversion is to neuroticism doesn’t make sense. We want to compare a single personality trait with another variable that tells us which gender a person is. To do that, we have to enter data different way.</p>
 <p>In R, we use what is called a <em>formula notation</em> to describe when we want to input one variable <strong>by</strong> another variable. What this means is that we have a dependent variable or an outcome variable, and then we have one or more variables that tell us what groups or how to divide the dependent variable.</p>
 <p>This function has one input, but it has two variables divided with a tilde. The first variable is the dependent variable and the other is the the grouping variable that tells what category an observation is in. The independent variable must have exactly 2 levels, because a t-test only compares 2 groups. This makes the <code>Gender</code> variable a good candidate.</p>
 <p>To do a t-test for the Extraversion variable with Gender as an independent variable we would type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(d$E~d$Gender)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(d<span class="op">$</span>E<span class="op">~</span>d<span class="op">$</span>Gender)</code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -262,7 +262,7 @@ d =<span class="st"> </span><span class="kw">gsheet2tbl</span>(link)</code></pre
 <p>This is the output you should get with this test. The second line of the output is the one you are most interested in. This tells us the t value, the degrees of freedom (abbreviated df), and the p value. The degrees of freedom is a corrected value, so it is often a decimal.</p>
 <p>The 95% confidence interval is on the 5th line, and the last line has the mean of the variable for each group. Notice in this case the mean for group F, for female, is very close to the value for group M, for male, which is why this t-test is not significant.</p>
 <ol start="2" style="list-style-type: decimal">
-<li>Using this function, do a t-test for the other 4 personality variables and conformity. Report your t-value and p-value for each of the tests below, using APA formatting: <em>t</em>(df) = tvalue, <em>p</em> = pvalue, or <em>t</em>(25) = .20, <em>p</em> = .84.</li>
+<li>Using this function, do a t-test examining whether men and women vary in the other 4 personality variables and whether they vary in conformity. Report your t-value and p-value for each of the tests below, using APA formatting: <em>t</em>(df) = tvalue, <em>p</em> = pvalue, or <em>t</em>(25) = .20, <em>p</em> = .84. Remember that gender should be the independent variable here.</li>
 </ol>
 <p> </p>
 <p> </p>
@@ -282,7 +282,7 @@ d =<span class="st"> </span><span class="kw">gsheet2tbl</span>(link)</code></pre
 <div id="correlation-with-r" class="section level2">
 <h2><span class="header-section-number">2.3</span> Correlation with R</h2>
 <p>The researchers were interested in whether there was a correlation between the personality variables and conformity. To test whether a correlation is present, we can use the <code>cor.test()</code> function in R. This function requires two input variables, which will be correlated. To see the correlation between Extraversion and Conformity, we would type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(d$E, d$Conformity)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(d<span class="op">$</span>E, d<span class="op">$</span>Conformity)</code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 

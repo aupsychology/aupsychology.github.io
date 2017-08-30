@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 
 #Interactive Assignment 2: Reviewing Inferential Statistics
 
@@ -15,14 +20,14 @@ First we are going to import the data. In this case, the data were entered on Go
 
 
 ```r
-install.packages(gsheet)
+install.packages('gsheet')
 ```
 
 And to load the package, we would type:
 
 
 ```r
-library(gsheet)
+library('gsheet')
 ```
 
 Now to load the package, we have to use this link. You can paste in this link and then type the command below.
@@ -167,7 +172,7 @@ This is the output you should get with this test. The second line of the output 
 
 The 95% confidence interval is on the 5th line, and the last line has the mean of the variable for each group. Notice in this case the mean for group F, for female, is very close to the value for group M, for male, which is why this t-test is not significant.
 
-2.  Using this function, do a t-test for the other 4 personality variables and conformity. Report your t-value and p-value for each of the tests below, using APA formatting: *t*(df) = tvalue, *p* = pvalue, or *t*(25) = .20, *p* = .84.
+2.  Using this function, do a t-test examining whether men and women vary in  the other 4 personality variables and whether they vary in conformity. Report your t-value and p-value for each of the tests below, using APA formatting: *t*(df) = tvalue, *p* = pvalue, or *t*(25) = .20, *p* = .84. Remember that gender should be the independent variable here.
 
 &nbsp;
 

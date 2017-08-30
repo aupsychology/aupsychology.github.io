@@ -6,17 +6,17 @@ This lab will examine how various personality variables predict a person's desir
 We will use the data we previously used in Interactive Assignment 2. Here is a key to the variables:
 
 
-Participant: a participant number
-E: extraversion score
-A: agreeableness score
-C: conscientiousness score
-N: Neuroticism score
-O: Openness score
-Gender: gender coded F and M
-Age: participant age
-Conformity: their score on a survey about how much they would conform
-RATING: a participant's rating to the question "how much do I think I conform to others' behaviors"
-SelfEsteem: a score on a self-esteem inventory with higher scores indicating more self-esteem
+* Participant: a participant number
+* E: extraversion score
+* A: agreeableness score
+* C: conscientiousness score
+* N: Neuroticism score
+* O: Openness score
+* Gender: gender coded F and M
+* Age: participant age
+* Conformity: their score on a survey about how much they would conform
+* RATING: a participant's rating to the question "how much do I think I conform to others' behaviors"
+* SelfEsteem: a score on a self-esteem inventory with higher scores indicating more self-esteem
 
 These data are available on Google Sheets and you can input it by using the following commands:
 
@@ -38,6 +38,7 @@ d = gsheet2tbl(link)
 ```
 
 **Step 1**: Create a regression examining each of the 5 personality variables (extraversion, agreeableness, etc.) as a predictor of conformity.
+
 
 
 Question 1: Write the regression equations for each of the 5 regressions below. Are any of the personality variables significant predictors of conformity?

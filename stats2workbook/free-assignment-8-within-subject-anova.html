@@ -26,7 +26,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-08-08">
+<meta name="date" content="2017-08-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -187,6 +187,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## Loading tidyverse: purrr
 ## Loading tidyverse: dplyr</code></pre>
 <pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.3.2</code></pre>
+<pre><code>## Warning: package &#39;tibble&#39; was built under R version 3.3.2</code></pre>
 <pre><code>## Warning: package &#39;tidyr&#39; was built under R version 3.3.2</code></pre>
 <pre><code>## Conflicts with tidy packages ----------------------------------------------</code></pre>
 <pre><code>## filter(): dplyr, stats
@@ -194,7 +195,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rate =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;data/FA8rate.csv&#39;</span>)</code></pre></div>
 <p><strong>Step 3</strong>: Use the <code>aggregate</code> command in order to fill out tables with the means for each rating, separating the ratings by face age and by rater age. So you will have four means, the mean for older raters (OR) rating older faces (OF), OR rating younger faces (YF), YR rating OF, and YR rating YF.</p>
 <p>To get the means for aggressiveness, you would type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(ag.rate~raterage*faceage, <span class="dt">data =</span> rate, <span class="dt">FUN =</span> mean)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(ag.rate<span class="op">~</span>raterage<span class="op">*</span>faceage, <span class="dt">data =</span> rate, <span class="dt">FUN =</span> mean)</code></pre></div>
 <pre><code>##   raterage   faceage  ag.rate
 ## 1      old   oldface 3.817839
 ## 2    young   oldface 3.350521
