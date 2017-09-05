@@ -26,7 +26,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-08-30">
+<meta name="date" content="2017-09-05">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -177,9 +177,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Know how to add functions to plots to change the labels on the plots</li>
 </ol>
 <p>This assignment will discuss some of the basics about creating a plot with ggplot. GGplot is very powerful but it can be very complicated. Before doing this assignment, you should read through <a href="http://r4ds.had.co.nz/data-visualisation.html">Chapter 3 of R for Data Science</a>.</p>
-<p>The first thing we have to do is to install the ggplot package and to load it. So type the following into R:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(ggplot2)
-<span class="kw">library</span>(ggplot2)</code></pre></div>
+<p>The first thing we have to do is to install the ggplot package and to load it. The ggplot package is part of the tidyverse, so we can load it by using the same command as in Interactive Assignment 3.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</code></pre></div>
 <p>The data for these assignments are available as a download on Canvas as the file IA4graph.csv (Files are also available at github )</p>
 <p>These data are a series of face ratings and were used in several studies looking at how older adult (older than 65 years) and younger adult (18-30) raters perceive older and younger adult faces. The raters rated the faces on 6 characteristics: aggressiveness, attractiveness, babyfaceness, competence, health, and untrustworthiness. The ratings were on a 7 point scale with 1 indicating very low and 7 indicating very high.</p>
 <p>Each row represnts a different face. The variables (columns) are as follows:</p>
@@ -374,12 +373,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In ggplot, we can also edit the other elements of a plot which are on the outside using different options. We can use the <code>labs()</code> option to set the labels of the plot and change the ones that ggplot gives us by default. For instance, we may want to change the labels of the plot above</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old, <span class="dt">y =</span> ag.young), <span class="dt">size =</span> <span class="dv">5</span>, <span class="dt">shape =</span> <span class="dv">20</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&#39;Older and younger adult ratings of aggressiveness&#39;</span>, <span class="dt">x =</span> <span class="st">&quot;Older Adult Ratings&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Younger Adult Ratings&quot;</span>)</code></pre></div>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&#39;Aggressiveness Ratings&#39;</span>, <span class="dt">x =</span> <span class="st">&quot;Older Adult Ratings&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Younger Adult Ratings&quot;</span>)</code></pre></div>
 <p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Finally, we can use the <code>theme()</code> function to change a lot of other options in our plot. In this example below, I’ll change the size and the type of the text:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> face) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">x =</span> ag.old, <span class="dt">y =</span> ag.young), <span class="dt">size =</span> <span class="dv">3</span>, <span class="dt">shape =</span> <span class="dv">20</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&#39;Older and younger adult ratings of aggressiveness&#39;</span>, <span class="dt">x =</span> <span class="st">&quot;Older Adult Ratings&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Younger Adult Ratings&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">title=</span><span class="st">&#39;Aggressiveness Ratings&#39;</span>, <span class="dt">x =</span> <span class="st">&quot;Older Adult Ratings&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Younger Adult Ratings&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">text=</span><span class="kw">element_text</span>(<span class="dt">size=</span><span class="dv">16</span>, <span class="dt">family=</span><span class="st">&quot;Arial&quot;</span>))</code></pre></div>
 <p><img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>As you can see in the examples, you can keep adding options to the plot to change different elements to make the plot look nicer. There are options to change each of the elements, such as changing the size of the x axis font, the y axis font, the x label font, the y label font, etc.</p>

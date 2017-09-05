@@ -12,12 +12,11 @@ After completing this lab, you should be able to do the following:
 
 This assignment will discuss some of the basics about creating a plot with ggplot. GGplot is very powerful but it can be very complicated. Before doing this assignment, you should read through [Chapter 3 of R for Data Science](http://r4ds.had.co.nz/data-visualisation.html).
 
-The first thing we have to do is to install the ggplot package and to load it. So type the following into R:
+The first thing we have to do is to install the ggplot package and to load it. The ggplot package is part of the tidyverse, so we can load it by using the same command as in Interactive Assignment 3.
 
 
 ```r
-install.packages(ggplot2)
-library(ggplot2)
+library("tidyverse")
 ```
 
 The data for these assignments are available as a download on Canvas as the file IA4graph.csv (Files are also available at github )
@@ -263,7 +262,7 @@ In ggplot, we can also edit the other elements of a plot which are on the outsid
 ```r
 ggplot(data = face) + 
   geom_point(aes(x = ag.old, y = ag.young), size = 5, shape = 20) +
-  labs(title='Older and younger adult ratings of aggressiveness', x = "Older Adult Ratings", y = "Younger Adult Ratings")
+  labs(title='Aggressiveness Ratings', x = "Older Adult Ratings", y = "Younger Adult Ratings")
 ```
 
 <img src="05-InteractiveAssignment4_ggplot_files/figure-html/unnamed-chunk-10-1.png" width="672" />
@@ -274,7 +273,7 @@ Finally, we can use the `theme()` function to change a lot of other options in o
 ```r
 ggplot(data = face) + 
   geom_point(aes(x = ag.old, y = ag.young), size = 3, shape = 20) +
-  labs(title='Older and younger adult ratings of aggressiveness', x = "Older Adult Ratings", y = "Younger Adult Ratings") +
+  labs(title='Aggressiveness Ratings', x = "Older Adult Ratings", y = "Younger Adult Ratings") +
   theme(text=element_text(size=16, family="Arial"))
 ```
 

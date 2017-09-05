@@ -26,7 +26,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-08-30">
+<meta name="date" content="2017-09-05">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -179,7 +179,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>To start with the tidyverse, you need to install the package ‘tidyverse’, which is a collection of useful packages used to analyze data. Do the following to install it:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;tidyverse&#39;</span>)</code></pre></div>
 <p>Then load the tidyverse package with the following:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&#39;tidyverse&#39;</span>)</code></pre></div>
 <p>For this assignment, you are going to work through Chapter 5.1-5.5 of R for Data Science. It is available at this link: <a href="http://r4ds.had.co.nz/transform.html" class="uri">http://r4ds.had.co.nz/transform.html</a></p>
 <p>Read the chapter at the attached link and then answer the questions that are below when you get to them. Place your answers on this sheet by writing down the code or commands you would do in order to solve these problems.</p>
 <p>If you’re ambitious, you can work through sections 5.6 and 5.7 on your own.</p>
@@ -193,10 +193,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Departed in summer (July, August, and September)</li>
 <li>Arrived more than two hours late, but didn’t leave late</li>
 </ul>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -234,7 +230,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
-<p>Section 2: arrange</p>
+<p><em>Section 2: arrange</em></p>
 <ol start="4" style="list-style-type: decimal">
 <li>How could you use <code>arrange()</code> to sort all missing values to the start? (Hint: use <code>is.na()</code>).</li>
 </ol>
@@ -255,7 +251,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
-<p>Section 3: select</p>
+<p><em>Section 3: select</em></p>
 <ol start="6" style="list-style-type: decimal">
 <li>Brainstorm as many ways as possible to select dep_time, dep_delay, arr_time, and arr_delay from flights.</li>
 </ol>
@@ -287,7 +283,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
-<p>Section 4: Mutate</p>
+<p><em>Section 4: Mutate</em></p>
 <ol start="9" style="list-style-type: decimal">
 <li>Currently dep_time and sched_dep_time are convenient to look at, but hard to compute with because they’re not really continuous numbers. Convert them to a more convenient representation of number of minutes since midnight.</li>
 </ol>

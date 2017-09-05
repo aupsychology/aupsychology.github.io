@@ -1,7 +1,7 @@
 --- 
 title: "Workbook for Statistics 2"
 author: "Robert G. Franklin Jr."
-date: "2017-08-30"
+date: "2017-09-05"
 site: bookdown::bookdown_site
 documentclass: book
 github-repo: aupsychology

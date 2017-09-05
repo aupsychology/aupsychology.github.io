@@ -20,7 +20,7 @@ Then load the tidyverse package with the following:
 
 
 ```r
-library(tidyverse)
+library('tidyverse')
 ```
 
 For this assignment, you are going to work through Chapter 5.1-5.5 of R for Data Science. It is available at this link: http://r4ds.had.co.nz/transform.html
@@ -39,13 +39,6 @@ If you're ambitious, you can work through sections 5.6 and 5.7 on your own.
 * Arrived more than two hours late, but didn’t leave late
 
 
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
 
 &nbsp;
 
@@ -118,7 +111,7 @@ If you're ambitious, you can work through sections 5.6 and 5.7 on your own.
 &nbsp;
 
 
-Section 2: arrange
+*Section 2: arrange*
 
 4. How could you use `arrange()` to sort all missing values to the start? (Hint: use `is.na()`).
 
@@ -154,7 +147,7 @@ Section 2: arrange
 &nbsp;
 
 
-Section 3: select
+*Section 3: select*
 
 6. Brainstorm as many ways as possible to select dep_time, dep_delay, arr_time, and arr_delay from flights.
 
@@ -209,7 +202,7 @@ Section 3: select
 &nbsp;
 
 
-Section 4: Mutate
+*Section 4: Mutate*
 
 9. Currently dep_time and sched_dep_time are convenient to look at, but hard to compute with because they’re not really continuous numbers. Convert them to a more convenient representation of number of minutes since midnight.
 

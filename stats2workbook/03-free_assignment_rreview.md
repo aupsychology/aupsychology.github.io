@@ -78,27 +78,9 @@ Using the psych package, create basic descriptive statistics to create a table t
 &nbsp;
 
 
-1. Mean and standard deviation for all variables (except Subject and Sex)
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
 
 3. Using a t-test, see whether there are any differences between males and females in their scores in the novelACC, seenACC, and overallACC variable. Report the t-values using APA formatting below:
 
-
-1. Mean and standard deviation for all variables (except Subject and Sex)
 &nbsp;
 
 &nbsp;
@@ -159,26 +141,12 @@ Is there a significant difference? Which variable has a higher mean? Do the resu
 
 &nbsp;
 
-
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
-
 &nbsp;
 
 &nbsp;
 
 6. When looking at all the results, do these results support the theory that memory is stronger for faces presented with complex adjectives than for faces presented with basic mental state adjectives? Why or why not? You should use your answers to the questions above in order to answer these questions.
 
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
 
 &nbsp;
 
