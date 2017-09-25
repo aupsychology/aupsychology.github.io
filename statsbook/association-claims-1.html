@@ -6,16 +6,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Statistics: The Story of Numbers</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="An Introduction to Psychology Statistics">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Statistics: The Story of Numbers" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="An Introduction to Psychology Statistics" />
-  <meta name="github-repo" content="rgfran" />
+  <meta name="github-repo" content="aupsychology" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Statistics: The Story of Numbers" />
@@ -26,7 +25,7 @@
 <meta name="author" content="Robert G. Franklin, Jr.">
 
 
-<meta name="date" content="2017-07-19">
+<meta name="date" content="2017-09-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="frequency-claims-1.html">
 <link rel="next" href="one-sample-mean-claims.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -93,6 +91,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 
 <body>
+
 
 
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
@@ -614,7 +613,7 @@ $$\frac{7.6 - 1.41}{6.9} = .90$$</code></pre>
 items =<span class="st"> </span><span class="kw">c</span>(<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">10</span>,<span class="dv">7</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">11</span>)
 d =<span class="st"> </span><span class="kw">data.frame</span>(sleep,items)</code></pre></div>
 <p>Now we can use the <code>lm()</code> function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">lm</span>(items~sleep, <span class="dt">data =</span> d)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">lm</span>(items<span class="op">~</span>sleep, <span class="dt">data =</span> d)</code></pre></div>
 <p>There are a few things to note. First, I save the output of the lm function to the variable x. This is important because the function <code>lm()</code> gives us a lot of outputs and we want to use some of it. Second, I enter in the two variables I’m interested in, entering in the dependent variable first, a tilde, and then an independent variable. In this case, I believe that sleep predicts items remembered, so I enter “items~sleep”. Finally, I type <code>data = d</code>, giving R the data frame I’m interested in.</p>
 <p>When you type this into R, you will get no output. To see the regression, I have to type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(x)</code></pre></div>
@@ -647,21 +646,21 @@ d =<span class="st"> </span><span class="kw">data.frame</span>(sleep,items)</cod
 <li>Linear regression and correlation assume a linear relationship, assuming the relationship should fit a straight line. However, not all data fit a straight line. If the relationship is <strong>curvilinear</strong>, a linear regression doesn’t work. For instance, the relationship between caffeine and performance may be curvilinear. A little bit of caffeine causes performance to go up, but then too much may cause performance to go down, causing an inverted U shape. A linear regression can’t fit this kind of curvilinear relatinonship.</li>
 </ol>
 <p>Look at the following graph, from a hypothetical study where I tested how caffeine (measured as cups of coffee over the 4 hours before a test) affected memory on a test. As you can see, as a person drinks more caffeine, their memory improves up unto a point, where the caffeine starts to impair memory.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Caffeine =<span class="st"> </span>(<span class="dv">1</span>:<span class="dv">500</span>)/<span class="dv">120</span>
-Items =<span class="st"> </span>(-<span class="dv">4</span>*Caffeine^<span class="dv">2</span> +<span class="st"> </span><span class="dv">18</span>*Caffeine +<span class="st"> </span><span class="dv">80</span>) +<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">500</span>)*<span class="dv">4</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Caffeine =<span class="st"> </span>(<span class="dv">1</span><span class="op">:</span><span class="dv">500</span>)<span class="op">/</span><span class="dv">120</span>
+Items =<span class="st"> </span>(<span class="op">-</span><span class="dv">4</span><span class="op">*</span>Caffeine<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">18</span><span class="op">*</span>Caffeine <span class="op">+</span><span class="st"> </span><span class="dv">80</span>) <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">500</span>)<span class="op">*</span><span class="dv">4</span>
 d =<span class="st"> </span><span class="kw">data.frame</span>(Caffeine,Items)
 graph =<span class="st"> </span><span class="kw">ggplot</span>(d, <span class="kw">aes</span>(<span class="dt">x =</span> Caffeine, <span class="dt">y =</span> Items))
-graph +<span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">2</span>) +<span class="st"> </span>
+graph <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>
 <span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Caffeine&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Items Remembered&quot;</span>)</code></pre></div>
 <p><img src="09-associationclaims_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(Caffeine,Items,d)</code></pre></div>
 <p>If I did a linear regression, I would have a line that fits this data like the following, which suggests almost no relationship.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Caffeine =<span class="st"> </span>(<span class="dv">1</span>:<span class="dv">500</span>)/<span class="dv">120</span>
-Items =<span class="st"> </span>(-<span class="dv">4</span>*Caffeine^<span class="dv">2</span> +<span class="st"> </span><span class="dv">18</span>*Caffeine +<span class="st"> </span><span class="dv">80</span>) +<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">500</span>)*<span class="dv">4</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Caffeine =<span class="st"> </span>(<span class="dv">1</span><span class="op">:</span><span class="dv">500</span>)<span class="op">/</span><span class="dv">120</span>
+Items =<span class="st"> </span>(<span class="op">-</span><span class="dv">4</span><span class="op">*</span>Caffeine<span class="op">^</span><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">18</span><span class="op">*</span>Caffeine <span class="op">+</span><span class="st"> </span><span class="dv">80</span>) <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">500</span>)<span class="op">*</span><span class="dv">4</span>
 d =<span class="st"> </span><span class="kw">data.frame</span>(Caffeine,Items)
 graph =<span class="st"> </span><span class="kw">ggplot</span>(d, <span class="kw">aes</span>(<span class="dt">x =</span> Caffeine, <span class="dt">y =</span> Items))
-graph +<span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">2</span>) +<span class="st"> </span>
-<span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Caffeine&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Items Remembered&quot;</span>) +<span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> lm, <span class="dt">se=</span>F, <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&#39;darkred&#39;</span>)</code></pre></div>
+graph <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>
+<span class="kw">labs</span>(<span class="dt">x =</span> <span class="st">&quot;Caffeine&quot;</span>, <span class="dt">y =</span> <span class="st">&quot;Items Remembered&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> lm, <span class="dt">se=</span>F, <span class="dt">size =</span> <span class="dv">2</span>, <span class="dt">color =</span> <span class="st">&#39;darkred&#39;</span>)</code></pre></div>
 <p><img src="09-associationclaims_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rm</span>(Caffeine,Items,d)</code></pre></div>
 <p>In this case you could use a different function to predict your data, which is beyond the scope of this chapter.</p>
@@ -694,8 +693,9 @@ graph +<span class="st"> </span><span class="kw">geom_point</span>(<span class="
         </div>
       </div>
 <a href="frequency-claims-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="one-sample-mean-claims.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="one-sample-mean-claims.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -704,7 +704,7 @@ graph +<span class="st"> </span><span class="kw">geom_point</span>(<span class="
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -738,7 +738,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

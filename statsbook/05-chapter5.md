@@ -4,9 +4,6 @@ output: html_notebook
 ---
 
 
-```
-## Warning: package 'ggplot2' was built under R version 3.3.2
-```
 
 
 #Probability and Samples

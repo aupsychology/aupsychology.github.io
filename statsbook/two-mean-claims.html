@@ -6,16 +6,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Statistics: The Story of Numbers</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="An Introduction to Psychology Statistics">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Statistics: The Story of Numbers" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="An Introduction to Psychology Statistics" />
-  <meta name="github-repo" content="rgfran" />
+  <meta name="github-repo" content="aupsychology" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Statistics: The Story of Numbers" />
@@ -26,7 +25,7 @@
 <meta name="author" content="Robert G. Franklin, Jr.">
 
 
-<meta name="date" content="2017-07-19">
+<meta name="date" content="2017-09-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="one-sample-mean-claims.html">
 <link rel="next" href="claims-with-more-than-two-means-anova.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -93,6 +91,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 
 <body>
+
 
 
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
@@ -393,7 +392,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><span class="math display">\[t = \frac{6.25 - 0}{\frac{6.95}{\sqrt{12}}} = -3.125 \]</span></p>
 <p>A couple of notes here: If the post-test is smaller than the pre-test, t will be negative. However, convention usually dictates that t-values are reported as positive, and since the t-distribution is symmetrical this does not change our results. When finding the p-value in R, the value for t must be positive. Second, there are 12 pairs of individuals, so we have 11 degrees of freedom.</p>
 <p>Using the command in the last chapter, we can find out the p-value of getting a t-value of 3.125 or more extreme by the following:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span> -<span class="st"> </span><span class="kw">pt</span>(<span class="fl">3.125</span>, <span class="dv">11</span>))*<span class="dv">2</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pt</span>(<span class="fl">3.125</span>, <span class="dv">11</span>))<span class="op">*</span><span class="dv">2</span></code></pre></div>
 <pre><code>## [1] 0.009663434</code></pre>
 <p>This <span class="math inline">\(p=.009\)</span>, which indicates there is a .009 chance (.9%) chance that these results would have occurred if the null hypothesis is true, that is if there is no difference between pre-test and post-test. Thus, we would reject the null hypothesis.</p>
 </div>
@@ -459,7 +458,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><span class="math display">\[t = \frac{82-75}{11.6 \cdot \sqrt{\frac{1}{21}+\frac{1}{33}}} = 2.23\]</span></p>
 <p>Step 5: Find degrees of freedom. These are equal to the total number of observations minus 2. In this case it is 52.</p>
 <p>Step 6, find out the P value associated with T. To calculate this, we would type the following into R:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span>-<span class="kw">pt</span>(<span class="fl">2.23</span>, <span class="dv">52</span>))*<span class="dv">2</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span><span class="op">-</span><span class="kw">pt</span>(<span class="fl">2.23</span>, <span class="dv">52</span>))<span class="op">*</span><span class="dv">2</span></code></pre></div>
 <pre><code>## [1] 0.03008958</code></pre>
 <p>This gives us a <span class="math inline">\(p = .030\)</span>. This is below the generally accepted <span class="math inline">\(\alpha = .05\)</span>, so we would reject the null hypothesis and conclude the groups are different. Given that the mean for the seated class is higher than the mean for the online class, we would conclude that the seated class performed significantly better on the exam. Whether that was due to the seated versus online nature of the classes or due to another confound is a question for research design.</p>
 </div>
@@ -557,9 +556,9 @@ d =<span class="st"> </span><span class="kw">data.frame</span>(GroupA,GroupB)</c
 <p>For the independent samples t-test:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(A, B, <span class="dt">paired =</span> F) </code></pre></div>
 <p>In the example given here, if I wanted to do a paired samples t-test, I would type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(d$GroupA, d$GroupB, <span class="dt">paired =</span> T)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(d<span class="op">$</span>GroupA, d<span class="op">$</span>GroupB, <span class="dt">paired =</span> T)</code></pre></div>
 <p>And if I wanted to do an independent samples t-test, I would type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(d$GroupA, d$GroupB, <span class="dt">paired =</span> F)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(d<span class="op">$</span>GroupA, d<span class="op">$</span>GroupB, <span class="dt">paired =</span> F)</code></pre></div>
 <p>If I do this, (for the paired samples t-test), I will get the following output:</p>
 <pre><code>## 
 ##  Paired t-test
@@ -592,8 +591,9 @@ d =<span class="st"> </span><span class="kw">data.frame</span>(GroupA,GroupB)</c
         </div>
       </div>
 <a href="one-sample-mean-claims.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="claims-with-more-than-two-means-anova.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="claims-with-more-than-two-means-anova.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -602,7 +602,7 @@ d =<span class="st"> </span><span class="kw">data.frame</span>(GroupA,GroupB)</c
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -636,7 +636,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

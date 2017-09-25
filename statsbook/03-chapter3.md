@@ -76,14 +76,14 @@ Here's an example. I asked twenty preschool children to tell me what their favor
 If you asked children their favorite color, you are probably not interested in only having a list of all the responses. You may be more interested in questions such as which color is most commonly picked or how many different colors are chosen. Each of these questions is more easily answered by a **frequency table**. A frequency table is a table which records each possible response of the variable and then lists how often that response happened. In this case, the table would be:
 
 
-|  Color  |  Frequency  |
-|:-------:|:-----------:|
-|  black  |      2      |
-|  blue   |      6      |
-|  green  |      2      |
-|  pink   |      2      |
-| purple  |      4      |
-|   red   |      4      |
+| Color  | Frequency |
+|:------:|:---------:|
+| black  |     2     |
+|  blue  |     6     |
+| green  |     2     |
+|  pink  |     2     |
+| purple |     4     |
+|  red   |     4     |
 
 
 If you look at the list carefully, some patterns become very apparent. Blue is the most common color, followed by purple and red. Also, there are only 6 colors chosen, and certain colors, like white and brown, are not chosen. The frequency table allows us to see all of that at a glance.
@@ -105,13 +105,13 @@ _3_, _5_, _2_, _4_, _4_, _4_, _1_, _1_, _3_, _5_, _5_, _4_, _5_, _3_, _5_, _3_, 
 Yuck! That is a long list of numbers. A frequency chart would look like this:
 
 
-|  Rating  |  Frequency  |
-|:--------:|:-----------:|
-|    1     |     10      |
-|    2     |      5      |
-|    3     |     10      |
-|    4     |     15      |
-|    5     |     20      |
+| Rating | Frequency |
+|:------:|:---------:|
+|   1    |    10     |
+|   2    |     5     |
+|   3    |    10     |
+|   4    |    15     |
+|   5    |    20     |
 
 In this case, it's a lot clearer to see what the pattern is. The ratings seem to be higher than average, with most people giving a fairly high rating and only a smaller percentage giving two stars or less.
 
@@ -260,20 +260,20 @@ Central tendency tells us what the middle or the “average” member of a distr
 Imagine I have two books and wanted to test what people thought about them. I give a series of people the book to read and ask them to rate how good the book was on a 10 point scale. For instance, I might get the following ratings:
 
 
-|  Rater  |  Book1  |  Book2  |
-|:-------:|:-------:|:-------:|
-|    A    |    6    |    3    |
-|    B    |    4    |    4    |
-|    C    |    5    |    6    |
-|    D    |    7    |    4    |
-|    E    |    4    |    3    |
-|    F    |    3    |    5    |
-|    G    |    3    |    2    |
-|    H    |    5    |   10    |
-|    I    |    6    |   10    |
-|    J    |    6    |    1    |
-|    K    |    6    |    9    |
-|    L    |    5    |    3    |
+| Rater | Book1 | Book2 |
+|:-----:|:-----:|:-----:|
+|   A   |   6   |   3   |
+|   B   |   4   |   4   |
+|   C   |   5   |   6   |
+|   D   |   7   |   4   |
+|   E   |   4   |   3   |
+|   F   |   3   |   5   |
+|   G   |   3   |   2   |
+|   H   |   5   |  10   |
+|   I   |   6   |  10   |
+|   J   |   6   |   1   |
+|   K   |   6   |   9   |
+|   L   |   5   |   3   |
 
 If we look at these data points, the mean for each group is  the same, with the mean for both groups equal to 5. However, it's clear that there is a different story happening here, especially if you look at the distributions.
 
@@ -294,20 +294,20 @@ This is a complicated formula for a simple concept. Here's a step-by-step to exp
 First we calculate the *deviations*, which is taking each score in a distribution and subtracting the mean from each score. A small deviation is close to the mean whereas a large deviation is far from the mean. As you can see in the table below, the deviations tells us a story about the data. There are very small deviations for Book 1 but very large deviations for most of the observations of Book 2. 
 
 
-|  Rater  |  Book1  |  Book2  |  Book1.deviation  |  Book2.deviation  |
-|:-------:|:-------:|:-------:|:-----------------:|:-----------------:|
-|    A    |    6    |    3    |         1         |        -2         |
-|    B    |    4    |    4    |        -1         |        -1         |
-|    C    |    5    |    6    |         0         |         1         |
-|    D    |    7    |    4    |         2         |        -1         |
-|    E    |    4    |    3    |        -1         |        -2         |
-|    F    |    3    |    5    |        -2         |         0         |
-|    G    |    3    |    2    |        -2         |        -3         |
-|    H    |    5    |   10    |         0         |         5         |
-|    I    |    6    |   10    |         1         |         5         |
-|    J    |    6    |    1    |         1         |        -4         |
-|    K    |    6    |    9    |         1         |         4         |
-|    L    |    5    |    3    |         0         |        -2         |
+| Rater | Book1 | Book2 | Book1.deviation | Book2.deviation |
+|:-----:|:-----:|:-----:|:---------------:|:---------------:|
+|   A   |   6   |   3   |        1        |       -2        |
+|   B   |   4   |   4   |       -1        |       -1        |
+|   C   |   5   |   6   |        0        |        1        |
+|   D   |   7   |   4   |        2        |       -1        |
+|   E   |   4   |   3   |       -1        |       -2        |
+|   F   |   3   |   5   |       -2        |        0        |
+|   G   |   3   |   2   |       -2        |       -3        |
+|   H   |   5   |  10   |        0        |        5        |
+|   I   |   6   |  10   |        1        |        5        |
+|   J   |   6   |   1   |        1        |       -4        |
+|   K   |   6   |   9   |        1        |        4        |
+|   L   |   5   |   3   |        0        |       -2        |
 
 
 Now we want to combine the deviations into one number. We can't take the mean of the distributions because that would always equal zero. So what we do is we square each of the deviations and take the sum of the squared numbers to create a property called sum of squared deviations or **sums of squares**.  The sums of squares are an interesting mathematical property of a distribution and one that will come up later. However, there is one problem with this property, it’s biased by how many observations we have. As we add more values, sums of squares will always go up. A distribution with twenty observations with the same amount of variance as a distribution with ten observations will have a much higher sums of squares, just because we are adding.
@@ -316,11 +316,11 @@ To account for this, we divide sums of squares by the number of observations. Fo
 
 In the example above, the variance for book one would be:
 	
-	$$s^2 = \frac{4}{10-1} = .44$$ 
+$$s^2 = \frac{4}{10-1} = .44$$ 
 
 And the variance for Book 2 would be:
 	
-	$$s^2 = \frac{148}{10 - 1} = 16.4$$
+$$s^2 = \frac{148}{10 - 1} = 16.4$$
 
 	
 Variance is a good measure of deviations, but one problem is that it is not on the same scale as the original units, because we squared the original deviations. To fix that, we often take the square root of the variance to get the quality called standard deviation. Standard deviation is the most common way to measure the amount of spread in data. It represents the average amount that each observation deviates from the mean. Since standard deviation is the square root of variance, it is written as the Greek letter sigma, $\sigma$, if it is the square root of a population and $s$ if it is the standard deviation of a sample.

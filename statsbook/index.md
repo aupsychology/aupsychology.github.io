@@ -1,12 +1,12 @@
 --- 
 title: "Statistics: The Story of Numbers"
 author: "Robert G. Franklin, Jr."
-date: "2017-07-19"
+date: "2017-09-25"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: "citations.bib"
 link-citations: yes
-github-repo: rgfran
+github-repo: aupsychology
 description: "An Introduction to Psychology Statistics"
 config:
     toc:

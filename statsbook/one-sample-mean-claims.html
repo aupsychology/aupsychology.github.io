@@ -6,16 +6,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Statistics: The Story of Numbers</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="An Introduction to Psychology Statistics">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Statistics: The Story of Numbers" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="An Introduction to Psychology Statistics" />
-  <meta name="github-repo" content="rgfran" />
+  <meta name="github-repo" content="aupsychology" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Statistics: The Story of Numbers" />
@@ -26,7 +25,7 @@
 <meta name="author" content="Robert G. Franklin, Jr.">
 
 
-<meta name="date" content="2017-07-19">
+<meta name="date" content="2017-09-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="association-claims-1.html">
 <link rel="next" href="two-mean-claims.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -93,6 +91,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 
 <body>
+
 
 
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
@@ -286,9 +285,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><span class="math display">\[ Z = \frac{\bar{X} - \mu}{\text{SE}}\]</span> where <span class="math display">\[\text{SE} = \frac{s}{\sqrt{n}}\]</span></p>
 <p>In this case, we would plug in the numbers and find:</p>
 <p><span class="math display">\[Z = \frac{3400 - 3600}{\frac{400}{\sqrt{25}}} = 2.5\]</span> So we get a z-score of -2.5. Now to find out the probability of getting a z-score of -2.5 or more extreme, we would do the following in R:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(-<span class="fl">2.5</span>) +<span class="st"> </span>(<span class="dv">1</span> -<span class="st"> </span><span class="kw">pnorm</span>(<span class="fl">2.5</span>)) </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="op">-</span><span class="fl">2.5</span>) <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(<span class="fl">2.5</span>)) </code></pre></div>
 <p>Why the complicated formula? The first part of this gives us the chance of getting a sample with a z-score below -2.5. The second part gives us the chance of getting a sample with a z-score above 2.5. We want to see the chance we would get a z-score more extreme than 2.5. That could be negative or positive. This is because if the sample is not part of the population, the sample mean could be significantly higher or significantly lower. In order to avoid this complicated formula, we can just do the following, since the z-distribution is symmetrical:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(-<span class="fl">2.5</span>) *<span class="st"> </span><span class="dv">2</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="op">-</span><span class="fl">2.5</span>) <span class="op">*</span><span class="st"> </span><span class="dv">2</span></code></pre></div>
 <pre><code>## [1] 0.01241933</code></pre>
 <p>In this case, we would get a p of .012. That means, if we sampled 25 individuals from the population with a mean birth weight of 3600g and a standard deviation of 400g, the chance of getting a sample of 25 individuals with a mean birth weight of 3400g is 1.2%. That is pretty unlikely, and would be below <span class="math inline">\(\alpha = .05\)</span>, so we would reject the null hypothesis. This gives us the conclusion: smoking mothers have babies with significantly lower birth weights than nonsmoking mothers.</p>
 </div>
@@ -310,14 +309,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In this case, we get a value of t= 2.29. Now we have to figure out the chance we would get a t of 2.29 or more by chance alone, as predicted by the null hypothesis. We can use the t-distribution to figure this out.</p>
 <p>However, as mentioned above, the t-distribution is different with different sample sizes. Our estimate of the population’s standard deviation is more precise with a larger sample. To examine this, we have to determine the degrees of freedom with the t-test. For a t-test, the degrees of freedom are equal to n-1. This is the value we will use for the rest of the t-test. In our example, with a sample size of 16 rats, the degrees of freedom are 15.</p>
 <p>I can do this by typing the following command into R, substituting the value I got for t for t and the degrees of freedom for <code>df</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span> – <span class="kw">pt</span>(t, df))*<span class="dv">2</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span> – <span class="kw">pt</span>(t, df))<span class="op">*</span><span class="dv">2</span></code></pre></div>
 <p>This is a complicated command. If you just want the answer, feel free to skip the next couple of paragraphs, because they may be confusing. The reason this R formula is complicated is for several reasons. We want to calculate the area under the edges of the t-distribution, or the chance we get a value more extreme than 2.29. The R command <code>pt()</code> gives us the chance of getting a t-value of less than t. Because of that, we have to calculate <code>1-pt()</code> this command because we are interested in values more than t.</p>
 <p>But this doesn’t explain why I multiply it all by 2. This is because we use a concept called two-sided hypotheses. When we set an alternative hypothesis, we have set it to say that the value is not equal to a certain value. For instance, in the rat example above, we set the alternative hypothesis that the rats did not push the lever 50% of the time. This could mean that they pressed the lever more than 50% of the time, or less than 50% of the time. In this case, we would consider our results to be significant if it is the case they push the lever more or less than 50% of the time.</p>
 <p>This is why we are interested in finding the chance we got a t of more than 2.29, or a t of less than -2.29. However, we might only be interested in setting a null hypothesis that the rats pressed the lever more than 50% of the time and unconcerned if the rats pressed the lever less than 50% of the time. This is called a one-sided hypothesis and is generally more powerful. In this case, you would use the formula</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span> – <span class="kw">pt</span>(t, df)</code></pre></div>
 <p>One sided hypotheses are not often used in psychology so I do not present them here. They make a lot of sense in some cases, but generally, we would be interested if we find results that are very large and opposite of what we expect. For instance, in the rat study, if the rats pressed the green lever more than the blue lever, that would be an interesting hypothesis. So this is why generally most people use two-sided hypotheses regardless.</p>
 <p>If this is confusing to you, just stick to the two-sided hypotheses. In this case, if we enter the following into R, we get the p value associated with our test:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span> -<span class="st"> </span><span class="kw">pt</span>(<span class="fl">2.29</span>, <span class="dv">15</span>))*<span class="dv">2</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pt</span>(<span class="fl">2.29</span>, <span class="dv">15</span>))<span class="op">*</span><span class="dv">2</span></code></pre></div>
 <pre><code>## [1] 0.03693081</code></pre>
 <p>This would equal .037. So we get a p-value of .037, which given it is less than .05, would lead us to reject the null hypothesis.</p>
 <p>Now, how do we report this in APA format? APA format, as you may know, is very, very picky and many times doesn’t seem to make sense. We use the following format, which is similar to the way we report correlations:</p>
@@ -336,9 +335,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>I have to get a sample mean and standard deviation.</li>
 <li>I have to calculate what is called a critical T-value. That is the t-value that is associated with the confidence interval size. For instance, for a 95% confidence interval, we need to figure out what value of t covers 95% of the t-distribution. This would mean, that the area of the t-distribution between –t and +t would equal .95. To figure this out, we can type the following into R:</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">-(<span class="dv">1</span>*<span class="kw">qt</span>((<span class="dv">1</span>-p)/<span class="dv">2</span>, df))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">-</span>(<span class="dv">1</span><span class="op">*</span><span class="kw">qt</span>((<span class="dv">1</span><span class="op">-</span>p)<span class="op">/</span><span class="dv">2</span>, df))</code></pre></div>
 <p>This is another long formula, but all you have to add is the value for p, which is the size of the confidence interval, .95 for a 95% confidence interval, and the degrees of freedom of the sample. In this case, we would type the following</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">-(<span class="dv">1</span>*<span class="kw">qt</span>((<span class="dv">1</span><span class="fl">-.95</span>)/<span class="dv">2</span>, <span class="dv">99</span>))</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">-</span>(<span class="dv">1</span><span class="op">*</span><span class="kw">qt</span>((<span class="dv">1</span><span class="op">-</span>.<span class="dv">95</span>)<span class="op">/</span><span class="dv">2</span>, <span class="dv">99</span>))</code></pre></div>
 <p>This gives us a value of 1.98. The 95% confidence interval is then solved by doing this:</p>
 <p><span class="math display">\[\bar{x} \pm t_\text{crit} \mathbin{\cdot} \text{SE}\]</span> <span class="math display">\[450 \pm 1.98 \mathbin{\cdot} \frac{80}{\sqrt{100}}\]</span> <span class="math display">\[ 450 \pm 15.8 \]</span></p>
 <p>Based on this, we can get a range of values where we are 95% certain by using this method, we would find the population mean. This gives us a degree of certainty we have about our estimate. For instance, we would not be very surprised if the reaction time in the population was really 440 ms, because that is in our confidence interval. However, it is very unlikely the population reaction time is really 500 ms., which is well outside our confidence interval.</p>
@@ -387,8 +386,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="association-claims-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="two-mean-claims.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="two-mean-claims.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -397,7 +397,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -431,7 +431,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

@@ -4,9 +4,6 @@ output: html_notebook
 ---
 
 
-```
-## Warning: package 'ggplot2' was built under R version 3.3.2
-```
 
 #Introduction to R
 
@@ -229,13 +226,13 @@ There are many ways to enter data into R, but the one that I use most commonly i
 A table may look like this:
 
 
-|   name   |  sex  |  test1  |  test2  |  test3  |
-|:--------:|:-----:|:-------:|:-------:|:-------:|
-|  April   |   F   |   85    |   79    |   80    |
-|   Bret   |   M   |   77    |   80    |   64    |
-|  Cassie  |   F   |   69    |   64    |   90    |
-| Deshauna |   F   |   98    |   93    |   81    |
-|   Egor   |   M   |   89    |   90    |   99    |
+|   name   | sex | test1 | test2 | test3 |
+|:--------:|:---:|:-----:|:-----:|:-----:|
+|  April   |  F  |  85   |  79   |  80   |
+|   Bret   |  M  |  77   |  80   |  64   |
+|  Cassie  |  F  |  69   |  64   |  90   |
+| Deshauna |  F  |  98   |  93   |  81   |
+|   Egor   |  M  |  89   |  90   |  99   |
 
 Each row corresponds a subject (in psychology, usually this is a person) and each column is a variable. By following each row, we can see all the values for a particular person. If we wanted to see Deshauna's scores, we would follow the fourth row.
 

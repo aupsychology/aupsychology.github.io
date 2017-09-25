@@ -6,16 +6,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Statistics: The Story of Numbers</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="An Introduction to Psychology Statistics">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Statistics: The Story of Numbers" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="An Introduction to Psychology Statistics" />
-  <meta name="github-repo" content="rgfran" />
+  <meta name="github-repo" content="aupsychology" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Statistics: The Story of Numbers" />
@@ -26,7 +25,7 @@
 <meta name="author" content="Robert G. Franklin, Jr.">
 
 
-<meta name="date" content="2017-07-19">
+<meta name="date" content="2017-09-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="data-distributions-and-descriptive-statistics.html">
 <link rel="next" href="probability-and-samples.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -93,6 +91,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 
 <body>
+
 
 
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
@@ -264,10 +263,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>Open source programs: Open-source programs are programs where the code is available for anyone to use and modify. Volunteers write these programs and give the code away for free. So, anyone can modify and edit it to make it what they want. This means that most open-source programs are free. Free is good, right? However, there’s a downside. Since the people writing the program are volunteers and are not getting paid to write the program directly, these programs can often be hard to use.</p></li>
 </ol>
 <p>R is an open-source statistical programming language. A programming language is a set of commands that are interpreted by an interpreter to do something. What that means is that a user will give R a command, or a list of commands, and get an output. So instead of clicking with a mouse, what a user will do is type a command and get an answer. A command could be something really simple. Here are some commands written below. In this book, the commands will be written in this <code>blocky font</code> and will often have the color highlighting that’s listed below.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">3</span> +<span class="st"> </span><span class="dv">5</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">3</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span>
 <span class="kw">mean</span>(<span class="kw">c</span>(<span class="dv">22</span>,<span class="dv">44</span>,<span class="dv">99</span>,<span class="dv">311</span>))
-numbers =<span class="st"> </span><span class="dv">1</span>:<span class="dv">100</span>
-<span class="kw">t.test</span>(DV~IV, <span class="dt">data=</span>mydata)
+numbers =<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">100</span>
+<span class="kw">t.test</span>(DV<span class="op">~</span>IV, <span class="dt">data=</span>mydata)
 <span class="kw">print</span>(<span class="st">&quot;I love R&quot;</span>)</code></pre></div>
 <p>R comes with a set of commands built into it called the base package. These are the first commands made with R and they cover basic math functions, data entry functions, and statistics functions. But the power of R is that there are functions to do almost anything that any statistician would ever want. And if there is a new stats test or new function that doesn’t exist, you can write your own. The best part is that you usually don’t have to write your own because someone else has probably already done it. People have written thousands of add-on packages you can add to do all sorts of analyses. We will use a lot of these packages this in this class.</p>
 <p>So R is free, and has thousands of add-ons. It sounds wonderful, right? If it weren’t free, wouldn’t I be trying to sell it? But there’s a catch. R is a programming language and that’s difficult to use if you don’t have experience programming. Plus, as programming languages go, R is not the easiest to use. So you might struggle with R. However, whenever you struggle with R, just remember you can pay several thousand dollars and get a commercial program which is only slightly easier to use.</p>
@@ -300,7 +299,7 @@ numbers =<span class="st"> </span><span class="dv">1</span>:<span class="dv">100
 <div id="basic-math-functions" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Basic Math Functions</h3>
 <p>As mentioned in the last section, R is a programming language. You do some input and get some output. The input are called commands and you run them by typing them in the console and pressing enter. At its simplest, R is like a big calculator. For instance, I could type the following:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">38</span> +<span class="st"> </span><span class="dv">74</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">38</span> <span class="op">+</span><span class="st"> </span><span class="dv">74</span></code></pre></div>
 <pre><code>## [1] 112</code></pre>
 <p>As a note, any command I show you in R will be in the shaded box like the box above. Additionally, the output that you would see in the R Console will be listed below the command. In this case, the output says “[1] 112”.</p>
 <p>Some basic math functions in R are listed here:</p>
@@ -335,14 +334,14 @@ numbers =<span class="st"> </span><span class="dv">1</span>:<span class="dv">100
 </tbody>
 </table>
 <p>If I wanted to multiply 24 and 8, I would type this:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">24</span>*<span class="dv">8</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">24</span><span class="op">*</span><span class="dv">8</span></code></pre></div>
 <pre><code>## [1] 192</code></pre>
 <p>I get 192. You might be wondering what the 1 in brackets means. It means that R is outputting one number and that its value is 192. This is helpful if R outputs a list of numbers. The number in brackets tells me what number in the list is the value immediately to its right. For instance, if it said [33], then I would know that the value immediately to the right of the [33] is the thirty-third element.</p>
 <p>With that said, let’s try to type some commands and see what the output is. Try typing the following commands: (note that I didn’t output the answers below).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">45</span> +<span class="dv">39</span>
-<span class="dv">34562</span> *<span class="st"> </span><span class="dv">24728</span>
-<span class="dv">854</span>/<span class="dv">2</span>
-<span class="dv">11</span>^<span class="dv">3</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">45</span> <span class="op">+</span><span class="dv">39</span>
+<span class="dv">34562</span> <span class="op">*</span><span class="st"> </span><span class="dv">24728</span>
+<span class="dv">854</span><span class="op">/</span><span class="dv">2</span>
+<span class="dv">11</span><span class="op">^</span><span class="dv">3</span></code></pre></div>
 </div>
 <div id="objects" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Objects</h3>
@@ -368,7 +367,7 @@ name =<span class="st"> &quot;Sarah&quot;</span></code></pre></div>
 <p>I can also do math with variables. Look at the following:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">4</span>
 z =<span class="st"> </span><span class="dv">12</span>
-z -<span class="st"> </span>x</code></pre></div>
+z <span class="op">-</span><span class="st"> </span>x</code></pre></div>
 <pre><code>## [1] 8</code></pre>
 <p>Notice now I get an output when I type z - x. This is because R is calculating the value for z minus the value for x and then outputting it in the screen. I can also use this to use one variable to set the value for another variable.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="dv">11</span>
@@ -460,14 +459,14 @@ grades =<span class="st"> </span><span class="kw">data.frame</span>(name,sex,tes
 ## 4 Deshauna   F    98    93    81
 ## 5     Egor   M    89    90    99</code></pre>
 <p>Now, it might be helpful to access various parts of the dataframe. If you want to see just a single variable or column, you can use the following notation:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dataframe$variable</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dataframe<span class="op">$</span>variable</code></pre></div>
 <p>To view the scores for test 1, we would type</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades$test1</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades<span class="op">$</span>test1</code></pre></div>
 <pre><code>## [1] 85 77 69 98 89</code></pre>
 <p>We can also create new columns by doing math to other columns. If we want to create a variable that has the total number of points in a class, we would do the following:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades$total =<span class="st"> </span>grades$test1 +<span class="st"> </span>grades$test2 +<span class="st"> </span>grades$test3</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades<span class="op">$</span>total =<span class="st"> </span>grades<span class="op">$</span>test1 <span class="op">+</span><span class="st"> </span>grades<span class="op">$</span>test2 <span class="op">+</span><span class="st"> </span>grades<span class="op">$</span>test3</code></pre></div>
 <p>Now if we want to see our new variable, we can type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades$total</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">grades<span class="op">$</span>total</code></pre></div>
 <pre><code>## [1] 244 221 223 272 278</code></pre>
 <p>If you want to see a data frame, you can look at them by using the View() command. So you would type the following to view grades:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">View</span>(grades)</code></pre></div>
@@ -545,9 +544,9 @@ grades =<span class="st"> </span><span class="kw">data.frame</span>(name,sex,tes
 <pre><code>## [1] 52.6</code></pre>
 <p>Both of these do the same thing.</p>
 <p>These functions can also be used with data frames to get the means of variables. In this case, to select the use the $ character, we can select only the column. We would type <code>dataframe$column</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(grades$test1)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(grades<span class="op">$</span>test1)</code></pre></div>
 <pre><code>## [1] 83.6</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(grades$test2)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(grades<span class="op">$</span>test2)</code></pre></div>
 <pre><code>## [1] 11.38859</code></pre>
 <p>If we take the data frame we made in the last section, called grades, we can get some summary statistics by using the <code>summary()</code> function that is built into R.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(grades)</code></pre></div>
@@ -624,7 +623,6 @@ qplot(x = test1, data=grades)
 <li>Be able to get basic summary statistics from R using the <code>mean()</code>, <code>median()</code> and <code>sd()</code> command and get summary statistics from a dataframe using the <code>summary()</code> command and the <code>describe()</code> command from the psych package.</li>
 </ol>
 
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.3.2</code></pre>
 </div>
 </div>
             </section>
@@ -633,8 +631,9 @@ qplot(x = test1, data=grades)
         </div>
       </div>
 <a href="data-distributions-and-descriptive-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="probability-and-samples.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="probability-and-samples.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -643,7 +642,7 @@ qplot(x = test1, data=grades)
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -677,7 +676,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

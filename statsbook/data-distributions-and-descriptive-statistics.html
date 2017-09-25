@@ -6,16 +6,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Statistics: The Story of Numbers</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="An Introduction to Psychology Statistics">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Statistics: The Story of Numbers" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="An Introduction to Psychology Statistics" />
-  <meta name="github-repo" content="rgfran" />
+  <meta name="github-repo" content="aupsychology" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Statistics: The Story of Numbers" />
@@ -26,7 +25,7 @@
 <meta name="author" content="Robert G. Franklin, Jr.">
 
 
-<meta name="date" content="2017-07-19">
+<meta name="date" content="2017-09-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="chapter-2-how-we-use-statistics.html">
 <link rel="next" href="introduction-to-r.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -93,6 +91,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 
 <body>
+
 
 
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
@@ -749,9 +748,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Now we want to combine the deviations into one number. We can’t take the mean of the distributions because that would always equal zero. So what we do is we square each of the deviations and take the sum of the squared numbers to create a property called sum of squared deviations or <strong>sums of squares</strong>. The sums of squares are an interesting mathematical property of a distribution and one that will come up later. However, there is one problem with this property, it’s biased by how many observations we have. As we add more values, sums of squares will always go up. A distribution with twenty observations with the same amount of variance as a distribution with ten observations will have a much higher sums of squares, just because we are adding.</p>
 <p>To account for this, we divide sums of squares by the number of observations. For various mathematical reasons which are well beyond the scope of this book, this number is slightly biased when discussing samples, so it is better to divide by the sample size minus 1. In the example of the books, where we have 10 observations, we would divide the sums of squares by 9. This quality is called <strong>variance</strong>, which is defined as the sums of squares divided by the number of observations minus 1. Variance is written as the Greek letter sigma squared, <span class="math inline">\(\sigma^2\)</span>, if it is the variance of a population and <span class="math inline">\(s^2\)</span> if it is the variance of a sample.</p>
 <p>In the example above, the variance for book one would be:</p>
-<pre><code>$$s^2 = \frac{4}{10-1} = .44$$ </code></pre>
+<p><span class="math display">\[s^2 = \frac{4}{10-1} = .44\]</span></p>
 <p>And the variance for Book 2 would be:</p>
-<pre><code>$$s^2 = \frac{148}{10 - 1} = 16.4$$</code></pre>
+<p><span class="math display">\[s^2 = \frac{148}{10 - 1} = 16.4\]</span></p>
 <p>Variance is a good measure of deviations, but one problem is that it is not on the same scale as the original units, because we squared the original deviations. To fix that, we often take the square root of the variance to get the quality called standard deviation. Standard deviation is the most common way to measure the amount of spread in data. It represents the average amount that each observation deviates from the mean. Since standard deviation is the square root of variance, it is written as the Greek letter sigma, <span class="math inline">\(\sigma\)</span>, if it is the square root of a population and <span class="math inline">\(s\)</span> if it is the standard deviation of a sample.</p>
 <p>So in the example of the books, the standard deviation for book 1 would be the square root of .44, or .66 and the standard deviation for book 2 would be the square root of 16.44 or 4.05. In this case, when rating book 1, each person is on average only .66 points from the mean. For book 2, each person is more than 4 points from the mean.</p>
 <p>Now, you might wonder why the concept of variance matters for you. Here’s one example. Imagine I want to buy a vacuum cleaner, because those are the important purchases once you settle down. I find two models online and look at their ratings. People give the vacuum between 1 star and 5 stars. Both of these vacuums have ratings of 4 stars. One vacuum has a standard deviation of .1 whereas the other has a standard deviation of .5. What this is telling me is that there’s a lot of agreement about the first vacuum cleaner and that most people give it 4 stars. However, there’s less agreement about vacuum cleaner 2. Vacuum cleaner 2 certainly has more 5 star ratings than the other vacuum cleaner. However it has more lower ratings. What this means is that people are more inconsistent with the second vacuum cleaner. Perhaps vacuum cleaner 2 is better but more customers happen to get a broken model and give it very low ratings. Perhaps vacuum cleaner 2 is harder to use and some people can’t figure it out, whereas those who figure it out really love it. The standard deviation helps to tell the story as to whether I’ll pick a vacuum cleaner that I’ll be sure to like somewhat or should I take the chance and get one I might love.</p>
@@ -802,7 +801,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Whenever you do an analysis, look at all the descriptive statistics and look at the distributions of your variables. This can help you find out interesting stories in your data and tell you about problems which might occur.</li>
 </ol>
 
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.3.2</code></pre>
 </div>
 </div>
             </section>
@@ -811,8 +809,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="chapter-2-how-we-use-statistics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="introduction-to-r.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="introduction-to-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -821,7 +820,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -855,7 +854,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

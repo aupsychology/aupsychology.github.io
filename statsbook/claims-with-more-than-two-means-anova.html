@@ -6,16 +6,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Statistics: The Story of Numbers</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="An Introduction to Psychology Statistics">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Statistics: The Story of Numbers" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="An Introduction to Psychology Statistics" />
-  <meta name="github-repo" content="rgfran" />
+  <meta name="github-repo" content="aupsychology" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Statistics: The Story of Numbers" />
@@ -26,7 +25,7 @@
 <meta name="author" content="Robert G. Franklin, Jr.">
 
 
-<meta name="date" content="2017-07-19">
+<meta name="date" content="2017-09-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -34,7 +33,6 @@
   
   
 <link rel="prev" href="two-mean-claims.html">
-
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -93,6 +91,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </head>
 
 <body>
+
 
 
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
@@ -771,9 +770,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </tbody>
 </table>
 <p>In this case, we get an <span class="math inline">\(F = 14\)</span>, which indicates we have conceptually 14 times as much between-group variance as within-group variance. This is quite high, so we should expect to reject the null hypothesis. To find out the probability we would get an F-value of F or greater, if our null hypothesis is true, we can use the following R command. In this case, we have to give the command the F value we received marked as F, and the two different types of degrees of freedom, first the between-group degrees of freedom marked as dfB and the within-groups degrees of freedom marked as dfW.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span>-<span class="st"> </span><span class="kw">pf</span>(F,dfB,dfW)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span><span class="st"> </span><span class="kw">pf</span>(F,dfB,dfW)</code></pre></div>
 <p>In our case, we would type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span>-<span class="kw">pf</span>(<span class="dv">14</span>,<span class="dv">2</span>,<span class="dv">12</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span><span class="kw">pf</span>(<span class="dv">14</span>,<span class="dv">2</span>,<span class="dv">12</span>)</code></pre></div>
 <pre><code>## [1] 0.000729</code></pre>
 <p>As noted above, this gives us a value of <span class="math inline">\(F = .00073\)</span>. This is much less than the traditionally assigned alpha value of <span class="math inline">\(\alpha = .05\)</span> and we would reject the null hypothesis.</p>
 </div>
@@ -882,7 +881,7 @@ d =<span class="st"> </span><span class="kw">data.frame</span>(Group,Score)</cod
 </ol>
 <p>The dependent variable and the independent variable are separated with a tilde ~.</p>
 <p>Now we type the command. In this case, we need two commands. the first one does the ANOVA and saves it as an object named x and then the second command does the <code>summary()</code> command using the object named x.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">aov</span>(Score~Group, <span class="dt">data =</span> d)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x =<span class="st"> </span><span class="kw">aov</span>(Score<span class="op">~</span>Group, <span class="dt">data =</span> d)
 <span class="kw">summary</span>(x)</code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## Group        2     70    35.0      14 0.000729 ***
@@ -924,7 +923,8 @@ d =<span class="st"> </span><span class="kw">data.frame</span>(Group,Score)</cod
       </div>
 <a href="two-mean-claims.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -933,7 +933,7 @@ d =<span class="st"> </span><span class="kw">data.frame</span>(Group,Score)</cod
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -967,7 +967,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);
