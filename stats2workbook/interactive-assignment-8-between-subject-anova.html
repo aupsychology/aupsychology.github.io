@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Workbook for Statistics 2</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Workbook for Statistics">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Workbook for Statistics 2" />
   <meta property="og:type" content="book" />
@@ -26,7 +25,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-09-05">
+<meta name="date" content="2017-10-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="free-assignment-6-moderation-with-r.html">
 <link rel="next" href="free-assignment-7-between-subject-anova.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -95,6 +93,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -120,7 +119,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html"><i class="fa fa-check"></i><b>3</b> Free Assignment 1: Reviewing R</a><ul>
 <li class="chapter" data-level="3.1" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> Basic descriptive statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Interactive Assignment 3: The tidyverse</a></li>
+<li class="chapter" data-level="4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Interactive Assignment 3: The tidyverse</a><ul>
+<li class="chapter" data-level="4.1" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#using-filter-to-select-rows"><i class="fa fa-check"></i><b>4.1</b> Using <code>filter()</code> to select rows</a></li>
+<li class="chapter" data-level="4.2" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#sorting-with-the-arrange-command"><i class="fa fa-check"></i><b>4.2</b> Sorting with the <code>arrange()</code> command</a></li>
+<li class="chapter" data-level="4.3" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#selecting-columns-with-the-select-command"><i class="fa fa-check"></i><b>4.3</b> Selecting columns with the <code>select()</code> command</a></li>
+<li class="chapter" data-level="4.4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#creating-new-variables-using-mutate"><i class="fa fa-check"></i><b>4.4</b> Creating new variables using <code>mutate()</code></a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>5</b> Interactive Assignment 4: Graphs with ggplot</a><ul>
 <li class="chapter" data-level="5.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#using-ggplot-to-create-histograms"><i class="fa fa-check"></i><b>5.1</b> Using ggplot to create histograms</a><ul>
 <li class="chapter" data-level="5.1.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#creating-scatterplots-using-ggplot"><i class="fa fa-check"></i><b>5.1.1</b> Creating scatterplots using ggplot</a></li>
@@ -147,6 +151,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="14.1" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html#graphing-with-error-bars"><i class="fa fa-check"></i><b>14.1</b> Graphing with error bars</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="free-assignment-8-within-subject-anova.html"><a href="free-assignment-8-within-subject-anova.html"><i class="fa fa-check"></i><b>15</b> Free Assignment 8: Within-subject ANOVA</a></li>
+<li class="chapter" data-level="16" data-path="interactive-assignment-3-the-tidyverse-1.html"><a href="interactive-assignment-3-the-tidyverse-1.html"><i class="fa fa-check"></i><b>16</b> Interactive Assignment 3: The tidyverse</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -180,12 +185,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>ANOVA stands for ANanlysis Of VAriance and examines whether the variance due to an independent variable or variables is significantly greater than the natural variance within a series of data. The idea is that if an independent variable can explain a significantly greater proprotion of variance than the natural variance in the data, then that variable is important.</p>
 <p>In this lab, we will investigate data from Zellner et al. (2010) which explored how symmetry and color affected people’s preferences for food. The data are available in the dataset “IA8food.csv”.</p>
 <p><strong>Step 1</strong>: Load the data into R as a dataframe named “food”. In addition, load the tidyverse and psych packages.</p>
-<p>The variables are as follows: subject – participant number</p>
-<p>balance – whether the food was balanced or symmetrical or unbalanced</p>
-<p>color – whether the food was monochrome or colorful</p>
-<p>attractiveness – measure of how attractive participants found the food (from -100 to 100)</p>
-<p>willingness – measure of how willing people were to try the food (-100 to 100)</p>
-<p>liking – how much they reported liking the food (-100 to 100)</p>
+<p>The variables are as follows: * subject – participant number * balance – whether the food was balanced or symmetrical or unbalanced * color – whether the food was monochrome or colorful * attractiveness – measure of how attractive participants found the food (from -100 to 100) * willingness – measure of how willing people were to try the food (-100 to 100) * liking – how much they reported liking the food (-100 to 100)</p>
 <p>The researchers’ main hypothesis is investigating how symmetry (the balance variable) and color affect how people view food.</p>
 <p>Question 1: What is the design of this study using ANOVA terminology? What are the factors and what are the levels?</p>
 <p> </p>
@@ -199,20 +199,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p><strong>Step 2</strong>: Use the <code>describeBy()</code> function to fill out the following table, to investigate the means and standard deviations of the main effects.</p>
 <p>For instance, to find the main effects of balance using of the attractiveness as the dependent variable, I would type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">describeBy</span>(food<span class="op">$</span>attractiveness, food<span class="op">$</span>balance)</code></pre></div>
-<pre><code>## $asymmetrical
+<pre><code>## 
+##  Descriptive statistics by group 
+## group: asymmetrical
 ##    vars  n mean    sd median trimmed   mad   min  max range skew kurtosis
 ## X1    1 34 15.9 42.88   12.5   15.59 47.08 -60.7 92.9 153.6 0.08    -0.91
 ##      se
 ## X1 7.35
-## 
-## $symmetrical
+## -------------------------------------------------------- 
+## group: symmetrical
 ##    vars  n  mean    sd median trimmed   mad    min   max  range  skew
 ## X1    1 34 32.75 38.37  36.99   34.22 33.14 -66.99 99.83 166.82 -0.47
 ##    kurtosis   se
-## X1     -0.2 6.58
-## 
-## attr(,&quot;call&quot;)
-## by.default(data = x, INDICES = group, FUN = describe, type = type)</code></pre>
+## X1     -0.2 6.58</code></pre>
 <p>Question 2: Fill out the tables below, the first one with the means and the second one with the standard deviations. Note that I already started to fill out the tables. What main effects do you see?</p>
 <table>
 <thead>
@@ -404,8 +403,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="free-assignment-6-moderation-with-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="free-assignment-7-between-subject-anova.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="free-assignment-7-between-subject-anova.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -414,7 +414,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -448,7 +448,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

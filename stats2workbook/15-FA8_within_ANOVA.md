@@ -33,28 +33,12 @@ library(tidyverse)
 ```
 
 ```
-## Warning: package 'tidyverse' was built under R version 3.3.2
-```
-
-```
 ## Loading tidyverse: ggplot2
 ## Loading tidyverse: tibble
 ## Loading tidyverse: tidyr
 ## Loading tidyverse: readr
 ## Loading tidyverse: purrr
 ## Loading tidyverse: dplyr
-```
-
-```
-## Warning: package 'ggplot2' was built under R version 3.3.2
-```
-
-```
-## Warning: package 'tibble' was built under R version 3.3.2
-```
-
-```
-## Warning: package 'tidyr' was built under R version 3.3.2
 ```
 
 ```

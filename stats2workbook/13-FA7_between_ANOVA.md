@@ -5,18 +5,18 @@ When completing this assignment, be sure to create a script file with all the co
 
 In this assignment, we are going to cover interactions using the wages dataset we used in Interactive Assignment 5. As a reminder, here are the variables:
 
-ID: person ID
-WAGE: wage (dollars per hour)
-OCCUPATION: occupation(1=Management,   2=Sales, 3=Clerical , 4=Service, 5=Professional, 6=Other)
-SECTOR: sector of employment(0= other, 1=Manufacturing, 2=Construction)
-UNION: Union membership (1=yes, 0=no)
-EDUCATION: Years of education (12 = high school diploma, 16= completed college, etc.)
-EXPERIENCE: Years of work experience
-AGE: Age in years
-SEX: Sex (0 – male, 1 – female)
-MARR: Married (0 – no, 1 – yes)
-RACE: Race (0 – other, 1 – white, 2 – Hispanic)
-SOUTH:Southern region (1 – yes, 0 – no)
+* ID: person ID
+* WAGE: wage (dollars per hour)
+* OCCUPATION: occupation(1=Management,   2=Sales, 3=Clerical , 4=Service, 5=Professional, 6=Other)
+* SECTOR: sector of employment(0= other, 1=Manufacturing, 2=Construction)
+* UNION: Union membership (1=yes, 0=no)
+* EDUCATION: Years of education (12 = high school diploma, 16= completed college, etc.)
+* EXPERIENCE: Years of work experience
+* AGE: Age in years
+* SEX: Sex (0 – male, 1 – female)
+* MARR: Married (0 – no, 1 – yes)
+* RACE: Race (0 – other, 1 – white, 2 – Hispanic)
+* SOUTH:Southern region (1 – yes, 0 – no)
 
 **Step 1**: The data are in the file "IA5WageData.csv". Load the data into R as the dataframe "wages". Also, load the `tidyverse` and `psych` packages into R.
 

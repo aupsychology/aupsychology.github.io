@@ -10,9 +10,9 @@ In this assignment, we will need the `tidyverse` and `ggplot` libraries. Fortuna
 
 **Step 1**: Go ahead and load the tidyverse package.
 
-Now we should load the data that was used in Interactive Assignment 4. 
+ 
 
-**Step 2**: Go ahead and load that file as the data.frame `face`, just like you did for Interactive Assignment 4.
+**Step 2**: Now we should load the data that was used in Interactive Assignment 4. Go ahead and load the file named IA4graph.csv as the data.frame `face`, just like you did for Interactive Assignment 4.
 
 As a reminder from Interactive Assignment 4, these data are a series of face ratings and were used in several studies looking at how older adult (older than 65 years) and younger adult (18-30) 
 raters perceive older and younger adult faces. The variables are as follows:
@@ -40,14 +40,46 @@ In this assignment, we are going to look at differences between older faces and 
 
 **Step 4**: Use the `filter()` command to create a new data frame called "face.ya" which only contains younger faces, or faces where the variable FaceAgeGroup is equal to "YA".
 
-Using ggplot, create a histogram for the aggressiveness rating variables for older faces using the variables ag.old and ag.young for the dataframe face.of. Make your histogram have 10 bins, have bars that have black lines and dark red fill. 
+1. How would you use the `filter()` command to select only faces that are younger adult and males? How would you select older adult females? For this question, you do not need to type the code into R, but just write down the answer below.
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+2. How would you use the `filter()` command to select only those faces that are above the median in younger adult attractiveness ratings and above the median in older adult attractiveness ratings. Write the command you would type in below.
+
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+
+**Step 5** Using ggplot, create a histogram for the aggressiveness rating variables for older faces using the variables ag.old and ag.young for the dataframe face.of. Make your histogram have 10 bins, have bars that have black lines and dark red fill. 
 
 Your histogram for ag.old should look like this:
 
 <img src="06-FreeAssignment2_ggplot_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 
-Question 1: What pattern do you see with the two histograms? Do the ratings appear to be normally distributed?
+3. What pattern do you see with the two histograms? Do the ratings appear to be normally distributed?
 
 
 &nbsp;
@@ -68,11 +100,9 @@ Question 1: What pattern do you see with the two histograms? Do the ratings appe
 
 &nbsp;
 
-**Step 5** Now create two histograms for the aggressiveness variables for the younger faces. The only difference is that instead of using the data frame "face.of", you should use the data frame "face.yf".
+**Step 6** Now create two histograms for the aggressiveness variables for the younger faces. The only difference is that instead of using the data frame "face.of", you should use the data frame "face.yf".
 
-Question 2: What pattern do you see with the two histograms of younger adult faces? Do the ratings appear to be similar to the ratings for older adult faces?
-
-&nbsp;
+4. What pattern do you see with the two histograms of younger adult faces? Do the ratings appear to be similar to the ratings for older adult faces?
 
 &nbsp;
 
@@ -90,21 +120,23 @@ Question 2: What pattern do you see with the two histograms of younger adult fac
 
 &nbsp;
 
+&nbsp;
 
-Now we are going to do a scatterplot, looking at the correlation between aggressiveness ratings by older raters and aggressiveness ratings by younger raters. We want to see whether the correlation is stronger for older faces or is it stronger for younger faces. That is, do older and younger adults agree more when rating how aggressive older faces are or do they agree more when rating how aggressive younger faces are?
 
-**Step 6** Create a scatterplot looking at the relationship between ag.old and ag.young for older faces. When making your scatterplot, make sure that you have the following features:
+Now we are going to create a scatterplot, looking at the correlation between aggressiveness ratings by older raters and aggressiveness ratings by younger raters. We want to see whether the correlation is stronger for older faces or is it stronger for younger faces. That is, do older and younger adults agree more when rating how aggressive older faces are or do they agree more when rating how aggressive younger faces are?
 
-*your plot title should say "Older Faces" so that we know that this plot is for older faces only
-*your x axis label and y axis label should say "Older Adult Raters" and "Younger Adult Raters" on the correct axis, depending on which one you plot on the x axis and which one you plot on the y axis.
+**Step 7** Create a scatterplot looking at the relationship between ag.old and ag.young for older faces. When making your scatterplot, make sure that you have the following features:
+
+* Your plot title should say "Older Faces" so that we know that this plot is for older faces only
+* Your x axis label and y axis label should say "Older Adult Raters" and "Younger Adult Raters" on the correct axis, depending on which one you plot on the x axis and which one you plot on the y axis.
 
 You can change the other elements such as the type of points and colors to anything you want. Your plot should look like the plot below:
 
 <img src="06-FreeAssignment2_ggplot_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
-**Step 7** Create the same plot you did in Step 6 only instead using younger faces. Make sure you change the title, but everything else can be the same.
+**Step 8** Create the same plot you did in Step 6 only instead using younger faces. Make sure you change the title, but everything else can be the same.
 
-Question 3: Compare the plot for older faces and younger faces. Does it look like the correlation is stronger for older faces or younger faces? Does it look like it is the same?
+5. Compare the plot for older faces and younger faces. Does it look like the correlation is stronger for older faces or younger faces? Does it look like it is the same?
 
 &nbsp;
 
@@ -122,7 +154,7 @@ One concept we will talk about later in this class is the idea of a **moderator*
 
 **Step 8** Use the `cor.test()` function to see whether the correlation between ag.old and ag.young is different for the older faces versus the younger faces. 
 
-Question 4: What are the correlations? Do the results support your answer for Question 3?
+6. What are the correlations? Do the results support your answer for Question 5?
 
 
 
@@ -140,7 +172,7 @@ Question 4: What are the correlations? Do the results support your answer for Qu
 &nbsp;
 
 
-Question 5: Repeat steps 5 - 8 for the competence ratings (the variables co.old and co.young), producing a histogram, a scatterplot, and the correlations for the competence ratings. What patterns do you see and what do you conclude? Are the results similar or different from the results for aggressiveness?
+Question 7: Repeat steps 5 - 8 for the competence ratings (the variables co.old and co.young), producing a histogram, a scatterplot, and the correlations for the competence ratings. What patterns do you see and what do you conclude? Are the results similar or different from the results for aggressiveness?
 
 
 &nbsp;

@@ -19,17 +19,12 @@ In this lab, we will investigate data from Zellner et al. (2010) which explored 
 
 
 The variables are as follows:
-subject – participant number
-
-balance – whether the food was balanced or symmetrical or unbalanced
-
-color – whether the food was monochrome or colorful
-
-attractiveness – measure of how attractive participants found the food (from -100 to 100)
-
-willingness – measure of how willing people were to try the food (-100 to 100)
-
-liking – how much they reported liking the food (-100 to 100)
+* subject – participant number
+* balance – whether the food was balanced or symmetrical or unbalanced
+* color – whether the food was monochrome or colorful
+* attractiveness – measure of how attractive participants found the food (from -100 to 100)
+* willingness – measure of how willing people were to try the food (-100 to 100)
+* liking – how much they reported liking the food (-100 to 100)
 
 The researchers' main hypothesis is investigating how symmetry (the balance variable) and color affect how people view food.
 
@@ -61,20 +56,19 @@ describeBy(food$attractiveness, food$balance)
 ```
 
 ```
-## $asymmetrical
+## 
+##  Descriptive statistics by group 
+## group: asymmetrical
 ##    vars  n mean    sd median trimmed   mad   min  max range skew kurtosis
 ## X1    1 34 15.9 42.88   12.5   15.59 47.08 -60.7 92.9 153.6 0.08    -0.91
 ##      se
 ## X1 7.35
-## 
-## $symmetrical
+## -------------------------------------------------------- 
+## group: symmetrical
 ##    vars  n  mean    sd median trimmed   mad    min   max  range  skew
 ## X1    1 34 32.75 38.37  36.99   34.22 33.14 -66.99 99.83 166.82 -0.47
 ##    kurtosis   se
 ## X1     -0.2 6.58
-## 
-## attr(,"call")
-## by.default(data = x, INDICES = group, FUN = describe, type = type)
 ```
 
 Question 2: Fill out the tables below, the first one with the means and the second one with the standard deviations. Note that I already started to fill out the tables. What main effects do you see?

@@ -15,21 +15,21 @@ When doing this assignment, make sure you create a script which contains all you
 
 When you load the package, check to make sure it inputted correctly. There should be 90 observations of 31 variables. The observations are for the 2014-2016 seasons and here is a guide to some of the column names. You can find out what all the column names are [here](http://www.baseball-reference.com/leagues/MLB/2016.shtml).
 
-*Tm: team name
-*League: League (AL for American League, NL for National League)
-Year: year data were collected
-BatAge: The average age of the team's batters
-RpG: Runs per game (this will be our main outcome variable)
-R: total runs in a season
-H: Total hits in a season
-2B: Total number of doubles
-3B: total number of triples
-HR: total number of Home Runs
-SB: total number of stolen bases
-BB: total number of walks
-SO: total number of strikeouts
-BA: Batting average (number of hits  divided by number of at bats)
-OBP: On-base percentage (percent of time a person reaches base)
+* Tm: team name
+* League: League (AL for American League, NL for National League)
+* Year: year data were collected
+* BatAge: The average age of the team's batters
+* RpG: Runs per game (this will be our main outcome variable)
+* R: total runs in a season
+* H: Total hits in a season
+* 2B: Total number of doubles
+* 3B: total number of triples
+* HR: total number of Home Runs
+* SB: total number of stolen bases
+* BB: total number of walks
+* SO: total number of strikeouts
+* BA: Batting average (number of hits  divided by number of at bats)
+* OBP: On-base percentage (percent of time a person reaches base)
 
 **Step 2**: First, we want to visualize the relationship between some of our predictor variables and runs per game. Create scatterplots using ggplot which visualize the following relationships. Also add a regression line to each of the plots. Make sure your axes and plot have ap propriate titles:
 

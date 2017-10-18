@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Workbook for Statistics 2</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Workbook for Statistics">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Workbook for Statistics 2" />
   <meta property="og:type" content="book" />
@@ -26,7 +25,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-09-05">
+<meta name="date" content="2017-10-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="free-assignment-1-reviewing-r.html">
 <link rel="next" href="interactive-assignment-4-graphs-with-ggplot.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -95,6 +93,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -120,7 +119,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html"><i class="fa fa-check"></i><b>3</b> Free Assignment 1: Reviewing R</a><ul>
 <li class="chapter" data-level="3.1" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> Basic descriptive statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Interactive Assignment 3: The tidyverse</a></li>
+<li class="chapter" data-level="4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Interactive Assignment 3: The tidyverse</a><ul>
+<li class="chapter" data-level="4.1" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#using-filter-to-select-rows"><i class="fa fa-check"></i><b>4.1</b> Using <code>filter()</code> to select rows</a></li>
+<li class="chapter" data-level="4.2" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#sorting-with-the-arrange-command"><i class="fa fa-check"></i><b>4.2</b> Sorting with the <code>arrange()</code> command</a></li>
+<li class="chapter" data-level="4.3" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#selecting-columns-with-the-select-command"><i class="fa fa-check"></i><b>4.3</b> Selecting columns with the <code>select()</code> command</a></li>
+<li class="chapter" data-level="4.4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#creating-new-variables-using-mutate"><i class="fa fa-check"></i><b>4.4</b> Creating new variables using <code>mutate()</code></a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>5</b> Interactive Assignment 4: Graphs with ggplot</a><ul>
 <li class="chapter" data-level="5.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#using-ggplot-to-create-histograms"><i class="fa fa-check"></i><b>5.1</b> Using ggplot to create histograms</a><ul>
 <li class="chapter" data-level="5.1.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#creating-scatterplots-using-ggplot"><i class="fa fa-check"></i><b>5.1.1</b> Creating scatterplots using ggplot</a></li>
@@ -147,6 +151,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="14.1" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html#graphing-with-error-bars"><i class="fa fa-check"></i><b>14.1</b> Graphing with error bars</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="free-assignment-8-within-subject-anova.html"><a href="free-assignment-8-within-subject-anova.html"><i class="fa fa-check"></i><b>15</b> Free Assignment 8: Within-subject ANOVA</a></li>
+<li class="chapter" data-level="16" data-path="interactive-assignment-3-the-tidyverse-1.html"><a href="interactive-assignment-3-the-tidyverse-1.html"><i class="fa fa-check"></i><b>16</b> Interactive Assignment 3: The tidyverse</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -180,18 +185,52 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;tidyverse&#39;</span>)</code></pre></div>
 <p>Then load the tidyverse package with the following:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&#39;tidyverse&#39;</span>)</code></pre></div>
-<p>For this assignment, you are going to work through Chapter 5.1-5.5 of R for Data Science. It is available at this link: <a href="http://r4ds.had.co.nz/transform.html" class="uri">http://r4ds.had.co.nz/transform.html</a></p>
-<p>Read the chapter at the attached link and then answer the questions that are below when you get to them. Place your answers on this sheet by writing down the code or commands you would do in order to solve these problems.</p>
-<p>If you’re ambitious, you can work through sections 5.6 and 5.7 on your own.</p>
+<p>For this assignment, you are going to work through some questions which are similar to Chapter 5.1-5.5 of R for Data Science. For more background, you may want to read this link, which has some good examples of the techniques used here. <a href="http://r4ds.had.co.nz/transform.html" class="uri">http://r4ds.had.co.nz/transform.html</a></p>
+<p>This activity will use the data available in the <code>nycflights13</code> package, which is a package containing data on all the flights which departed from New York City in 2013. Install and load this package by using the following commands.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;nycflights13&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&#39;nycflights13&#39;</span>)</code></pre></div>
+<p>When loading data that are built into R, you do not have to load them to your workspace. The <code>nycflights13</code> library will load the data we need as the <code>flights</code> dataframe. To view it, you can type <code>View(flights)</code>. To view a summary of the data in the output, you can simply type <code>flights</code>.</p>
+<p>The tidyverse functions for manipulating data work using the following logic:</p>
+<p><code>output = command(dataframe, option1, option2, ... )</code></p>
+<p>Each command has a series of arguments. The first argument is the dataframe you are going to manipulate. The second argument and each following argument describes an option about what you can do with the data frame. The output from this command is a new data frame. If you do not have an output variable specified, it will just output the results to the console.</p>
+<div id="using-filter-to-select-rows" class="section level2">
+<h2><span class="header-section-number">4.1</span> Using <code>filter()</code> to select rows</h2>
+<p>The <code>filter()</code> command selects a subset of the rows from a data frame. The first argument is the data frame itself. Each argument afterward is a <em>comparison</em> expression which says which rows to select. Here is one example, which selects all the flights which left in March:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(flights, month <span class="op">==</span><span class="st"> </span><span class="dv">3</span>)</code></pre></div>
+<pre><code>## # A tibble: 28,834 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
+##  1  2013     3     1        4           2159       125      318
+##  2  2013     3     1       50           2358        52      526
+##  3  2013     3     1      117           2245       152      223
+##  4  2013     3     1      454            500        -6      633
+##  5  2013     3     1      505            515       -10      746
+##  6  2013     3     1      521            530        -9      813
+##  7  2013     3     1      537            540        -3      856
+##  8  2013     3     1      541            545        -4     1014
+##  9  2013     3     1      549            600       -11      639
+## 10  2013     3     1      550            600       -10      747
+## # ... with 28,824 more rows, and 12 more variables: sched_arr_time &lt;int&gt;,
+## #   arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,
+## #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,
+## #   minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+<p>If you would want to save the result to a new dataframe, you would have to specify a variable for the output:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">march =<span class="st"> </span><span class="kw">filter</span>(flights, month <span class="op">==</span><span class="st"> </span><span class="dv">3</span>)</code></pre></div>
+<p>The arguments for <code>filter()</code> are conditionals. Comparisons are expressions which use logic in order to select rows based on a certain criterion. Here are a few examples below:</p>
+<ul>
+<li><p><code>==</code> This selects rows where the value in the variable is equal to the value selected. Note that this is a double equals, or the equal character twice. For example, to select rows where the variable <code>origin</code> is “JFK”, I would type <code>origin = &quot;JFK&quot;</code>, remembering to put “JFK” in quotes since it is a string.</p></li>
+<li><p><code>!=</code> This means <em>not equal</em>, and is the opposite of the <code>==</code> operator. This selects rows where the value is not equal to the given variable. For instance, typing <code>month != 4</code> would select all flights that were not in April, the fourth month.</p></li>
+<li><p><code>&gt;</code> and <code>&lt;</code> These are greater than and less than. To do greater than or equal to, you would type <code>&gt;=</code> and less than or equal to would be <code>&lt;=</code>. Note, these can only be used on numeric values.</p></li>
+<li><p>You can separate two or more expressions with the <code>|</code> (vertical line, press shift and backslash) to select conditions where one <strong>or</strong> the other conditions are true. For instance, to select flights which left in January or February, you could type <code>select(flights, month == 1 | month == 2)</code></p></li>
+</ul>
 <ol style="list-style-type: decimal">
-<li>Find all flights that:</li>
+<li>Using this, find the following:</li>
 </ol>
 <ul>
-<li>Had an arrival delay of two or more hours</li>
-<li>Flew to Houston (IAH or HOU)</li>
+<li>Had an arrival delay of two or more hours (remember that the delay variable is listed in minutes)</li>
+<li>Flew to Dulles International Airport (IAD)</li>
 <li>Were operated by United, American, or Delta</li>
 <li>Departed in summer (July, August, and September)</li>
-<li>Arrived more than two hours late, but didn’t leave late</li>
 </ul>
 <p> </p>
 <p> </p>
@@ -201,18 +240,35 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
+<p>You may want to select rows that fit more than one condition. If you add more than one argument to <code>filter()</code>, the command will select rows where all of the conditions are true. For instance, if I want to select flights which left on July 4th, I want flights where <code>month == 7</code> AND <code>day == 4</code>. To do this, I just list the two arguments, separating them with commas. There is no limit as to how many of these I can list.</p>
+<p>For example, the following selects all the flights which left from JFK on July 4th in the morning, before noon.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(flights, month <span class="op">==</span><span class="st"> </span><span class="dv">7</span>, day <span class="op">==</span><span class="st"> </span><span class="dv">4</span>, origin <span class="op">==</span><span class="st"> &quot;JFK&quot;</span>, dep_time <span class="op">&lt;</span><span class="st"> </span><span class="dv">1200</span>)</code></pre></div>
+<pre><code>## # A tibble: 104 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
+##  1  2013     7     4       11           2359        12      400
+##  2  2013     7     4       59           2359        60      501
+##  3  2013     7     4      538            540        -2      835
+##  4  2013     7     4      539            545        -6      918
+##  5  2013     7     4      553            600        -7      659
+##  6  2013     7     4      556            600        -4      834
+##  7  2013     7     4      602            605        -3      830
+##  8  2013     7     4      609            610        -1      902
+##  9  2013     7     4      611            615        -4      754
+## 10  2013     7     4      615            611         4      952
+## # ... with 94 more rows, and 12 more variables: sched_arr_time &lt;int&gt;,
+## #   arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,
+## #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,
+## #   minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+<p>When selecting data, you may wonder when you have an AND situation versus an OR situation. I remember it this way. And situations make your output smaller. A given row has to fit every condition that you give, so you are selecting a small subset of your data. In contrast, OR situations make your output bigger. Each OR you add will increase the size of your data. AND situations are very specific (like flights leaving the morning of July 4th) whereas OR situations are not as specific (like flights leaving in the winter).</p>
 <ol start="2" style="list-style-type: decimal">
-<li>Another useful dplyr filtering helper is <code>between()</code>. What does it do? Can you use it to simplify the code needed to answer the previous challenges?</li>
+<li>What would you type to find the following:</li>
 </ol>
+<ul>
+<li>Flights that left on time or early and had an arrival delay</li>
+<li>Flights that were delayed in December</li>
+<li>Flights that had a time in air (the air_time variable) between 6 hours and 8 hours</li>
+</ul>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -220,9 +276,47 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
+<p>The final thing you may want to do with the <code>filter()</code> command is to remove or look at missing data. Missing data is listed in R as <code>NA</code>. However, you cannot choose observations that are missing by using a comparison operator. Typing <code>data == NA</code> will not work. R has the <code>is.na()</code> command to test for missing data.</p>
+<p>For instance, to choose flights with a missing departure time, I would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(flights, <span class="kw">is.na</span>(dep_time))</code></pre></div>
+<pre><code>## # A tibble: 8,255 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
+##  1  2013     1     1       NA           1630        NA       NA
+##  2  2013     1     1       NA           1935        NA       NA
+##  3  2013     1     1       NA           1500        NA       NA
+##  4  2013     1     1       NA            600        NA       NA
+##  5  2013     1     2       NA           1540        NA       NA
+##  6  2013     1     2       NA           1620        NA       NA
+##  7  2013     1     2       NA           1355        NA       NA
+##  8  2013     1     2       NA           1420        NA       NA
+##  9  2013     1     2       NA           1321        NA       NA
+## 10  2013     1     2       NA           1545        NA       NA
+## # ... with 8,245 more rows, and 12 more variables: sched_arr_time &lt;int&gt;,
+## #   arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,
+## #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,
+## #   minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+<p>If I want to remove these values, I want to choose the opposite, which are flights that do not have an <code>NA</code> for dep_time. In R, the exclamation point represents NOT. To choose flights without a missing dep_time, I would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(flights, <span class="op">!</span><span class="kw">is.na</span>(dep_time))</code></pre></div>
+</div>
+<div id="sorting-with-the-arrange-command" class="section level2">
+<h2><span class="header-section-number">4.2</span> Sorting with the <code>arrange()</code> command</h2>
+<p>The <code>arrange()</code> command allows us to sort data. It uses the same format as the filter command, with the arguments listing the variables that will be used to sort the data, starting by sorting by the first variable, then the second variable, and so forth.</p>
+<p>Sorting is ascending by default, starting with the lowest values for numbers and the first letters, for strings.</p>
+<p>For instance, if we want to sort the data by destination, we would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(flights, dest)</code></pre></div>
+<p>If we wanted to sort flights by destination, then departure time, we would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(flights, dest, dep_time)</code></pre></div>
+<p>If we wanted to sort a variable in descending order, or reverse the normal order, we have to use the <code>desc()</code> command. So if we wanted to sort the flights by months in reverse, starting with the flights in December, then November, etc., we would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(flights, <span class="kw">desc</span>(month))</code></pre></div>
 <ol start="3" style="list-style-type: decimal">
-<li>How many flights have a missing dep_time? What other variables are missing? What might these rows represent?</li>
+<li>How would you do the following:</li>
 </ol>
+<ul>
+<li>sort the flights by scheduled departure time?</li>
+<li>sort the flights so that the ones with the longest arrival delays are first</li>
+<li>sort the flights by carrier and then origin</li>
+</ul>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -230,10 +324,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
-<p><em>Section 2: arrange</em></p>
+</div>
+<div id="selecting-columns-with-the-select-command" class="section level2">
+<h2><span class="header-section-number">4.3</span> Selecting columns with the <code>select()</code> command</h2>
+<p>The <code>select()</code> command allows us to select columns in a data frame. This is useful if we have data frames with many columns and want to select a smaller subset of those columns. The power of select is that it can use several different functions to select columns, based on the column names. For instance, if we want to select the month, day, and dep_time variables, we would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(flights, month, day, dep_time)</code></pre></div>
+<p>*starts_with(“string”): selects variables whose names begin with “string”.</p>
+<p>*ends_with(“string”): selects all variables whose names end with the string “string”.</p>
+<p>*contains(“str”): selects all variables which contain the letters “str”.</p>
+<p>For example, we can use the following command to select month, year, and all the variables which deal with arrival times and delays.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(flights, month, year, <span class="kw">starts_with</span>(<span class="st">&quot;arr&quot;</span>))</code></pre></div>
 <ol start="4" style="list-style-type: decimal">
-<li>How could you use <code>arrange()</code> to sort all missing values to the start? (Hint: use <code>is.na()</code>).</li>
+<li>How would you select the following:</li>
 </ol>
+<ul>
+<li>all the variables which involve delays</li>
+<li>all the variables which involve dates and times</li>
+</ul>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -241,8 +348,35 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
+</div>
+<div id="creating-new-variables-using-mutate" class="section level2">
+<h2><span class="header-section-number">4.4</span> Creating new variables using <code>mutate()</code></h2>
+<p>The classic way to create new variables using mathematical functions or other functions is to use the <code>dataframe$variable</code> notation and create math functions based on this.</p>
+<p>The dplyr function as part of the tidyverse uses a different way to do this and uses the mutate function. In this section, I will mention how you could use both, and you can choose which one you would prefer.</p>
+<p>For instance, I may want to create a new variable which lists the minutes since midnight each flight takes off. The flights dataframe has the variable <code>hour</code> which lists the hour that each flight took off and the variable <code>minute</code> which lists the minutes.</p>
+<p>The mutate command uses the following logic. It starts with the data frame, then has a statement which is the name of the new variable equal to a command. To calculate the number of minutes since midnight using the mutate command, I would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mutate</span>(flights, <span class="dt">mins_midnight =</span> hour<span class="op">*</span><span class="dv">60</span> <span class="op">+</span><span class="st"> </span>minute)</code></pre></div>
+<pre><code>## # A tibble: 336,776 x 20
+##     year month   day dep_time sched_dep_time dep_delay arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
+##  1  2013     1     1      517            515         2      830
+##  2  2013     1     1      533            529         4      850
+##  3  2013     1     1      542            540         2      923
+##  4  2013     1     1      544            545        -1     1004
+##  5  2013     1     1      554            600        -6      812
+##  6  2013     1     1      554            558        -4      740
+##  7  2013     1     1      555            600        -5      913
+##  8  2013     1     1      557            600        -3      709
+##  9  2013     1     1      557            600        -3      838
+## 10  2013     1     1      558            600        -2      753
+## # ... with 336,766 more rows, and 13 more variables: sched_arr_time &lt;int&gt;,
+## #   arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,
+## #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,
+## #   minute &lt;dbl&gt;, time_hour &lt;dttm&gt;, mins_midnight &lt;dbl&gt;</code></pre>
+<p>I can use the mutate command to create multiple variables by adding them as extra arguments with commas. The <code>transmute()</code> command is like mutate, but it only contains the variables which are calculated and removes the rest of the variables. For instance, if I want to keep the month, day, and mins_midnight variable, I would type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">transmute</span>(flights, month, day, <span class="dt">mins_midnight =</span> hour<span class="op">*</span><span class="dv">60</span> <span class="op">+</span><span class="st"> </span>minute)</code></pre></div>
 <ol start="5" style="list-style-type: decimal">
-<li>Sort flights to find the most delayed flights. Find the flights that left earliest.</li>
+<li>Create a new variable called flight_time which is arr_time - dep_time. Compare air_time with flight_time. What do you expect to see? What do you see?</li>
 </ol>
 <p> </p>
 <p> </p>
@@ -251,60 +385,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
-<p><em>Section 3: select</em></p>
 <ol start="6" style="list-style-type: decimal">
-<li>Brainstorm as many ways as possible to select dep_time, dep_delay, arr_time, and arr_delay from flights.</li>
-</ol>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<ol start="7" style="list-style-type: decimal">
-<li>What happens if you include the name of a variable multiple times in a <code>select()</code> call?</li>
-</ol>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<ol start="8" style="list-style-type: decimal">
-<li>What does the <code>one_of()</code> function do? Why might it be helpful in conjunction with this vector?</li>
-</ol>
-<p><code>vars &lt;- c(&quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;dep_delay&quot;, &quot;arr_delay&quot;)</code></p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p><em>Section 4: Mutate</em></p>
-<ol start="9" style="list-style-type: decimal">
-<li>Currently dep_time and sched_dep_time are convenient to look at, but hard to compute with because they’re not really continuous numbers. Convert them to a more convenient representation of number of minutes since midnight.</li>
-</ol>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<ol start="10" style="list-style-type: decimal">
-<li>Compare air_time with arr_time - dep_time. What do you expect to see? What do you see? What do you need to do to fix it?</li>
-</ol>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<ol start="11" style="list-style-type: decimal">
 <li>Compare dep_time, sched_dep_time, and dep_delay. How would you expect those three numbers to be related?</li>
 </ol>
 <p> </p>
@@ -316,14 +397,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 
 </div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
 <a href="free-assignment-1-reviewing-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="interactive-assignment-4-graphs-with-ggplot.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="interactive-assignment-4-graphs-with-ggplot.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -332,7 +415,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -366,7 +449,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

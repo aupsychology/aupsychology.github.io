@@ -37,9 +37,6 @@ The dataset is saved as the file "IA5WageData.csv" and is available on Canvas. D
 **Step 1**: Load this file into your R workspace as the data frame "income". The first line of your script should look like this:
 
 
-```r
-income = read.csv("IA5WageData.csv")
-```
 
 Also, load the tidyverse package because we will use it later in the lab:
 
@@ -293,7 +290,7 @@ The important thing we may be interested in is comparing the equation where sex 
 
 In larger studies which have investigated the wage gap, the effect of experience does have a small impact in why women get paid less than men, but the effect does not explain the wage gap, just like in this dataset.
 
-**Step 6**: Try another possible control variable which might explain the relationship between SEX and WAGE instead of EXPERIENCE. Good options may include EDUCATION, AGE, or MARRIED.
+**Step 6**: Try another possible control variable which might explain the relationship between SEX and WAGE instead of EXPERIENCE. Good options may include EDUCATION, AGE, or MARR (married).
 
 6. Write your regression equation below and examine whether the b coefficients for SEX are different when SEX is the only predictor and when SEX is added with the othe predictor.
 

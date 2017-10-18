@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="interactive-assignment-9-within-subject-anova.html">
-<link rel="next" href="interactive-assignment-3-the-tidyverse-1.html">
+<link rel="prev" href="free-assignment-8-within-subject-anova.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -172,166 +172,32 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="free-assignment-8-within-subject-anova" class="section level1">
-<h1><span class="header-section-number">15</span> Free Assignment 8: Within-subject ANOVA</h1>
-<p>This assignment will cover how to conduct within-subject and mixed-subject ANOVAs in R. It builds on Interactive Assignment 9 which discusses how to use the <code>ez</code> package to do ANOVA design.</p>
-<p><strong>Step 1</strong>: Before we get started, load the <code>ez</code> package and the <code>tidyverse</code> package.</p>
-<p>The dataset for this homework investigate how older and younger adults perceive faces and rate them on several characteristics. Older and younger adult participants each rated older and younger faces on the characteristics below. The variables you will need are described below.</p>
-<p>ID – participant ID number raterage – a between-subject factor for participant age, with either “old” or “young” ratergender – participant gender: either “F” or “M” ag.rate – average ratings of aggressiveness at.rate – average rating of attractiveness ba.rate – average rating of babyfaceness co.rate – average rating of competence he.rate – average rating of health un.rate – average rating of untrustworthiness faceage – a within-subject variable which indicates the age of the face, with values “oldface” and “youngface”</p>
-<p>In this dataset, I have older and younger adult raters rating older and younger adult faces. To simplify things a bit and save me some typing, I will use the abbreviations OR and YR to refer to Older Raters and Younger Raters and OF and YF to refer to Older Faces and Younger Faces, respectively.</p>
-<p>They are the same data as we used in Interactive Assignment 4, on graphing, but they are structured a bit differently. In that assignment, I had the ratings for older adults and younger adults in separate columns but in this assignment, the ratings for older adults and for younger adults are in the same column, which is how ez requires us to format the data.</p>
-<p>In this assignment, the dependent variables will be the face ratings for aggressiveness, attractiveness, babyfaceness, competence, health, and untrustworthiness.</p>
-<p><strong>Step 2</strong>: Load the data named “FA8rate.csv” into R as the data frame “rate”, for ratings.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ez)
-<span class="kw">library</span>(tidyverse)</code></pre></div>
-<pre><code>## Loading tidyverse: ggplot2
-## Loading tidyverse: tibble
-## Loading tidyverse: tidyr
-## Loading tidyverse: readr
-## Loading tidyverse: purrr
-## Loading tidyverse: dplyr</code></pre>
-<pre><code>## Conflicts with tidy packages ----------------------------------------------</code></pre>
-<pre><code>## filter(): dplyr, stats
-## lag():    dplyr, stats</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">rate =<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&#39;data/FA8rate.csv&#39;</span>)</code></pre></div>
-<p><strong>Step 3</strong>: Use the <code>aggregate</code> command in order to fill out tables with the means for each rating, separating the ratings by face age and by rater age. So you will have four means, the mean for older raters (OR) rating older faces (OF), OR rating younger faces (YF), YR rating OF, and YR rating YF.</p>
-<p>To get the means for aggressiveness, you would type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(ag.rate<span class="op">~</span>raterage<span class="op">*</span>faceage, <span class="dt">data =</span> rate, <span class="dt">FUN =</span> mean)</code></pre></div>
-<pre><code>##   raterage   faceage  ag.rate
-## 1      old   oldface 3.817839
-## 2    young   oldface 3.350521
-## 3      old youngface 3.996978
-## 4    young youngface 3.512032</code></pre>
-<p>Question 1: Using what you get in Step 3, fill out the following tables with the means. I already filled out the Aggressiveness table.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Aggressiveness</th>
-<th align="left">OR</th>
-<th align="left">YR</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">OF</td>
-<td align="left">3.82</td>
-<td align="left">3.35</td>
-</tr>
-<tr class="even">
-<td align="left">YF</td>
-<td align="left">4.00</td>
-<td align="left">3.51</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Attractiveness</th>
-<th align="left">OR</th>
-<th align="left">YR</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">OF</td>
-<td align="left">     </td>
-<td align="left">     </td>
-</tr>
-<tr class="even">
-<td align="left">YF</td>
-<td align="left">     </td>
-<td align="left">     </td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Babyfaceness</th>
-<th align="left">OR</th>
-<th align="left">YR</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">OF</td>
-<td align="left">     </td>
-<td align="left">     </td>
-</tr>
-<tr class="even">
-<td align="left">YF</td>
-<td align="left">     </td>
-<td align="left">     </td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Competence</th>
-<th align="left">OR</th>
-<th align="left">YR</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">OF</td>
-<td align="left">     </td>
-<td align="left">     </td>
-</tr>
-<tr class="even">
-<td align="left">YF</td>
-<td align="left">     </td>
-<td align="left">     </td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Health</th>
-<th align="left">OR</th>
-<th align="left">YR</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">OF</td>
-<td align="left">     </td>
-<td align="left">     </td>
-</tr>
-<tr class="even">
-<td align="left">YF</td>
-<td align="left">     </td>
-<td align="left">     </td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Untrustworthiness</th>
-<th align="left">OR</th>
-<th align="left">YR</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">OF</td>
-<td align="left">     </td>
-<td align="left">     </td>
-</tr>
-<tr class="even">
-<td align="left">YF</td>
-<td align="left">     </td>
-<td align="left">     </td>
-</tr>
-</tbody>
-</table>
-<p><strong>Step 2</strong>: Use ggplot to create bar graphs of each of the 6 dependent variables with separate bars for face age and rater age (using faceage and raterage as the independent variables). Make sure to add error bars representing standard error. You can also use the <code>coord_cartesian()</code> function to change the scale of the y axis. For instance, your plot for aggressiveness should look like the following:</p>
-<p><img src="15-FA8_within_ANOVA_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>Question 2: Based on the plots and the tables of the means, do you predict any interactions?</p>
+<div id="interactive-assignment-3-the-tidyverse-1" class="section level1">
+<h1><span class="header-section-number">16</span> Interactive Assignment 3: The tidyverse</h1>
+<p>This assignment explores the use of the “tidyverse”, or a set of R packages designed to import, format, and analyze data in “tidy” formats.</p>
+<p>In this lab, we will:</p>
+<ol style="list-style-type: decimal">
+<li>How to use <code>filter()</code> to select part of your data</li>
+<li>How to arrange and select data using the <code>arrange()</code> and <code>select()</code> funtions</li>
+<li>How to use <code>mutate()</code> to make new columns in a dataframe.</li>
+</ol>
+<p>To start with the tidyverse, you need to install the package ‘tidyverse’, which is a collection of useful packages used to analyze data. Do the following to install it:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;tidyverse&#39;</span>)</code></pre></div>
+<p>Then load the tidyverse package with the following:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&#39;tidyverse&#39;</span>)</code></pre></div>
+<p>For this assignment, you are going to work through Chapter 5.1-5.5 of R for Data Science. It is available at this link: <a href="http://r4ds.had.co.nz/transform.html" class="uri">http://r4ds.had.co.nz/transform.html</a></p>
+<p>Read the chapter at the attached link and then answer the questions that are below when you get to them. Place your answers on this sheet by writing down the code or commands you would do in order to solve these problems.</p>
+<p>If you’re ambitious, you can work through sections 5.6 and 5.7 on your own.</p>
+<ol style="list-style-type: decimal">
+<li>Find all flights that:</li>
+</ol>
+<ul>
+<li>Had an arrival delay of two or more hours</li>
+<li>Flew to Houston (IAH or HOU)</li>
+<li>Were operated by United, American, or Delta</li>
+<li>Departed in summer (July, August, and September)</li>
+<li>Arrived more than two hours late, but didn’t leave late</li>
+</ul>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -340,41 +206,29 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
-<p>Now we are going to conduct the ANOVAs, using face age and rater age as independent variables predicting the dependent variable of aggressiveness ratings (ag.rate).</p>
-<p>Question 4: Which of these independent variables (if any) are between-subject variables? Which are within-subject variables (since this is a lab on within-subject and mixed ANOVA, one of these has to be a within-subject variable).</p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
-<p><strong>Step 3</strong>:Type the following to look at face age (faceage) and rater age (raterage) as independent variables predicting the dependent variable of aggressiveness ratings (ag.rate).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ezANOVA</span>(rate, <span class="dt">dv =</span> .(ag.rate), <span class="dt">wid =</span> .(ID), <span class="dt">within =</span> .(faceage), <span class="dt">between =</span> .(raterage))</code></pre></div>
-<pre><code>## Warning: Collapsing data to cell means. *IF* the requested effects are a
-## subset of the full design, you must use the &quot;within_full&quot; argument, else
-## results may be inaccurate.</code></pre>
-<pre><code>## $ANOVA
-##             Effect DFn DFd         F          p p&lt;.05          ges
-## 2         raterage   1  30 6.2652118 0.01798802     * 1.525502e-01
-## 3          faceage   1  30 5.0061221 0.03283715     * 2.251707e-02
-## 4 raterage:faceage   1  30 0.0134071 0.90859136       6.168922e-05</code></pre>
-<p>Question 5: When you type the following, what results do you get?</p>
 <p> </p>
 <p> </p>
 <p> </p>
+<ol start="2" style="list-style-type: decimal">
+<li>How many flights have a missing dep_time? What other variables are missing? What might these rows represent?</li>
+</ol>
 <p> </p>
 <p> </p>
 <p> </p>
-<p><strong>Step 4</strong>: Changing the code above, conduct ANOVAs using face age and rater age predicting the other five face ratings, at.rate, ba.rate, co.rate, he.rate, and un.rate.</p>
-<p>Question 6: Now I want you to report your results using APA formatting.</p>
-<p>If you have a significant main effect or interaction, you need to explain why you think there was a main effect or interaction. For main effects, all you have to do is indicate which level was higher. For interactions, you should interpret them by eyeballing the graphs and means and trying to explain why there is an interaction.</p>
-<p>For instance, this is how I would report the results for aggressiveness rating.</p>
-<p>We conducted a 2(face age: older vs younger) X 2(participant age: older versus younger) mixed ANOVA with face age as a within-subject variable and participant age as a between-subject variable. We found a significant main effect of rater age, F(1,30) = 6.27, p = .018, indicating that older participants rated faces more aggressively than younger participants. We also found a significant main effect of face age, F(1,30) = 5.01, p = .032, as younger faces were rated more aggressively than older faces. There was no significant interaction, F(1,30) = .013, p = .91.</p>
-<p>Results for attractiveness:</p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
+<p><em>Section 2: arrange</em></p>
+<ol start="3" style="list-style-type: decimal">
+<li>How could you use <code>arrange()</code> to sort all missing values to the start? (Hint: use <code>is.na()</code>).</li>
+</ol>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -382,22 +236,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
+<ol start="5" style="list-style-type: decimal">
+<li>Sort flights to find the most delayed flights. Find the flights that left earliest.</li>
+</ol>
 <p> </p>
-<p>Results for babyfaceness:</p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
+<p><em>Section 3: select</em></p>
+<ol start="6" style="list-style-type: decimal">
+<li>Brainstorm as many ways as possible to select dep_time, dep_delay, arr_time, and arr_delay from flights.</li>
+</ol>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
-<p>Results for competence:</p>
 <p> </p>
+<ol start="7" style="list-style-type: decimal">
+<li>What happens if you include the name of a variable multiple times in a <code>select()</code> call?</li>
+</ol>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -405,14 +267,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
+<ol start="8" style="list-style-type: decimal">
+<li>What does the <code>one_of()</code> function do? Why might it be helpful in conjunction with this vector?</li>
+</ol>
+<p><code>vars &lt;- c(&quot;year&quot;, &quot;month&quot;, &quot;day&quot;, &quot;dep_delay&quot;, &quot;arr_delay&quot;)</code></p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
-<p>Results for health:</p>
 <p> </p>
 <p> </p>
 <p> </p>
+<p><em>Section 4: Mutate</em></p>
+<ol start="9" style="list-style-type: decimal">
+<li>Currently dep_time and sched_dep_time are convenient to look at, but hard to compute with because they’re not really continuous numbers. Convert them to a more convenient representation of number of minutes since midnight.</li>
+</ol>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -420,25 +289,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
+<ol start="10" style="list-style-type: decimal">
+<li>Compare air_time with arr_time - dep_time. What do you expect to see? What do you see? What do you need to do to fix it?</li>
+</ol>
 <p> </p>
 <p> </p>
-<p>Results for untrustworthiness:</p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p>Question 7: What do you think the story is with this data? Pick one of the rating variables (other than aggressiveness) and try to explain why you think there were these main effects and interactions. I’m not going to grade this based on your interpretation; instead, I want you to try your best to interpret the data using what you know about the world.</p>
-<p>For example, I may explain the aggressiveness rating by stating that there is a main effect of face age because overall, people find older faces less aggressive than younger faces. This may be because people have a stereotype that older adults are less aggressive. There is a main effect of rater age because older adults rated faces more aggressively than younger adults. This may be because older adults are more skeptical of people in general.</p>
-<p> </p>
-<p> </p>
+<ol start="11" style="list-style-type: decimal">
+<li>Compare dep_time, sched_dep_time, and dep_delay. How would you expect those three numbers to be related?</li>
+</ol>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -453,8 +316,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
           </div>
         </div>
       </div>
-<a href="interactive-assignment-9-within-subject-anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="interactive-assignment-3-the-tidyverse-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="free-assignment-8-within-subject-anova.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

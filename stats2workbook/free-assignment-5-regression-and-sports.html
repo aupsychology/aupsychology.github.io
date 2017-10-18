@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Workbook for Statistics 2</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Workbook for Statistics">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Workbook for Statistics 2" />
   <meta property="og:type" content="book" />
@@ -26,7 +25,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-09-05">
+<meta name="date" content="2017-10-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="free-assignment-4-regression-and-multiple-regression-in-r.html">
 <link rel="next" href="interactive-assignment-7-moderation-in-multiple-regression.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -95,6 +93,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -120,7 +119,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html"><i class="fa fa-check"></i><b>3</b> Free Assignment 1: Reviewing R</a><ul>
 <li class="chapter" data-level="3.1" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> Basic descriptive statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Interactive Assignment 3: The tidyverse</a></li>
+<li class="chapter" data-level="4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Interactive Assignment 3: The tidyverse</a><ul>
+<li class="chapter" data-level="4.1" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#using-filter-to-select-rows"><i class="fa fa-check"></i><b>4.1</b> Using <code>filter()</code> to select rows</a></li>
+<li class="chapter" data-level="4.2" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#sorting-with-the-arrange-command"><i class="fa fa-check"></i><b>4.2</b> Sorting with the <code>arrange()</code> command</a></li>
+<li class="chapter" data-level="4.3" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#selecting-columns-with-the-select-command"><i class="fa fa-check"></i><b>4.3</b> Selecting columns with the <code>select()</code> command</a></li>
+<li class="chapter" data-level="4.4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#creating-new-variables-using-mutate"><i class="fa fa-check"></i><b>4.4</b> Creating new variables using <code>mutate()</code></a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>5</b> Interactive Assignment 4: Graphs with ggplot</a><ul>
 <li class="chapter" data-level="5.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#using-ggplot-to-create-histograms"><i class="fa fa-check"></i><b>5.1</b> Using ggplot to create histograms</a><ul>
 <li class="chapter" data-level="5.1.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#creating-scatterplots-using-ggplot"><i class="fa fa-check"></i><b>5.1.1</b> Creating scatterplots using ggplot</a></li>
@@ -147,6 +151,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="14.1" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html#graphing-with-error-bars"><i class="fa fa-check"></i><b>14.1</b> Graphing with error bars</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="free-assignment-8-within-subject-anova.html"><a href="free-assignment-8-within-subject-anova.html"><i class="fa fa-check"></i><b>15</b> Free Assignment 8: Within-subject ANOVA</a></li>
+<li class="chapter" data-level="16" data-path="interactive-assignment-3-the-tidyverse-1.html"><a href="interactive-assignment-3-the-tidyverse-1.html"><i class="fa fa-check"></i><b>16</b> Interactive Assignment 3: The tidyverse</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -175,7 +180,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>When doing this assignment, make sure you create a script which contains all your R commands. The dataset is FA5_baseball.csv and is listed on Canvas.</p>
 <p><strong>Step 1</strong>: You should import this into R as a dataframe with the name <code>b</code> for baseball. I’m lazy and typing b rather than baseball will save some time. Also, load the tidyverse package.</p>
 <p>When you load the package, check to make sure it inputted correctly. There should be 90 observations of 31 variables. The observations are for the 2014-2016 seasons and here is a guide to some of the column names. You can find out what all the column names are <a href="http://www.baseball-reference.com/leagues/MLB/2016.shtml">here</a>.</p>
-<p><em>Tm: team name </em>League: League (AL for American League, NL for National League) Year: year data were collected BatAge: The average age of the team’s batters RpG: Runs per game (this will be our main outcome variable) R: total runs in a season H: Total hits in a season 2B: Total number of doubles 3B: total number of triples HR: total number of Home Runs SB: total number of stolen bases BB: total number of walks SO: total number of strikeouts BA: Batting average (number of hits divided by number of at bats) OBP: On-base percentage (percent of time a person reaches base)</p>
+<ul>
+<li>Tm: team name</li>
+<li>League: League (AL for American League, NL for National League)</li>
+<li>Year: year data were collected</li>
+<li>BatAge: The average age of the team’s batters</li>
+<li>RpG: Runs per game (this will be our main outcome variable)</li>
+<li>R: total runs in a season</li>
+<li>H: Total hits in a season</li>
+<li>2B: Total number of doubles</li>
+<li>3B: total number of triples</li>
+<li>HR: total number of Home Runs</li>
+<li>SB: total number of stolen bases</li>
+<li>BB: total number of walks</li>
+<li>SO: total number of strikeouts</li>
+<li>BA: Batting average (number of hits divided by number of at bats)</li>
+<li>OBP: On-base percentage (percent of time a person reaches base)</li>
+</ul>
 <p><strong>Step 2</strong>: First, we want to visualize the relationship between some of our predictor variables and runs per game. Create scatterplots using ggplot which visualize the following relationships. Also add a regression line to each of the plots. Make sure your axes and plot have ap propriate titles:</p>
 <p>A. Hits predicting Runs per game B. HR predicting Runs per game C. SB predicting Runs per game D. Batting average predicting Runs per game.</p>
 <p>Your first plot should look something like this:</p>
@@ -228,8 +249,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="free-assignment-4-regression-and-multiple-regression-in-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="interactive-assignment-7-moderation-in-multiple-regression.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="interactive-assignment-7-moderation-in-multiple-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -238,7 +260,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -272,7 +294,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

@@ -6,9 +6,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Workbook for Statistics 2</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
   <meta name="description" content="Workbook for Statistics">
-  <meta name="generator" content="bookdown 0.3 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Workbook for Statistics 2" />
   <meta property="og:type" content="book" />
@@ -26,7 +25,7 @@
 <meta name="author" content="Robert G. Franklin Jr.">
 
 
-<meta name="date" content="2017-09-05">
+<meta name="date" content="2017-10-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="interactive-assignment-4-graphs-with-ggplot.html">
 <link rel="next" href="interactive-assignment-5-regression-in-r.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -95,6 +93,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <body>
 
 
+
   <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
 
     <div class="book-summary">
@@ -120,7 +119,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html"><i class="fa fa-check"></i><b>3</b> Free Assignment 1: Reviewing R</a><ul>
 <li class="chapter" data-level="3.1" data-path="free-assignment-1-reviewing-r.html"><a href="free-assignment-1-reviewing-r.html#basic-descriptive-statistics"><i class="fa fa-check"></i><b>3.1</b> Basic descriptive statistics</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Interactive Assignment 3: The tidyverse</a></li>
+<li class="chapter" data-level="4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html"><i class="fa fa-check"></i><b>4</b> Interactive Assignment 3: The tidyverse</a><ul>
+<li class="chapter" data-level="4.1" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#using-filter-to-select-rows"><i class="fa fa-check"></i><b>4.1</b> Using <code>filter()</code> to select rows</a></li>
+<li class="chapter" data-level="4.2" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#sorting-with-the-arrange-command"><i class="fa fa-check"></i><b>4.2</b> Sorting with the <code>arrange()</code> command</a></li>
+<li class="chapter" data-level="4.3" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#selecting-columns-with-the-select-command"><i class="fa fa-check"></i><b>4.3</b> Selecting columns with the <code>select()</code> command</a></li>
+<li class="chapter" data-level="4.4" data-path="interactive-assignment-3-the-tidyverse.html"><a href="interactive-assignment-3-the-tidyverse.html#creating-new-variables-using-mutate"><i class="fa fa-check"></i><b>4.4</b> Creating new variables using <code>mutate()</code></a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html"><i class="fa fa-check"></i><b>5</b> Interactive Assignment 4: Graphs with ggplot</a><ul>
 <li class="chapter" data-level="5.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#using-ggplot-to-create-histograms"><i class="fa fa-check"></i><b>5.1</b> Using ggplot to create histograms</a><ul>
 <li class="chapter" data-level="5.1.1" data-path="interactive-assignment-4-graphs-with-ggplot.html"><a href="interactive-assignment-4-graphs-with-ggplot.html#creating-scatterplots-using-ggplot"><i class="fa fa-check"></i><b>5.1.1</b> Creating scatterplots using ggplot</a></li>
@@ -147,6 +151,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="14.1" data-path="interactive-assignment-9-within-subject-anova.html"><a href="interactive-assignment-9-within-subject-anova.html#graphing-with-error-bars"><i class="fa fa-check"></i><b>14.1</b> Graphing with error bars</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="free-assignment-8-within-subject-anova.html"><a href="free-assignment-8-within-subject-anova.html"><i class="fa fa-check"></i><b>15</b> Free Assignment 8: Within-subject ANOVA</a></li>
+<li class="chapter" data-level="16" data-path="interactive-assignment-3-the-tidyverse-1.html"><a href="interactive-assignment-3-the-tidyverse-1.html"><i class="fa fa-check"></i><b>16</b> Interactive Assignment 3: The tidyverse</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -172,8 +177,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This assignment will build on a lot of the work in Interactive Assignments 3 and 4. We will use the same data that we used in Interactive Assignment 4 where we examined how older and younger adults rated the facial appearance of older and younger faces.</p>
 <p>In this assignment, we will need the <code>tidyverse</code> and <code>ggplot</code> libraries. Fortunately, ggplot is part of the <code>tidyverse</code> so all we have to load is the <code>tidyverse</code> package.</p>
 <p><strong>Step 1</strong>: Go ahead and load the tidyverse package.</p>
-<p>Now we should load the data that was used in Interactive Assignment 4.</p>
-<p><strong>Step 2</strong>: Go ahead and load that file as the data.frame <code>face</code>, just like you did for Interactive Assignment 4.</p>
+<p><strong>Step 2</strong>: Now we should load the data that was used in Interactive Assignment 4. Go ahead and load the file named IA4graph.csv as the data.frame <code>face</code>, just like you did for Interactive Assignment 4.</p>
 <p>As a reminder from Interactive Assignment 4, these data are a series of face ratings and were used in several studies looking at how older adult (older than 65 years) and younger adult (18-30) raters perceive older and younger adult faces. The variables are as follows:</p>
 <p>*FaceSex - the sex of each face rated (F for female, M for male)</p>
 <p>*FaceAgeGroup - the age group of each face rated (OA for older adult faces, YA for younger adult faces)</p>
@@ -183,10 +187,30 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>In this assignment, we are going to look at differences between older faces and younger faces. The first step is to create two new data frames. One data frame will be for older faces and one data frame will be for younger faces. As we discussed in Interactive Assignment 3, you can use the <code>filter()</code> command to create a data frame that contains only rows that fit a certain condition.</p>
 <p><strong>Step 3</strong>: Use the <code>filter()</code> command to create a new data frame called “face.of” which only contains older faces, or those faces where the variable FaceAgeGroup is equal to “OA”.</p>
 <p><strong>Step 4</strong>: Use the <code>filter()</code> command to create a new data frame called “face.ya” which only contains younger faces, or faces where the variable FaceAgeGroup is equal to “YA”.</p>
-<p>Using ggplot, create a histogram for the aggressiveness rating variables for older faces using the variables ag.old and ag.young for the dataframe face.of. Make your histogram have 10 bins, have bars that have black lines and dark red fill.</p>
+<ol style="list-style-type: decimal">
+<li>How would you use the <code>filter()</code> command to select only faces that are younger adult and males? How would you select older adult females? For this question, you do not need to type the code into R, but just write down the answer below.</li>
+</ol>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<ol start="2" style="list-style-type: decimal">
+<li>How would you use the <code>filter()</code> command to select only those faces that are above the median in younger adult attractiveness ratings and above the median in older adult attractiveness ratings. Write the command you would type in below.</li>
+</ol>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><strong>Step 5</strong> Using ggplot, create a histogram for the aggressiveness rating variables for older faces using the variables ag.old and ag.young for the dataframe face.of. Make your histogram have 10 bins, have bars that have black lines and dark red fill.</p>
 <p>Your histogram for ag.old should look like this:</p>
 <p><img src="06-FreeAssignment2_ggplot_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>Question 1: What pattern do you see with the two histograms? Do the ratings appear to be normally distributed?</p>
+<ol start="3" style="list-style-type: decimal">
+<li>What pattern do you see with the two histograms? Do the ratings appear to be normally distributed?</li>
+</ol>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -196,8 +220,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
-<p><strong>Step 5</strong> Now create two histograms for the aggressiveness variables for the younger faces. The only difference is that instead of using the data frame “face.of”, you should use the data frame “face.yf”.</p>
-<p>Question 2: What pattern do you see with the two histograms of younger adult faces? Do the ratings appear to be similar to the ratings for older adult faces?</p>
+<p><strong>Step 6</strong> Now create two histograms for the aggressiveness variables for the younger faces. The only difference is that instead of using the data frame “face.of”, you should use the data frame “face.yf”.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>What pattern do you see with the two histograms of younger adult faces? Do the ratings appear to be similar to the ratings for older adult faces?</li>
+</ol>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -207,13 +233,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p> </p>
 <p> </p>
-<p>Now we are going to do a scatterplot, looking at the correlation between aggressiveness ratings by older raters and aggressiveness ratings by younger raters. We want to see whether the correlation is stronger for older faces or is it stronger for younger faces. That is, do older and younger adults agree more when rating how aggressive older faces are or do they agree more when rating how aggressive younger faces are?</p>
-<p><strong>Step 6</strong> Create a scatterplot looking at the relationship between ag.old and ag.young for older faces. When making your scatterplot, make sure that you have the following features:</p>
-<p><em>your plot title should say “Older Faces” so that we know that this plot is for older faces only </em>your x axis label and y axis label should say “Older Adult Raters” and “Younger Adult Raters” on the correct axis, depending on which one you plot on the x axis and which one you plot on the y axis.</p>
+<p>Now we are going to create a scatterplot, looking at the correlation between aggressiveness ratings by older raters and aggressiveness ratings by younger raters. We want to see whether the correlation is stronger for older faces or is it stronger for younger faces. That is, do older and younger adults agree more when rating how aggressive older faces are or do they agree more when rating how aggressive younger faces are?</p>
+<p><strong>Step 7</strong> Create a scatterplot looking at the relationship between ag.old and ag.young for older faces. When making your scatterplot, make sure that you have the following features:</p>
+<ul>
+<li>Your plot title should say “Older Faces” so that we know that this plot is for older faces only</li>
+<li>Your x axis label and y axis label should say “Older Adult Raters” and “Younger Adult Raters” on the correct axis, depending on which one you plot on the x axis and which one you plot on the y axis.</li>
+</ul>
 <p>You can change the other elements such as the type of points and colors to anything you want. Your plot should look like the plot below:</p>
 <p><img src="06-FreeAssignment2_ggplot_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p><strong>Step 7</strong> Create the same plot you did in Step 6 only instead using younger faces. Make sure you change the title, but everything else can be the same.</p>
-<p>Question 3: Compare the plot for older faces and younger faces. Does it look like the correlation is stronger for older faces or younger faces? Does it look like it is the same?</p>
+<p><strong>Step 8</strong> Create the same plot you did in Step 6 only instead using younger faces. Make sure you change the title, but everything else can be the same.</p>
+<ol start="5" style="list-style-type: decimal">
+<li>Compare the plot for older faces and younger faces. Does it look like the correlation is stronger for older faces or younger faces? Does it look like it is the same?</li>
+</ol>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -222,14 +253,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p> </p>
 <p>One concept we will talk about later in this class is the idea of a <strong>moderator</strong>. A moderator is a third variable that affects or <em>moderates</em> the relationship between two variables. In this case, the age of the face may be a moderator, since the relationship between the two variables ag.old and ag.young is different for different values of the moderator.</p>
 <p><strong>Step 8</strong> Use the <code>cor.test()</code> function to see whether the correlation between ag.old and ag.young is different for the older faces versus the younger faces.</p>
-<p>Question 4: What are the correlations? Do the results support your answer for Question 3?</p>
+<ol start="6" style="list-style-type: decimal">
+<li>What are the correlations? Do the results support your answer for Question 5?</li>
+</ol>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
 <p> </p>
-<p>Question 5: Repeat steps 5 - 8 for the competence ratings (the variables co.old and co.young), producing a histogram, a scatterplot, and the correlations for the competence ratings. What patterns do you see and what do you conclude? Are the results similar or different from the results for aggressiveness?</p>
+<p>Question 7: Repeat steps 5 - 8 for the competence ratings (the variables co.old and co.young), producing a histogram, a scatterplot, and the correlations for the competence ratings. What patterns do you see and what do you conclude? Are the results similar or different from the results for aggressiveness?</p>
 <p> </p>
 <p> </p>
 <p> </p>
@@ -247,8 +280,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="interactive-assignment-4-graphs-with-ggplot.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="interactive-assignment-5-regression-in-r.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="interactive-assignment-5-regression-in-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -257,7 +291,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -291,7 +325,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);
